@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637e75419a692458092f560a6e0a4410, type: 3}
+  m_Name: WeaponsMasterData
+  m_EditorClassIdentifier: 
+  HP: 200
+  Move1Damage: 20
+  Move2Card: {fileID: 11400000, guid: 62c19b1b85b1d4c72981076b37387a75, type: 2}
+  Move2NumOfCards: 3
+  Move3Damages: 0a0000000f00000014000000190000001e000000
+  Move4Damage: 10
+  Move4Block: 10
+  Move5Restore: 10
+  Move5Block: 10
+  Phase2PercentageTrigger:
+    Percentage: 66
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  Phase3PercentageTrigger:
+    Percentage: 33
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  PhaseOneUntilThisPrecentOfHP: 66
+  PhaseTwoUntilThisPrecentOfHP: 33

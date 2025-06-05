@@ -1,0 +1,185 @@
+ComonWarrior.png
+size:3973,3841
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm 01
+bounds:3436,1124,535,406
+offsets:276,7,817,446
+Arm 02
+bounds:1631,1075,212,516
+offsets:6,20,224,542
+Armor Chestplate
+bounds:2866,551,547,480
+rotate:90
+Armor Chestplate 02
+bounds:2824,2123,167,347
+offsets:6,6,179,359
+Armor sholder 01
+bounds:1754,2434,273,333
+offsets:6,6,285,345
+rotate:90
+Armor sholder 02
+bounds:2089,2442,201,265
+offsets:6,6,213,277
+Atack
+bounds:2276,13,500,559
+offsets:0,0,500,563
+rotate:90
+Belt 01
+bounds:3497,2404,473,303
+offsets:0,2,473,305
+Belt 02
+bounds:281,193,878,347
+rotate:90
+Belt 03
+bounds:2,104,884,277
+rotate:90
+Belt 04
+bounds:2292,2449,364,258
+offsets:6,6,376,270
+Belt 05
+bounds:1589,13,209,685
+offsets:4,5,218,692
+rotate:90
+Chest
+bounds:1055,3417,519,422
+Cloth-01
+bounds:2133,1841,312,599
+offsets:5,0,320,601
+Cloth-02
+bounds:630,221,850,423
+offsets:0,3,851,430
+rotate:90
+ComonWarrior/Arm 01
+bounds:2998,2179,488,352
+offsets:7,7,501,365
+ComonWarrior/Armor Chestplate
+bounds:3015,2,547,480
+rotate:90
+ComonWarrior/Armor sholder 01
+bounds:329,7,184,214
+rotate:90
+ComonWarrior/Atack
+bounds:3497,1532,446,422
+offsets:6,6,458,434
+ComonWarrior/Forearm 01
+bounds:2998,2533,174,493
+offsets:7,6,189,507
+rotate:90
+ComonWarrior/Forearm 02
+bounds:2658,2472,338,235
+offsets:29,37,373,278
+ComonWarrior/Fury
+bounds:3497,1956,446,452
+offsets:6,6,458,464
+rotate:90
+ComonWarrior/Leg 01-01
+bounds:1055,3068,347,517
+rotate:90
+ComonWarrior/Leg 02-02
+bounds:1055,353,237,720
+offsets:0,103,237,926
+ComonWarrior/Neutral
+bounds:3497,302,446,420
+offsets:6,6,458,432
+ComonWarrior/Pain
+bounds:2988,1108,446,422
+offsets:6,6,458,434
+ComonWarrior/Shield
+bounds:1589,2709,1130,1131
+offsets:6,6,1142,1143
+rotate:90
+ComonWarrior/Sholder armor 02
+bounds:2,19,83,171
+rotate:90
+ComonWarrior/Spear
+bounds:918,1145,134,2694
+offsets:1,0,136,2694
+Cover
+bounds:3436,724,534,398
+offsets:2,1,541,404
+Cover 02
+bounds:1055,2414,516,652
+offsets:5,4,522,659
+Foot 01
+bounds:2824,1613,204,341
+Foot 02
+bounds:2473,1616,349,231
+Forearm
+bounds:2837,35,176,493
+offsets:6,6,190,507
+Forearm 02
+bounds:2133,1602,338,237
+offsets:29,35,373,278
+Fury
+bounds:1845,1091,500,580
+offsets:0,0,500,584
+rotate:90
+Fx_Spear
+bounds:1019,7,212,568
+rotate:90
+Hand 01
+bounds:545,8,183,172
+offsets:6,9,195,187
+rotate:90
+Hand 02-Spear
+bounds:137,1073,779,2766
+offsets:6,6,791,2778
+Hand 02-Spear copy
+bounds:2,990,133,2849
+Hand _R
+bounds:1556,224,158,170
+rotate:90
+Helmet hair
+bounds:1054,1075,488,575
+offsets:5,0,497,580
+rotate:90
+Layer 1
+bounds:1054,1565,847,257
+offsets:0,0,847,360
+rotate:90
+Leg 01-01
+bounds:1556,384,451,689
+Leg 01-02
+bounds:2447,1849,366,598
+Leg 01-03
+bounds:719,2,217,298
+offsets:2,2,225,303
+rotate:90
+Leg 02-01
+bounds:1294,354,260,719
+Leg 02-02
+bounds:3030,1740,437,448
+rotate:90
+Leg 02-03
+bounds:1573,2418,179,289
+Neck
+bounds:3497,4,296,308
+offsets:5,4,305,316
+rotate:90
+Neutral
+bounds:2364,530,500,559
+offsets:0,0,500,563
+Pain
+bounds:2427,1100,500,559
+offsets:0,0,500,563
+rotate:90
+Sheld_Light
+bounds:1313,1593,819,818
+rotate:90
+Shield
+bounds:2722,2709,1130,1131
+offsets:6,6,1142,1143
+rotate:90
+Shirt 01
+bounds:2009,515,574,353
+offsets:6,6,586,365
+rotate:90
+Shirt 02
+bounds:3030,1565,173,302
+offsets:6,6,185,314
+rotate:90
+path (65)
+bounds:175,57,152,45
+offsets:23,21,192,96

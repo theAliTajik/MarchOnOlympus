@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce49f76a2e31f47858afa2bd652512a6, type: 3}
+  m_Name: Eviscerate
+  m_EditorClassIdentifier: 
+  Name: Eviscerate
+  Rarity: 1
+  Type: 0
+  CardPack: 4
+  Image: {fileID: 21300000, guid: a14d0139215bb3a4ca5f2272332b0247, type: 3}
+  MStance: 2
+  normalDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Deal {0} Damage, Apply Impale {1}
+    targetingType: 1
+    actionType: 0000000004000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Gain Fortified
+    targetingType: 1
+    actionType: 03000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Damage: 15
+  ImpaleAmount: 5

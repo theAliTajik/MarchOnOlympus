@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
+  m_Name: 2_ChooseReward
+  m_EditorClassIdentifier: 
+  DialogueText: Choose A Reward
+  Choices:
+  - {fileID: 11400000, guid: a2f69d844a7554408b50ebee917fd101, type: 2}
+  - {fileID: 11400000, guid: 52d487819bc5f4820a4cf9d2bf00d087, type: 2}
+  - {fileID: 11400000, guid: eb774836094234cb3900b5dda7821787, type: 2}
+  - {fileID: 11400000, guid: e6428362b9a2d4630993bf1563b597bd, type: 2}
+  - {fileID: 11400000, guid: 1e394127afda640779f133d3a9f98623, type: 2}

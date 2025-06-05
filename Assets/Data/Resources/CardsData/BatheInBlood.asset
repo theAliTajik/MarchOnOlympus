@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0e71a74729e4c2eb4f70bc3240e311, type: 3}
+  m_Name: BatheInBlood
+  m_EditorClassIdentifier: 
+  Name: Bathe In Blood
+  Rarity: 0
+  Type: 0
+  CardPack: 3
+  Image: {fileID: 21300000, guid: 2b8ec3288513f49788358cba9fe181d2, type: 3}
+  MStance: 3
+  normalDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Double the Bleed Amount
+    targetingType: 1
+    actionType: 03000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Gain Frenzy
+    targetingType: 1
+    actionType: 02000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0

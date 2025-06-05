@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326b066d804e5485b8bc27737dbade35, type: 3}
+  m_Name: KillingSoftly
+  m_EditorClassIdentifier: 
+  Name: Killing Softly
+  Rarity: 0
+  Type: 0
+  CardPack: 4
+  Image: {fileID: 21300000, guid: 79315af1d276ec547a22cecc2ea30a60, type: 3}
+  MStance: 2
+  normalDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Apply Bleed x Impale, Remove Impale from enemy
+    targetingType: 1
+    actionType: 0000000005000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 2
+    energyCost: 2
+    description: Apply Impale {0}
+    targetingType: 1
+    actionType: 0300000005000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  ImpaleAmount: 3

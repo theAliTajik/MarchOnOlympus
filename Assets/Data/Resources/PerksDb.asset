@@ -1,0 +1,562 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5602be893a92c44b1b2d3bc7166c9011, type: 3}
+  m_Name: PerksDb
+  m_EditorClassIdentifier: 
+  AllPerks:
+  - ClientID: Healthy
+    Icon: {fileID: 21300000, guid: e8cbea3923c0fa14ca951fb34fbf6b6e, type: 3}
+    Desc: Temprary Description for Perk healthy
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Vigilant
+    Icon: {fileID: 21300000, guid: 54739cf2fcb14c749955952de6c93a10, type: 3}
+    Desc: Temprary Description for Perk vigilant
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Silent
+    Icon: {fileID: 21300000, guid: effba74d401ff9c45a844290b255e9c2, type: 3}
+    Desc: Temprary Description for Perk silent
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: Hedonist
+    Icon: {fileID: 21300000, guid: 0de64d2f63f9ee34da6fe9570e9c6a1a, type: 3}
+    Desc: Temprary Description for Perk hedonist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: aa2d095825d2b4ead9f2f8250a1109bc, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: ProtectedByHonor
+    Icon: {fileID: 21300000, guid: 8e059f0dca9db814ea585246f44ee521, type: 3}
+    Desc: Temprary Description for Perk protected_armor
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 51323b8b3372d4873ab4837a7dba4c12, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Fundamentalist
+    Icon: {fileID: 21300000, guid: 1d62f3020e972024aad6b3b5b26c81d7, type: 3}
+    Desc: Temprary Description for Perk fundamentalist
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: Patient
+    Icon: {fileID: 21300000, guid: 2d006d4115a7b2848a2aff5e1a57f85b, type: 3}
+    Desc: Temprary Description for Perk patient
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Blessed
+    Icon: {fileID: 21300000, guid: fe0ea56cef0c57e469858383d59808f6, type: 3}
+    Desc: Temprary Description for Perk blessed
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: StrongAsWater
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk strong_as_water
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 00c6f4231e8b24d78be8457d2acf4f47, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Phantom
+    Icon: {fileID: 21300000, guid: bf31db59720366841838a38a4e13d383, type: 3}
+    Desc: Temprary Description for Perk phantom
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: TillTheEnd
+    Icon: {fileID: 21300000, guid: 8d8e51db5bb2d3340b61bca551b72d51, type: 3}
+    Desc: Temprary Description for Perk till_the_end
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 568ad376cb4c342f0a482b19b544b51a, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: EternalArmor
+    Icon: {fileID: 21300000, guid: aa065c9fe01229c4fa81c29723c8f8c7, type: 3}
+    Desc: Temprary Description for Perk eternal_armor
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 9539e2b6a8044489490bfe913b3930f5, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: NoHonorInFighting
+    Icon: {fileID: 21300000, guid: cb1b242ca127d8b4da0c6f0e73c37afc, type: 3}
+    Desc: Temprary Description for Perk no_honor_in_fighting
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: ThirstForBlood
+    Icon: {fileID: 21300000, guid: d5e225ec319180747a323a301c098d44, type: 3}
+    Desc: Temprary Description for Perk thirst_for_blood
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: b40eef493a21e4127a9d81c961d4b098, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Fortune
+    Icon: {fileID: 21300000, guid: a61a1082dba871045b90d917c8ced7fc, type: 3}
+    Desc: Temprary Description for Perk fortune
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Teachings
+    Icon: {fileID: 21300000, guid: eade1c261b4c83f418b03ac1e99d6e0b, type: 3}
+    Desc: Temprary Description for Perk teachings
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: Pendant
+    Icon: {fileID: 21300000, guid: 77195f465baf5a54ba070427e40e2b66, type: 3}
+    Desc: Temprary Description for Perk pendant
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: Meticulous
+    Icon: {fileID: 21300000, guid: 735327b87e3088842a4f06064fd0402a, type: 3}
+    Desc: Temprary Description for Perk meliculous
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: c1fb6f527b6a8481d8f2be6309fb9281, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Serendipity
+    Icon: {fileID: 21300000, guid: c47b5a6e0dd72b04392e0643c4e31190, type: 3}
+    Desc: Temprary Description for Perk serendipity
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 5f8e5702ef0404e9aaf0d423a3678ac8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: CarryOver
+    Icon: {fileID: 21300000, guid: e8362ac5c61662f4a872a9e6ded35261, type: 3}
+    Desc: Temprary Description for Perk carry_over
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 6af2186387084467fb62681fd0367ece, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Thornful
+    Icon: {fileID: 21300000, guid: 2995995c464dbb647bb8b9192f14d547, type: 3}
+    Desc: Temprary Description for Perk thornful
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: d4d1e0c94e94744a199ffeb56d5d4781, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Minimalist
+    Icon: {fileID: 21300000, guid: 88c5505056401dc45803526486ea5674, type: 3}
+    Desc: Temprary Description for Perk minimalist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: b3f90cb09aaaa409f94384604121f1f8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: HonorSeeker
+    Icon: {fileID: 21300000, guid: 4e1986d0e35e00249bc8afeb3d24df8e, type: 3}
+    Desc: Temprary Description for Perk honor_seeker
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: ShopkeeperFavorite
+    Icon: {fileID: 21300000, guid: c4b53afb0a044b5468f5cdf142d02131, type: 3}
+    Desc: Temprary Description for Perk shopkeeper_favorite
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: Progress
+    Icon: {fileID: 21300000, guid: 041a492c19677df4ba647b9d66413eab, type: 3}
+    Desc: Temprary Description for Perk progress
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: ExplosivePower
+    Icon: {fileID: 21300000, guid: 22fa84983f306034cb37010e2124ebf5, type: 3}
+    Desc: Temprary Description for Perk explosive_power
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 94e348c0b4c4849a9956849f7d833fa3, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Egoist
+    Icon: {fileID: 21300000, guid: 8031b6508535b8e4a9f5279ed7770a51, type: 3}
+    Desc: Temprary Description for Perk egoist
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: SlayerOfGods
+    Icon: {fileID: 21300000, guid: cd6fde27fe9214642ba1fd26cabbf202, type: 3}
+    Desc: Temprary Description for Perk slayer_of_gods
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: SlayerOfMonsters
+    Icon: {fileID: 21300000, guid: 32a98f07b9fa0504789a9a91fb8da1f1, type: 3}
+    Desc: Temprary Description for Perk slayer_of_monsters
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: SlayerOfZealots
+    Icon: {fileID: 21300000, guid: 289deaf7cf6e18942b4482f638cc48dc, type: 3}
+    Desc: Temprary Description for Perk slayer_of_zealots
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: LuckyCharm
+    Icon: {fileID: 21300000, guid: 4809967737abd7f4b999e8b5a911bc44, type: 3}
+    Desc: Temprary Description for Perk lucky_charm
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 7fdf0256cb00e495e8342d3dd0488d06, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: HornsOfMinotaur
+    Icon: {fileID: 21300000, guid: 4fcd54b203c67b84daf9ea884540663a, type: 3}
+    Desc: Temprary Description for Perk horns_of_minotaur
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: a5cd6b8b077e9426696544ebb7201eba, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Missing
+    Icon: {fileID: 21300000, guid: 2244dafc9f84cd84699584152c41bf3c, type: 3}
+    Desc: Temprary Description for Perk missing
+    Invisible: 0
+    PerkData: {fileID: 0}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: MoreTheMerrier
+    Icon: {fileID: 21300000, guid: 7c5a85e2b61ee8c41a48e4b3e56f9797, type: 3}
+    Desc: Temprary Description for Perk more_the_merrier
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: bdb59e2b6189e4a3da35ef24f55cbf99, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: PendantOfEnergy
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk PendantOfEnergy
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 71cba92ab408444ecab4f99a631c9447, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Maximalist
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Maximalist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 4d30331c2361148aea352393681d627b, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LuckyNumber
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LuckyNumber
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: a5ef871b6a43447c987d2156acf217a8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Technical
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Technical
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: ddb65c92f9b704f6c88e7097d9e93aea, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: ArmoredToTeeth
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk ArmoredToTeeth
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: b7c9cc5adf5a74a2ca936659d43de8e5, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: HeavyHitter
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk HeavyHitter
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 616e4b718bb0a41f0a11d5abe22cdd90, type: 2}
+    IsImplemented: 0
+    ActionScriptName: 
+  - ClientID: LessIsMore
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LessIsMore
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: fb28cdcb97a084453ae01832cd8450fe, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Emergency
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Emergency
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 97394620a648947358e69425010cfb23, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LastCall
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LastCall
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 7ffd8baeb63c5466f9aa1c0cdcf26ca5, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LetItBurn
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LetItBurn
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 5c14fc68397f5476bb1ee9f94ec21db8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: QuickRecovery
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk QuickRecovery
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: f2791603d72d743fb82fa6c4bb9fb129, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LoneWolf
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LoneWolf
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 9b9dd2b5219554caf90273d20102cfc4, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Dancer
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Dancer
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: d14fb853715314392828546b7e0a7ed5, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: JackOfAllTrades
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk JackOfAllTrades
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: f0cb1dc6728db436f97391dc9860ca11, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: RingOfSapphire
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk RingOfSapphire
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: b28860582431440bfa2a1ce543f0c561, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Duelist
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Duelist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 457f110f52be444c49671bdfadd0fe20, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: AggressiveDefender
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk AggressiveDefender
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: a1afd720008d143c3ae2a6299de3b8d8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: InArmorWeTrust
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk InArmorWeTrust
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 3d7d98bfa23dd48f496b37749a7df7e1, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: UntilTheEnd
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk UntilTheEnd
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 2dd2c00c0ad8340bd90dfc55c2a1523f, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Narcicist
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Narcicist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 675e0bb7aa5c3441b9384e6c179dc305, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Perfectionist
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Perfectionist
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: a224209d6680f4712b864560c52828fb, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Bloodthirst
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Bloodthirst
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: e32559985694c47b09786f8ed0c45631, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Hemophile
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Hemophile
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: ccdc2f364f537462db4db2c49959d6b7, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: ChangeHeals
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk ChangeHeals
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 24d1c83442de0461da47fad8b5f3bd71, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: BurningDesires
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk BurningDesires
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 5221da916075d48c3972702b57f104e9, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Talos
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Talos
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 5044df7ac652743c9b29dbe1f5048015, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: JoyOfSerenity
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk JoyOfSerenity
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: dd59805eac5fb458787bc9dc09772a31, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: BloodPact
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk BloodPact
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 4e0d1fcb31a314c80bf10ba7bf294954, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Kairos
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Kairos
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 28952db3214fc4d4b9fc8e1adb565cb3, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: AllOut
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk AllOut
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 06dafadaceb5f4ae9acf54e868c08cd7, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Dynamis
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Dynamis
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 1e2c079792ad144adbfd1cf4efc38e55, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: HeavyBlocker
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk HeavyBlocker
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 46b3f9b7755cf42a6829baf046b4af96, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Titan
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Titan
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 590428c83176b4aa0bfe89b554127756, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Techy
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Techy
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: c6b71719ae706406ebda17aff4e50cba, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: BurningAegis
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk BurningAegis
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: c44f112e462644fd48ab11b838496bd3, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainDraw3Event
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainDraw3Event
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: c86fb60f7189743948642d960ccaceb7, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainFortifyEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainFortifyEevent
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 3b29b2e701c0c45f88654c0f14bae208, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Gain2FortifyEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Gain2FortifyEvent
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 22ec90f6c160746ae89523f01bac238d, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: DrawOneLessCardEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk DrawOneLessCardEvent
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: e2b2419e57c6d43c3b0d215506eaf0e9, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainOneEnergyEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainOneEnergyEvent
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 1c3a197446bf94f8d9437a126ff11d28, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainMinusThirtyHP
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainMinusThirtyHP
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: aac4f89893eac4fed9bfd8f2a77ae643, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainStrengthNextCombatEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainStrengthNextCombatEvent
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 9cf079c49598a462d835deb31f3ab6d8, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainVulnerableNextCombatEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainVulnerableNextCombatEvent
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 60580a93b579e4b2eb453b0f3f63d0ef, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainBleedEachCombatEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainBleedEachCombatEvent
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: f653c6f9ee4bb4410854e336bccbe38b, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  defaultIcon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}

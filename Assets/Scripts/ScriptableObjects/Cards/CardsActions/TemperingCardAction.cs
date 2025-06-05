@@ -1,0 +1,29 @@
+using System;
+using System.Collections; 
+using System.Collections.Generic;
+using UnityEngine;
+using Game;
+
+public class TemperingCardAction : BaseCardAction
+{
+    public override void Play(BaseCardData cardData, Action finishCallback, Fighter target, CardDisplay cardDisplay)
+    {
+        TemperingCard c = (TemperingCard)cardData;
+
+        MechanicsManager.Instance.AddMechanic(new BlockMechanic(c.Block, CombatManager.Instance.Player));
+        
+        if (CombatManager.Instance.CurrentStance == cardData.MStance)
+        {
+            MechanicsManager.Instance.AddMechanic(new StrenghtMechanic(c.StanceStr, CombatManager.Instance.Player));
+        }
+        
+        StartCoroutine(WaitAndExecute(finishCallback, 2f));
+    }
+
+    private IEnumerator WaitAndExecute(Action finishCallback, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        finishCallback?.Invoke();
+    }
+    
+}

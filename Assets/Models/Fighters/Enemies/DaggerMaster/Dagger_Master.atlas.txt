@@ -1,0 +1,137 @@
+Dagger_Master.png
+size:3037,3007
+filter:Linear,Linear
+pma:true
+scale:0.75
+03
+bounds:2283,328,166,589
+offsets:0,0,167,590
+Arm left-01
+bounds:2696,1056,337,315
+Arm left-02
+bounds:2367,1017,387,327
+rotate:90
+Arm right-01
+bounds:2451,664,296,351
+Arm right-02
+bounds:2451,336,326,294
+rotate:90
+Belt
+bounds:1826,450,458,272
+rotate:90
+Belt-02
+bounds:2,5,151,590
+rotate:90
+Belt-03
+bounds:2100,408,181,509
+Belt-04
+bounds:594,36,120,499
+rotate:90
+Belt-05
+bounds:1114,431,361,962
+Belt_B
+bounds:2093,919,458,272
+rotate:90
+Belt_Item_1
+bounds:2027,2,56,85
+offsets:0,1,56,86
+rotate:90
+Belt_Item_2
+bounds:2843,33,55,87
+offsets:1,1,57,89
+Belt_Item_3
+bounds:2900,40,53,80
+offsets:0,2,53,83
+Belt_Item_4
+bounds:2467,60,120,279
+offsets:0,0,120,280
+rotate:90
+Belt_Item_4_FX
+bounds:1872,2,103,153
+offsets:7,73,120,280
+rotate:90
+Breastplate
+bounds:1777,1379,503,511
+rotate:90
+Camada 718
+bounds:2345,1837,367,486
+offsets:1,1,368,488
+rotate:90
+Camada 719
+bounds:1763,910,328,467
+offsets:1,0,329,467
+Camada 720
+bounds:1477,886,284,507
+offsets:1,1,286,508
+Camada 721
+bounds:1114,2,369,427
+offsets:1,1,371,429
+Camada 722
+bounds:1477,442,347,442
+offsets:1,1,349,444
+Cloth-01
+bounds:2345,2206,799,668
+rotate:90
+Cloth-02
+bounds:2,158,1110,1235
+Cloth-03
+bounds:1777,1884,566,1121
+Cover button-Right
+bounds:2748,27,93,93
+Cover button-left
+bounds:2947,356,79,88
+offsets:0,1,79,89
+rotate:90
+Cover-01-Right
+bounds:2290,1406,419,429
+Cover-02
+bounds:1872,107,341,192
+offsets:0,2,341,194
+rotate:90
+Cover-03-Left
+bounds:2833,1842,362,172
+rotate:90
+Cover-04
+bounds:2,1395,1773,1610
+Dagger
+bounds:2711,1373,324,462
+Feet Right-01
+bounds:2747,220,157,180
+rotate:90
+Feet left-01
+bounds:2467,182,272,152
+Forearm Left-01
+bounds:2749,820,269,234
+Forearm Right-01
+bounds:2066,128,205,278
+offsets:0,1,205,279
+Hand Left
+bounds:2747,379,198,250
+offsets:0,0,198,251
+Hand Right
+bounds:2749,631,187,269
+rotate:90
+Head
+bounds:1485,32,385,408
+lightning (88)
+bounds:2929,258,96,96
+projectile (10)
+bounds:2748,122,96,96
+projectile (131)
+bounds:2417,919,24,96
+projectile (136)
+bounds:2066,78,48,48
+projectile (2)
+bounds:2273,84,48,192
+rotate:90
+projectile (218)
+bounds:2290,1856,41,26
+offsets:11,9,96,48
+projectile (240)
+bounds:2846,122,96,96
+projectile (260)
+bounds:2367,919,48,96
+projectile (274)
+bounds:2947,437,48,192
+projectile (49)
+bounds:2273,134,192,192

@@ -1,0 +1,203 @@
+WeaponsMaste.png
+size:3975,3884
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm 01
+bounds:2109,3435,434,284
+offsets:23,1,457,285
+Atack
+bounds:3273,3372,318,348
+offsets:1,1,319,349
+rotate:90
+Back Shield
+bounds:2,597,851,978
+offsets:0,1,853,980
+rotate:90
+Back Shield copy 4
+bounds:982,240,973,1101
+offsets:17,18,1007,1136
+rotate:90
+Back Spear
+bounds:1874,1962,506,2065
+offsets:0,0,506,2066
+rotate:90
+Belt 01
+bounds:1303,3165,458,347
+Chest
+bounds:3419,2470,519,507
+Cloth-&-Sholder
+bounds:774,3208,527,345
+offsets:0,24,527,369
+Cloth-01
+bounds:953,2081,919,519
+Cloth-03
+bounds:2,1698,635,628
+Cloth-05
+bounds:539,2775,645,431
+Cloth-06
+bounds:1344,1215,978,745
+FX/flare (10)
+bounds:626,3813,69,83
+offsets:21,7,96,96
+rotate:90
+FX/flare (76)
+bounds:793,3796,86,90
+offsets:5,2,96,96
+rotate:90
+FX/flare (76)_cop
+bounds:1205,3786,96,113
+rotate:90
+FX/glow (45)
+bounds:1885,3737,145,176
+offsets:30,5,192,192
+rotate:90
+FX/impact (28)
+bounds:344,3816,66,89
+offsets:15,2,96,96
+rotate:90
+FX/impact (60)
+bounds:1020,3788,94,183
+offsets:1,8,96,192
+rotate:90
+FX/particle (105)
+bounds:435,3814,189,68
+offsets:3,10,192,96
+FX/particle (331)
+bounds:2,3628,192,192
+FX/path (217)
+bounds:2,3834,87,48
+offsets:8,0,96,48
+FX/path (95)
+bounds:189,3822,153,60
+offsets:18,18,192,96
+FX/projectile (112)
+bounds:91,3834,96,48
+FX/projectile (196)
+bounds:711,3803,79,80
+offsets:9,8,96,96
+rotate:90
+FX/projectile (27)
+bounds:196,3622,192,192
+FX/projectile (76)
+bounds:1320,3786,96,384
+rotate:90
+FX/slash (10)
+bounds:390,3620,192,192
+FX/slash (103)
+bounds:885,3796,86,133
+offsets:7,16,192,192
+rotate:90
+FX/slash (26)
+bounds:2063,3725,157,190
+offsets:0,2,192,192
+rotate:90
+FX/slash (40)
+bounds:584,3609,192,192
+FX/slash (49)
+bounds:3189,3702,180,181
+offsets:12,7,192,192
+rotate:90
+FX/slash (55)
+bounds:1706,3758,124,177
+offsets:2,12,192,192
+rotate:90
+Forearm 01
+bounds:3611,3692,190,362
+offsets:2,0,192,364
+rotate:90
+Fury
+bounds:2896,3387,313,375
+offsets:1,1,314,376
+rotate:90
+Hair-01
+bounds:1500,3514,263,242
+Hand 01
+bounds:3008,3709,173,179
+rotate:90
+Hand 02
+bounds:2504,3721,188,161
+L_Foot
+bounds:3372,3697,185,237
+rotate:90
+Leg 01-01
+bounds:3409,2979,391,542
+rotate:90
+Leg 01-02
+bounds:2,2874,409,535
+offsets:236,0,645,928
+rotate:90
+Neutral
+bounds:426,3285,322,346
+offsets:1,1,323,347
+rotate:90
+Pain
+bounds:3623,3372,318,348
+offsets:1,1,319,349
+rotate:90
+R_Arm
+bounds:2,3299,319,422
+rotate:90
+R_Arm Armor_1
+bounds:2545,3423,296,349
+offsets:1,0,297,349
+rotate:90
+R_Arm Armor_1 copy 6
+bounds:2805,2996,374,602
+offsets:2,1,376,604
+rotate:90
+R_Foot
+bounds:2694,3721,312,161
+R_ForeArm
+bounds:1765,3449,342,274
+offsets:0,0,342,275
+R_ForeArmArmor
+bounds:2255,3722,247,160
+offsets:0,1,248,161
+R_Leg1
+bounds:2385,3044,418,377
+R_Leg2
+bounds:1763,3085,348,620
+offsets:0,0,533,889
+rotate:90
+Shield-01
+bounds:2324,1144,816,959
+rotate:90
+Spear-&-Hand-02
+bounds:2085,2,1140,1795
+offsets:1,1,1141,1797
+rotate:90
+Sword scabbard
+bounds:1763,2602,703,440
+offsets:245,0,948,445
+Sword scabbard-02
+bounds:2468,2532,949,445
+Sword scabbard-02FX
+bounds:2,2328,949,445
+Sword-&-Hand-02
+bounds:639,1450,629,703
+offsets:1,1,630,705
+rotate:90
+Sword-&-Hand_FX
+bounds:1186,2657,506,575
+offsets:0,130,630,705
+rotate:90
+r_Leg2_Armore
+bounds:778,3555,229,720
+offsets:0,0,505,871
+rotate:90
+
+WeaponsMaste_2.png
+size:3624,1799
+filter:Linear,Linear
+pma:true
+scale:0.75
+Layer 1
+bounds:2383,404,1239,1393
+offsets:0,1,1239,1394
+Layer 1 copy
+bounds:1144,257,1237,1540
+offsets:0,1,1238,1542
+Spear-&-Hand-02FX
+bounds:2,2,1140,1795
+offsets:1,1,1141,1797

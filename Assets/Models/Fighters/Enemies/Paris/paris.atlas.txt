@@ -1,0 +1,203 @@
+paris.png
+size:3997,3855
+filter:Linear,Linear
+pma:true
+Arm 01
+bounds:2040,2760,483,482
+offsets:8,8,499,498
+Arm 02
+bounds:1055,2844,424,533
+offsets:8,8,440,549
+rotate:90
+Armor Chestplate
+bounds:1429,2256,640,502
+offsets:8,8,656,518
+Armor sholder 01
+bounds:1590,2821,448,442
+offsets:8,8,464,458
+Armor sholder 02
+bounds:1841,3736,117,235
+offsets:8,8,133,251
+rotate:90
+Arrow-01
+bounds:2,1398,941,991
+offsets:8,8,957,1008
+rotate:90
+Atack
+bounds:2525,2695,623,490
+offsets:8,8,641,509
+Atack_Fx
+bounds:405,3548,621,198
+offsets:3,6,641,211
+Belt 01
+bounds:3362,3148,627,347
+offsets:8,8,643,363
+Camada 688
+bounds:3293,3506,220,383
+offsets:8,8,236,399
+rotate:90
+Chest
+bounds:831,3309,236,361
+offsets:8,8,252,377
+rotate:90
+Cloak-01
+bounds:2696,3187,664,317
+Cloak-02
+bounds:2309,3516,455,214
+offsets:8,8,471,230
+Cloak-03
+bounds:627,2341,800,501
+Cloth-01
+bounds:2532,1065,1049,1142
+rotate:90
+Cloth-02
+bounds:2,2,1247,1460
+rotate:90
+Cloth-belt-01
+bounds:392,2911,396,661
+rotate:90
+Cloth-belt-02
+bounds:2071,2179,514,652
+rotate:90
+Foot 01
+bounds:2989,3511,219,302
+offsets:8,8,235,318
+rotate:90
+Foot 02
+bounds:1452,3270,406,251
+offsets:8,8,422,267
+Forearm 01
+bounds:1764,3523,543,208
+offsets:8,8,559,224
+Forearm 02
+bounds:2,2959,388,358
+offsets:8,8,406,375
+Fury
+bounds:2725,2116,623,538
+offsets:8,9,641,558
+Hand 01
+bounds:132,3550,271,197
+offsets:8,8,287,213
+Hand 02
+bounds:2766,3515,215,221
+offsets:8,8,231,237
+rotate:90
+Leg 01
+bounds:2,3319,227,827
+offsets:8,25,245,860
+rotate:90
+Leg 02
+bounds:2212,3244,270,482
+offsets:0,0,270,1011
+rotate:90
+Neck
+bounds:1860,3265,256,350
+offsets:8,8,272,366
+rotate:90
+Neutral
+bounds:3150,2656,623,490
+offsets:8,8,641,509
+Pain
+bounds:2,2419,623,490
+offsets:8,8,641,509
+Quiver with arrows
+bounds:995,1251,1535,926
+offsets:8,8,1551,942
+Shirt 01
+bounds:1028,3547,199,511
+rotate:90
+Strap_1
+bounds:2744,3732,121,658
+rotate:90
+Strap_2
+bounds:2,3749,104,794
+rotate:90
+Strap_3
+bounds:798,3748,105,800
+rotate:90
+Strap_4
+bounds:2078,3733,120,664
+rotate:90
+aura (247)
+bounds:1194,3289,256,256
+aura (79)
+bounds:2,3619,128,128
+aura (92)
+bounds:1725,3739,114,114
+offsets:7,10,128,128
+aura (93)
+bounds:3678,3497,227,228
+offsets:13,14,256,256
+rotate:90
+element (56)
+bounds:1600,3741,112,123
+offsets:1,2,128,128
+rotate:90
+element (85)
+bounds:3790,3726,127,205
+offsets:1,25,128,256
+rotate:90
+texture (228)
+bounds:1541,3527,210,221
+offsets:18,23,256,256
+rotate:90
+texture (296)
+bounds:3662,3728,125,126
+offsets:3,0,128,128
+rotate:90
+texture (450)
+bounds:3404,3732,256,121
+offsets:0,3,256,128
+
+paris_2.png
+size:3462,2240
+filter:Linear,Linear
+pma:true
+Bow-01
+bounds:2,2,2236,1728
+rotate:90
+Bow-01Fx
+bounds:1732,2,2236,1728
+rotate:90
+
+paris_3.png
+size:1609,262
+filter:Linear,Linear
+pma:true
+FXArrow/aura (126)
+bounds:497,35,224,225
+offsets:16,16,256,256
+FXArrow/aura (128)
+bounds:940,53,207,206
+offsets:24,25,256,256
+rotate:90
+FXArrow/aura (247)
+bounds:2,4,256,256
+FXArrow/aura (3)
+bounds:1401,140,120,110
+offsets:4,9,128,128
+rotate:90
+FXArrow/aura (79)
+bounds:1271,132,128,128
+FXArrow/aura (92)
+bounds:1401,24,114,114
+offsets:7,10,128,128
+FXArrow/aura (93)
+bounds:260,19,241,235
+offsets:7,8,256,256
+rotate:90
+FXArrow/element (198)
+bounds:1517,64,83,91
+offsets:21,18,128,128
+FXArrow/element (231)
+bounds:1513,157,94,103
+offsets:16,12,128,128
+FXArrow/element (241)
+bounds:1271,2,128,128
+FXArrow/texture (228)
+bounds:723,39,215,221
+offsets:18,23,256,256
+FXArrow/texture (450)
+bounds:1148,4,256,121
+offsets:0,3,256,128
+rotate:90

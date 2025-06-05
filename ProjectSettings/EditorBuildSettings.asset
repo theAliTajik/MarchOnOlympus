@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Splash.unity
+    guid: 4f65d3e22d6217d46ac2fc7bfef7b651
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 36cc520c45982da48839e7147efb7df9
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 5e9023fc9315c404a86fe4929a9ea830
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: cd1ef6ab22dc747aa8238251d34d23eb
+  - enabled: 1
+    path: Assets/Scenes/Event.unity
+    guid: 508c35662d1c043e2a53ba9dfce924c1
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: a3525fcd0d785496f8b576e8e63af582
+  - enabled: 1
+    path: Assets/Scenes/AdvancedShop.unity
+    guid: 93dd0b1e309bd43b7a643dbb8abe9e0d
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 5bb61c12b434e4d97b8f1b4eb77fa90b, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 6893a2638abce47c1930de5ef3d2b193, type: 2}

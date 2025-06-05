@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566ef004ea06f48b89939f429fa49113, type: 3}
+  m_Name: Patience
+  m_EditorClassIdentifier: 
+  Name: Patience
+  Rarity: 0
+  Type: 0
+  CardPack: 0
+  Image: {fileID: 0}
+  MStance: 1
+  normalDataSet:
+    newEnergyCost:
+      m_value: 1
+    energyCost: 1
+    description: Deal {0} damage per not used turn
+    targetingType: 1
+    actionType: 00000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 1
+    energyCost: 1
+    description: Also block {0} per not used turn
+    targetingType: 1
+    actionType: 01000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  DamagePerNotUsed: 5
+  BlockPerNotUsed: 1

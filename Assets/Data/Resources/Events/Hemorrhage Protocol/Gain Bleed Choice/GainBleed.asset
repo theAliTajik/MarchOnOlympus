@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcebfdc95c13492a84586266c1a0098, type: 3}
+  m_Name: GainBleed
+  m_EditorClassIdentifier: 
+  Title: '[Bleed]'
+  Description: Gain 5 bleed at the start of each combat, Gain make them bleed card
+  ActionAssets:
+  - {fileID: 11400000, guid: e32db5c27777f4b1e87464fc5f573532, type: 2}
+  - {fileID: 11400000, guid: 2782731bd464b4ee9b1688353d169d67, type: 2}
+  NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

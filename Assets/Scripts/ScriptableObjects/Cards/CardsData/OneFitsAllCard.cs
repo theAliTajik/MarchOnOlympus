@@ -1,0 +1,29 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Game;
+using UnityEngine;
+
+
+[CreateAssetMenu(fileName = "One Fits All", menuName = "Cards/One Fits All Card")]
+public class OneFitsAllCard : BaseCardData
+{
+    
+    
+    protected override Type GetActionType()
+    {
+        return typeof(OneFitsAllCardAction);
+    }
+    
+    public override string GetDescription(bool Stance)
+    {
+        if (Stance)
+        {
+            return stanceDataSet.description;
+        }
+        else
+        {
+            return normalDataSet.description;
+        }
+    }
+}

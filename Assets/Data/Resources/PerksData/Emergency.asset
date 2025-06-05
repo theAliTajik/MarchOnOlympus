@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59208f6673fa7406f81d66aecf83341b, type: 3}
+  m_Name: Emergency
+  m_EditorClassIdentifier: 
+  HPThresholdPercentage: 50
+  Restore: 10
+  ConditionHasNotBenMet: 0

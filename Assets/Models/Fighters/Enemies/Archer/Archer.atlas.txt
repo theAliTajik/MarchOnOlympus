@@ -1,0 +1,140 @@
+Archer.png
+size:3925,1960
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm 01
+bounds:2482,7,432,338
+offsets:73,5,509,449
+Armor Chestplate
+bounds:2413,1422,536,469
+offsets:7,7,550,483
+rotate:90
+Armor Chestplate 02
+bounds:2916,23,168,348
+offsets:7,7,182,362
+Arrow
+bounds:424,7,90,1055
+offsets:0,8,90,1063
+rotate:90
+Atack
+bounds:2696,965,455,414
+offsets:7,7,469,428
+rotate:90
+BackCloth-03
+bounds:803,1043,915,302
+rotate:90
+Belt-01
+bounds:1956,2,524,330
+offsets:7,33,538,371
+Belt-02
+bounds:2951,389,387,287
+offsets:7,7,401,301
+Bow
+bounds:2,35,420,1923
+Bow - Hand
+bounds:3661,5,159,169
+offsets:7,7,173,184
+Camada 379
+bounds:424,99,1859,295
+offsets:17,22,2276,330
+rotate:90
+Camada 436_FX
+bounds:3519,424,216,263
+offsets:38,452,278,731
+Chest
+bounds:2228,347,545,560
+Cloth
+bounds:721,242,658,407
+offsets:7,7,673,441
+rotate:90
+Cloth-01
+bounds:1107,1119,323,839
+Cloth-02
+bounds:1432,1333,625,608
+rotate:90
+Cloth-03
+bounds:1806,909,422,431
+rotate:90
+Foot 01
+bounds:1432,1124,207,344
+rotate:90
+Foot 02
+bounds:3099,684,347,234
+offsets:0,0,352,234
+Forearm 02
+bounds:1368,265,495,639
+offsets:20,30,519,673
+Forearm-01
+bounds:2884,1422,195,536
+Fury
+bounds:2239,913,455,442
+offsets:7,7,469,456
+Hair
+bounds:1667,8,287,255
+offsets:6,5,299,266
+Hand-01
+bounds:1368,99,164,297
+offsets:7,7,178,311
+rotate:90
+Leg 01-01
+bounds:2042,1357,369,601
+Leg 01-02
+bounds:1865,334,361,573
+offsets:8,137,426,801
+Leg 02-01
+bounds:1130,259,236,641
+offsets:7,7,250,655
+Leg 02-02
+bounds:3462,689,426,437
+offsets:7,7,440,451
+Leg 02-03
+bounds:1314,906,211,490
+offsets:170,344,1325,1015
+rotate:90
+Neutral
+bounds:3468,1544,455,414
+offsets:7,7,469,428
+Pain
+bounds:3468,1128,455,414
+offsets:7,7,469,428
+Quiver
+bounds:3081,1436,385,522
+offsets:8,7,400,537
+Shirt 02
+bounds:3112,1242,354,192
+offsets:7,7,368,206
+Shirt 03_2
+bounds:2916,678,181,285
+offsets:7,7,195,299
+Shirt 04
+bounds:2775,373,174,303
+offsets:7,7,188,317
+Sholder Armor 01-01
+bounds:3112,920,348,320
+offsets:7,7,362,334
+Sholder Armor 01-02
+bounds:3461,63,346,198
+offsets:7,7,360,212
+rotate:90
+Sholder Armor 01-03
+bounds:3340,411,271,177
+offsets:7,7,285,191
+rotate:90
+Sholder Armor 01-04
+bounds:721,102,297,138
+offsets:7,7,311,152
+Sholder armor-02
+bounds:1107,902,215,205
+offsets:2,5,222,212
+rotate:90
+flare (74)
+bounds:1020,136,104,104
+fx
+bounds:721,902,80,1056
+offsets:54,52,188,1160
+shirt sleeve-01
+bounds:3086,9,373,378
+shirt sleeve-02
+bounds:3661,176,249,246
+offsets:6,0,257,251

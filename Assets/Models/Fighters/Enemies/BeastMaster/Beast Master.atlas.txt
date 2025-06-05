@@ -1,0 +1,148 @@
+Beast Master.png
+size:3960,3582
+filter:Linear,Linear
+pma:true
+Angry
+bounds:2044,2,1111,891
+offsets:8,8,1127,907
+Arm 01
+bounds:3164,353,794,1229
+offsets:8,8,810,1245
+Arm 02
+bounds:2,1870,567,821
+offsets:10,8,617,893
+rotate:90
+Atack
+bounds:3434,2745,484,480
+offsets:10,8,502,496
+Belt 01
+bounds:1138,3243,767,337
+offsets:8,8,783,353
+Bones Forearm 02
+bounds:2,1251,773,617
+offsets:9,8,790,633
+Chain
+bounds:488,2439,421,733
+offsets:8,8,437,749
+rotate:90
+Chest
+bounds:1089,145,953,865
+Claw 01
+bounds:2,294,1085,840
+offsets:8,9,1101,857
+Claw 02-01
+bounds:2232,2280,534,717
+offsets:8,8,550,733
+rotate:90
+Claw 02-02
+bounds:777,1136,655,947
+offsets:9,9,672,964
+rotate:90
+Cloth-01
+bounds:1726,1012,675,722
+rotate:90
+Cloth-02
+bounds:2559,2816,873,409
+Cloth-03
+bounds:526,2862,379,1019
+rotate:90
+Collar 01
+bounds:2,3432,148,160
+offsets:9,8,165,176
+rotate:90
+Collar 02
+bounds:2951,2182,561,643
+offsets:8,8,577,659
+rotate:90
+Foot 01
+bounds:1547,2836,404,1010
+rotate:90
+Foot 02
+bounds:706,3274,430,306
+Forearm 01
+bounds:2585,3227,353,1046
+offsets:8,8,369,1063
+rotate:90
+Forearm 02
+bounds:2,2953,522,370
+offsets:8,8,539,387
+Fury
+bounds:1709,2350,484,521
+offsets:10,8,502,537
+rotate:90
+Hand & Axe 01
+bounds:825,1793,1319,555
+offsets:8,8,1335,572
+Hand 01
+bounds:164,3330,270,250
+offsets:8,8,286,266
+Hand 02
+bounds:436,3325,268,255
+offsets:8,8,284,271
+Head
+bounds:2,2471,484,480
+offsets:10,8,502,496
+Neutral
+bounds:2,2471,484,480
+offsets:10,8,502,496
+Leg 02-01
+bounds:1907,3242,338,676
+offsets:435,0,773,676
+rotate:90
+Leg 02-02
+bounds:2820,1584,596,822
+rotate:90
+Lion Mane
+bounds:2146,1689,672,589
+offsets:8,8,688,605
+Lion Skin-01
+bounds:2450,895,712,687
+Pain
+bounds:1223,2354,484,480
+offsets:10,8,502,496
+
+Beast Master_2.png
+size:3946,3511
+filter:Linear,Linear
+pma:true
+Axe
+bounds:2948,2384,1125,996
+offsets:9,9,1142,1013
+rotate:90
+Body
+bounds:2,1589,1920,2944
+offsets:8,8,1936,2960
+rotate:90
+Cloth-04
+bounds:2948,881,977,1501
+Cloth-05
+bounds:2,459,1128,1343
+rotate:90
+Hand & Axe 02
+bounds:1347,530,1053,1057
+offsets:8,8,1069,1073
+Lion Skin-02
+bounds:2402,2,1266,877
+
+Beast Master_3.png
+size:1237,262
+filter:Linear,Linear
+pma:true
+fx/projectile (29)
+bounds:2,4,256,256
+fx/projectile (31)
+bounds:260,4,256,256
+fx/projectile (9)
+bounds:977,132,128,128
+fx/slash (111)
+bounds:776,21,239,199
+offsets:1,38,256,256
+rotate:90
+fx/slash (168)
+bounds:977,2,128,128
+fx/slash (32)
+bounds:1107,132,128,128
+fx/slash (88)
+bounds:518,4,256,256
+fx/slash (9)
+bounds:1107,2,128,128

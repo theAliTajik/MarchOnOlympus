@@ -1,0 +1,134 @@
+Diomedes.png
+size:3893,2995
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm 01
+bounds:3304,1373,535,406
+offsets:276,7,817,446
+rotate:90
+Arm 02
+bounds:2497,1078,212,516
+offsets:6,20,224,542
+rotate:90
+Armor Chestplate
+bounds:2647,35,547,480
+Armor Chestplate 02
+bounds:3674,1952,167,347
+offsets:6,6,179,359
+Armor sholder 01
+bounds:2142,893,273,333
+offsets:6,6,285,345
+rotate:90
+Armor sholder 02
+bounds:3685,790,201,265
+offsets:6,6,213,277
+Atack
+bounds:2497,1292,500,559
+offsets:0,0,500,563
+Belt 01
+bounds:2999,1459,473,303
+offsets:0,2,473,305
+rotate:90
+Belt 02
+bounds:2767,2511,878,347
+Belt 03
+bounds:1604,841,884,277
+rotate:90
+Belt 04
+bounds:3623,183,364,258
+offsets:6,6,376,270
+rotate:90
+Belt 05
+bounds:2,16,209,685
+offsets:4,5,218,692
+rotate:90
+Chest
+bounds:3149,949,519,422
+Cloth-01
+bounds:3360,1910,312,599
+offsets:5,0,320,601
+Cloth-02
+bounds:1915,2435,850,423
+offsets:0,3,851,430
+Cover
+bounds:3149,549,534,398
+offsets:2,1,541,404
+Cover 02
+bounds:783,253,516,652
+offsets:5,4,522,659
+Foot 01
+bounds:3674,2301,204,341
+Foot 02
+bounds:3647,2644,349,231
+rotate:90
+Forearm
+bounds:783,75,176,493
+offsets:6,6,190,507
+rotate:90
+Forearm 02
+bounds:1563,2,338,237
+offsets:29,35,373,278
+Fury
+bounds:2368,1853,500,580
+offsets:0,0,500,584
+Fx_Spear
+bounds:1931,308,212,568
+Hand 01
+bounds:3685,616,183,172
+offsets:6,9,195,187
+Hand 02-Spear
+bounds:2,227,779,2766
+offsets:6,6,791,2778
+Hand 02-Spear copy
+bounds:783,2860,133,2849
+rotate:90
+Hand _R
+bounds:2455,160,158,170
+Helmet hair
+bounds:2870,1934,488,575
+offsets:5,0,497,580
+Layer 1
+bounds:1883,878,847,257
+offsets:0,0,847,360
+rotate:90
+Leg 01-01
+bounds:1915,1744,451,689
+Leg 01-02
+bounds:1563,241,366,598
+Leg 01-03
+bounds:3670,1057,217,298
+offsets:2,2,225,303
+Leg 02-01
+bounds:1301,186,260,719
+Leg 02-02
+bounds:3196,111,425,436
+offsets:6,6,437,448
+Leg 02-03
+bounds:3712,1357,179,289
+Neck
+bounds:2145,34,296,308
+offsets:5,4,305,316
+rotate:90
+Neutral
+bounds:2145,332,500,559
+offsets:0,0,500,563
+Pain
+bounds:2647,517,500,559
+offsets:0,0,500,563
+Sheld_Light
+bounds:783,907,819,818
+Shield
+bounds:783,1727,1130,1131
+offsets:6,6,1142,1143
+Shirt 01
+bounds:2142,1168,574,353
+offsets:6,6,586,365
+rotate:90
+Shirt 02
+bounds:3712,1648,173,302
+offsets:6,6,185,314
+path (65)
+bounds:689,73,152,45
+offsets:23,21,192,96
+rotate:90

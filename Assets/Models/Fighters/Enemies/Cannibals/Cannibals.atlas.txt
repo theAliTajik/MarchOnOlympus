@@ -1,0 +1,96 @@
+Cannibals.png
+size:3824,1358
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm Left-01
+bounds:2923,679,145,426
+offsets:2,0,152,429
+rotate:90
+Atack
+bounds:1196,34,288,343
+offsets:7,8,302,358
+Body
+bounds:2,379,680,977
+offsets:0,50,683,1028
+Body_Back
+bounds:684,379,680,977
+offsets:0,50,683,1028
+Cloth-01
+bounds:1486,2,316,584
+Cloth-02
+bounds:1804,7,319,579
+offsets:2,2,326,586
+Cloth-03
+bounds:2125,28,558,220
+offsets:5,2,563,226
+rotate:90
+Cloth-04
+bounds:2136,622,734,591
+offsets:0,2,737,599
+rotate:90
+Cloth-05
+bounds:2347,11,609,528
+offsets:3,5,613,538
+rotate:90
+FX/aura (181)
+bounds:1366,588,768,768
+FX/path (15)
+bounds:2877,16,48,96
+offsets:0,0,96,96
+FX/projectile (115)
+bounds:2729,632,192,192
+FX/s (309)
+bounds:2923,637,40,91
+offsets:0,2,46,101
+rotate:90
+FX/slash (10)
+bounds:1366,410,100,176
+offsets:0,0,192,192
+Forearm Left-01
+bounds:3213,2,318,138
+offsets:7,7,333,154
+rotate:90
+Forearm Right
+bounds:2927,18,284,94
+offsets:7,7,298,108
+Fury
+bounds:3529,667,288,381
+offsets:7,7,302,395
+Golden Ring
+bounds:3691,200,120,120
+offsets:7,7,134,134
+Hand Right
+bounds:3529,1050,293,306
+offsets:7,7,307,320
+Hand left
+bounds:3202,372,325,305
+offsets:7,7,341,320
+Layer 1
+bounds:3691,146,52,56
+offsets:7,8,66,71
+rotate:90
+Leg Left-01
+bounds:2877,114,516,323
+offsets:2,5,519,331
+rotate:90
+Leg Left-02
+bounds:2,3,549,374
+offsets:6,6,562,551
+Leg Right-01
+bounds:2729,826,530,395
+offsets:4,2,539,397
+rotate:90
+Leg Right-02
+bounds:553,18,641,359
+offsets:72,4,717,368
+Neutral
+bounds:3353,33,287,336
+offsets:7,7,301,350
+rotate:90
+Pain
+bounds:3529,322,288,343
+offsets:7,8,302,358
+String
+bounds:3126,855,501,401
+rotate:90

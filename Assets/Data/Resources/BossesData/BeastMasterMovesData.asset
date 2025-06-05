@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc709e4829ddb40f89772762edac2141, type: 3}
+  m_Name: BeastMasterMovesData
+  m_EditorClassIdentifier: 
+  HP: 150
+  Move1Damage: 15
+  Move2Damage: 10
+  Phase1HPPercentageTrigger: 75
+  Phase1Animal: {fileID: 0}
+  Phase2HPPercentageTrigger: 50
+  Phase2Animal: {fileID: 0}
+  Phase3HPPercentageTrigger: 25
+  Phase3Animal: {fileID: 0}

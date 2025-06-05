@@ -1,0 +1,211 @@
+Assasin.png
+size:3986,2678
+filter:Linear,Linear
+pma:true
+Arm right-01
+bounds:3741,857,456,235
+offsets:8,9,473,252
+rotate:90
+Atack
+bounds:2440,1301,641,596
+offsets:8,8,657,612
+Bag
+bounds:3699,416,277,224
+offsets:8,8,293,240
+Belt
+bounds:1662,13,518,425
+offsets:0,0,519,425
+rotate:90
+Belt-02
+bounds:2,11,455,505
+offsets:4,4,464,513
+rotate:90
+Camada 379
+bounds:2,2321,2702,355
+offsets:13,142,3227,540
+Camada 659
+bounds:1148,41,512,490
+offsets:0,0,515,493
+Cloth
+bounds:2440,935,717,364
+Cloth-02
+bounds:416,1014,928,913
+Cloth-03
+bounds:2273,1929,390,263
+rotate:90
+Cloth-04
+bounds:416,558,895,454
+Dagger copiar 3
+bounds:2,468,412,1851
+offsets:8,9,429,1869
+Dagger copiar 4
+bounds:416,1929,390,1855
+offsets:8,8,407,1872
+rotate:90
+Feet Right-01
+bounds:3295,1943,348,270
+rotate:90
+Feet left-01
+bounds:3726,1622,258,337
+Forearm Left
+bounds:2996,27,491,250
+Forearm Right-01
+bounds:3552,2425,251,432
+rotate:90
+Fury
+bounds:3083,1301,641,596
+offsets:8,8,657,612
+Hair-02
+bounds:3726,1315,231,305
+Hand Right & Dagger-01
+bounds:2706,2293,844,383
+offsets:8,8,860,400
+Hand left & Dagger
+bounds:2010,1105,428,822
+offsets:8,8,444,838
+Hood-02
+bounds:1989,593,438,510
+offsets:8,8,454,526
+Leg Left-01
+bounds:1346,1131,662,796
+offsets:3,0,665,800
+Leg Left-02
+bounds:3159,768,531,580
+offsets:8,8,547,597
+rotate:90
+Leg Right-01
+bounds:509,31,637,525
+offsets:2,6,643,531
+Leg Right-02
+bounds:2309,106,229,685
+offsets:8,8,245,702
+rotate:90
+Neck
+bounds:3741,642,243,213
+offsets:8,8,259,229
+Neutral
+bounds:1346,533,641,596
+offsets:8,8,657,612
+Pain
+bounds:2429,337,641,596
+offsets:8,8,657,612
+Scarf
+bounds:2538,1899,755,392
+offsets:7,5,762,401
+Scarf-02
+bounds:2089,2,589,218
+rotate:90
+Scarf-03
+bounds:3489,26,251,174
+offsets:8,8,267,190
+rotate:90
+Shirt 01
+bounds:3072,279,625,487
+offsets:8,0,633,491
+Shirt 02
+bounds:3567,1961,462,320
+rotate:90
+Sholder
+bounds:3699,104,310,182
+offsets:8,8,326,198
+rotate:90
+
+Assasin_2.png
+size:755,2024
+filter:Linear,Linear
+pma:true
+fx/aura (364)
+bounds:2,1645,427,377
+offsets:7,77,512,512
+fx/aura (365)
+bounds:2,1266,427,377
+offsets:7,77,512,512
+fx/element (113)
+bounds:260,307,128,256
+fx/element (116)
+bounds:481,778,128,256
+fx/element (202)
+bounds:520,271,111,128
+offsets:8,0,128,128
+fx/element (203)
+bounds:492,36,128,128
+fx/element (24)
+bounds:603,1093,54,128
+offsets:2,0,64,128
+rotate:90
+fx/element (248)
+bounds:390,307,256,128
+rotate:90
+fx/element (264)
+bounds:431,1279,238,227
+offsets:0,13,256,256
+fx/element (421)
+bounds:260,177,128,256
+rotate:90
+fx/flare (58)
+bounds:431,1766,256,256
+fx/glow (62)
+bounds:633,270,126,84
+offsets:1,1,128,128
+rotate:90
+fx/ground (118)
+bounds:518,166,103,105
+offsets:13,10,128,128
+rotate:90
+fx/ground (145)
+bounds:260,789,219,234
+offsets:21,15,256,256
+fx/ground (163)
+bounds:470,649,127,256
+offsets:0,0,128,256
+rotate:90
+fx/impact (2)
+bounds:637,398,94,249
+offsets:79,5,256,256
+fx/impact (3)
+bounds:520,401,246,115
+offsets:7,69,256,256
+rotate:90
+fx/impact (32)
+bounds:603,1149,128,128
+fx/impact (4)
+bounds:260,565,222,208
+offsets:13,20,256,256
+rotate:90
+fx/impact (5)
+bounds:461,1036,241,140
+offsets:13,37,256,256
+rotate:90
+fx/particle (105)
+bounds:234,47,256,128
+fx/path (283)
+bounds:689,1526,243,54
+offsets:10,7,256,64
+rotate:90
+fx/projectile (29)
+bounds:2,1008,256,256
+fx/projectile (31)
+bounds:431,1508,256,256
+fx/projectile (34)
+bounds:2,750,256,256
+fx/projectile (35)
+bounds:2,492,256,256
+fx/projectile (57)
+bounds:689,1771,61,251
+offsets:97,3,256,256
+fx/projectile (9)
+bounds:625,140,128,128
+fx/slash (111)
+bounds:260,1025,239,199
+offsets:1,38,256,256
+rotate:90
+fx/slash (168)
+bounds:622,10,128,128
+fx/slash (32)
+bounds:611,963,128,128
+fx/slash (88)
+bounds:2,234,256,256
+fx/slash (9)
+bounds:611,833,128,128
+fx/smoke (6)
+bounds:2,2,230,230

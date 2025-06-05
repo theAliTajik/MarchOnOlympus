@@ -1,0 +1,46 @@
+Egle.png
+size:3267,2994
+filter:Linear,Linear
+pma:true
+Atack
+bounds:2884,1105,350,425
+offsets:0,0,362,436
+Body
+bounds:1841,181,1781,1041
+offsets:0,0,1781,1045
+rotate:90
+Claw 01
+bounds:2884,349,311,361
+offsets:7,6,325,374
+Claw 02
+bounds:2884,74,377,273
+offsets:7,3,390,276
+Head
+bounds:2884,712,356,391
+Pain
+bounds:2884,1532,362,434
+Wing 01
+bounds:2,1404,1806,1588
+offsets:5,0,1812,1592
+Wing 01-02
+bounds:2,2,1400,1837
+offsets:1,3,1408,1842
+rotate:90
+Wing 02
+bounds:1810,1964,663,1028
+offsets:0,3,663,1031
+Wing 02-02
+bounds:2475,1968,660,1024
+offsets:0,0,660,1031
+particle (30)
+bounds:3137,2864,128,128
+particle (332)
+bounds:2341,51,128,128
+particle (347)
+bounds:3137,2734,128,128
+particle (96)
+bounds:2471,51,128,128
+texture (197)
+bounds:1841,35,144,498
+offsets:60,11,256,512
+rotate:90

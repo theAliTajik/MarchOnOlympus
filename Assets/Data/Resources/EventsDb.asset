@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772b0e47f618e411ab59c6217b29fbc5, type: 3}
+  m_Name: EventsDb
+  m_EditorClassIdentifier: 
+  EventInfos:
+  - EventId: DemoEvent
+    DialogueNode: {fileID: 11400000, guid: b47ef4c8ed80b4cbf9576d9dccef195e, type: 2}
+  - EventId: ASilentDay
+    DialogueNode: {fileID: 11400000, guid: e2526500bc83848ebb38b46d2d9dc165, type: 2}
+  - EventId: JustAPeek
+    DialogueNode: {fileID: 11400000, guid: b8d384a3c3cb142b2975f06a1d76a17f, type: 2}
+  - EventId: TheCampRemembers
+    DialogueNode: {fileID: 11400000, guid: faa197e9b49fb4365aa6de8710b27525, type: 2}
+  - EventId: ThinkLessDoMore
+    DialogueNode: {fileID: 11400000, guid: f67a637040d274f9ea41fe2255ecf14d, type: 2}
+  - EventId: ComingSoonASaleYoullNeverReach
+    DialogueNode: {fileID: 11400000, guid: 3dd4797c1ae124695a0eb670813882cc, type: 2}
+  - EventId: TheForestRewrites
+    DialogueNode: {fileID: 11400000, guid: bd2a0cf52ea7b4b7caff83c4bf61bf1c, type: 2}
+  - EventId: TheRedBargain
+    DialogueNode: {fileID: 11400000, guid: ed4a8e538b61d4903a9e1886ede86ab9, type: 2}
+  - EventId: HandOfTheGodButcher
+    DialogueNode: {fileID: 11400000, guid: e0a78befd14c24049b5b2a1ddc80ba3a, type: 2}
+  - EventId: HemorrhageProtocol
+    DialogueNode: {fileID: 11400000, guid: f06f7175ab8e7423c95285f1e936f220, type: 2}
+  FinishEventDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

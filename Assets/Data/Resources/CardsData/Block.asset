@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e013ebd3ac8641c081402360d9e1161, type: 3}
+  m_Name: Block
+  m_EditorClassIdentifier: 
+  Name: Block
+  Rarity: 0
+  Type: 0
+  CardPack: 0
+  Image: {fileID: 21300000, guid: 60595ffeb4e7b4ee68ba390f22341dc9, type: 3}
+  MStance: 1
+  normalDataSet:
+    newEnergyCost:
+      m_value: 1
+    energyCost: 1
+    description: Block {0}
+    targetingType: 0
+    actionType: 0100000003000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 1
+    energyCost: 1
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Block: 5

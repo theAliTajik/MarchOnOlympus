@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725c95da401bf4d96b654a2e90af394e, type: 3}
+  m_Name: BerserkersRage
+  m_EditorClassIdentifier: 
+  Name: Berserker's Rage
+  Rarity: 0
+  Type: 1
+  CardPack: 6
+  Image: {fileID: 0}
+  MStance: 3
+  normalDataSet:
+    newEnergyCost:
+      m_value: 3
+    energyCost: 3
+    description: Whenever you play a berserker stance card, gain {0} str this turn,
+      damage self {1}
+    targetingType: 0
+    actionType: 0300000006000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    newEnergyCost:
+      m_value: 3
+    energyCost: 3
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  StrGain: 1
+  SelfDamage: 1

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abf9385e749d4a2280c8f719c9fd995, type: 3}
+  m_Name: DaggerMasterData
+  m_EditorClassIdentifier: 
+  HP: 150
+  Move1Damage: 10
+  Move1Card: {fileID: 11400000, guid: 16fbfae437bd64fe3919bb116c927998, type: 2}
+  Move2BleedPerDagger: 2
+  Move3DamagePerDagger: 10
+  Phase1PercentageTrigger:
+    Percentage: 66
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  Phase2PercentageTrigger:
+    Percentage: 33
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  AddedDaggersEachTurn: 2
+  AddedDaggersInPhase2: 6
+  MaxDaggers: 12
+  FirstPhaseStr: 10

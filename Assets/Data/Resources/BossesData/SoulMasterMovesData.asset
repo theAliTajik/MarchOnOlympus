@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198b16773536f43bb969769048a751f3, type: 3}
+  m_Name: SoulMasterMovesData
+  m_EditorClassIdentifier: 
+  HP: 150
+  Move1NumOfSoulsToSpawn: 2
+  Move2StrGain: 10
+  Move2Restore: 10
+  Move3BleedGain: 3
+  Move4Damage: 10
+  Move5Damage: 5
+  Move5DazeGain: 1
+  Phase1PercentageTrigger:
+    Percentage: 66
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  Phase2PercentageTrigger:
+    Percentage: 33
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  MaxTurnWhenSoulAreLessThanOne: 4
+  MaxNumOfSouls: 6

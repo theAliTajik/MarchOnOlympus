@@ -1,0 +1,26 @@
+using System;
+using UnityEngine;
+
+
+[CreateAssetMenu(fileName = "_CardName", menuName = "Cards/_CardMenuName")]
+public class _CardTemplate : BaseCardData
+{
+    public int Damage;
+    
+    protected override Type GetActionType()
+    {
+        return typeof(_CardTemplateAction);
+    }
+    
+    public override string GetDescription(bool isInStance)
+    {
+        if (isInStance)
+        {
+            *STANCE*
+        }
+        else
+        {
+            *NORMAL*
+        }
+    }
+}

@@ -1,0 +1,159 @@
+Archer_Common.png
+size:3972,2660
+filter:Linear,Linear
+pma:true
+scale:0.75
+Arm 01
+bounds:3026,1378,504,375
+offsets:1,5,509,449
+rotate:90
+Armor Chestplate 02
+bounds:3157,19,168,348
+offsets:7,7,182,362
+Arrow
+bounds:2454,1603,90,1055
+offsets:0,8,90,1063
+BackCloth-03
+bounds:1964,3,915,302
+rotate:90
+Belt-02
+bounds:2574,17,387,287
+offsets:7,7,401,301
+Bow
+bounds:2,735,420,1923
+Bow - Hand
+bounds:1803,84,159,169
+offsets:7,7,173,184
+Camada 379
+bounds:424,799,1859,295
+offsets:17,22,2276,330
+rotate:90
+Camada 436_FX
+bounds:2737,1883,216,263
+offsets:38,452,278,731
+rotate:90
+Chest
+bounds:3015,2098,545,560
+Cloth
+bounds:1555,255,658,407
+offsets:7,7,673,441
+rotate:90
+Cloth-01
+bounds:1230,71,323,839
+Cloth-02
+bounds:2268,306,625,608
+rotate:90
+Cloth-03
+bounds:1370,915,422,431
+Foot 01
+bounds:3520,1889,207,344
+rotate:90
+Foot 02
+bounds:3327,20,347,234
+offsets:0,0,352,234
+rotate:90
+Hair
+bounds:2737,1626,287,255
+offsets:6,5,299,266
+Hand-01
+bounds:2268,7,164,297
+offsets:7,7,178,311
+Leg 01-01
+bounds:3336,386,369,601
+Leg 02-01
+bounds:2372,1364,236,641
+offsets:7,7,250,655
+rotate:90
+Leg 02-02
+bounds:1794,920,426,437
+offsets:7,7,440,451
+rotate:90
+Shirt 02
+bounds:2963,13,354,192
+offsets:7,7,368,206
+rotate:90
+Shirt 03_2
+bounds:3707,439,181,285
+offsets:7,7,195,299
+Shirt 04
+bounds:721,736,174,303
+offsets:7,7,188,317
+rotate:90
+Sholder Armor 01-02
+bounds:3707,726,346,198
+offsets:7,7,360,212
+rotate:90
+Sholder Armor 01-03
+bounds:2737,2481,271,177
+offsets:7,7,285,191
+Sholder Armor 01-04
+bounds:2434,7,297,138
+offsets:7,7,311,152
+rotate:90
+Sholder armor-02
+bounds:3443,1207,215,205
+offsets:2,5,222,212
+flare (74)
+bounds:3866,2170,104,104
+fx
+bounds:2372,1602,80,1056
+offsets:54,52,188,1160
+images/Arm 02
+bounds:3002,1884,212,516
+offsets:6,20,224,542
+rotate:90
+images/Arm_new
+bounds:2878,369,456,604
+offsets:19,29,479,636
+images/Armor sholder 01
+bounds:1026,738,172,202
+offsets:6,6,184,214
+rotate:90
+images/Atack
+bounds:3563,2276,382,387
+offsets:6,6,394,399
+rotate:90
+images/Belt
+bounds:2617,975,440,387
+offsets:6,6,452,399
+images/Chestplate
+bounds:3403,1414,548,468
+offsets:6,6,560,480
+images/Forearm 01
+bounds:2546,1626,189,470
+images/Forearm 02
+bounds:3707,1074,338,235
+offsets:29,37,373,278
+rotate:90
+images/Fury
+bounds:2233,933,382,413
+offsets:6,6,394,425
+images/Hand - Bow
+bounds:721,912,647,1746
+images/Leg 01-02
+bounds:754,31,411,703
+offsets:6,6,423,798
+images/Leg 02-02
+bounds:1370,1348,1310,1000
+offsets:6,6,1322,1012
+rotate:90
+images/Neutral
+bounds:3059,989,382,387
+offsets:6,6,394,399
+images/Pain
+bounds:3563,2,382,387
+offsets:6,6,394,399
+rotate:90
+images/Quiver
+bounds:2,23,710,750
+rotate:90
+images/Shirt 01
+bounds:3443,1007,198,179
+offsets:6,75,210,260
+rotate:90
+shirt sleeve-01
+bounds:2546,2101,373,378
+shirt sleeve-02
+bounds:1555,4,249,246
+offsets:6,0,257,251
+rotate:90

@@ -1,0 +1,54 @@
+Wolf.png
+size:3957,2027
+filter:Linear,Linear
+pma:true
+Body
+bounds:2,1007,1855,1018
+offsets:2,3,1863,1028
+Collar
+bounds:957,67,174,469
+offsets:8,8,190,485
+rotate:90
+Fury
+bounds:1859,1253,876,772
+offsets:6,6,882,778
+Head
+bounds:957,243,866,762
+offsets:8,8,882,778
+Pain
+bounds:2737,1263,866,762
+offsets:8,8,882,778
+Paw 01
+bounds:3372,35,409,452
+offsets:3,6,416,462
+Paw 01-02
+bounds:3605,1291,350,734
+Paw 01-03
+bounds:2714,2,485,656
+rotate:90
+Paw 02
+bounds:1859,599,652,901
+rotate:90
+Paw 02-02
+bounds:2762,489,772,788
+rotate:90
+aura (165)
+bounds:3552,883,125,120
+offsets:3,6,128,128
+aura (208)
+bounds:1428,27,215,214
+offsets:22,23,256,256
+aura (226)
+bounds:3552,1005,256,252
+offsets:0,1,256,256
+rotate:90
+aura (281)
+bounds:2,21,953,984
+offsets:31,30,1024,1024
+glow (159)
+bounds:3552,757,119,124
+offsets:4,3,128,128
+glow (58)
+bounds:1645,113,128,128
+tail
+bounds:1825,122,887,475

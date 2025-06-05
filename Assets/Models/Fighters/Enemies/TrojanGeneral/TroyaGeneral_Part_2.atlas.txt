@@ -1,0 +1,196 @@
+TroyaGeneral_Part_2.png
+size:4096,4096
+filter:Linear,Linear
+pma:true
+Arm 02
+bounds:2999,2,551,278
+offsets:8,8,567,294
+Armor sholder 01
+bounds:2293,9,704,505
+offsets:8,8,720,521
+Bags-01
+bounds:2293,516,1201,728
+rotate:90
+Camada 788
+bounds:3023,1041,1161,1047
+offsets:15,74,1227,1137
+rotate:90
+Camada 790
+bounds:2,1719,2886,2358
+offsets:8,35,2905,2404
+Cloth-03
+bounds:3023,282,757,1042
+offsets:8,8,773,1058
+rotate:90
+Hair-01
+bounds:3552,7,309,273
+offsets:7,7,321,286
+Neck
+bounds:1875,9,390,294
+offsets:6,7,403,307
+Shield2
+bounds:2890,2204,1163,1873
+offsets:8,8,1179,1889
+Spear2
+bounds:2,305,2289,1412
+offsets:8,8,2305,1428
+Spear_FX
+bounds:2,15,288,1871
+offsets:316,2110,656,4031
+rotate:90
+flare (76)_cop
+bounds:2890,1805,128,150
+impact (60)
+bounds:2890,1957,126,245
+offsets:1,10,128,256
+particle (10)
+bounds:2890,1731,72,127
+offsets:28,0,128,128
+rotate:90
+slash (26)
+bounds:3863,27,209,253
+offsets:0,3,256,256
+
+TroyaGeneral_Part_2_2.png
+size:4096,4096
+filter:Linear,Linear
+pma:true
+Arm 01
+bounds:3640,3586,508,434
+offsets:0,4,511,438
+rotate:90
+Armor Chestplate
+bounds:2556,2876,708,584
+offsets:8,8,724,600
+Armor sholder 02
+bounds:3724,3287,221,297
+offsets:8,8,237,313
+Atack
+bounds:1167,677,479,381
+offsets:9,10,496,399
+rotate:90
+Belt 01
+bounds:1371,2113,788,1090
+offsets:8,8,804,1108
+Cloth-01
+bounds:1167,1158,829,341
+offsets:8,8,845,357
+rotate:90
+Cloth-02
+bounds:2496,3462,1142,632
+Cloth-04
+bounds:1371,3205,1123,889
+offsets:8,8,1139,905
+Foot 01
+bounds:3348,2260,215,301
+offsets:8,8,231,317
+rotate:90
+Foot 02
+bounds:2161,2085,268,289
+offsets:8,8,284,305
+rotate:90
+Forearm 01
+bounds:1510,1195,415,479
+offsets:20,8,444,527
+rotate:90
+Forearm 02
+bounds:3116,2327,547,230
+offsets:8,8,563,246
+rotate:90
+Fury
+bounds:1550,723,470,415
+offsets:9,10,487,433
+rotate:90
+Hair-02
+bounds:3724,2927,150,100
+offsets:8,8,166,116
+Hand 01
+bounds:2287,1815,268,181
+offsets:8,8,284,197
+rotate:90
+Leg 01-01
+bounds:3266,2919,456,541
+offsets:8,8,472,557
+Leg 01-02
+bounds:1510,1612,517,499
+offsets:8,8,533,515
+Leg 02-01
+bounds:2556,2363,511,558
+offsets:8,8,527,574
+rotate:90
+Leg 02-02
+bounds:3348,2477,309,440
+offsets:8,8,325,456
+Neutral
+bounds:1167,196,479,381
+offsets:9,10,496,399
+rotate:90
+Pain
+bounds:1550,242,479,381
+offsets:9,10,496,399
+rotate:90
+Shield
+bounds:2,115,1163,1872
+offsets:8,8,1179,1888
+Shirt 01
+bounds:2161,2355,848,393
+offsets:8,8,864,409
+rotate:90
+Spear
+bounds:2,1989,1367,2105
+offsets:8,9,1383,2122
+aura (223)
+bounds:3947,3465,120,119
+offsets:5,4,128,128
+aura (227)
+bounds:1967,921,220,221
+offsets:18,15,256,256
+flare (10)
+bounds:2,2,91,111
+offsets:29,9,128,128
+flare (76)
+bounds:3947,3343,114,120
+offsets:7,3,128,128
+glow (45)
+bounds:1167,2,192,234
+offsets:41,7,256,256
+rotate:90
+glow (45)2
+bounds:1991,1144,165,232
+offsets:68,9,256,256
+rotate:90
+impact (28)
+bounds:1371,1989,90,122
+offsets:19,0,128,128
+light_01
+bounds:2496,3270,50,190
+offsets:9,19,69,226
+particle (194)
+bounds:1403,66,128,128
+particle (331)
+bounds:3724,3029,256,256
+particle (364)(1)
+bounds:2249,1322,241,241
+offsets:8,7,256,256
+path (14)
+bounds:1403,2,62,119
+offsets:0,5,128,128
+rotate:90
+projectile (27)
+bounds:2029,1827,256,256
+slash (10)
+bounds:2029,1569,256,256
+slash (103)
+bounds:1967,742,174,177
+offsets:8,22,256,256
+slash (15)
+bounds:2287,1565,256,248
+offsets:0,8,256,256
+slash (19)
+bounds:1991,1311,256,256
+slash (66)
+bounds:95,3,118,110
+offsets:5,13,128,128
+spark (125)
+bounds:2452,2225,70,128
+offsets:28,0,128,128

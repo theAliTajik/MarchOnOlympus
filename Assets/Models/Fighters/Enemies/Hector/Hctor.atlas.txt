@@ -1,0 +1,154 @@
+Hctor.png
+size:3911,3437
+filter:Linear,Linear
+pma:true
+Agrupar 29
+bounds:2666,2147,495,692
+offsets:10,10,515,713
+rotate:90
+Agrupar 29 copiar
+bounds:1987,2173,495,677
+offsets:10,10,515,697
+rotate:90
+Agrupar 29 copiar 2
+bounds:2,2361,495,678
+offsets:10,10,515,699
+rotate:90
+Agrupar 29 copiar 3
+bounds:1289,2231,495,696
+offsets:10,11,515,717
+rotate:90
+Arm 01
+bounds:682,2270,605,497
+offsets:6,10,621,514
+Arm 02
+bounds:1290,2746,523,433
+offsets:10,10,543,453
+Armor Chestplate-02
+bounds:363,2858,332,492
+offsets:10,10,352,512
+rotate:90
+Armor sholder 01
+bounds:1815,2728,463,443
+offsets:10,10,483,463
+Armor sholder 02
+bounds:2,3332,103,193
+offsets:10,10,123,213
+rotate:90
+Belt 01
+bounds:2280,2670,695,472
+offsets:10,10,715,492
+Chest
+bounds:3405,3138,297,504
+offsets:10,10,317,524
+rotate:90
+Cloak-01
+bounds:1160,1108,884,688
+offsets:10,10,904,708
+Cloth-01
+bounds:2046,1105,940,691
+offsets:10,10,960,711
+Cloth-belt-01
+bounds:2988,1075,721,791
+offsets:8,9,736,809
+rotate:90
+Cloth-belt-02
+bounds:197,3282,186,153
+offsets:10,10,206,173
+Foot 01
+bounds:385,3203,232,319
+rotate:90
+Foot 02
+bounds:1770,3181,446,254
+offsets:0,0,446,257
+Forearm 01
+bounds:857,2769,417,431
+offsets:10,10,437,451
+rotate:90
+Forearm 02
+bounds:2218,3173,344,262
+offsets:10,10,364,282
+Hand & Spear-01
+bounds:706,3192,250,243
+offsets:12,10,272,263
+Leather straps
+bounds:2,460,843,729
+offsets:0,6,843,735
+Leg 01
+bounds:2977,2644,492,694
+offsets:10,10,512,714
+rotate:90
+Leg 02
+bounds:958,3188,247,810
+offsets:10,10,267,830
+rotate:90
+Neck
+bounds:2,2932,359,348
+offsets:5,6,369,360
+Spear-01
+bounds:2,1798,347,3593
+rotate:90
+Spear-02
+bounds:847,2,2996,1071
+offsets:10,10,3016,1093
+Tail
+bounds:2564,3144,291,839
+offsets:0,0,302,839
+rotate:90
+leather protection
+bounds:2,1191,1156,605
+
+Hctor_2.png
+size:3465,3113
+filter:Linear,Linear
+pma:true
+Cloth-02
+bounds:2,209,1616,1461
+offsets:9,3,1628,1472
+Symbol
+bounds:1620,2,1668,1843
+offsets:8,8,1684,1859
+rotate:90
+shield-01
+bounds:2,1672,1439,1569
+offsets:3,8,1452,1584
+rotate:90
+shield-01Fx
+bounds:1573,1672,1439,1569
+offsets:3,8,1452,1584
+rotate:90
+
+Hctor_3.png
+size:1792,1787
+filter:Linear,Linear
+pma:true
+Shied
+bounds:2,2,1788,1783
+offsets:8,8,1804,1799
+
+Hctor_4.png
+size:814,196
+filter:Linear,Linear
+pma:true
+FX/flare (10)
+bounds:743,23,69,83
+offsets:21,7,96,96
+FX/flare (76)
+bounds:675,108,86,90
+offsets:5,2,96,96
+rotate:90
+FX/glow (45)
+bounds:432,18,145,176
+offsets:30,5,192,192
+FX/glow (45) — копия
+bounds:2,2,192,234
+offsets:41,7,256,256
+rotate:90
+FX/impact (28)
+bounds:675,17,66,89
+offsets:15,2,96,96
+FX/impact (60)
+bounds:579,11,94,183
+offsets:1,8,96,192
+FX/projectile (27)
+bounds:238,2,192,192

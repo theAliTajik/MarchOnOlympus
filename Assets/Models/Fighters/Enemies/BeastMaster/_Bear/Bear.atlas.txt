@@ -1,0 +1,48 @@
+Bear.png
+size:3862,3396
+filter:Linear,Linear
+pma:true
+Angry
+bounds:2964,2283,1111,891
+offsets:8,8,1127,907
+rotate:90
+Body
+bounds:2,1458,1936,2960
+rotate:90
+Chain
+bounds:1366,133,430,738
+offsets:7,6,437,749
+rotate:90
+Claw 01
+bounds:2902,67,1101,857
+rotate:90
+Claw 02-01
+bounds:647,29,534,717
+offsets:8,8,550,733
+rotate:90
+Claw 02-02
+bounds:2228,492,672,964
+Collar 01
+bounds:2106,342,148,160
+offsets:9,8,165,176
+rotate:90
+Collar 02
+bounds:2,2,561,643
+offsets:8,8,577,659
+rotate:90
+Fury
+bounds:2964,1170,1111,891
+offsets:8,8,1127,907
+rotate:90
+Head
+bounds:2,565,1111,891
+offsets:8,8,1127,907
+Pain
+bounds:1115,565,1111,891
+offsets:8,8,1127,907
+aura (363)
+bounds:2268,362,128,128
+texture (271)
+bounds:3761,1066,102,99
+offsets:12,13,128,128
+rotate:90
