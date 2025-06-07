@@ -334,6 +334,16 @@ public static class GameActionHelper
         fighter.HP.RemoveDamageGuard();
     }
 
+    public static void HealFighter(Fighter fighter, int amount)
+    {
+        if (amount <= 0)
+        {
+            Debug.Log("invalid amount passed to heal fighter");
+            return;
+        }
+        
+        fighter.Heal(amount);
+    }
 
     // ### Player
     public static void IncreasePlayerMaxHP(int amount)
