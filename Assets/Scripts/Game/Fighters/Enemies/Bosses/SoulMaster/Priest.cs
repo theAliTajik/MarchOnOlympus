@@ -42,19 +42,16 @@ public class Priest : BaseEnemy
 
     #endregion
 
-    public Action<MoveData> OnSoulIntentionDetermined;
-
     [SerializeField] protected MoveData[] m_movesDatas;
-    [SerializeField] protected MoveData[] m_attackMovesDatas;
     [SerializeField] private PriestMovesData m_data;
 
     protected override void Awake()
     {
         base.Awake();
 
-        for (int i = 0; i < m_attackMovesDatas.Length; i++)
+        for (int i = 0; i < m_movesDatas.Length; i++)
         {
-            MoveData md = m_attackMovesDatas[i];
+            MoveData md = m_movesDatas[i];
             m_moves.Add(md, md.chance);
         }
 
@@ -83,21 +80,8 @@ public class Priest : BaseEnemy
 
     public override void DetermineIntention()
     {
-        /*  if (m_numOfSoulsAlive < 1)
-          {
-              m_nextMove = m_movesDatas[0];
-
-              if (m_numOfTurnsWhereSoulsLessThanOne >= 2 && m_numOfTurnsWhereSoulsLessThanOne <= 3) 
-              {
-                  m_nextMove = m_movesDatas[3];
-              }
-          }
-          else
-          {
-              RandomIntentionPicker(m_moves);
-          }
-          OnSoulIntentionDetermined?.Invoke(m_nextMove);
-          ShowIntention();*/
+        RandomIntentionPicker(m_moves);
+        ShowIntention();
     }
 
     public override void ShowIntention()
@@ -109,7 +93,7 @@ public class Priest : BaseEnemy
                 CallOnIntentionDetermined(Intention.BLOCK, m_nextMove.description);
                 break;
             case "Rejuvenation":
-                CallOnIntentionDetermined(Intention.SLEEP, m_nextMove.description);
+            CallOnIntentionDetermined(Intention.BUFF, m_nextMove.description);
                 break;
         }
     }
@@ -169,7 +153,10 @@ public class Priest : BaseEnemy
     {
         List<Fighter> allEnemies = GameInfoHelper.GetAllEnemies();
         if (allEnemies == null || allEnemies.Count == 0)
+        {
+            Debug.Log("find lowset hp returned null");
             return null;
+        }
 
         Fighter lowest = allEnemies[0];
         foreach (var enemy in allEnemies)

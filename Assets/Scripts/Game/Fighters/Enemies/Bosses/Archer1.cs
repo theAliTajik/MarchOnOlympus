@@ -20,10 +20,6 @@ public class Archer1 : BaseEnemy
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private Archer1MovesData m_data;
     
-    private Diomedes m_diomedes;
-    
-    private bool m_isPlayingMove = false;
-    
     protected override void Awake()
     {
         base.Awake();
@@ -39,17 +35,6 @@ public class Archer1 : BaseEnemy
 
     }
 
-    private void Start()
-    {
-        m_diomedes = findDiomedes();
-        if (m_diomedes != null)
-        {
-            m_diomedes.Death += OnDiomedesDeath;
-            m_diomedes.OnPhase1 += OnPhase1OfDiomedes;
-            GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, true, 1);
-        }
-    }
-
     protected override void OnTookDamage(int damage, bool isCritical)
     {
         if (CombatManager.Instance.IsGameOver)
@@ -62,11 +47,6 @@ public class Archer1 : BaseEnemy
 
     protected override void OnDeath()
     {
-        if (m_diomedes != null)
-        {
-            m_diomedes.Death -= OnDiomedesDeath;
-            m_diomedes.OnPhase1 -= OnPhase1OfDiomedes;
-        }
         if (CombatManager.Instance.IsGameOver)
         {
             return;
@@ -114,7 +94,6 @@ public class Archer1 : BaseEnemy
             yield break;
         }
 
-        m_isPlayingMove = true;
         Debug.Log("animation started");
         switch (m_nextMove.clientID)
         {
@@ -130,7 +109,6 @@ public class Archer1 : BaseEnemy
         }
 
         Debug.Log("animation actualy finished");
-        m_isPlayingMove = false;
         yield return null;
     }
     
@@ -138,43 +116,6 @@ public class Archer1 : BaseEnemy
     {
         m_fighterHP.SetMax(m_data.HP);
         m_fighterHP.ResetHP();
-    }
-    
-    private Diomedes findDiomedes()
-    {
-        List<Fighter> allEnemies = GameInfoHelper.GetAllEnemies();
-        return allEnemies.Find(enemy => enemy.GetType().Name == "Diomedes") as Diomedes;
-    }
-
-    private void OnDiomedesDeath(Fighter fighter)
-    {
-        StartCoroutine(waitForDeath());
-    }
-
-    private IEnumerator waitForDeath()
-    {
-        Debug.Log("diomedes died");
-        yield return new WaitForSeconds(1.2f);
-        yield return new WaitUntil(() => !m_isPlayingMove);
-        Debug.Log("animation finished");
-        //remove diomedes
-        EnemiesManager.Instance.RemoveDeadEnemy(m_diomedes);
-        // spawn diomedes level 2 
-        //EnemiesManager.Instance.SpawnBoss(m_data.DiomedesLevel2Id, true);
-
-        // sacrifice yourself
-        int health = m_fighterHP.Current;
-        TakeDamage(health * 10, this , false, true);
-    }
-
-    private void OnPhase1OfDiomedes()
-    {
-        //remove fortify
-        //GameActionHelper.RemoveMechanicGuard(this, MechanicType.FORTIFIED);
-        //GameActionHelper.ReduceMechanicStack(this,1, MechanicType.FORTIFIED);
-        
-        
-        //GameActionHelper.AddMechanicToFighter(this, m_data.StrRecievedWhenWarriorsDeath, MechanicType.STRENGTH);
     }
     
 }

@@ -37,12 +37,6 @@ public class Assassin_A : BaseEnemy
         
         ConfigFighterHP();
 
-        HP.OnPercentageTrigger += OnHPPercentageTriggred;
-    }
-
-    private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percent)
-    {
-
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)

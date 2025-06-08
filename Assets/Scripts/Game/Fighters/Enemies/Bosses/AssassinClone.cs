@@ -78,8 +78,6 @@ public class AssassinClone : BaseEnemy
     public override void DetermineIntention()
     {
         //grab intention from original
-        //RandomIntentionPicker(m_moves);
-        //ShowIntention();
     }
 
     public override void ShowIntention()

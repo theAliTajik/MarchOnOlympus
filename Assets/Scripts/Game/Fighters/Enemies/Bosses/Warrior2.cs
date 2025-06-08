@@ -69,7 +69,7 @@ public class Warrior2 : BaseEnemy
         switch (m_nextMove.clientID)
         {
             case "Fortify":
-                CallOnIntentionDetermined(Intention.SLEEP, m_nextMove.description);
+                CallOnIntentionDetermined(Intention.BUFF, m_nextMove.description);
                 break;
             case "Hit":
                 CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);

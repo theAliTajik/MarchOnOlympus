@@ -34,12 +34,6 @@ public class Assassin_B : BaseEnemy
         
         ConfigFighterHP();
 
-        HP.OnPercentageTrigger += OnHPPercentageTriggred;
-    }
-
-    private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percent)
-    {
-
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -74,7 +68,7 @@ public class Assassin_B : BaseEnemy
         switch (m_nextMove.clientID)
         {
             case "Vulnerable":
-                CallOnIntentionDetermined(Intention.ESCAPE, m_nextMove.description);
+                CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description);
                 break;
             case "HitRestore":
                 CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
