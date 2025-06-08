@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bf187f1c3a68d46b9cf5c241df13b8, type: 3}
+  m_Name: Assassin_C_Data
+  m_EditorClassIdentifier: 
+  HP: 45
+  Move1Thorns: 3
+  Move2Damage: 5
+  Move2Block: 15
