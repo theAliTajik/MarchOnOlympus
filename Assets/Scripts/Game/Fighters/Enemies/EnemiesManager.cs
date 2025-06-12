@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Game;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -11,16 +12,26 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
     [SerializeField] private EnemiesDb enemiesDb;
     [SerializeField] private string[] m_enemiesToLoad;
-    [SerializeField] private Transform[] m_spawnPoint;
 
+    [Serializable]
+    private class SpawnPoint
+    {
+        public Transform Point;
+        [NonSerialized] public List<BaseEnemy> Occupant = new List<BaseEnemy>();
+    }
+    [SerializeField] private List<SpawnPoint> m_spawnPoints = new List<SpawnPoint>();
     
     [SerializeField] private Dictionary<string, IEnemyFactory> m_factories = new Dictionary<string, IEnemyFactory>();
     
     private List<Fighter> m_enemies = new List<Fighter>();
+    private List<Fighter> m_deadEnemies = new List<Fighter>();
     
     private List<Fighter> m_enemiesToPlayTwice = new List<Fighter>();
     
+    
     private int m_currentSpawnPoint = -1;
+    private int m_currentWave = 0;
+    private CombatWavesDb.CombatWaveSet m_combatWaveSet;
 
     private void Start()
     {
@@ -29,9 +40,21 @@ public class EnemiesManager : Singleton<EnemiesManager>
         {
             m_factories[factories[i].FactoryID] = factories[i];
         }
-        if (!string.IsNullOrEmpty(GameSessionParams.enemyClientId))
+        
+        if (!string.IsNullOrEmpty(GameSessionParams.EnemyClientId))
         {
-            LoadEnemies(GameSessionParams.enemyClientId);
+            LoadEnemies(GameSessionParams.EnemyClientId);
+        }
+        else if(!string.IsNullOrEmpty(GameSessionParams.WaveClientId))
+        {
+            m_combatWaveSet = CombatWavesDb.Instance.FindById(GameSessionParams.WaveClientId);
+            if (m_combatWaveSet == null)
+            {
+                Debug.Log("wave set was not found by id");
+                return;
+            }
+            SpawnWave();
+
         }
         else
         {
@@ -52,6 +75,22 @@ public class EnemiesManager : Singleton<EnemiesManager>
         GameplayEvents.SpawnBoss -= SpawnBossAdaptor;
     }
 
+    private void SpawnWave()
+    {
+        if (m_combatWaveSet == null)
+        {
+            Debug.Log("combat wave set is null");
+            return;
+        }
+
+
+        List<EnemiesDb.BossInfo> enemiesToSpawn = m_combatWaveSet.Waves[m_currentWave].Enemies;
+        foreach (var boss in enemiesToSpawn)
+        {
+            SpawnBoss(boss, true);
+        }
+    }
+    
     public void LoadEnemies(params string[] enemyIds)
     {
         for (int i = 0; i < enemyIds.Length; i++)
@@ -91,8 +130,9 @@ public class EnemiesManager : Singleton<EnemiesManager>
             BaseEnemy enemy = factory.SpawnEnemy(info.bosses[i], transform);
             spawnedEnemeis.Add(enemy);
 
-            SetNextSpawnPoint();
-            factory.SetupEnemy(enemy, m_spawnPoint[m_currentSpawnPoint].position);
+            SpawnPoint spawnPoint = GetNextSpawnPoint();
+            spawnPoint.Occupant.Add(enemy);
+            factory.SetupEnemy(enemy, spawnPoint.Point.position);
             if (determineIntention)
             {
                 enemy.DetermineIntention();
@@ -103,25 +143,123 @@ public class EnemiesManager : Singleton<EnemiesManager>
         return spawnedEnemeis;
     }
 
+
+    public List<BaseEnemy> SpawnBoss(EnemiesDb.BossInfo boss, bool determineIntention = false)
+    {
+        IEnemyFactory factory;
+        List<BaseEnemy> spawnedEnemeis = new List<BaseEnemy>();
+
+        if (string.IsNullOrWhiteSpace(boss.Factory))
+        {
+            factory = m_factories["Default"];
+        }
+        else
+        {
+            factory = m_factories[boss.Factory];
+        }
+        
+        if (factory == null)
+        {
+            Debug.Log("null factory when enemy spawning");
+            return null;
+        }
+
+        BaseEnemy enemy = factory.SpawnEnemy(boss, transform);
+        spawnedEnemeis.Add(enemy);
+
+        SpawnPoint spawnPoint = GetNextSpawnPoint();
+        spawnPoint.Occupant.Add(enemy);
+        factory.SetupEnemy(enemy, spawnPoint.Point.position);
+        if (determineIntention)
+        {
+            enemy.DetermineIntention();
+        }
+        return spawnedEnemeis;
+    }
+
     public void AddEnemey(BaseEnemy enemy)
     {
         enemy.Death += OnEnemyDied;
         m_enemies.Add(enemy);
     }
 
-    public void SetNextSpawnPoint()
+    private SpawnPoint GetNextSpawnPoint()
     {
-        if (m_currentSpawnPoint >= m_spawnPoint.Length -1)
+        SpawnPoint emptySpawnPoint = null;
+        foreach (SpawnPoint point in m_spawnPoints)
         {
-            m_currentSpawnPoint = 0;
+            if (point.Occupant == null || point.Occupant.Count == 0)
+            {
+                emptySpawnPoint = point;
+                break;
+            }
         }
-        else
+
+        if (emptySpawnPoint == null)
         {
-            m_currentSpawnPoint++;
+            emptySpawnPoint = GetLeastCroudedSpawnPoint();
         }
+
+        return emptySpawnPoint;
     }
 
+    private SpawnPoint GetLeastCroudedSpawnPoint()
+    {
+        SpawnPoint leastCroudedSpawnPoint = m_spawnPoints[0];
+        foreach (SpawnPoint point in m_spawnPoints)
+        {
+            if (point.Occupant == null || point.Occupant.Count < leastCroudedSpawnPoint.Occupant.Count)
+            {
+                leastCroudedSpawnPoint = point;
+                break;
+            }
+        }
+        
+        return leastCroudedSpawnPoint;
+    }
 
+    private void OccupySpawnPoint(Transform spawnPoint, BaseEnemy enemy)
+    {
+        SpawnPoint keyPoint = m_spawnPoints.Find(x => x.Point == spawnPoint);
+
+        if (keyPoint == null)
+        {
+            Debug.Log("did not find spawn point to occupy");
+            return;
+        }
+        
+        keyPoint.Occupant.Add(enemy);
+    }
+
+    private void RemoveEnemyFromSpawnPoint(Fighter enemy)
+    {
+        SpawnPoint keyPoint = FindSpawnPointOfEnemy(enemy);
+        keyPoint.Occupant.Remove((BaseEnemy)enemy);
+    }
+
+    private SpawnPoint FindSpawnPointOfEnemy(Fighter enemy)
+    {
+        SpawnPoint keyPoint = null;
+        foreach (SpawnPoint point in m_spawnPoints)
+        {
+            foreach (BaseEnemy occupant in point.Occupant)
+            {
+                if (occupant == enemy)
+                {
+                    keyPoint = point;
+                    break;
+                }
+            }
+
+            if (keyPoint != null)
+            {
+                break;
+            }
+        }
+
+        return keyPoint;
+    }
+    
     public BaseEnemy SetupEnemy(BaseEnemy enemy, Vector3? position = null)
     {
         if (position != null)
@@ -161,10 +299,11 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
         // Remove from enemies list
         m_enemies.Remove(enemy);
-
+        RemoveEnemyFromSpawnPoint(enemy);
         // Destroy enemy GameObject
         Destroy(enemy.gameObject);
     }
+
 
     public List<Fighter> GetAllEnemies()
     {
@@ -179,13 +318,45 @@ public class EnemiesManager : Singleton<EnemiesManager>
     public void OnEnemyDied(Fighter enemy)
     {
         m_enemies.Remove(enemy);
+        m_deadEnemies.Add(enemy);
         GameplayEvents.SendGamePhaseChanged(EGamePhase.ENEMY_KILLED);
         if (EnemiesAreDead())
         {
+            if (NextWaveExists())
+            {
+                m_currentWave++;
+                ClearEnemies();
+                SpawnWave();
+                return;
+            }
             OnAllEnemiesDestroyed?.Invoke();
         }
     }
 
+    private void ClearEnemies()
+    {
+        foreach (var enemy in m_deadEnemies)
+        {
+            RemoveDeadEnemy(enemy);
+        }
+        m_currentSpawnPoint = 0;
+    }
+
+
+    private bool NextWaveExists()
+    {
+        if (m_combatWaveSet == null)
+        {
+            return false;
+        }
+
+        if (m_currentWave >= m_combatWaveSet.Waves.Count-1)
+        {
+            return false;
+        }
+
+        return true;
+    }
 
 
     public void DetermineAllEnemiesIntentions()
@@ -247,12 +418,15 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
     public bool EnemiesAreDead()
     {
-        if (m_enemies.Count <= 0)
+        foreach (BaseEnemy enemy in m_enemies.OfType<BaseEnemy>())
         {
-            return true;
+            if (enemy.IsRequiredForCombatCompletion)
+            {
+                return false;
+            }
         }
 
-        return false;
+        return true;
     }
 
     protected override void Init()

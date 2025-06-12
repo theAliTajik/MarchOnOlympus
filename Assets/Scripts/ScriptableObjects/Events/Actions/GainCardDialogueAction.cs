@@ -11,9 +11,9 @@ public class GainCardDialogueAction : DialogueAction
     {
         //Add card data to deck
         string currentdeckId = null;
-        if (!string.IsNullOrWhiteSpace(GameSessionParams.deckTemplateClientId))
+        if (!string.IsNullOrWhiteSpace(GameSessionParams.DeckTemplateClientId))
         {
-            currentdeckId = GameSessionParams.deckTemplateClientId;
+            currentdeckId = GameSessionParams.DeckTemplateClientId;
         }
         
         if (!string.IsNullOrEmpty(currentdeckId))

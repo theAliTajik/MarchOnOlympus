@@ -10,9 +10,9 @@ public class DuplicateCardFromDeckDialogueAction : DialogueAction
     {
         base.Execute(context);
 
-        if (!string.IsNullOrEmpty(GameSessionParams.deckTemplateClientId))
+        if (!string.IsNullOrEmpty(GameSessionParams.DeckTemplateClientId))
         {
-            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.deckTemplateClientId);
+            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.DeckTemplateClientId);
             GameplayEvents.SendShowCardsForSelecting(template.CardsInDeck);
             GameplayEvents.CardSelectedByPlayer += OnCardSelected;
         }
@@ -30,7 +30,7 @@ public class DuplicateCardFromDeckDialogueAction : DialogueAction
         Debug.Log("selected this card: " + cardDisplay.CardInDeck.GetCardName());
 
         CardInDeckStateMachine duplicatecard = cardDisplay.CardInDeck.Clone();
-        DeckTemplates.AddCardToDeck(GameSessionParams.deckTemplateClientId, duplicatecard, -1);
+        DeckTemplates.AddCardToDeck(GameSessionParams.DeckTemplateClientId, duplicatecard, -1);
         GameplayEvents.CardSelectedByPlayer -= OnCardSelected;   
         EventController.Instance.FinishEvent();
     }

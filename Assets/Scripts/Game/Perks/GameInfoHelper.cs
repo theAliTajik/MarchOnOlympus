@@ -365,6 +365,10 @@ public static class GameInfoHelper
 
     public static List<Fighter> GetAllEnemies()
     {
+        if (!EnemiesManager.Instance)
+        {
+            return null;
+        }
         return EnemiesManager.Instance.GetAllEnemies();
     }
 

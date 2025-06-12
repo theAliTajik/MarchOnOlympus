@@ -30,6 +30,7 @@ public abstract class BaseEnemy : Fighter
 
     public event Action<Intention, string> OnIntentionDetermined;
 
+    public virtual bool IsRequiredForCombatCompletion => true;
 
     [SerializeField] protected AnimatorHelper m_animation;
     
@@ -38,6 +39,7 @@ public abstract class BaseEnemy : Fighter
     protected  MoveData? m_previusMove;
     protected  int m_moveRepeats = 1;
     protected bool m_stuned = false;
+    
 
     public virtual void DetermineIntention()
     {
@@ -125,6 +127,24 @@ public abstract class BaseEnemy : Fighter
     }
 
 
+    public void SetCanBeTarget(bool isTarget)
+    {
+        Collider2D myCollider = GetComponent<Collider2D>();
+        if (myCollider == null)
+        {
+            Debug.Log("enemy did not find collider");
+            return;
+        }
+        
+        if (isTarget)
+        {
+            myCollider.enabled = true;
+        }
+        else
+        {
+            myCollider.enabled = false;
+        }
+    }
     
     protected void CallOnIntentionDetermined(Intention intention, string description)
     {

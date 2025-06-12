@@ -15,3 +15,5 @@ MonoBehaviour:
   HP: 100
   Move1Taunt: 1
   Move2Damage: 60
+  Move2AllyDamageMultiplier: 20
+  Move2MaxNumOfAllies: 2

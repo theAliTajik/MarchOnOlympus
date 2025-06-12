@@ -115,3 +115,17 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
       Factory: 
+  - clientID: SpaceTest
+    bosses:
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+      Factory: 

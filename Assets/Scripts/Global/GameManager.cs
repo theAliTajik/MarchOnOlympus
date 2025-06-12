@@ -4,9 +4,10 @@ using UnityEngine;
 
 public static class GameSessionParams
 {
-    public static string enemyClientId;
-    public static string deckTemplateClientId;
+    public static string EnemyClientId;
+    public static string DeckTemplateClientId;
     public static string EventId;
+    public static string WaveClientId;
 }
 
 

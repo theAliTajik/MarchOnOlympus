@@ -21,9 +21,9 @@ public class RemoveCardShopItem : IShopItemModel
         Debug.Log("one card removal purchased");
         
         bool success = false;
-        if (!string.IsNullOrEmpty(GameSessionParams.deckTemplateClientId))
+        if (!string.IsNullOrEmpty(GameSessionParams.DeckTemplateClientId))
         {
-            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.deckTemplateClientId);
+            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.DeckTemplateClientId);
             GameplayEvents.SendShowCardsForSelecting(template.CardsInDeck);
             GameplayEvents.CardSelectedByPlayer += OnCardSelected;
             success = Price.ReduceCost();
@@ -43,7 +43,7 @@ public class RemoveCardShopItem : IShopItemModel
     private void OnCardSelected(CardDisplay cardDisplay)
     {
         Debug.Log("selected this card: " + cardDisplay.CardInDeck.GetCardName());
-        DeckTemplates.RemoveCardFromDeck(GameSessionParams.deckTemplateClientId, cardDisplay.CardInDeck.GetCardData());
+        DeckTemplates.RemoveCardFromDeck(GameSessionParams.DeckTemplateClientId, cardDisplay.CardInDeck.GetCardData());
         GameplayEvents.CardSelectedByPlayer -= OnCardSelected;
     }
 

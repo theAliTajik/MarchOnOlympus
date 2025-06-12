@@ -69,7 +69,7 @@ public class TestEnemySelect : MonoBehaviour
     private void SetItem(string clientId)
     {
         m_enemyText.text = clientId;
-        GameSessionParams.enemyClientId = clientId;
+        GameSessionParams.EnemyClientId = clientId;
     }
 
     private void ButtonClicked()

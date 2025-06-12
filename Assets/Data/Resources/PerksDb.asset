@@ -548,14 +548,14 @@ MonoBehaviour:
   - ClientID: GainVulnerableNextCombatEvent
     Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
     Desc: Temprary Description for Perk GainVulnerableNextCombatEvent
-    Invisible: 0
+    Invisible: 1
     PerkData: {fileID: 11400000, guid: 60580a93b579e4b2eb453b0f3f63d0ef, type: 2}
     IsImplemented: 1
     ActionScriptName: 
   - ClientID: GainBleedEachCombatEvent
     Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
     Desc: Temprary Description for Perk GainBleedEachCombatEvent
-    Invisible: 0
+    Invisible: 1
     PerkData: {fileID: 11400000, guid: f653c6f9ee4bb4410854e336bccbe38b, type: 2}
     IsImplemented: 1
     ActionScriptName: 

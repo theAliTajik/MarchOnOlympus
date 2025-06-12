@@ -31,14 +31,14 @@ public class GameplayController : Singleton<GameplayController>
         DeckTemplates.Deck template;
         bool isDevTestingTemplate = false;
         DeckTemplates.LoadAllDecks();
-        if (!string.IsNullOrEmpty(GameSessionParams.deckTemplateClientId))
+        if (!string.IsNullOrEmpty(GameSessionParams.DeckTemplateClientId))
         {
-            template = DeckTemplates.FindById(GameSessionParams.deckTemplateClientId);
-            if (GameSessionParams.deckTemplateClientId.ToLower().StartsWith("Dev Testing"))
+            template = DeckTemplates.FindById(GameSessionParams.DeckTemplateClientId);
+            if (GameSessionParams.DeckTemplateClientId.ToLower().StartsWith("Dev Testing"))
             {
                 isDevTestingTemplate = true;
             }
-            m_currentDeck = GameSessionParams.deckTemplateClientId;
+            m_currentDeck = GameSessionParams.DeckTemplateClientId;
         }
         else
         {

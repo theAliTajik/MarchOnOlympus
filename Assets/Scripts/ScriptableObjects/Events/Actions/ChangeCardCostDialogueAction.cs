@@ -12,9 +12,9 @@ public class ChangeCardCostDialogueAction : DialogueAction
     {
              base.Execute(context);
      
-             if (!string.IsNullOrEmpty(GameSessionParams.deckTemplateClientId))
+             if (!string.IsNullOrEmpty(GameSessionParams.DeckTemplateClientId))
              {
-                 DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.deckTemplateClientId);
+                 DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.DeckTemplateClientId);
                  GameplayEvents.SendShowCardsForSelecting(template.CardsInDeck);
                  GameplayEvents.CardSelectedByPlayer += OnCardSelected;
              }

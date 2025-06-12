@@ -175,7 +175,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
     {
         if (m_allMechanics.ContainsKey(fighter))
         {
-            Debug.Log("Fighter already has mechanics list");
+            Debug.Log($"Fighter {fighter.name} already has mechanics list");
             return;
         }
         

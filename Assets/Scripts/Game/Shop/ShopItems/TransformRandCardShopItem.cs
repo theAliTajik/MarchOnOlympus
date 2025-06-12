@@ -26,7 +26,7 @@ public class TransformRandCardShopItem : IShopItemModel
     
     public bool Purchase()
     {
-        string deckId = GameSessionParams.deckTemplateClientId;
+        string deckId = GameSessionParams.DeckTemplateClientId;
         if (!string.IsNullOrEmpty(deckId))
         {
             DeckTemplates.Deck template = DeckTemplates.FindById(deckId);

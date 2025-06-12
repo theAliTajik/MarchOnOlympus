@@ -45,6 +45,7 @@ public class Priest : BaseEnemy
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private PriestMovesData m_data;
 
+    private Fighter m_warLvl2;
     protected override void Awake()
     {
         base.Awake();
@@ -127,14 +128,29 @@ public class Priest : BaseEnemy
                 break;
             case "Rejuvenation":
                 m_animation.Play(ANIM_POISON_FX, finishCallback);
-                Fighter warlvl2 = FindWarriorLevel2();
-                if (warlvl2)
+                m_warLvl2 = FindWarriorLevel2();
+                if (m_warLvl2)
                 {
-					//Rejuvenation on Warrior level 2
-				}
+                    GameActionHelper.HealFighter(m_warLvl2, m_data.Move2Rejuvenation);
+                    GameplayEvents.GamePhaseChanged += GamePhaseChanged;
+                }
 				break;
         }
 
+    }
+
+    private void GamePhaseChanged(EGamePhase obj)
+    {
+        if (obj != EGamePhase.ENEMY_TURN_START)
+        {
+            return;
+        }
+        
+        if (m_warLvl2)
+        {
+            GameActionHelper.HealFighter(m_warLvl2, m_data.Move2Rejuvenation);
+            GameplayEvents.GamePhaseChanged -= GamePhaseChanged;
+        }
     }
 
     public override void ConfigFighterHP()
@@ -161,7 +177,7 @@ public class Priest : BaseEnemy
         Fighter lowest = allEnemies[0];
         foreach (var enemy in allEnemies)
         {
-            if (enemy.HP.Current < lowest.HP.Current)
+            if ((float)enemy.HP.Current / enemy.HP.Max < (float)lowest.HP.Current / lowest.HP.Max)
                 lowest = enemy;
         }
 

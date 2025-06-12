@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
@@ -25,6 +26,12 @@ public class FighterSelectorDropDown : MonoBehaviour
     private List<ChildData> m_childrenWithFighter = new List<ChildData>();
 
     public void Start()
+    {
+        GrabFighters();
+        UpdateDropdown();
+    }
+
+    public void Refresh()
     {
         GrabFighters();
         UpdateDropdown();

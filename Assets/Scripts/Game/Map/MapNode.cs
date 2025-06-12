@@ -106,7 +106,47 @@ public class CombatMapNode : MapNode
         else
         {
             // Debug.Log("Load combat scene with boss: " + BossName);
-            GameSessionParams.enemyClientId = BossName;
+            GameSessionParams.EnemyClientId = BossName;
+            SceneController.Instance.LoadScene(m_scene);
+        }
+    }
+}
+
+
+public class CombatWaveMapNode : MapNode
+{
+    private readonly Scenes m_scene = Scenes.Game;
+    public string WaveSetId;
+
+    public CombatWaveMapNode() : base(0) {}
+    
+    public CombatWaveMapNode(int id, string waveSetId) : base(id)
+    {
+        this.WaveSetId = waveSetId;
+    }
+
+    public CombatWaveMapNode(int id) : base(id)
+    {
+        WaveSetId = PickRandomWave();
+    }
+
+    private string PickRandomWave()
+    {
+        int randomPick = UnityEngine.Random.Range(0, CombatWavesDb.Instance.AllCombatWaveSets.Count);
+        string waveClientId = CombatWavesDb.Instance.AllCombatWaveSets[randomPick].ClientID;
+        return waveClientId;
+    }
+
+    public override void OnClick()
+    {
+        if (string.IsNullOrWhiteSpace(WaveSetId))
+        {
+            Debug.Log("wave id empty in node: " + ID);
+        }
+        else
+        {
+            GameSessionParams.EnemyClientId = string.Empty;
+            GameSessionParams.WaveClientId = WaveSetId;
             SceneController.Instance.LoadScene(m_scene);
         }
     }

@@ -23,8 +23,9 @@ public class CardInDeckNormalState : CardInDeckBaseState
     {
         // m_stateMachine = cardInDeck;
         // m_cardData = cardInDeck.GetCardData();
-        m_cardDataSet = cardInDeck.GetCardData().normalDataSet;
-        m_modifiableCardDataSet = new ModifiableCardDataSet(m_cardDataSet);
+        BaseCardData data = cardInDeck.GetCardData();
+        m_cardDataSet = data.normalDataSet;
+        m_modifiableCardDataSet = new ModifiableCardDataSet(m_cardDataSet, data.GetDescription());
     }
 
     public override ModifiableCardDataSet CloneData()

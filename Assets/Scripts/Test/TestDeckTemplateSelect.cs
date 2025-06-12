@@ -65,7 +65,7 @@ public class TestDeckTemplateSelect : MonoBehaviour
     private void SetSelected(string clientId)
     {
         m_deckTemplateText.text = clientId;
-        GameSessionParams.deckTemplateClientId = clientId;
+        GameSessionParams.DeckTemplateClientId = clientId;
     }
 
     private void ButtonClicked()

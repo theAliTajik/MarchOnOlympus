@@ -29,7 +29,11 @@ public class MapModel : MonoBehaviour
         
         Map.SetHead(startNode);
         MapNode previousNode = Map.Head;
-        for (int i = 0; i < m_numOfLoops; i++)
+        
+        previousNode = GenerateOneMapLoop(previousNode);
+        previousNode = GenerateCombatWaveMapLoop(previousNode);
+        
+        for (int i = 0; i < m_numOfLoops-2; i++)
         {
             previousNode = GenerateOneMapLoop(previousNode);
         }
@@ -45,6 +49,28 @@ public class MapModel : MonoBehaviour
     private MapNode GenerateOneMapLoop(MapNode startNode)
     {
         CombatMapNode combatMapNode = new CombatMapNode(startNode.ID + 1);
+        EventMapNode eventMapNode = new EventMapNode(startNode.ID + 2);
+        
+        startNode.AddChild(combatMapNode);
+        combatMapNode.AddChild(eventMapNode);
+        
+        generateAdvanced = !generateAdvanced;
+        if (generateAdvanced)
+        {
+            AdvancedShopMapNode advancedShopMapNode = new AdvancedShopMapNode(startNode.ID + 3);
+            eventMapNode.AddChild(advancedShopMapNode);
+            return advancedShopMapNode;
+        }
+        
+        ShopMapNode shopMapNode = new ShopMapNode(startNode.ID + 3);
+        eventMapNode.AddChild(shopMapNode);
+        return shopMapNode;
+    }
+    
+    
+    private MapNode GenerateCombatWaveMapLoop(MapNode startNode)
+    {
+        CombatWaveMapNode combatMapNode = new CombatWaveMapNode(startNode.ID + 1);
         EventMapNode eventMapNode = new EventMapNode(startNode.ID + 2);
         
         startNode.AddChild(combatMapNode);

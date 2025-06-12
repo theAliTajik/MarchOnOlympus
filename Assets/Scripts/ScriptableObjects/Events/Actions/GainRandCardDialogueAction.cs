@@ -7,13 +7,13 @@ public class GainRandCardDialogueAction : DialogueAction
         
         public override void Execute(DialogueContex context)
         {
-            if (string.IsNullOrWhiteSpace(GameSessionParams.deckTemplateClientId))
+            if (string.IsNullOrWhiteSpace(GameSessionParams.DeckTemplateClientId))
             {
                 Debug.Log("current deck id is null");
                 return;
             }
 
-            string currentdeckId = GameSessionParams.deckTemplateClientId;
+            string currentdeckId = GameSessionParams.DeckTemplateClientId;
                 
             //pick rand card
             BaseCardData cardData = CardsDb.Instance.GetRandom();

@@ -11,9 +11,9 @@ public class RemoveCardFromDeckDialogueAction : DialogueAction
     {
         base.Execute(context);
 
-        if (!string.IsNullOrEmpty(GameSessionParams.deckTemplateClientId))
+        if (!string.IsNullOrEmpty(GameSessionParams.DeckTemplateClientId))
         {
-            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.deckTemplateClientId);
+            DeckTemplates.Deck template = DeckTemplates.FindById(GameSessionParams.DeckTemplateClientId);
             GameplayEvents.SendShowCardsForSelecting(template.CardsInDeck);
             GameplayEvents.CardSelectedByPlayer += OnCardSelected;
         }
@@ -27,7 +27,7 @@ public class RemoveCardFromDeckDialogueAction : DialogueAction
     private void OnCardSelected(CardDisplay cardDisplay)
     {
         Debug.Log("selected this card: " + cardDisplay.CardInDeck.GetCardName());
-        DeckTemplates.RemoveCardFromDeck(GameSessionParams.deckTemplateClientId, cardDisplay.CardInDeck);
+        DeckTemplates.RemoveCardFromDeck(GameSessionParams.DeckTemplateClientId, cardDisplay.CardInDeck);
         GameplayEvents.CardSelectedByPlayer -= OnCardSelected;   
         EventController.Instance.FinishEvent();
     }

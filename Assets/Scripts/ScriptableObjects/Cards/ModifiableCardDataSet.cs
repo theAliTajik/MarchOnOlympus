@@ -15,10 +15,10 @@ public class ModifiableCardDataSet
         
     }
 
-    public ModifiableCardDataSet(BaseCardDataSet baseCardDataSet)
+    public ModifiableCardDataSet(BaseCardDataSet baseCardDataSet, string desc)
     {
         EnergyCost = baseCardDataSet.EnergyCost;
-        Description = baseCardDataSet.description;
+        Description = desc;
         TargetingType = baseCardDataSet.targetingType;
         ActionType.AddRange(baseCardDataSet.actionType);
         DoesPerish = baseCardDataSet.doesPerish;

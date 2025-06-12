@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer1 : BaseEnemy
+public class ArcherWave : BaseEnemy
 {
     #region Animations
     
@@ -18,12 +18,16 @@ public class Archer1 : BaseEnemy
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
-    [SerializeField] private Archer1MovesData m_data;
+    [SerializeField] private ArcherWaveMovesData m_data;
+
+    public override bool IsRequiredForCombatCompletion => false;
+
+    private int m_remainigTurnsCountDown = -1;
+    
     
     protected override void Awake()
     {
         base.Awake();
-
 
         ConfigFighterHP();
         
@@ -58,6 +62,17 @@ public class Archer1 : BaseEnemy
 
     public override void DetermineIntention()
     {
+        if (m_remainigTurnsCountDown < 0)
+        {
+            m_remainigTurnsCountDown = m_data.Move1NumOfTurns;
+        }
+
+        if (m_nextMove.clientID == "hit")
+        {
+            ShowIntention();
+            return;
+        }
+        
         RandomIntentionPicker(m_moves);
         ShowIntention();
     }
@@ -67,11 +82,11 @@ public class Archer1 : BaseEnemy
         base.ShowIntention();
         switch (m_nextMove.clientID)
         {
-            case "Hit":
-                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
+            case "countDown":
+                CallOnIntentionDetermined(Intention.SLEEP,  string.Format(m_nextMove.description, m_remainigTurnsCountDown));
                 break;
-            case "Str":
-                CallOnIntentionDetermined(Intention.BLOCK, m_nextMove.description);
+            case "hit":
+                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
                 break;
         }
     }
@@ -86,7 +101,7 @@ public class Archer1 : BaseEnemy
     
 
     private IEnumerator WaitAndExecute(Action finishCallback)
-    { 
+    {
         if (m_stuned)
         {
             m_stuned = false;
@@ -94,26 +109,29 @@ public class Archer1 : BaseEnemy
             yield break;
         }
 
-        Debug.Log("animation started");
         switch (m_nextMove.clientID)
         {
-            case "Hit":
-				yield return WaitForAnimation(ANIM_05_SHOOT, finishCallback);
-				Fighter player = GameInfoHelper.GetPlayer();
-				GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
-				break;
-            case "Str":
-                yield return WaitForAnimation(ANIM_05_SHOOT);
-                List<Fighter> enemies = GameInfoHelper.GetAllEnemies();
-                foreach (Fighter enemy in enemies)
+            case "countDown":
+                if (m_remainigTurnsCountDown > 0)
                 {
-                    GameActionHelper.AddMechanicToFighter(enemy, m_data.Move2Str, MechanicType.STRENGTH);
+                    m_remainigTurnsCountDown--;
+                }
+
+                if (m_remainigTurnsCountDown == 0)
+                {
+                    m_nextMove = m_movesDatas[1];
                 }
                 finishCallback?.Invoke();
-				break;
+                break;
+            case "hit":
+                m_animation.Play(ANIM_05_SHOOT, finishCallback);
+                yield return new WaitForSeconds(1);
+                Fighter player = GameInfoHelper.GetPlayer();
+                GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
+                m_nextMove = m_movesDatas[0];
+                break;
         }
 
-        Debug.Log("animation actualy finished");
         yield return null;
     }
     
@@ -122,5 +140,4 @@ public class Archer1 : BaseEnemy
         m_fighterHP.SetMax(m_data.HP);
         m_fighterHP.ResetHP();
     }
-    
 }

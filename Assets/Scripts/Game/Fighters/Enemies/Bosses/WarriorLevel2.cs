@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WarriorLevel2 : BaseEnemy
@@ -34,7 +36,12 @@ public class WarriorLevel2 : BaseEnemy
             m_moves.Add(md, md.chance);
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        Taunt(false);
+    }
+
     protected override void OnTookDamage(int damage, bool isCritical)
     {
         if (CombatManager.Instance.IsGameOver)
@@ -53,6 +60,7 @@ public class WarriorLevel2 : BaseEnemy
         }
         base.OnDeath();
         m_animation.Play(ANIM_DEAD_COMONWARRIOR);
+        Taunt(false);
     }
     
     public override void DetermineIntention()
@@ -91,20 +99,47 @@ public class WarriorLevel2 : BaseEnemy
             finishCallback?.Invoke();
             yield break;
         }
+        Taunt(false);
         switch (m_nextMove.clientID)
         {
             case "Taunt":
                 m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
                 yield return new WaitForSeconds(1f);
-				//--- m_data.Move1Taunt
+                Taunt(true);
 				break;
             case "Hit":
                 m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
 				yield return new WaitForSeconds(1f);
-				//--- m_data.Move2Damage
+                int damage = m_data.Move2Damage;
+                int numOfAlliesAlive = GetAllEnemiesExcludingSelf().Count;
+
+                numOfAlliesAlive = Mathf.Min(numOfAlliesAlive, m_data.Move2MaxNumOfAllies);
+                damage -= numOfAlliesAlive * m_data.Move2AllyDamageMultiplier;
+                GameActionHelper.DamageFighter(GameInfoHelper.GetPlayer(), this, damage);
 				break;
         }
         yield return null;
+    }
+
+    private void Taunt(bool activate)
+    {
+        List<BaseEnemy> otherEnemies = GetAllEnemiesExcludingSelf();
+        if (otherEnemies == null || otherEnemies.Count == 0)
+        {
+            return;
+        }
+        
+        foreach (BaseEnemy enemy in otherEnemies)
+        {
+            enemy.SetCanBeTarget(!activate);
+        }
+    }
+    private List<BaseEnemy> GetAllEnemiesExcludingSelf()
+    {
+        List<BaseEnemy> allEnemies = GameInfoHelper.GetAllEnemies()?.Cast<BaseEnemy>().ToList();
+        allEnemies?.Remove(this);
+
+        return allEnemies;
     }
     
     public override void ConfigFighterHP()
