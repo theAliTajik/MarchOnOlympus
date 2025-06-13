@@ -1,0 +1,122 @@
+Cyclops.png
+size:3980,3489
+filter:Linear,Linear
+pma:true
+Arm 01
+bounds:2390,2,1106,1140
+offsets:14,591,1292,1739
+rotate:90
+Arm 02
+bounds:2548,1110,743,1082
+offsets:0,112,743,1194
+rotate:90
+Atack
+bounds:2385,1873,730,666
+Cloth-02
+bounds:1641,3097,390,775
+offsets:7,6,403,788
+rotate:90
+Cord-01
+bounds:1517,1955,866,584
+offsets:3,0,869,584
+Cord-02
+bounds:2418,3095,888,392
+offsets:1,0,893,395
+Cord-03
+bounds:2,2863,773,414
+offsets:0,4,776,418
+Foot 01
+bounds:777,2629,549,473
+offsets:7,7,562,484
+Foot 02
+bounds:3308,3092,670,395
+offsets:6,7,765,753
+Forearm 01
+bounds:2,524,754,1507
+offsets:3,7,763,1514
+rotate:90
+Forearm 02
+bounds:2,1524,715,688
+Fury
+bounds:1771,1171,700,775
+rotate:90
+Hand 02
+bounds:1328,2543,634,552
+offsets:8,8,650,569
+Layer 2
+bounds:1964,2541,1187,552
+offsets:13,11,1207,563
+Leg 01-01
+bounds:719,1280,673,1050
+offsets:8,8,689,1066
+rotate:90
+Leg 01-02
+bounds:734,1981,560,781
+offsets:148,8,716,797
+rotate:90
+Leg 02-01
+bounds:1511,292,877,877
+offsets:8,9,893,894
+Leg 02-02
+bounds:959,3104,383,680
+offsets:8,9,481,697
+rotate:90
+Neutral
+bounds:2,2214,730,647
+Pain
+bounds:3117,1855,730,677
+Skulls
+bounds:3153,2534,702,556
+ground (15)
+bounds:327,3334,175,153
+offsets:74,58,256,256
+ground (31)
+bounds:735,3279,222,208
+offsets:13,28,256,256
+ground (35)
+bounds:504,3293,194,229
+offsets:24,15,256,256
+rotate:90
+objects (44)
+bounds:248,3412,75,77
+offsets:26,26,128,128
+rotate:90
+objects (45)
+bounds:88,3422,65,78
+offsets:28,25,128,128
+rotate:90
+objects (46)
+bounds:168,3415,72,78
+offsets:24,23,128,128
+rotate:90
+objects (47)
+bounds:2,3426,84,61
+offsets:22,36,128,128
+
+Cyclops_2.png
+size:3995,3201
+filter:Linear,Linear
+pma:true
+Body
+bounds:2389,59,1443,1825
+Cloth-01
+bounds:2390,1886,1313,1603
+offsets:6,4,1322,1608
+rotate:90
+Hand - Club_2
+bounds:2,877,2385,1160
+offsets:8,8,2402,1176
+Hand - Club_3
+bounds:2,2,2385,873
+offsets:8,8,2402,889
+Layer 1
+bounds:2,2039,2386,1160
+offsets:8,8,2402,1176
+
+Cyclops_3.png
+size:1115,1156
+filter:Linear,Linear
+pma:true
+Arm 01_1
+bounds:2,2,1111,1152
+offsets:13,34,1148,1191

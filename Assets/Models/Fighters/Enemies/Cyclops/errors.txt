@@ -1,0 +1,7 @@
+Invalid group name:
+[Slot]Head
+The [Slot] tag is not a valid tag.
+---
+Invalid group name:
+[Slot]Hand_Club
+The [Slot] tag is not a valid tag.

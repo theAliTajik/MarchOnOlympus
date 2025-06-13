@@ -115,17 +115,43 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
       Factory: 
-  - clientID: SpaceTest
+  - clientID: Archer1
     bosses:
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+    - Prefab: {fileID: 4100661280340990023, guid: 59b87c36859e39e47accc89e96c7fb53, type: 3}
       Factory: 
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+  - clientID: Archer2
+    bosses:
+    - Prefab: {fileID: 3219014423859083501, guid: 64d688d49130ecf4e910d345ac33982f, type: 3}
       Factory: 
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+  - clientID: Assassin_A
+    bosses:
+    - Prefab: {fileID: -5880846175203906008, guid: 4fd2d31172cc035428a88e05156a0702, type: 3}
       Factory: 
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+  - clientID: Assassin_B
+    bosses:
+    - Prefab: {fileID: 9182915094707394875, guid: 7e16194df2dbf6e43abf021957c60efc, type: 3}
       Factory: 
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+  - clientID: Assassin_C
+    bosses:
+    - Prefab: {fileID: 7485899804033241738, guid: 4dddb6a15aaa9de47a1cf186d2894017, type: 3}
       Factory: 
-    - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
+  - clientID: Warrior1
+    bosses:
+    - Prefab: {fileID: 6933318682100703591, guid: b7882426ee5c0b547a4cc775e4c70231, type: 3}
+      Factory: 
+  - clientID: Warrior2
+    bosses:
+    - Prefab: {fileID: 5698642075706088080, guid: d9f5904325cc27548bbdefb09b7c9b24, type: 3}
+      Factory: 
+  - clientID: WarriorLevel2
+    bosses:
+    - Prefab: {fileID: 647305255771967818, guid: 03ca93cfe1f78f345b716fbdde5ebf2f, type: 3}
+      Factory: 
+  - clientID: Priest
+    bosses:
+    - Prefab: {fileID: 9111556972283175391, guid: 4e91ac975f17f8f4c8abcf6a489c5146, type: 3}
+      Factory: 
+  - clientID: Cyclops
+    bosses:
+    - Prefab: {fileID: 1786792893909816965, guid: dc00e15fb6bc35e40a81edccbe13b342, type: 3}
       Factory: 
