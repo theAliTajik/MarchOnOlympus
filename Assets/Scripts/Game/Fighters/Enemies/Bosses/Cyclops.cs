@@ -9,14 +9,16 @@ public class Cyclops : BaseEnemy
 	#region Animations
 
 	private const string ANIM_001_DANCE = "001_Dance";
-	private readonly string[] ANIM_ATTACK123 = new string[] { "Attack", "Attack2", "Attack3" };
-    private const string ANIM_ATTACK_4_1 = "Attack_4_1";
-	private const string ANIM_ATTACK_4_2 = "Attack_4_2";
 	private const string ANIM_DEATH = "Death";
 	private const string ANIM_IDLE = "Idle";
+	private readonly string[] ANIM_ATTACK123 = new string[] { "Attack", "Attack2", "Attack3", "Attack_4_1", "Attack_4_2" };
+	private readonly string[] ANIM_WOUNDEDS = new string[] { "Wounded1", "Wounded2", "Wounded3" };
+
+	/*private const string ANIM_ATTACK_4_1 = "Attack_4_1";
+	private const string ANIM_ATTACK_4_2 = "Attack_4_2";
 	private const string ANIM_WOUNDED1 = "Wounded1";
     private const string ANIM_WOUNDED2 = "Wounded2";
-	private const string ANIM_WOUNDED3 = "Wounded3";
+	private const string ANIM_WOUNDED3 = "Wounded3";*/
 
 	#endregion
 
@@ -35,7 +37,6 @@ public class Cyclops : BaseEnemy
         }
         
         ConfigFighterHP();
-
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -45,7 +46,7 @@ public class Cyclops : BaseEnemy
             return;
         }
         base.OnTookDamage(damage, isCritical);
-        m_animation.Play(ANIM_WOUNDED1);
+        m_animation.Play(RandomWOUNDEDClip());
     }
 
     protected override void OnDeath()
@@ -159,4 +160,10 @@ public class Cyclops : BaseEnemy
         int rand = Random.Range(0, ANIM_ATTACK123.Length);
         return ANIM_ATTACK123[rand];
     }
+
+	private string RandomWOUNDEDClip()
+	{
+		int rand = Random.Range(0, ANIM_WOUNDEDS.Length);
+		return ANIM_WOUNDEDS[rand];
+	}
 }
