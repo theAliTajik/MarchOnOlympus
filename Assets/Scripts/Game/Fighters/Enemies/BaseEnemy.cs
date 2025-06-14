@@ -150,6 +150,21 @@ public abstract class BaseEnemy : Fighter
     {
         OnIntentionDetermined?.Invoke(intention, description);
     }
-    
+
+    protected void SetMoves(MoveData[] moves)
+    {
+        if (m_moves == null || moves.Length == 0)
+        {
+            Debug.Log("WARNING: empty moves passed set for enemy");
+            return;
+        }
+        
+        for (int i = 0; i < moves.Length; i++)
+        {
+            MoveData md = moves[i];
+            m_moves.Add(md, md.chance);
+        } 
+        
+    }
 }
 
