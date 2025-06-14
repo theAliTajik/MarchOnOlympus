@@ -24,7 +24,7 @@ public class Cyclops : BaseEnemy
 
 	[SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private CyclopsMovesData m_data;
-    private int m_turnCounter = 1;
+    private int m_turnCounter = 0;
 
     protected override void Awake()
     {
@@ -61,6 +61,16 @@ public class Cyclops : BaseEnemy
 
     public override void DetermineIntention()
     {
+        m_turnCounter++;
+        if (m_turnCounter > 4)
+        {
+            m_nextMove = m_moves[2];
+            m_turnCounter = 0;
+            ShowIntention();
+            return;
+        }
+        
+        
         RandomIntentionPicker(m_moves);
         ShowIntention();
     }
@@ -68,20 +78,17 @@ public class Cyclops : BaseEnemy
     public override void ShowIntention()
     {
         base.ShowIntention();
-        if (m_turnCounter < 4)
-            switch (m_nextMove.clientID)
-            {
-                case "HitBuff":
-                    CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
-                    break;
-                case "Hit":
-                    CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
-                    break;
-            }
-        else
+        switch (m_nextMove.clientID)
         {
-            string desc = "Every 4th turn, removes all debuffs and Fortify 2";
-			CallOnIntentionDetermined(Intention.CAST_DEBUFF, desc);
+            case "HitBuff":
+                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
+                break;
+            case "Hit":
+                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
+                break;
+            case "RemoveAllDebuffs":
+                CallOnIntentionDetermined(Intention.BUFF, m_nextMove.description);
+                break;
         }
     }
 
@@ -105,48 +112,42 @@ public class Cyclops : BaseEnemy
 
 		Fighter player = GameInfoHelper.GetPlayer();
 
-        if (m_turnCounter < 4)
-            switch (m_nextMove.clientID)
-            {
-                case "HitBuff":
-                    //Hit
-                    for (int i = 1; i <= m_data.Move1NumOfAttacks; i++)
-                    {
-                        yield return WaitForAnimation(RandomAttackClip());
-                        GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
-                    }
-
-					//Remove all buffs on player
-					MechanicsList mechanics = MechanicsManager.Instance.GetMechanicsList(player);
-					mechanics.RemoveAllMechanicsOfCatigory(MechanicCategory.BUFF);
-
-					finishCallback?.Invoke();
-                    break;
-                case "Hit":
-                    for (int i = 1; i <= m_data.Move2NumOfAttacks; i++)
-                    {
-                        yield return WaitForAnimation(RandomAttackClip());
-                        GameActionHelper.DamageFighter(player, this, m_data.Move2Damage);
-                    }
-                    finishCallback?.Invoke();
-                    break;
-            }
-        else
+        switch (m_nextMove.clientID)
         {
-			//Every 4th turn, removes all debuffs on (This)
-			MechanicsList mechanics = MechanicsManager.Instance.GetMechanicsList(this);
-            mechanics.RemoveAllMechanicsOfCatigory(MechanicCategory.DEBUFF);
+            case "HitBuff":
+                //Hit
+                for (int i = 1; i <= m_data.Move1NumOfAttacks; i++)
+                {
+                    yield return WaitForAnimation(RandomAttackClip());
+                    GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
+                }
 
-			//Fortify
-			GameActionHelper.AddMechanicToFighter(this, m_data.Move3Fortify, MechanicType.FORTIFIED);
+                //Remove all buffs on player
+                GameActionHelper.RemoveAllMechanicOfCategory(player, MechanicCategory.BUFF);
 
-            //Reset Turn Counter
-			m_turnCounter = 0;
-		}
+                finishCallback?.Invoke();
+                break;
+            case "Hit":
+                for (int i = 1; i <= m_data.Move2NumOfAttacks; i++)
+                {
+                    yield return WaitForAnimation(RandomAttackClip());
+                    GameActionHelper.DamageFighter(player, this, m_data.Move2Damage);
+                }
+                finishCallback?.Invoke();
+                break;
+            case "RemoveAllDebuffs":
+                //Every 4th turn, removes all debuffs on (This)
+                GameActionHelper.RemoveAllMechanicOfCategory(this, MechanicCategory.DEBUFF);
+                
+                //Fortify
+                GameActionHelper.AddMechanicToFighter(this, m_data.Move3Fortify, MechanicType.FORTIFIED);
+                
+                //Reset Turn Counter
+                m_turnCounter = 0;
+                break;
+        }
 
-        m_turnCounter++;
-
-		yield return null;
+        yield return null;
     }
 
     public override void ConfigFighterHP()

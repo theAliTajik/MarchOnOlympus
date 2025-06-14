@@ -345,6 +345,12 @@ public static class GameActionHelper
         fighter.Heal(amount);
     }
 
+    public static void RemoveAllMechanicOfCategory(Fighter fighter, MechanicCategory catigory)
+    {
+        MechanicsList mechanics = MechanicsManager.Instance.GetMechanicsList(fighter);
+        mechanics.RemoveAllMechanicsOfCategory(catigory);
+    }
+    
     // ### Player
     public static void IncreasePlayerMaxHP(int amount)
     {
@@ -441,4 +447,5 @@ public static class GameActionHelper
             GameInfoHelper.MechanicsData.StrToAddNextTurn.Clear();
         }
     }
+
 }

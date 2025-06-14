@@ -235,7 +235,7 @@ public class MechanicsList
         return CombatManager.Instance.IsPlayersTurn == m_isPlayer;
     }
 
-    public void RemoveAllMechanicsOfCatigory(MechanicCategory category)
+    public void RemoveAllMechanicsOfCategory(MechanicCategory category)
     {
         List<MechanicType> keysToRemove = MechanicsManager.Instance.GetMechanicsOfCatigoryPresent(m_mechanics.Keys.ToList(), category);
 

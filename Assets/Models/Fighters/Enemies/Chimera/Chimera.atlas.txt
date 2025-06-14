@@ -1,0 +1,127 @@
+Chimera.png
+size:3648,2528
+filter:Linear,Linear
+pma:true
+scale:0.75
+Fx/Dust_Fx/texture (111)
+bounds:2368,655,159,147
+offsets:17,24,192,192
+rotate:90
+Fx/Dust_Fx/texture (112)
+bounds:3444,825,159,147
+offsets:17,24,192,192
+Fx/Dust_Fx/texture (123)
+bounds:2339,2341,180,185
+offsets:3,7,192,192
+Fx/Dust_Fx/texture (77)
+bounds:3432,102,182,171
+offsets:5,5,192,192
+rotate:90
+Fx/Grow/Screem_1
+bounds:1695,1450,96,96
+Fx/Grow/Screem_2
+bounds:1863,35,96,96
+Fx/Grow/aura (1)
+bounds:3243,654,96,96
+Fx/Grow/aura (2)
+bounds:1961,35,96,93
+offsets:0,3,96,96
+rotate:90
+Fx/Grow/aura (208)
+bounds:3444,974,164,163
+offsets:15,15,192,192
+rotate:90
+Fx/Grow/aura (5)
+bounds:1863,133,192,192
+Fx/Grow/aura (52)
+bounds:3250,946,192,192
+Fx/Grow/aura (6)
+bounds:3243,752,192,192
+Fx/Pois/element (272)
+bounds:3525,1779,96,96
+Fx/Pois/element (286)
+bounds:3341,675,76,75
+offsets:9,11,96,96
+Fx/Pois/fire (3)
+bounds:1695,1352,96,96
+Goat Atack
+bounds:1497,327,487,573
+offsets:6,6,499,585
+rotate:90
+Goat Body
+bounds:2,9,870,762
+offsets:3,2,878,765
+Goat Fury
+bounds:900,331,487,595
+offsets:6,6,499,607
+rotate:90
+Goat Horn 01
+bounds:2368,104,42,140
+offsets:6,6,54,152
+rotate:90
+Goat Pain
+bounds:2368,148,487,573
+offsets:6,6,499,585
+rotate:90
+Goat ear
+bounds:3525,1877,155,119
+offsets:0,4,155,123
+rotate:90
+Goat head
+bounds:2943,62,487,573
+offsets:6,6,499,585
+Lion Arm Left
+bounds:2522,637,719,411
+offsets:1,5,720,416
+Lion Arm Right 01
+bounds:3250,2034,492,396
+offsets:4,5,496,404
+rotate:90
+Lion Arm Right 02
+bounds:3250,1140,409,276
+rotate:90
+Lion Atack
+bounds:1794,1555,726,737
+Lion Body
+bounds:2,1548,1790,744
+offsets:1,5,1791,750
+Lion Fury
+bounds:900,820,726,793
+rotate:90
+Lion Fury_FX
+bounds:2522,1789,726,737
+offsets:0,28,726,793
+Lion Head
+bounds:2522,1050,726,737
+Lion Leg Left
+bounds:1214,23,280,306
+offsets:4,2,287,312
+Lion Pain
+bounds:1794,816,726,737
+Lion claw left
+bounds:3250,1551,481,273
+offsets:3,0,488,275
+rotate:90
+Shadow
+bounds:2,2294,2335,232
+offsets:0,5,2363,260
+Snake Atack
+bounds:2072,55,294,365
+offsets:6,6,306,377
+Snake Body 01
+bounds:2,773,896,773
+Snake Body 02
+bounds:3432,286,464,174
+offsets:1,2,465,177
+rotate:90
+Snake Fury
+bounds:2072,422,294,392
+offsets:6,6,306,404
+Snake Head
+bounds:874,2,327,338
+offsets:6,6,339,350
+rotate:90
+Snake Pain
+bounds:1496,31,294,365
+offsets:6,6,306,377
+rotate:90

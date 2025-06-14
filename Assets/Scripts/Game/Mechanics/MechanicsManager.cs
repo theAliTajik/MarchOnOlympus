@@ -322,7 +322,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
     {
         if (m_allMechanics.ContainsKey(fighter))
         {
-            m_allMechanics[fighter].RemoveAllMechanicsOfCatigory(MechanicCategory.ALL);
+            m_allMechanics[fighter].RemoveAllMechanicsOfCategory(MechanicCategory.ALL);
         }
     }
 
@@ -330,7 +330,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
     {
         if (m_allMechanics.ContainsKey(fighter))
         {
-            m_allMechanics[fighter].RemoveAllMechanicsOfCatigory(mechanicCategory);
+            m_allMechanics[fighter].RemoveAllMechanicsOfCategory(mechanicCategory);
         }
     }
 

@@ -19,18 +19,14 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: f848fc00e22e14362a54aa70ec25bd40, type: 3}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
-    energyCost: 1
+    EnergyCost: 1
     description: Block {0}
     targetingType: 0
     actionType: 01000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
-    energyCost: 1
+    EnergyCost: 1
     description: Draw {0}
     targetingType: 0
     actionType: 04000000
