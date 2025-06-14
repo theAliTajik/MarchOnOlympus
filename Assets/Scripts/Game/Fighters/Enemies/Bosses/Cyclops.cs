@@ -141,9 +141,6 @@ public class Cyclops : BaseEnemy
                 
                 //Fortify
                 GameActionHelper.AddMechanicToFighter(this, m_data.Move3Fortify, MechanicType.FORTIFIED);
-                
-                //Reset Turn Counter
-                m_turnCounter = 0;
                 break;
         }
 
