@@ -159,3 +159,7 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 8391349627649040841, guid: a9d3b258f3e014d4588395a411bbe37b, type: 3}
       Factory: 
+  - clientID: WarHero
+    bosses:
+    - Prefab: {fileID: 727013420262267302, guid: a1c30fdcb18df3f49b2f8459478e9213, type: 3}
+      Factory: 
