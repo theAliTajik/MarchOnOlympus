@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 98976a1cf5da24c078a771941c483b11, type: 3}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: give {0} block
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Hit {0}, Switch to Battle Stance
     targetingType: 1

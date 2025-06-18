@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,14 @@ using UnityEngine.Serialization;
 public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
 {
 
-
-
-    public DeckTemplates.Deck[] allDecks;
+    [Serializable]
+    public struct PredefinedDeck
+    {
+        public string ClientId;
+        public List<BaseCardData> Cards;
+    }
+    
+    public List<PredefinedDeck> PredefinedDecks;
     
 #if UNITY_EDITOR
     [ContextMenu("generate a deck for all cards")]
@@ -23,7 +29,7 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
         }
 
         List<DeckTemplates.Deck> deckList = new List<DeckTemplates.Deck>();
-        deckList.AddRange(allDecks);
+        // deckList.AddRange(allDecks);
         
         int deckIndex = 0;
         for (int i = 0; i < CardsDb.Instance.AllCards.Count; i += 25)
@@ -51,18 +57,18 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
         }
 
         // Convert the list back to an array after processing all cards
-        allDecks = deckList.ToArray();
+        // allDecks = deckList.ToArray();
     }
 
 #endif
 
 
-    public DeckTemplates.Deck FindById(string clientId)
+    public PredefinedDeck? FindById(string clientId)
     {
-        for (int i = 0; i < allDecks.Length; i++)
+        for (int i = 0; i < PredefinedDecks.Count; i++)
         {
-            DeckTemplates.Deck template = allDecks[i];
-            if (template.clientID == clientId)
+            PredefinedDeck template = PredefinedDecks[i];
+            if (template.ClientId == clientId)
             {
                 return template;
             }

@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 1cca5bd6105de7f4e8a6df383e4ba763, type: 3}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Perish, boost your strike cards by {0}
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: boost them {0} instead
     targetingType: 0

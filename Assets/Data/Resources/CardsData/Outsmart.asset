@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Enemy uses its ability twice, Apply stun
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Draw {0} next turn
     targetingType: 1

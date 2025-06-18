@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Perish, Damage {0} increase this card's damage by {1} permaently
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: On killing blow, increase its damage by {0}
     targetingType: 1

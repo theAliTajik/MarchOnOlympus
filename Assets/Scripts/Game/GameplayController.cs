@@ -42,7 +42,7 @@ public class GameplayController : Singleton<GameplayController>
         }
         else
         {
-            template = DeckTemplatesDb.Instance.FindById(m_deckClientIdTest);
+            template = DeckTemplates.FindById(m_deckClientIdTest);
             isDevTestingTemplate = true;
             m_currentDeck = m_deckClientIdTest;
         }

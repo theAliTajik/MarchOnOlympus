@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fa5e55690634d1db44b4057f4f126e, type: 3}
   m_Name: ShakeItOff
   m_EditorClassIdentifier: 
-  Name: Shake it Off!
+  Name: Shake it Off
   Rarity: 0
   Type: 0
   CardPack: 0
   Image: {fileID: 0}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Remove all debuffs from yourself
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Restore {0} for each debuff
     targetingType: 0

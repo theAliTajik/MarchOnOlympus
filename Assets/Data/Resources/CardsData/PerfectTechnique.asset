@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Hit {0}, Block {1}, End your turn
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Restore {0}
     targetingType: 1

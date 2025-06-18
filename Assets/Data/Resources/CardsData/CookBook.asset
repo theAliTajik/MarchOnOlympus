@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Spawn a random card from your starting deck, it costs {0}
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: 
     targetingType: 0

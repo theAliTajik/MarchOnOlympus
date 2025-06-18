@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 0b93db7de334a4e88a8253f00d4425b3, type: 3}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Deal {0}x{1} Damage
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: 
     targetingType: 1

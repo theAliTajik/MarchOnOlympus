@@ -1,6 +1,7 @@
 using System;
 using Game;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Chimera : BaseEnemy
@@ -19,18 +20,34 @@ public class Chimera : BaseEnemy
 
 	#endregion
 
-	[SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private ChimeraMovesData m_data;
+
+    [SerializeField] private ChimeraLion m_lion;
+    private ChimeraSerpent m_serpent = new ChimeraSerpent();
+    private ChimeraGoat m_goat = new ChimeraGoat();
+    
+    [SerializeField] private Transform m_lionPosition;
+    [SerializeField] private Transform m_serpentPosition;
+    [SerializeField] private Transform m_goatPosition;
+
+    public Chimera()
+    {
+        m_lion = new ChimeraLion(this);
+    }
+
+
+    public ChimeraLion Lion => m_lion;
+    public ChimeraSerpent Serpent => m_serpent;
+    public ChimeraGoat Goat => m_goat;
+    
+    public Transform LionPosition => m_lionPosition;
+    public Transform SerpentPosition => m_serpentPosition;
+    public Transform GoatPosition => m_goatPosition;
 
     protected override void Awake()
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
         
         ConfigFighterHP();
 
@@ -58,22 +75,13 @@ public class Chimera : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        m_lion.DetermineIntention();
         ShowIntention();
     }
 
     public override void ShowIntention()
     {
-        base.ShowIntention();
-        switch (m_nextMove.clientID)
-        {
-            case "0":
-                //CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description);
-                break;
-            case "1":
-
-                break;
-        }
+        m_lion.ShowIntention();
     }
 
     public override void ExecuteAction(Action finishCallback)
@@ -81,29 +89,17 @@ public class Chimera : BaseEnemy
         // play intention
         base.ExecuteAction(finishCallback);
 
-        Debug.Log("this action is played: " + m_nextMove.clientID);
         StartCoroutine(WaitAndExecute(finishCallback));
     }
-    
+
     private IEnumerator WaitAndExecute(Action finishCallback)
     {
-        if (m_stuned)
-        {
-            m_stuned = false;
-            finishCallback?.Invoke();
-            yield break;
-        }
-        switch (m_nextMove.clientID)
-        {
-            case "0":
-                m_animation.Play(ANIM_04_LION_HEAD_ATTACK, finishCallback);
-                break;
-            case "1":
-                m_animation.Play(ANIM_04_LION_HEAD_ATTACK, finishCallback);
-				break;
-        }
-
-        yield return null;
+        bool headFinished = false;
+        m_lion.ExecuteIntention(() => headFinished = true);
+        yield return new WaitUntil(() => headFinished);
+        
+        
+        finishCallback?.Invoke();
     }
 
     public override void ConfigFighterHP()

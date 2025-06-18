@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Draw {0} cards and gain +{1} energy next turn, Switch to {2} Stance
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: 
     targetingType: 0

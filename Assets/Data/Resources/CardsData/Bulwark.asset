@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42dc4375221e465ab543e8c87c49af1, type: 3}
   m_Name: Bulwark
   m_EditorClassIdentifier: 
-  Name: Bulwark!
+  Name: Bulwark
   Rarity: 1
   Type: 0
   CardPack: 2
   Image: {fileID: 21300000, guid: bdd94dd0891b7479e9fa4e595a269284, type: 3}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Perish, Gain {0} Block
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Costs 1 less
     targetingType: 0

@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Whenever you play a berserker stance card, gain {0} str this turn,
       damage self {1}
@@ -29,8 +27,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: 
     targetingType: 0

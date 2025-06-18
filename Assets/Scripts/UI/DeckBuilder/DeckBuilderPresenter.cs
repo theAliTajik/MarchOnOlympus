@@ -110,11 +110,6 @@ public class DeckBuilderPresenter : MonoBehaviour
         DeckTemplates.RemoveDeck(deckId);
     }
 
-    private void OnDeckCardDuplicateClicked(string cardId)
-    {
-        
-    }
-
     private void OnDeckCardRemoveClicked(int cardIndex)
     {
         if (m_currentDeck == null)
@@ -153,7 +148,7 @@ public class DeckBuilderPresenter : MonoBehaviour
     private List<string> GetCardTemplatesFromScriptableObject()
     {
         List<string> cardsTemplate = new List<string>();
-        cardsTemplate.AddRange(DeckTemplatesDb.Instance.allDecks.Select(t => t.clientID));
+        cardsTemplate.AddRange(DeckTemplatesDb.Instance.PredefinedDecks.Select(t => t.ClientId));
 
         if (cardsTemplate.Count <= 0)
         {

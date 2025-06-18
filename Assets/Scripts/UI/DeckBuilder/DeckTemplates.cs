@@ -24,8 +24,27 @@ public static class DeckTemplates
     public static void LoadAllDecks()
     {
         Decks.Clear();
+
+        if (!DeckTemplatesDb.Instance)
+        {
+            Debug.Log("null predefined deck templates");
+        }
         
-        Decks.AddRange(DeckTemplatesDb.Instance.allDecks);
+        foreach (DeckTemplatesDb.PredefinedDeck predefinedDeck in DeckTemplatesDb.Instance.PredefinedDecks)
+        {
+            Deck newDeck = new Deck();
+            newDeck.clientID = predefinedDeck.ClientId;
+            newDeck.ReadOnly = true;
+            foreach (BaseCardData cardData in predefinedDeck.Cards)
+            {
+                CardInDeckStateMachine card = new CardInDeckStateMachine();
+                card.Configure(cardData);
+                newDeck.CardsInDeck.Add(card);
+            }
+            
+            Decks.Add(newDeck);
+        }
+        
         
         DeckSaveWrapper wrapper = new DeckSaveWrapper();
         wrapper = JsonHelper.LoadAdvanced<DeckSaveWrapper>(Application.persistentDataPath + m_savePath);

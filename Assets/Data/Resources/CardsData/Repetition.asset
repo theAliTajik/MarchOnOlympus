@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: b9a79d93b3221496a98452313f03adf3, type: 3}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Whenever you play a {0} card, gain {1} str
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Costs 2
     targetingType: 0

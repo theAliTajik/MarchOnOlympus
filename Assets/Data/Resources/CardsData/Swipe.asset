@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Deal {0} Damage, lower the damage by {1} by each non-{2} card
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: 
     targetingType: 1

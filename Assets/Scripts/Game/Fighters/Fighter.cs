@@ -5,7 +5,7 @@ using UnityEngine;
 using Game;
 
 [RequireComponent(typeof(FighterHP))]
-public abstract class Fighter : MonoBehaviour
+public abstract class Fighter : MonoBehaviour, IHaveHUD
 {
 
     public class DamageContext

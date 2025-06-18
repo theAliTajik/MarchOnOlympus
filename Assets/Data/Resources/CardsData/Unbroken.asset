@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: e1df99f8a430542d2a5232814c0d379f, type: 3}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: If you have armor at the start of your turn, Gain {0} str
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: 
     targetingType: 0

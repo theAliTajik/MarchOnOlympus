@@ -145,16 +145,14 @@ public class ToolCardGenerator : EditorWindow
         AssetDatabase.Refresh();
         
         //add to dev testing deck template
-        DeckTemplates.Deck devtemplate = DeckTemplatesDb.Instance.FindById("Dev Testing");
+        DeckTemplates.Deck devtemplate = DeckTemplates.FindById("Dev Testing");
         if (devtemplate != null)
         {
             devtemplate.CardsInDeck.RemoveAt(0);
             CardInDeckStateMachine cardInDeck = new CardInDeckStateMachine();
             cardInDeck.Configure(cardData);
             devtemplate.CardsInDeck.Insert(0, cardInDeck);
-            EditorUtility.SetDirty(DeckTemplatesDb.Instance);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            DeckTemplates.Save();
         }
         
         //add to all cards Db

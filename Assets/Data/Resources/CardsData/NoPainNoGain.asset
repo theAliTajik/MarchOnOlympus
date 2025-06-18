@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 4746045363c914b33b9f485c8a26e94c, type: 3}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Whenever you lose hp in your turn, gain {0} str
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: 
     targetingType: 0

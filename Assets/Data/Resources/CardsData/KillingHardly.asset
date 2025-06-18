@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 66951a210091747c487ef428ebcd1dc4, type: 3}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Deal Bleed Damage, Perish
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Apply Bleed {0}
     targetingType: 1

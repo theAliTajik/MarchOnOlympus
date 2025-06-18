@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: b1616f3135c9f094c894a62d6287b394, type: 3}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Deal {0} Damage for each buff the enemy has
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Apply Vulnerable {0}
     targetingType: 1

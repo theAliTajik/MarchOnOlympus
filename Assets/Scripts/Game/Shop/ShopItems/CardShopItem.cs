@@ -23,7 +23,7 @@ public class CardShopItem : IShopItemModel
     {
         Debug.Log("Card purchased: " + m_cardData.Name);
         
-        GameplayEvents.SendRewarderCardSelected(m_cardData);
+        DeckTemplates.AddCardToDeck(GameInfoHelper.GetCurrentDeckID(), m_cardData, -1);
         return Price.ReduceCost();
     }
 }

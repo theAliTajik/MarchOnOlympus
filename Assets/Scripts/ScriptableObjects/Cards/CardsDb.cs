@@ -76,7 +76,7 @@ public class CardsDb : GenericData<CardsDb>
     public CardsInfo FindById(string clientId)
     {
         clientId = clientId.ToLower();
-        for (int i = 0; i < AllCards.Count; i++)
+        for(int i = 0; i < AllCards.Count; i++)
         {
             CardsInfo card = AllCards[i];
             if (card.clientID.ToLower() == clientId)
@@ -85,6 +85,20 @@ public class CardsDb : GenericData<CardsDb>
             }
         }
 
+        return null;
+    }
+
+    public string GetID(BaseCardData cardData)
+    {
+        for(int i = 0; i < AllCards.Count; i++)
+        {
+            CardsInfo card = AllCards[i];
+            if (card.CardData == cardData)
+            {
+                return card.clientID;
+            }
+        }
+        
         return null;
     }
 

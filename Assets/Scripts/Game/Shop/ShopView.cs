@@ -17,6 +17,12 @@ public class ShopView : MonoBehaviour
         GameplayEvents.ShowCardsByData += m_cardDisplayList.ShowCards;
     }
 
+    private void OnDestroy()
+    {
+        GameplayEvents.ShowCardsByData -= m_cardDisplayList.ShowCards;
+
+    }
+
     public void DisplayShopItems(List<IShopItemModel> shopItems)
     {
         m_layoutAssigner.Config();

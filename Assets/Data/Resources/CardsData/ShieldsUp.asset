@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d1fded8a40d4ebfad45c9abbcd1dbf, type: 3}
   m_Name: ShieldsUp
   m_EditorClassIdentifier: 
-  Name: Shields Up!
+  Name: Shields Up
   Rarity: 0
   Type: 0
   CardPack: 0
   Image: {fileID: 21300000, guid: 333937b78f4e144d28a395420e0ebffc, type: 3}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Gain Daze, Gain Fortify
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 1
     energyCost: 1
     description: Gain {0} additional Fortify
     targetingType: 0

@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Gain {0} Str
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Transform in to "{0}"
     targetingType: 0

@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: ef4ca23f463214e88b84ca1f41dc45d0, type: 3}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Give {0} Bleed
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 0
     energyCost: 0
     description: Costs {0} less
     targetingType: 1

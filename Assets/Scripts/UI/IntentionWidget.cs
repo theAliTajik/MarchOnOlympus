@@ -18,6 +18,11 @@ public class IntentionWidget : MonoBehaviour
         enemy.OnIntentionDetermined += ActivateIntention;
     }
 
+    public void Config(IHaveIntention iHaveIntention)
+    {
+        iHaveIntention.OnIntentionDetermined += ActivateIntention;
+    }
+    
     public void Start()
     {
         m_onEnterImageDetector.OnEnter += ShowTooltip;

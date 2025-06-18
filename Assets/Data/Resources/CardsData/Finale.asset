@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 2
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: In each {0} damages done, Finale plays from anywhere and it hits
       a random target for {1}
@@ -29,8 +27,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: 
     targetingType: 0

@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -15,3 +15,4 @@ public class RemoveShopPriceModifiers
         GameProgress.Instance.Data.ShopModifiers.Clear();
     }
 }
+#endif

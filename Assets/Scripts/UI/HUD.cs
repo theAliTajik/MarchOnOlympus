@@ -38,7 +38,7 @@ public class HUD : Singleton<HUD>
         INTENTION_WIDGET,
         DAMAGE_INDICATOR
     }
-    private Dictionary<Fighter, Dictionary<HudObjectType, GameObject>> m_hudObjects = new Dictionary<Fighter, Dictionary<HudObjectType, GameObject>>();
+    private Dictionary<IHaveHUD, Dictionary<HudObjectType, GameObject>> m_hudObjects = new Dictionary<IHaveHUD, Dictionary<HudObjectType, GameObject>>();
 
 
     public void Start()
@@ -131,6 +131,16 @@ public class HUD : Singleton<HUD>
         AddHudObject(enemy, HudObjectType.INTENTION_WIDGET, intentionWidget.gameObject);
         return intentionWidget;
     }
+    public IntentionWidget SpawnEnemyIntentionWidget(IHaveIntention iHaveIntention, Vector3 position)
+    {
+        IntentionWidget intentionWidget = Instantiate(m_intentionWidgetPrefab, transform);
+        intentionWidget.Config(iHaveIntention);
+
+        RectTransform rectTransform = intentionWidget.transform as RectTransform;
+        rectTransform.anchoredPosition = ConvertWorldPosition(position + intentionWidget.GetOffset(), rectTransform.anchorMin, rectTransform.anchorMax);
+        AddHudObject(iHaveIntention, HudObjectType.INTENTION_WIDGET, intentionWidget.gameObject);
+        return intentionWidget;
+    }
     public void RemoveEnemyIntentionWidget(Fighter fighter)
     {
         RemoveHudObject(fighter, HudObjectType.INTENTION_WIDGET);
@@ -152,28 +162,34 @@ public class HUD : Singleton<HUD>
         RemoveHudObject(fighter, HudObjectType.DAMAGE_INDICATOR);
     }
 
-    public void AddHudObject(Fighter fighter, HudObjectType hudObjectType, GameObject hudObject)
+    public void AddHudObject(IHaveHUD hudOwner, HudObjectType hudObjectType, GameObject hudObject)
     {
-        if (m_hudObjects.ContainsKey(fighter))
+        if (m_hudObjects.ContainsKey(hudOwner))
         {
-            m_hudObjects[fighter].Add(hudObjectType, hudObject);
+            m_hudObjects[hudOwner].Add(hudObjectType, hudObject);
         }
         else
         {
-            m_hudObjects.Add(fighter, new Dictionary<HudObjectType, GameObject>(){ { hudObjectType, hudObject } });
+            m_hudObjects.Add(hudOwner, new Dictionary<HudObjectType, GameObject>(){ { hudObjectType, hudObject } });
         }
     }
 
-    public void RemoveHudObject(Fighter fighter, HudObjectType hudObjectType)
+    public void RemoveHudObject(IHaveHUD hudOwner, HudObjectType hudObjectType)
     {
-        if (m_hudObjects.ContainsKey(fighter))
+        if (!m_hudObjects.ContainsKey(hudOwner))
         {
-            if (m_hudObjects[fighter].ContainsKey(hudObjectType))
-            {
-                Destroy(m_hudObjects[fighter][hudObjectType]);
-            }
-            m_hudObjects[fighter].Remove(hudObjectType);
+            Debug.Log("WARNING: tried to remove hud of non existent fighter");
+            return;
         }
+        
+        if (!m_hudObjects[hudOwner].ContainsKey(hudObjectType))
+        {
+            Debug.Log($"WARNING: hudOwner did not have hud of type: {hudObjectType.ToString()}");
+            return;
+        }
+        
+        Destroy(m_hudObjects[hudOwner][hudObjectType]);
+        m_hudObjects[hudOwner].Remove(hudObjectType);
     }
 
 
@@ -233,5 +249,5 @@ public class HUD : Singleton<HUD>
         m_cardDisplayList.AddCards(m_Deck.GetCardPile(CardStorage.DISCARD_PILE));
         m_cardDisplayList.gameObject.SetActive(true);
     }
-    
+
 }

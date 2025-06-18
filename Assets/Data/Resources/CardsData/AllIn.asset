@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad6bb4b2f4d44cfc950e51789500515, type: 3}
   m_Name: AllIn
   m_EditorClassIdentifier: 
-  Name: All In!
+  Name: All In
   Rarity: 0
   Type: 0
   CardPack: 0
   Image: {fileID: 0}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Hit {0}, if you dont have a {1} stance in your hand hit {2}
     targetingType: 1
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Hit {0}, if you dont have a {1} stance in your hand hit {2}
     targetingType: 1

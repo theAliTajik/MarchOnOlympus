@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 3
   normalDataSet:
-    newEnergyCost:
-      m_value: 0
     energyCost: 0
     description: If your deck has no {0} stance cards, each attack restores {1} this
       turn
@@ -29,8 +27,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 0
     energyCost: 0
     description: 
     targetingType: 0

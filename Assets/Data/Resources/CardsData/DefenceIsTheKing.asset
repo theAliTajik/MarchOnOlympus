@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: Perish, All block cards recieve "Deal {0} Damage to Random Enemy"
       this combat
@@ -29,8 +27,6 @@ MonoBehaviour:
     doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 3
     energyCost: 3
     description: 
     targetingType: 0

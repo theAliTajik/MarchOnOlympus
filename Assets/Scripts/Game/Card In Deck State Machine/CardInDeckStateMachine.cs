@@ -48,7 +48,7 @@ public class CardInDeckStateMachine
     public void Configure(BaseCardData cardData)
     {
         m_cardData = cardData;
-        m_cardDataId = cardData.Name.Replace(" ", "");
+        m_cardDataId = CardsDb.Instance.GetID(cardData);
         m_normalState.Configure(this);
         m_stanceState.Configure(this);
         

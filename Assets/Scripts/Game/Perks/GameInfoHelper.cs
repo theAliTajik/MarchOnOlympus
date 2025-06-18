@@ -23,6 +23,11 @@ public static class GameInfoHelper
     }
     
     
+    public static string GetCurrentDeckID()
+    {
+        return GameSessionParams.DeckTemplateClientId;
+    }
+    
     // ### Cards
     public static class CardsData
     {

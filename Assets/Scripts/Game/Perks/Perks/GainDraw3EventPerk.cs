@@ -1,8 +1,5 @@
 using System;
-using Game;
 using Game.ModifiableParam;
-using UnityEditorInternal;
-using UnityEngine;
 
 public class GainDraw3EventPerk : BasePerk
 {

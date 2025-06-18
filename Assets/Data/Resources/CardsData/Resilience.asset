@@ -19,8 +19,6 @@ MonoBehaviour:
   Image: {fileID: 0}
   MStance: 1
   normalDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Recieve only damage this turn (no debuffs)
     targetingType: 0
@@ -28,8 +26,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    newEnergyCost:
-      m_value: 2
     energyCost: 2
     description: Reflect the effect which would be put on you
     targetingType: 0
