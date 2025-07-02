@@ -17,7 +17,7 @@ public class ModifiableCardDataSet
 
     public ModifiableCardDataSet(BaseCardDataSet baseCardDataSet, string desc)
     {
-        EnergyCost = baseCardDataSet.EnergyCost;
+        EnergyCost = baseCardDataSet.energyCost;
         Description = desc;
         TargetingType = baseCardDataSet.targetingType;
         ActionType.AddRange(baseCardDataSet.actionType);

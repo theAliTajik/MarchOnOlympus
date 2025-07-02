@@ -29,14 +29,9 @@ public class ArcherWave : BaseEnemy
     {
         base.Awake();
 
-        ConfigFighterHP();
+        SetMoves(m_movesDatas);
         
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
-
+        ConfigFighterHP();
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -67,13 +62,16 @@ public class ArcherWave : BaseEnemy
             m_remainigTurnsCountDown = m_data.Move1NumOfTurns;
         }
 
-        if (m_nextMove.clientID == "hit")
+        if (m_remainigTurnsCountDown > 0)
         {
-            ShowIntention();
-            return;
+            m_nextMove = m_moves[0];
+        }
+
+        if (m_remainigTurnsCountDown == 0)
+        {
+            m_nextMove = m_moves[1];
         }
         
-        RandomIntentionPicker(m_moves);
         ShowIntention();
     }
 

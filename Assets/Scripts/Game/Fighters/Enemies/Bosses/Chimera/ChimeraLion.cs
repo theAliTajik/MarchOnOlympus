@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class ChimeraLion : IChimeraHead, IHaveIntention
@@ -10,27 +9,24 @@ public class ChimeraLion : IChimeraHead, IHaveIntention
     {
         m_mind = mind;
     }
-    
+
+    public event Action<Intention, string> OnIntentionDetermined;
     public event Action<BaseEnemy, int> OnDamaged;
-    
+
     [SerializeField] private ChimeraLionMovesData m_data;
     [SerializeField] private BaseEnemy.MoveData[] m_movesData;
-    
+
     private BaseEnemy.MoveData? m_nextMove;
 
     private int m_turnCycleCount = 0;
     private Chimera m_mind;
+
 
     public void Config(Chimera mind)
     {
         m_mind = mind;
     }
 
-    // // public override int takedamage(int damage, fighter sender, bool doesreturntosender, bool isarmorpiercing = false)
-    // {
-    //     return m_mind.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
-    // }
-    
     public void DetermineIntention()
     {
         m_turnCycleCount++;
@@ -90,6 +86,4 @@ public class ChimeraLion : IChimeraHead, IHaveIntention
                 break;
         }
     }
-
-    public event Action<Intention, string> OnIntentionDetermined;
 }

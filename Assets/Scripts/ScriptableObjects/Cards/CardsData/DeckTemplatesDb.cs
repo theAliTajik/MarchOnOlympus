@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -28,8 +29,7 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
             return;
         }
 
-        List<DeckTemplates.Deck> deckList = new List<DeckTemplates.Deck>();
-        // deckList.AddRange(allDecks);
+        List<PredefinedDeck> deckList = new List<PredefinedDeck>();
         
         int deckIndex = 0;
         for (int i = 0; i < CardsDb.Instance.AllCards.Count; i += 25)
@@ -39,25 +39,22 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
                 .Take(25)
                 .Select(cardInfo => cardInfo.CardData)
                 .ToList();
-            List<CardInDeckStateMachine> cardsInDeck = new List<CardInDeckStateMachine>();
-            foreach (BaseCardData baseCardData in cards)
+            
+            PredefinedDeck newTemplate = new PredefinedDeck()
             {
-                CardInDeckStateMachine cardInDeck = new CardInDeckStateMachine();
-                cardInDeck.Configure(baseCardData);
-                cardsInDeck.Add(cardInDeck);
-            }
-            DeckTemplates.Deck newTemplate = new DeckTemplates.Deck
-            {
-                clientID = "Deck_" + deckIndex,
-                CardsInDeck = cardsInDeck,
+                ClientId = "Deck_" + deckIndex,
+                Cards = cards,
             };
             
             deckList.Add(newTemplate);
             deckIndex++;
         }
 
-        // Convert the list back to an array after processing all cards
-        // allDecks = deckList.ToArray();
+        
+        PredefinedDecks.AddRange(deckList);
+        EditorUtility.SetDirty(this);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
 
 #endif

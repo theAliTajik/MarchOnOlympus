@@ -1,6 +1,3 @@
-#if UNITY_EDITOR
-
-
 
 using System.Collections;
 using System.Collections.Generic;
@@ -31,7 +28,3 @@ public class DevEnergySelector : MonoBehaviour
         CombatManager.Instance.Energy.SetEnergy(value);
     }
 }
-
-
-
-#endif

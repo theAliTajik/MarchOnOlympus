@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,5 +22,15 @@ public class MenuController : MonoBehaviour
     public void MapClicked()
     {
         SceneController.Instance.LoadScene(Scenes.Map);
+    }
+
+    public void DeleteDataClicked()
+    {
+        string path = Application.persistentDataPath;
+
+        if (Directory.Exists(path))
+        {
+            Directory.Delete(path, true); 
+        }
     }
 }

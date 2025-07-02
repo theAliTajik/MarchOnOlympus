@@ -25,12 +25,14 @@ public class DeckBuilderPresenter : MonoBehaviour
         m_view.OnDeckAdded += OnDeckAddClicked;
         m_view.OnDeckRemoved += OnDeckRemoveClicked;
         m_view.OnDeckDuplicated += OnDeckDuplicateClicked;
+        m_view.OnLoadDecks += OnLoadDecksClicked;
         
 
         m_view.DisplayAllCards(CardsDb.Instance.AllCards
             .Where(card => card.IsImplemented)
             .Select(card => card.CardData).ToList());
     }
+
 
     private void OnDestroy()
     {
@@ -92,6 +94,11 @@ public class DeckBuilderPresenter : MonoBehaviour
         }
     }
 
+    private void OnLoadDecksClicked()
+    {
+        DeckTemplates.LoadPredefinedDecks();
+    }
+    
     private void OnDeckDuplicateClicked(string deckId, string duplicateId, int index)
     {
         bool success = DeckTemplates.AddDeck(duplicateId, index);

@@ -110,7 +110,7 @@ public class Assassin_A : BaseEnemy
                     yield return WaitForAnimation(ANIM_05_ATTACK);
                     GameActionHelper.DamageFighter(player, this, m_data.Move2Damage);
                 }
-				finishCallback?.Invoke();
+                finishCallback?.Invoke();
 				break;
         }
 

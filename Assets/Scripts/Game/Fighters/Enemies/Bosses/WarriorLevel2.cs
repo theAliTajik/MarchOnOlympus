@@ -104,15 +104,18 @@ public class WarriorLevel2 : BaseEnemy
         {
             case "Taunt":
                 m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
-                yield return new WaitForSeconds(1f);
                 Taunt(true);
 				break;
             case "Hit":
                 m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
 				yield return new WaitForSeconds(1f);
                 int damage = m_data.Move2Damage;
-                int numOfAlliesAlive = GetAllEnemiesExcludingSelf().Count;
+                List<BaseEnemy> enemies = GetAllEnemiesExcludingSelf();
+                
+                // remove archer wave
+                enemies.RemoveAll(e => e is ArcherWave);
 
+                int numOfAlliesAlive = enemies.Count;
                 numOfAlliesAlive = Mathf.Min(numOfAlliesAlive, m_data.Move2MaxNumOfAllies);
                 damage -= numOfAlliesAlive * m_data.Move2AllyDamageMultiplier;
                 GameActionHelper.DamageFighter(GameInfoHelper.GetPlayer(), this, damage);

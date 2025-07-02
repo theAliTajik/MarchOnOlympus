@@ -19,6 +19,14 @@ public class ClickableList : MonoBehaviour
         item.Config(clientId, text, image, OnItemClicked);
     }
 
+    public virtual void Clear()
+    {
+        foreach (Transform child in m_itemsParent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+    
     protected virtual void OnItemClicked(string clientId)
     {
         ItemClicked?.Invoke(clientId);

@@ -80,7 +80,7 @@ public class Archer2 : BaseEnemy
     {
         base.ExecuteAction(finishCallback);
 
-        Debug.Log("this action is played: " + m_nextMove.clientID);
+        // Debug.Log("this action is played: " + m_nextMove.clientID);
         StartCoroutine(WaitAndExecute(finishCallback));
     }
     
@@ -94,7 +94,6 @@ public class Archer2 : BaseEnemy
             yield break;
         }
 
-        Debug.Log("animation started");
         switch (m_nextMove.clientID)
         {
             case "Thorns":
@@ -104,13 +103,12 @@ public class Archer2 : BaseEnemy
                 else Debug.Log(gameObject.name + ": WarriorLevel2 Not Exist", gameObject);
                 break;
             case "Hit":
-                yield return WaitForAnimation(ANIM_05_SHOOT);
+                yield return WaitForAnimation(ANIM_05_SHOOT, finishCallback);
                 Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move2Damage);
                 break;
         }
 
-        Debug.Log("animation actualy finished");
         yield return null;
     }
     

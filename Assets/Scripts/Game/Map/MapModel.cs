@@ -13,7 +13,7 @@ public class MapModel : MonoBehaviour
     public MapLinkedList Map => m_map;
 
     private const string m_savePath = "/Map/Map.txt";
-    private const int m_numOfLoops = 3;
+    private const int m_numOfLoops = 4;
 
     private void Start()
     {
@@ -45,8 +45,7 @@ public class MapModel : MonoBehaviour
         }
     }
 
-    private bool generateAdvanced = true;
-    private MapNode GenerateOneMapLoop(MapNode startNode)
+    private MapNode GenerateOneMapLoop(MapNode startNode, bool generateAdvancedShop = false)
     {
         CombatMapNode combatMapNode = new CombatMapNode(startNode.ID + 1);
         EventMapNode eventMapNode = new EventMapNode(startNode.ID + 2);
@@ -54,8 +53,7 @@ public class MapModel : MonoBehaviour
         startNode.AddChild(combatMapNode);
         combatMapNode.AddChild(eventMapNode);
         
-        generateAdvanced = !generateAdvanced;
-        if (generateAdvanced)
+        if (generateAdvancedShop)
         {
             AdvancedShopMapNode advancedShopMapNode = new AdvancedShopMapNode(startNode.ID + 3);
             eventMapNode.AddChild(advancedShopMapNode);
@@ -68,7 +66,7 @@ public class MapModel : MonoBehaviour
     }
     
     
-    private MapNode GenerateCombatWaveMapLoop(MapNode startNode)
+    private MapNode GenerateCombatWaveMapLoop(MapNode startNode, bool generateAdvancedShop = true)
     {
         CombatWaveMapNode combatMapNode = new CombatWaveMapNode(startNode.ID + 1);
         EventMapNode eventMapNode = new EventMapNode(startNode.ID + 2);
@@ -76,8 +74,7 @@ public class MapModel : MonoBehaviour
         startNode.AddChild(combatMapNode);
         combatMapNode.AddChild(eventMapNode);
         
-        generateAdvanced = !generateAdvanced;
-        if (generateAdvanced)
+        if (generateAdvancedShop)
         {
             AdvancedShopMapNode advancedShopMapNode = new AdvancedShopMapNode(startNode.ID + 3);
             eventMapNode.AddChild(advancedShopMapNode);

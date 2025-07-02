@@ -27,11 +27,7 @@ public class Assassin_C : BaseEnemy
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
         
         ConfigFighterHP();
 
@@ -68,10 +64,10 @@ public class Assassin_C : BaseEnemy
         base.ShowIntention();
         switch (m_nextMove.clientID)
         {
-            case "Vulnerable":
-                CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description); //No Vulnerable
+            case "Thorns":
+                CallOnIntentionDetermined(Intention.BUFF, m_nextMove.description); //No Vulnerable
 				break;
-            case "HitRestore":
+            case "HitBlock":
                 CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description); //About Restore?
 				break;
         }
@@ -96,18 +92,18 @@ public class Assassin_C : BaseEnemy
         }
         switch (m_nextMove.clientID)
         {
-            case "Vulnerable":
+            case "Thorns":
                 m_animation.Play(ANIM_05_ATTACK, finishCallback);
 				List<Fighter> enemies = GameInfoHelper.GetAllEnemies();
                 foreach (Fighter i in enemies)
 					GameActionHelper.AddMechanicToFighter(i, m_data.Move1Thorns, MechanicType.THORNS);
+                
 				break;
-            case "HitRestore":
+            case "HitBlock":
                 m_animation.Play(ANIM_05_ATTACK, finishCallback);
 				Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move2Damage);
                 GameActionHelper.AddMechanicToFighter(this, m_data.Move2Block, MechanicType.BLOCK);
-				finishCallback?.Invoke();
                 break;
         }
 

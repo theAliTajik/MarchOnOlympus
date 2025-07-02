@@ -13,6 +13,7 @@ public class TestDeckTemplateSelect : MonoBehaviour
     [SerializeField] private ClickableList m_list;
     [SerializeField] private TMP_Text m_deckTemplateText;
 
+    private List<string> m_decks = new List<string>();
     private bool m_isInitialized;
 
     private void Awake()
@@ -22,54 +23,58 @@ public class TestDeckTemplateSelect : MonoBehaviour
         Init();
     }
 
-
     public void Init()
     {
         if (m_isInitialized)
-        {
             return;
-        }
+
         DeckTemplates.LoadAllDecks();
-        bool firstOne = true;
-        foreach (DeckTemplates.Deck deck in DeckTemplates.Decks)
+        LoadAllDecks();
+
+        string selectedDeckId = PlayerPrefs.HasKey(DECK_SELECTED) 
+            ? PlayerPrefs.GetString(DECK_SELECTED) 
+            : null;
+
+        if (string.IsNullOrEmpty(selectedDeckId) && m_decks.Count > 0)
         {
-            m_list.AddItem(deck.clientID, deck.clientID, null);
-            if (firstOne)
-            {
-                SetSelected(deck.clientID);
-                firstOne = false;
-            }
+            selectedDeckId = m_decks[0];
         }
 
-        if (PlayerPrefs.HasKey(DECK_SELECTED))
+        if (!string.IsNullOrEmpty(selectedDeckId))
         {
-            string clientId = PlayerPrefs.GetString(DECK_SELECTED);
-            if (!string.IsNullOrEmpty(clientId))
-            {
-                SetSelected(clientId);
-            }
+            SetSelected(selectedDeckId);
         }
 
         m_list.ItemClicked += ItemClicked;
-
         m_isInitialized = true;
+    }
+
+    private void LoadAllDecks()
+    {
+        m_list.Clear();
+        foreach (DeckTemplates.Deck deck in DeckTemplates.Decks)
+        {
+            m_list.AddItem(deck.clientID, deck.clientID, null);
+            m_decks.Add(deck.clientID);
+        }
     }
 
     private void ItemClicked(string clientId)
     {
         m_list.gameObject.SetActive(false);
-        PlayerPrefs.SetString(DECK_SELECTED, clientId);
         SetSelected(clientId);
     }
 
     private void SetSelected(string clientId)
     {
+        PlayerPrefs.SetString(DECK_SELECTED, clientId);
         m_deckTemplateText.text = clientId;
         GameSessionParams.DeckTemplateClientId = clientId;
     }
 
     private void ButtonClicked()
     {
+        LoadAllDecks();
         m_list.gameObject.SetActive(true);
     }
 }

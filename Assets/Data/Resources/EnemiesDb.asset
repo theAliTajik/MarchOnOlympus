@@ -115,13 +115,17 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 6283848790141674510, guid: e08d6087961c14cf495040c05f918796, type: 3}
       Factory: 
+  - clientID: Warrior1
+    bosses:
+    - Prefab: {fileID: 6933318682100703591, guid: b7882426ee5c0b547a4cc775e4c70231, type: 3}
+      Factory: 
+  - clientID: Warrior2
+    bosses:
+    - Prefab: {fileID: 5698642075706088080, guid: d9f5904325cc27548bbdefb09b7c9b24, type: 3}
+      Factory: 
   - clientID: Archer1
     bosses:
     - Prefab: {fileID: 4100661280340990023, guid: 59b87c36859e39e47accc89e96c7fb53, type: 3}
-      Factory: 
-  - clientID: Archer2
-    bosses:
-    - Prefab: {fileID: 3219014423859083501, guid: 64d688d49130ecf4e910d345ac33982f, type: 3}
       Factory: 
   - clientID: Assassin_A
     bosses:
@@ -135,23 +139,74 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 7485899804033241738, guid: 4dddb6a15aaa9de47a1cf186d2894017, type: 3}
       Factory: 
-  - clientID: Warrior1
-    bosses:
-    - Prefab: {fileID: 6933318682100703591, guid: b7882426ee5c0b547a4cc775e4c70231, type: 3}
-      Factory: 
-  - clientID: Warrior2
-    bosses:
-    - Prefab: {fileID: 5698642075706088080, guid: d9f5904325cc27548bbdefb09b7c9b24, type: 3}
-      Factory: 
   - clientID: WarriorLevel2
     bosses:
     - Prefab: {fileID: 647305255771967818, guid: 03ca93cfe1f78f345b716fbdde5ebf2f, type: 3}
+      Factory: 
+  - clientID: Archer2
+    bosses:
+    - Prefab: {fileID: 3219014423859083501, guid: 64d688d49130ecf4e910d345ac33982f, type: 3}
       Factory: 
   - clientID: Priest
     bosses:
     - Prefab: {fileID: 9111556972283175391, guid: 4e91ac975f17f8f4c8abcf6a489c5146, type: 3}
       Factory: 
-  - clientID: Chimera
+  PlayableEnemies:
+  - clientID: Ajax
     bosses:
-    - Prefab: {fileID: 8391349627649040841, guid: a9d3b258f3e014d4588395a411bbe37b, type: 3}
-      Factory: Chimera
+    - Prefab: {fileID: 7435012441752274053, guid: 3a4ce9f4f4710df47a18786c9c2415e0, type: 3}
+      Factory: 
+  - clientID: WeaponsMaster
+    bosses:
+    - Prefab: {fileID: 1602722980804940878, guid: 563d0eeb85ef149fcb66390810644914, type: 3}
+      Factory: 
+  - clientID: Diomedes&Archer
+    bosses:
+    - Prefab: {fileID: 3021905948194845025, guid: f3193eba67c314522ba5cc900da1b9a6, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6394598590285146880, guid: a5bafe8f2f99c4615a367303e55476c2, type: 3}
+      Factory: 
+  - clientID: DiomedesLevel2
+    bosses:
+    - Prefab: {fileID: 6410856973492131912, guid: 24b59721553a74eadaed5e2acc070871, type: 3}
+      Factory: 
+  - clientID: Assassin
+    bosses:
+    - Prefab: {fileID: 2136260072648656707, guid: 7c94573a1ee6243bfb6c81302dd46ef3, type: 3}
+      Factory: 
+  - clientID: DaggerMaster
+    bosses:
+    - Prefab: {fileID: 5206618030830488305, guid: 43ce55b5c3bd343389143b42fd0d27c5, type: 3}
+      Factory: 
+  - clientID: BeastMaster
+    bosses:
+    - Prefab: {fileID: 4544466601808064709, guid: 330ab1f92467e49db93654f2b842257b, type: 3}
+      Factory: 
+  - clientID: Hector&Paris
+    bosses:
+    - Prefab: {fileID: 4990843099871153840, guid: 8b9886092ed5940e193bc1713cb0a8d9, type: 3}
+      Factory: 
+    - Prefab: {fileID: 6155499130491812502, guid: 0d6b59ca67a5d4797a037cdce88ade72, type: 3}
+      Factory: 
+  - clientID: 3Cannibals
+    bosses:
+    - Prefab: {fileID: 8934569720885734989, guid: 71e76834668f040bf996891c086fb0fa, type: 3}
+      Factory: 
+    - Prefab: {fileID: 8934569720885734989, guid: 71e76834668f040bf996891c086fb0fa, type: 3}
+      Factory: 
+    - Prefab: {fileID: 8934569720885734989, guid: 71e76834668f040bf996891c086fb0fa, type: 3}
+      Factory: 
+  - clientID: TrojanGeneral
+    bosses:
+    - Prefab: {fileID: 2693138379110094841, guid: 3d3953460e1c34653bbabd9e90a3dbbf, type: 3}
+      Factory: TrojanGeneral
+    - Prefab: {fileID: 2779489260938786069, guid: 70afe86e61c7544c090a6efa2939f524, type: 3}
+      Factory: 
+    - Prefab: {fileID: 7787332252885303513, guid: b24e60fc1ee6d4f7eb2fb2f12ece2e81, type: 3}
+      Factory: 
+    - Prefab: {fileID: -2812004488212880521, guid: a62b6b231ae564b6b9bb6b9a2d74f4bb, type: 3}
+      Factory: 
+  - clientID: SoulMaster
+    bosses:
+    - Prefab: {fileID: -124724260323325013, guid: f664c22a388694c229410c2653fa7aca, type: 3}
+      Factory: 

@@ -80,7 +80,7 @@ public class Archer1 : BaseEnemy
     {
         base.ExecuteAction(finishCallback);
 
-        Debug.Log("this action is played: " + m_nextMove.clientID);
+        // Debug.Log("this action is played: " + m_nextMove.clientID);
         StartCoroutine(WaitAndExecute(finishCallback));
     }
     
@@ -94,7 +94,6 @@ public class Archer1 : BaseEnemy
             yield break;
         }
 
-        Debug.Log("animation started");
         switch (m_nextMove.clientID)
         {
             case "Hit":
@@ -113,7 +112,6 @@ public class Archer1 : BaseEnemy
 				break;
         }
 
-        Debug.Log("animation actualy finished");
         yield return null;
     }
     

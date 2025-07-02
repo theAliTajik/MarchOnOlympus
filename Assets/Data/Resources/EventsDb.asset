@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: EventsDb
   m_EditorClassIdentifier: 
   EventInfos:
-  - EventId: DemoEvent
-    DialogueNode: {fileID: 11400000, guid: b47ef4c8ed80b4cbf9576d9dccef195e, type: 2}
   - EventId: ASilentDay
     DialogueNode: {fileID: 11400000, guid: e2526500bc83848ebb38b46d2d9dc165, type: 2}
   - EventId: JustAPeek

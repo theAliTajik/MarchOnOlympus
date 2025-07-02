@@ -11,7 +11,7 @@ public class BackstabCard : BaseCardData
     
     protected override Type GetActionType()
     {
-        stanceDataSet.EnergyCost = NormalCost;
+        stanceDataSet.energyCost = NormalCost;
         return typeof(BackstabCardAction);
     }
     

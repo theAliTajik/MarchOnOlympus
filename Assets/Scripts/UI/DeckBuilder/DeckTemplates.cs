@@ -30,20 +30,6 @@ public static class DeckTemplates
             Debug.Log("null predefined deck templates");
         }
         
-        foreach (DeckTemplatesDb.PredefinedDeck predefinedDeck in DeckTemplatesDb.Instance.PredefinedDecks)
-        {
-            Deck newDeck = new Deck();
-            newDeck.clientID = predefinedDeck.ClientId;
-            newDeck.ReadOnly = true;
-            foreach (BaseCardData cardData in predefinedDeck.Cards)
-            {
-                CardInDeckStateMachine card = new CardInDeckStateMachine();
-                card.Configure(cardData);
-                newDeck.CardsInDeck.Add(card);
-            }
-            
-            Decks.Add(newDeck);
-        }
         
         
         DeckSaveWrapper wrapper = new DeckSaveWrapper();
@@ -54,6 +40,56 @@ public static class DeckTemplates
         }
         
         UpdateDecks();
+    }
+
+    public static List<Deck> LoadPredefinedDecks()
+    {
+        List<Deck> decks = new List<Deck>();
+        
+        foreach (DeckTemplatesDb.PredefinedDeck predefinedDeck in DeckTemplatesDb.Instance.PredefinedDecks)
+        {
+            Deck newDeck = new Deck();
+            newDeck.clientID = predefinedDeck.ClientId;
+            // newDeck.ReadOnly = true;
+            foreach (BaseCardData cardData in predefinedDeck.Cards)
+            {
+                CardInDeckStateMachine card = new CardInDeckStateMachine();
+                card.Configure(cardData);
+                newDeck.CardsInDeck.Add(card);
+            }
+            
+            decks.Add(newDeck);
+        }
+
+        foreach (Deck deck in decks)
+        {
+            deck.clientID = MakeIDUnique(deck.clientID);
+            Decks.Add(deck);
+        }
+        
+        UpdateDecks();
+        Save();
+
+        return decks;
+    }
+
+    private static string MakeIDUnique(string deckName)
+    {
+        if (string.IsNullOrEmpty(deckName))
+        {
+            Debug.Log("ERROR: Null string passed as deck name");
+            return deckName;
+        }
+
+        int increment = 0;
+        while (Decks.Exists(d => d.clientID == deckName))
+        {
+            deckName = deckName.Replace(increment.ToString(), "");
+            increment++;
+            deckName += increment.ToString();
+        }
+        
+        return deckName;
     }
     
     public static Deck FindById(string clientId)
@@ -270,14 +306,6 @@ public static class DeckTemplates
     {
         DeckSaveWrapper wrapper = new DeckSaveWrapper(Decks);
         
-        for (var i = wrapper.m_decks.Count - 1; i >= 0; i--)
-        {
-            if (DeckTemplatesDb.Instance.FindById(wrapper.m_decks[i].clientID) != null)
-            {
-                wrapper.m_decks.RemoveAt(i);
-            }
-        }
-
         JsonHelper.SaveAdvanced(wrapper, Application.persistentDataPath + m_savePath); // adjust name/path as needed
     }
 
@@ -292,3 +320,4 @@ public static class DeckTemplates
     }
 
 }
+

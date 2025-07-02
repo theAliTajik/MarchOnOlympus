@@ -92,8 +92,8 @@ public class CombatMapNode : MapNode
 
     private string PickRandomBoss()
     {
-        int randomPick = UnityEngine.Random.Range(0, EnemiesDb.Instance.allEnemies.Length);
-        string bosscClientID = EnemiesDb.Instance.allEnemies[randomPick].clientID;
+        int randomPick = UnityEngine.Random.Range(0, EnemiesDb.Instance.PlayableEnemies.Length);
+        string bosscClientID = EnemiesDb.Instance.PlayableEnemies[randomPick].clientID;
         return bosscClientID;
     }
 

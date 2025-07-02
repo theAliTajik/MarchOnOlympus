@@ -97,7 +97,7 @@ public class Assassin_B : BaseEnemy
         {
             case "Vulnerable":
                 m_animation.Play(ANIM_05_ATTACK, finishCallback);
-                GameActionHelper.AddMechanicToFighter(this, m_data.Move1Vulnerable, MechanicType.VULNERABLE);
+                GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Vulnerable, MechanicType.VULNERABLE);
                 break;
             case "HitRestore":
                 m_animation.Play(ANIM_05_ATTACK, finishCallback);

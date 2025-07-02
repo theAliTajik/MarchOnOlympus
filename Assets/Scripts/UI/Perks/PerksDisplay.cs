@@ -77,7 +77,7 @@ public class PerksDisplay : MonoBehaviour
 
     private void OnRemovePerkClicked(PerksWidget perk)
     {
-        PerksManager.Instance.RemovePerk(perk.ClientID);
+        PerksManager.Instance.OnRemovePerkClicked(perk.ClientID);
         RemovePerk(perk);
     }
     

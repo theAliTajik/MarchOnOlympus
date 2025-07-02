@@ -50,16 +50,14 @@ public class BaseCardData : ScriptableObject, ICloneable
     [ContextMenu("add to dev testing")]
     public void AddToDevTest()
     {
-        DeckTemplates.Deck devtemplate = DeckTemplatesDb.Instance.FindById("Dev Testing");
+        DeckTemplates.Deck devtemplate = DeckTemplates.FindById("Dev Testing");
         if (devtemplate != null)
         {
             devtemplate.CardsInDeck.RemoveAt(0);
             CardInDeckStateMachine cardInDeck = new CardInDeckStateMachine();
             cardInDeck.Configure(this);
             devtemplate.CardsInDeck.Insert(0, cardInDeck);
-            EditorUtility.SetDirty(DeckTemplatesDb.Instance);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            DeckTemplates.Save();
             Debug.Log("added card: " + Name + "to dev testing");
         }
         else
@@ -132,7 +130,7 @@ public class BaseCardData : ScriptableObject, ICloneable
 [Serializable]
 public class BaseCardDataSet
 {
-    public int EnergyCost; 
+    public int energyCost; 
     public string description;
     public TargetType targetingType;
     public List<CardActionType> actionType;
@@ -143,7 +141,7 @@ public class BaseCardDataSet
     {
         return new BaseCardDataSet
         {
-            EnergyCost = this.EnergyCost,
+            energyCost = this.energyCost,
             description = this.description,
             targetingType = this.targetingType,
             doesPerish = this.doesPerish,

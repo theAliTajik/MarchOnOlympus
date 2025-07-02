@@ -180,7 +180,7 @@ public class PerksManager : Singleton<PerksManager>
         perks.Sort((a, b) => a.GetPriority().CompareTo(b.GetPriority())); // Ascending order
     }
 
-    public void RemovePerk(BasePerk perk)
+    public void RemovePerk(BasePerk perk, bool removeDisplay = true)
     {
         perk.OnRemove();
         EGamePhase[] phases = perk.GetPhases();
@@ -191,20 +191,34 @@ public class PerksManager : Singleton<PerksManager>
                 m_phasePerks[phase].Remove(perk);
             }
         }
-     
+
         
         string perkID = perk.GetType().Name.Replace("Perk", "");
         Debug.Log("perk id to remove: " + perkID);
         m_perkIds.Remove(perkID);
         Debug.Log("removed: " + perkID + " List of perks: " + m_perkIds);
+        
+        if (removeDisplay)
+        {
+            OnPerkRemoved?.Invoke(perkID);
+        }
+        
         SavePerksToJson();
     }
+    
     public void RemovePerk(string perkClientID)
     {
         BasePerk perkToRemove = FindPerkByClientID(perkClientID);
         RemovePerk(perkToRemove);
     }
+    
 
+    public void OnRemovePerkClicked(string perkClientID)
+    {
+        BasePerk perkToRemove = FindPerkByClientID(perkClientID);
+        RemovePerk(perkToRemove, false);
+    }
+    
     private BasePerk FindPerkByClientID(string perkClientID)
     {
         string perkName = string.Empty;
@@ -234,8 +248,14 @@ public class PerksManager : Singleton<PerksManager>
         Debug.Log("did not find perk by client Id");
         return null;
     }
-    
-    
+
+    public void RemoveAllPerks()
+    {
+        foreach (BasePerk bPerk in m_perks)
+        {
+            RemovePerk(bPerk);
+        }
+    }
     
     private void SavePerksToJson()
     {
@@ -256,4 +276,5 @@ public class PerksManager : Singleton<PerksManager>
             Debug.Log(perk);
         }
     }
+
 }

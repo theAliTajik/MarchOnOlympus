@@ -22,10 +22,10 @@ public class EventPresenter : MonoBehaviour
         else
         {
             testNode = EventsDb.Instance.FindByID(GameSessionParams.EventId);
-            Debug.Log("found by id");
+            Debug.Log($"found by id: {GameSessionParams.EventId}");
         }
         
-        testNode = EventsDb.Instance.EventInfos[6].DialogueNode;
+        // testNode = EventsDb.Instance.EventInfos[6].DialogueNode;
         m_eventView.DisplayDialogue(testNode);
         m_eventView.OnEventChoiceClicked += OnEventChoiceClicked;
         GameplayEvents.ShowCardsByData += m_cardDisplayList.ShowCards;

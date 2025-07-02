@@ -24,6 +24,8 @@ public class EnemiesDb : GenericData<EnemiesDb>
 
     [FormerlySerializedAs("allNewEnemies")] public EnemyInfo[] allEnemies;
     
+    public EnemyInfo[] PlayableEnemies;
+    
 #if UNITY_EDITOR
     [ContextMenu("Generate Boss Info")]
     private void GenerateBossInfo()

@@ -13,6 +13,8 @@ public class DeckBuilderView : MonoBehaviour
     public Action<string, int> OnDeckAdded;
     public Action<string, string, int > OnDeckDuplicated; // params: original name, duplicate name, index
     public Action<string> OnDeckRemoved;
+
+    public event Action OnLoadDecks;
     
     public Action<string, int> OnCardAddedToDeck;
     public Action<int> OnCardRemovedFromDeck;
@@ -230,6 +232,11 @@ public class DeckBuilderView : MonoBehaviour
     {
         deckItem.OnRemoveClicked -= RemoveCardFromDeck;
         deckItem.OnDuplicateClicked -= DuplicateCardFromDeck;
+    }
+
+    public void OnLoadDecksButtonClicked()
+    {
+        OnLoadDecks?.Invoke();
     }
 
     public void OnCreateDeckMenuClicked()

@@ -52,7 +52,7 @@ public class BackstabCardAction : BaseCardAction
         }
         else
         {
-            m_card.stanceDataSet.EnergyCost = m_card.NormalCost;
+            m_card.stanceDataSet.energyCost = m_card.NormalCost;
             m_cardDisplay.RefreshUI();
         }
         
