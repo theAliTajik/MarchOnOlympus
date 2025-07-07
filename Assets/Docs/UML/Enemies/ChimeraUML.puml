@@ -1,0 +1,68 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class ChimeraHead {
+
+- m_colliderMatcher : ColliderMatcher <<serializable>>
+
+- m_movesData : BaseEnemy.MoveData[]
+- m_intentionDeterminer : IDetermineIntention
+- m_stun : IChimeraHeadStunBehaviour
+- m_taunt : ITauntBehaviour
+- m_mind : Chimera
+
+
++ Config()
++ TakeDamage()
++ EnemyTurnOver()
++ DetermineIntention()
++ ShowIntention()
++ ExecuteIntention() 
++ ReceiveTaunt()
+}
+
+interface ITauntBehaviour {
++ ReceiveTaunt(collider: Collider2D)
+}
+
+class NormalTaunt
+class NoTaunt
+
+NormalTaunt --|> ITauntBehaviour
+NoTaunt --|> ITauntBehaviour
+
+interface IDetermineIntention{
++ DetermineIntention()
+}
+
+class CyclicIntentionDeterminer
+CyclicIntentionDeterminer --|> IDetermineIntention
+
+interface IChimeraHeadStunBehaviour{
++ IsStuned(damage: int) : bool
+}
+
+class NormalStun
+NormalStun --|> IChimeraHeadStunBehaviour
+
+class ColliderMatcher{
+- m_collider: Collider2D <<serializable>>
+
++ IsMyCollider() : bool
+}
+
+
+ChimeraHead ..> ITauntBehaviour : Has-A >
+ChimeraHead ..> IDetermineIntention : Has-A >
+ChimeraHead ..> IChimeraHeadStunBehaviour : Has-A >
+ChimeraHead ..> ColliderMatcher : Has-A >
+
+class ChimeraLion 
+class ChimeraGoat 
+class ChimeraSerpent 
+
+ChimeraLion --|> ChimeraHead
+ChimeraGoat --|> ChimeraHead
+ChimeraSerpent --|> ChimeraHead
+
+@enduml

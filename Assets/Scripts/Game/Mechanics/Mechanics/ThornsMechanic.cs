@@ -15,8 +15,6 @@ public class ThornsMechanic : BaseMechanic
     {
         m_stack = stack;    
         m_fighter = fighter;
-        m_hasGuard = hasGuard;
-        m_guardMin = guardMin;
     }
     
     public override MechanicType GetMechanicType()

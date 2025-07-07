@@ -10,8 +10,6 @@ public class DazeMechanic : BaseMechanic
     {
         m_fighter = fighter;
         m_stack = stack;
-        m_hasGuard = hasGuard;  
-        m_guardMin = guardMin;
     }
     
     public override MechanicType GetMechanicType()

@@ -1,0 +1,46 @@
+@startuml
+class BaseMechanic{
++ OnChange: Action<MechanicType>
++ OnEnd: Action<MechanicType>
+
+# m_stack: int
+# m_fighter: Fighter
+# m_hasGuard: bool
+# m_guardMin: bool
+}
+
+
+class ExplodeMechanic{
+- Explode(Fighter)
+}
+class ThornsMechanic{
+- ReturnDamage(Fighter)
+}
+class BleedMechanic{
++ TryReduceStack(Fighter)
+}
+class StunMechanic{
++ StunEnemyOnCreation(BaseEnemy)
+}
+
+ExplodeMechanic --|> BaseMechanic
+ThornsMechanic --|> BaseMechanic
+BleedMechanic --|> BaseMechanic
+StunMechanic --|> BaseMechanic
+
+class MechanicsManager{
+- m_allMechanics: Dict<Fighter, MechanicList>
+
+
++ GetMechanicsList(Fighter): MechanicList 
++ GetMechanic(Fighter, MechanicType): BaseMechanic 
+
++ int GetMechanicsStack(Fighter fighter, MechanicType mechanicType)
++ Contains(Fighter, MechanicType): bool 
++ AnyEnemyContainsAny(List<MechanicType>): bool 
++ GetMechanicsCount(Fighter, MechanicCategory): int 
++ CreateMechanicsList(Fighter): void 
++ RemoveMechanicsList(Fighter): void 
++ AddMechanic(BaseMechanic, Fighter): void 
+}
+@enduml

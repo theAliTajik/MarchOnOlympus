@@ -159,5 +159,12 @@ public class GameplayEvents
     {
         RewardedCardSelected?.Invoke(cardData);
     }
+    
+    public static event System.Action<Collider2D> ColliderSelected;
+
+    public static void SendColliderSelected(Collider2D collider)
+    {
+        ColliderSelected?.Invoke(collider);
+    }
 
 }

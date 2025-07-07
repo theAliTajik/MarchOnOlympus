@@ -21,15 +21,21 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
             return;
         }
 
-        IHaveIntention lion = mind.Lion;
-        IHaveIntention serpent = mind.Serpent;
-        IHaveIntention goat = mind.Goat;
         
         SetupMind(mind, position, rotation);
-        SetupHead(mind, lion, mind.LionPosition.position);
-        SetupHead(mind, serpent, mind.SerpentPosition.position);
-        SetupHead(mind, goat, mind.GoatPosition.position);
 
+        foreach (var headPair in mind.HeadPositions)
+        {
+            IHaveIntention headIntention = mind.Heads.Find(x => x.GetType() == headPair.Key);
+
+            if (headIntention == null)
+            {
+                Debug.Log("ERROR: did not find chimera head in list of heads");
+                continue;
+            }
+            
+            SetupHead(headIntention, headPair.Value.position);
+        }
     }
     
     private void SetupMind(BaseEnemy enemy, Vector3? position = null, Quaternion? rotation = null)
@@ -54,14 +60,8 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
         EnemiesManager.Instance.AddEnemey(enemy);
     }
 
-    private void SetupHead(BaseEnemy mind, IHaveIntention headIntention, Vector3 position)
+    private void SetupHead(IHaveIntention headIntention, Vector3 position)
     {
-        if (mind == null)
-        {
-            Debug.Log("null mind sent to setup");
-            return;
-        }
-        
         if (headIntention == null)
         {
             Debug.Log("null head sent to setup");

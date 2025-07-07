@@ -29,7 +29,7 @@ public class ModifiableParam<T>
         get { return m_value; }
     }
 
-    [JsonProperty] private T m_value;
+    [SerializeField] [JsonProperty] private T m_value;
     [JsonProperty] private List<IParamModifier<T>> m_modifiers = new List<IParamModifier<T>>();
 
     private T GetValue()

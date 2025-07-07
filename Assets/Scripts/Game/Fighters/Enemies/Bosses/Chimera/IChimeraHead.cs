@@ -1,11 +1,11 @@
 using System;
+using UnityEngine;
 
 public interface IChimeraHead
 {
-    public event Action<BaseEnemy, int> OnDamaged;
-
     public void DetermineIntention();
     public void ExecuteIntention(Action finishCallBack);
+    public void TakeDamage(int damage);
 }
 
 public interface IChimeraHeadStun

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ChimeraLionMovesData
   m_EditorClassIdentifier: 
   Move1Damage: 10
+  DamageThresholdForStun: 10

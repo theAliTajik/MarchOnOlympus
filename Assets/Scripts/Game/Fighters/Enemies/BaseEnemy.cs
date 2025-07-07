@@ -18,6 +18,14 @@ public abstract class BaseEnemy : Fighter
         public int chance;
         public float[] probabilities;
 
+        public MoveData(string clientID)
+        {
+            this.clientID = clientID;
+            description = null;
+            chance = 0;
+            probabilities = new float[] { };
+        }
+        
         public MoveData(string clientID, string description1, int chance = 10, float[] probabilities = null)
         {
             this.clientID = clientID;
