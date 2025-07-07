@@ -158,13 +158,14 @@ public abstract class BaseEnemy : Fighter
             Debug.Log("WARNING: empty moves passed set for enemy");
             return;
         }
-        
-        for (int i = 0; i < moves.Length; i++)
+
+        m_moves = new WeightedList<MoveData>();
+
+		for (int i = 0; i < moves.Length; i++)
         {
             MoveData md = moves[i];
             m_moves.Add(md, md.chance);
         } 
-        
     }
 }
 

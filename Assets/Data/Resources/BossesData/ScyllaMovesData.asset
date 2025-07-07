@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454f43a595234394287f1d6f7545563b, type: 3}
+  m_Name: ScyllaMovesData
+  m_EditorClassIdentifier: 
+  HP: 200
+  Move1Damage: 3
+  Move1NumOfAttacks: 3
+  Move2Block: 3
+  Move2NumOfBlocks: 3
+  Move3Restore: 25
+  Move3Damage: 15
+  Phase1HPPercentageTrigger:
+    Percentage: 66
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  Phase2HPPercentageTrigger:
+    Percentage: 33
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
