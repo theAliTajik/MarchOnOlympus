@@ -14,8 +14,8 @@ public class IntWithGuard
         m_stack = value;
     }
     
-    public event Action OnChange;
-    public event Action OnZero;
+    public Action OnChange;
+    public Action OnZero;
     
     private int m_stack;
     
@@ -73,9 +73,9 @@ public class IntWithGuard
     {
         return value.Amount;
     }
-    
-    public static implicit operator IntWithGuard(int value)
+
+    public void SetValue(int value)
     {
-        return new IntWithGuard(value);
+        m_stack = value;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using Game;
 
 [RequireComponent(typeof(FighterHP))]
-public abstract class Fighter : MonoBehaviour, IHaveHUD
+public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMechanics
 {
 
     public class DamageContext
@@ -13,26 +13,32 @@ public abstract class Fighter : MonoBehaviour, IHaveHUD
         public int OriginalDamage;
         public int ModifiedDamage;
         
-        public Fighter Sender;
-        public Fighter Target;
+        public IHaveMechanics Sender;
+        public IHaveMechanics Target;
 
         public bool DoesReturnToSender;
         public bool IsArmorPiercing;
     }
     
     public event Action<Fighter> Death;
+    public event Action<int> OnDamage;
+    
     [SerializeField] protected FighterHP m_fighterHP;
     [SerializeField] protected Transform m_head;
     [SerializeField] protected Transform m_root;
 
+    protected IDamageable m_damageable;
     private MechanicsList m_mechanicsList;
 
     public FighterHP HP => m_fighterHP;
-    
+
+
     protected virtual void Awake()
     {
         m_fighterHP.Death += OnDeath;
         m_fighterHP.OnTookDamage += OnTookDamage;
+        m_damageable = new StandardDamageBehaviour(this);
+        m_damageable.OnDamage += m_fighterHP.TakeDamage;
     }
 
     protected virtual void OnTookDamage(int damage, bool isCritical)
@@ -52,38 +58,7 @@ public abstract class Fighter : MonoBehaviour, IHaveHUD
 
     public virtual int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
     {
-        if (damage < 0)
-        {
-            damage = 0;
-        }
-        
-
-        if (m_mechanicsList == null)
-        {
-            m_mechanicsList = MechanicsManager.Instance.GetMechanicsList(this);
-        }
-
-        DamageContext context = new DamageContext();
-        if (m_mechanicsList != null)
-        {
-            context.OriginalDamage = damage;
-            context.ModifiedDamage = damage;
-            context.Sender = sender;
-            context.Target = this;
-            context.DoesReturnToSender = doesReturnToSender;
-            context.IsArmorPiercing = isArmorPiercing;
-            
-            m_mechanicsList.ApplyMechanics(context);
-        }
-
-        //Debug.Log(gameObject.name + " has taken: " + modifiedDamage + " damage");
-        m_fighterHP.TakeDamage(context.ModifiedDamage);
-        if (this is BaseEnemy)
-        {
-            GameplayEvents.SendGamePhaseChanged(EGamePhase.ENEMY_DAMAGED);
-        }
-        
-        return context.ModifiedDamage;
+        return m_damageable.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
     }
     
 
@@ -108,5 +83,10 @@ public abstract class Fighter : MonoBehaviour, IHaveHUD
     public virtual void ConfigFighterHP()
     {
         
+    }
+
+    public MechanicsList GetMechanicsList()
+    {
+        return m_mechanicsList;
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class MechanicAddList : MonoBehaviour
 {
     [SerializeField] private ClickableList m_list;
-    [SerializeField] private Fighter m_fighter;
+    [SerializeField] private IHaveMechanics m_owner;
 
     private bool m_isInitialized;
 
@@ -40,9 +40,9 @@ public class MechanicAddList : MonoBehaviour
         m_isInitialized = true;
     }
 
-    public void Config(Fighter fighter)
+    public void Config(IHaveMechanics owner)
     {
-        m_fighter = fighter;
+        m_owner = owner;
     }
 
     private void ItemClicked(string clientId)
@@ -67,37 +67,37 @@ public class MechanicAddList : MonoBehaviour
         {
             default:
             case Game.MechanicType.STRENGTH:
-                return new StrenghtMechanic(m_mechanicStack, m_fighter);
+                return new StrenghtMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.BLOCK:
-                return new BlockMechanic(m_mechanicStack, m_fighter);
+                return new BlockMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.FORTIFIED:
-                return new FortifiedMechanic(m_mechanicStack, m_fighter);
+                return new FortifiedMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.DEXTERITY:
-                return new DexterityMechanic(m_mechanicStack, m_fighter);
+                return new DexterityMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.THORNS:
-                return new ThornsMechanic(m_mechanicStack, m_fighter);
+                return new ThornsMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.FRENZY:
-                return new FrenzyMechanic(m_mechanicStack, m_fighter);
+                return new FrenzyMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.IMPALE:
-                return new ImpaleMechanic(m_mechanicStack, m_fighter);
+                return new ImpaleMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.BLEED:
-                return new BleedMechanic(m_mechanicStack, m_fighter);
+                return new BleedMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.BURN:
-                return new BurnMechanic(m_mechanicStack, m_fighter);
+                return new BurnMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.DAZE:
-                return new DazeMechanic(m_mechanicStack, m_fighter);
+                return new DazeMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.STUN:
-                return new StunMechanic(m_mechanicStack, m_fighter);
+                return new StunMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.VULNERABLE:
-                return new VulnerableMechanic(m_mechanicStack, m_fighter);
+                return new VulnerableMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.EXPLODE:
-                return new ExplodeMechanic(m_mechanicStack, m_fighter);
+                return new ExplodeMechanic(m_mechanicStack, m_owner);
 
                 // not implemented yet
             case Game.MechanicType.INGENIUS:
-                return new BlockMechanic(1, m_fighter);
+                return new BlockMechanic(1, m_owner);
             case Game.MechanicType.IMPROVISE:
-                return new BlockMechanic(1, m_fighter);
+                return new BlockMechanic(1, m_owner);
         }
     }
 }

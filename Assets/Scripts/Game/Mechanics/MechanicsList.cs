@@ -30,9 +30,9 @@ public class MechanicsList
         MechanicType.THORNS,
         MechanicType.BURN,
     }.AsReadOnly();
-    
 
-    private Fighter m_fighter;
+
+    private IHaveMechanics m_mechanicsOwner;
     private bool m_isPlayer;
 
     public MechanicsList(bool isPlayer)
@@ -187,7 +187,7 @@ public class MechanicsList
             if (m_mechanics[mechanicType].Stack > 10)
             {
                 Remove(mechanicType);
-                Add(new BleedMechanic(5, mechanic.Fighter));
+                Add(new BleedMechanic(5, mechanic.MechanicOwner));
             } 
         }
         
@@ -195,7 +195,7 @@ public class MechanicsList
         {
             if (m_mechanics[mechanicType].Stack > 10)
             {
-                Add(new ExplodeMechanic(1, mechanic.Fighter));
+                Add(new ExplodeMechanic(1, mechanic.MechanicOwner));
                 Remove(MechanicType.BURN);
             } 
         }

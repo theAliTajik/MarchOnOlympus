@@ -46,22 +46,26 @@ public class AggressiveDefenderPerk : BasePerk
 
     private void OnMechanicAdded(Fighter fighter, BaseMechanic mechanic)
     {
-        if (mechanic.GetMechanicType() == m_perkData.MechanicToTrack)
+        if (mechanic.GetMechanicType() != m_perkData.MechanicToTrack)
         {
-            if (!GameInfoHelper.CompareFighterToPlayer(fighter))
-            {
-                return;
-            }
-            int StackOfMechanic = GameInfoHelper.GetMechanicStack(fighter, mechanic.GetMechanicType());
-            if (StackOfMechanic >= m_perkData.TriggerAmount && !IsConditionMet)
-            {
-                GameActionHelper.SpawnCard(m_perkData.CardToSpawn, CardStorage.HAND);
-                IsConditionMet = true;
-            }
-            else
-            {
-                IsConditionMet = false;
-            }
+            return;
         }
+
+        if (!GameInfoHelper.CompareFighterToPlayer(fighter))
+        {
+            return;
+        }
+        
+        int StackOfMechanic = GameInfoHelper.GetMechanicStack(fighter, mechanic.GetMechanicType());
+        if (StackOfMechanic >= m_perkData.TriggerAmount && !IsConditionMet)
+        {
+            GameActionHelper.SpawnCard(m_perkData.CardToSpawn, CardStorage.HAND);
+            IsConditionMet = true;
+        }
+        else
+        {
+            IsConditionMet = false;
+        }
+        
     }
 }

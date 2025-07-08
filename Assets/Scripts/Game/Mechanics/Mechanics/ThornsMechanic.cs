@@ -11,10 +11,10 @@ public class ThornsMechanic : BaseMechanic
         
     }
 
-    public ThornsMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public ThornsMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;    
-        m_fighter = fighter;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()
@@ -29,10 +29,18 @@ public class ThornsMechanic : BaseMechanic
     
     public override void Apply(Fighter.DamageContext context)
     {
-        if (MechanicsManager.Instance.Contains(context.Target, MechanicType.THORNS) && context.DoesReturnToSender)
+        if (!MechanicsManager.Instance.Contains(context.Target, MechanicType.THORNS) && !context.DoesReturnToSender)
         {
-            BaseMechanic thorns = MechanicsManager.Instance.GetMechanic(context.Target, MechanicType.THORNS);
-            context.Sender.TakeDamage(thorns.Stack, context.Target, false);
+            return;
         }
+
+        BaseMechanic thorns = MechanicsManager.Instance.GetMechanic(context.Target, MechanicType.THORNS);
+
+        if (context.Sender is not IDamageable damageable)
+        {
+            return;
+        }
+        
+        damageable.TakeDamage(thorns.Stack, context.Target as Fighter, false);
     }
 }

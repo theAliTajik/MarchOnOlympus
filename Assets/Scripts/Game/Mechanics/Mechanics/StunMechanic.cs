@@ -10,14 +10,14 @@ public class StunMechanic : BaseMechanic
         
     }
 
-    public StunMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public StunMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;
-        m_fighter = fighter;
-        if (fighter is BaseEnemy)
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
+        
+        if(m_mechanicOwner is IGetStunned stunnable)
         {
-            BaseEnemy enemy = (BaseEnemy)fighter;
-            enemy.GetStuned();
+            stunnable.Stun();
         }
     }
     

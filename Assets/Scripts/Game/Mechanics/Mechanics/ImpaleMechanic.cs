@@ -10,10 +10,10 @@ public class ImpaleMechanic : BaseMechanic
         
     }
 
-    public ImpaleMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public ImpaleMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;    
-        m_fighter = fighter;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()
@@ -32,7 +32,7 @@ public class ImpaleMechanic : BaseMechanic
         {
             return;
         }
-        
+
         int impaleAmount = MechanicsManager.Instance.GetMechanicsStack(context.Sender, MechanicType.IMPALE);
         if (impaleAmount > 0)
         {

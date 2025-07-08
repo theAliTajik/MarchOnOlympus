@@ -50,6 +50,11 @@ public class ChimeraLion : ChimeraHead
         }
     }
 
+    public override string GetAnimation()
+    {
+        return null;
+    }
+
     public override void ExecuteIntention(Action finishCallBack)
     {
         switch (m_nextMoveData.Value.clientID)

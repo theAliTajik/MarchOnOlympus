@@ -10,27 +10,28 @@ public abstract class BaseMechanic
 {
     public event Action<MechanicType> OnEnd;
     public event Action<MechanicType> OnChange;
-    protected IntWithGuard m_stack = new IntWithGuard();
-    protected Fighter m_fighter;
+    protected IntWithGuard m_stack;
+    protected IHaveMechanics m_mechanicOwner;
     
     
     public int Stack => m_stack;
-    public Fighter Fighter => m_fighter;
+    public IHaveMechanics MechanicOwner => m_mechanicOwner;
     
     public bool HasGuard => m_stack.HasGuard;
     public int GuardMin => m_stack.GuardMin;
 
     public BaseMechanic()
     {
+        m_stack = new IntWithGuard();
         m_stack.OnChange += RaiseOnChange;
         m_stack.OnZero += RaiseOnEnd;
     }
     
     public abstract MechanicType GetMechanicType();
 
-    public virtual Fighter GetFighter()
+    public virtual IHaveMechanics GetMechanicOwner()
     {
-        return m_fighter;
+        return m_mechanicOwner;
     }
     
     public void SetGuard(int minHP)

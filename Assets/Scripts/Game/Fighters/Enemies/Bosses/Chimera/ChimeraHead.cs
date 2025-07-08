@@ -6,6 +6,8 @@ public abstract class ChimeraHead : IHaveIntention
 {
     public abstract event Action<Intention, string> OnIntentionDetermined;
     
+    [SerializeField] private Transform m_headPosition;
+    [SerializeField] private Vector3 m_rootOffsetFromHead;
     [SerializeField] protected ColliderMatcher m_colliderMatcher = new ColliderMatcher();
     [SerializeField] protected BaseEnemy.MoveData[] m_movesData;
 
@@ -54,6 +56,8 @@ public abstract class ChimeraHead : IHaveIntention
 
     public abstract void ShowIntention();
 
+    public abstract string GetAnimation();
+
     public abstract void ExecuteIntention(Action finishCallBack);
 
     public virtual void ReceiveTaunt()
@@ -64,5 +68,15 @@ public abstract class ChimeraHead : IHaveIntention
     public bool IsMyCollider(Collider2D Targetcollider)
     {
         return m_colliderMatcher.IsMyCollider(Targetcollider);
+    }
+
+    public Vector3 GetRootPosition()
+    {
+        return m_headPosition.position + m_rootOffsetFromHead;
+    }
+
+    public Vector3 GetHeadPosition()
+    {
+        return m_headPosition.position;
     }
 }

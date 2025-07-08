@@ -14,10 +14,10 @@ public class ExplodeMechanic : BaseMechanic
         Explode();
     }
 
-    public ExplodeMechanic(int stack, Fighter fighter)
+    public ExplodeMechanic(int stack, IHaveMechanics mOwner)
     {
-        m_stack = stack;    
-        m_fighter = fighter;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
         CombatManager.Instance.StartCoroutine(Explode());
     }
 
@@ -29,7 +29,10 @@ public class ExplodeMechanic : BaseMechanic
     private IEnumerator Explode()
     {
         yield return new WaitForSeconds(m_waitSecondsBeforeExplode);
-        m_fighter.TakeDamage(m_damage, m_fighter, false);
+        if (m_mechanicOwner is IDamageable damageable)
+        {
+            damageable.TakeDamage(m_damage, null, false);
+        }
         ReduceStack(10000);
     }
     

@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ChimeraSerpent : ChimeraHead, IHaveIntention
+public class ChimeraSerpent : ChimeraHead, IHaveIntention, IHaveMechanics
 {
     public ChimeraSerpent(Chimera mind)
     {
@@ -13,6 +13,8 @@ public class ChimeraSerpent : ChimeraHead, IHaveIntention
     public override event Action<Intention, string> OnIntentionDetermined;
     
     [SerializeField] private ChimeraSerpentMoveData m_data;
+    
+    private MechanicsList m_mechanicsList;
 
     public override void Config()
     {
@@ -41,6 +43,11 @@ public class ChimeraSerpent : ChimeraHead, IHaveIntention
         }
     }
 
+    public override string GetAnimation()
+    {
+        return null;
+    }
+
     public override void ExecuteIntention(Action finishCallBack)
     {
         switch (m_nextMoveData.Value.clientID)
@@ -53,6 +60,11 @@ public class ChimeraSerpent : ChimeraHead, IHaveIntention
                 finishCallBack?.Invoke();
                 break;
         }
+    }
+
+    public MechanicsList GetMechanicsList()
+    {
+        return m_mechanicsList;
     }
 }
 

@@ -30,11 +30,6 @@ public class Chimera : BaseEnemy
     [SerializeField] private ChimeraSerpent m_serpent;
     [SerializeField] private ChimeraGoat m_goat;
 
-
-    [SerializeField] private Transform m_lionPosition;
-    [SerializeField] private Transform m_serpentPosition;
-    [SerializeField] private Transform m_goatPosition;
-
     private Dictionary<Type, Transform> m_HeadPositions = new Dictionary<Type, Transform>();
     
     public List<ChimeraHead> Heads => m_heads;
@@ -57,13 +52,6 @@ public class Chimera : BaseEnemy
     protected override void Awake()
     {
         base.Awake();
-        
-        m_HeadPositions = new Dictionary<Type, Transform>()
-        {
-            { typeof(ChimeraLion), m_lionPosition },
-            { typeof(ChimeraSerpent), m_serpentPosition },
-            { typeof(ChimeraGoat), m_goatPosition },
-        };
         
         ConfigFighterHP();
 
@@ -185,8 +173,19 @@ public class Chimera : BaseEnemy
         foreach (var head in m_heads)
         {
             bool headFinished = false;
+            bool animationFinished = true;
+            
+            string animName = head.GetAnimation();
+            if (!string.IsNullOrEmpty(animName))
+            {
+                animationFinished = false;
+                WaitForAnimation(animName, () => { animationFinished = true; });
+            }
+            
             head.ExecuteIntention(() => headFinished = true);
+            
             yield return new WaitUntil(() => headFinished);
+            yield return new WaitUntil(() => animationFinished);
         }
         
         finishCallback?.Invoke();

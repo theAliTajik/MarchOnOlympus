@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Game;
+using Unity.Burst;
 using UnityEngine;
 
 public class MechanicsManager : Singleton<MechanicsManager>
 {
 
-    private Dictionary<Fighter, MechanicsList> m_allMechanics = new Dictionary<Fighter, MechanicsList>();
+    private Dictionary<IHaveMechanics, MechanicsList> m_allMechanics = new Dictionary<IHaveMechanics, MechanicsList>();
     [SerializeField] private CombatManager m_combatManager;
     [SerializeField] private MechanicsDisplay m_playerMechanicsDisplay, m_enemyMechanicsDisplay;
     
@@ -66,9 +67,19 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public MechanicsList GetMechanicsList(Fighter fighter)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        return GetMechanicsList(fighter as IHaveMechanics);
+    }
+    public MechanicsList GetMechanicsList(IHaveMechanics owner)
+    {
+        if (owner == null)
         {
-            return m_allMechanics[fighter];
+            Debug.Log("ERROR: tried to get mechanic of null owner");
+            return null;
+        }
+        
+        if (m_allMechanics.ContainsKey(owner))
+        {
+            return m_allMechanics[owner];
         }
 
         //Debug.LogError("MechanicsManager::GetMechanicsList: fighter not found");
@@ -77,7 +88,11 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public BaseMechanic GetMechanic(Fighter fighter, MechanicType mechanicType)
     {
-        m_allMechanics.TryGetValue(fighter, out MechanicsList mechanicsList);
+        return GetMechanic(fighter as IHaveMechanics, mechanicType);
+    }
+    public BaseMechanic GetMechanic(IHaveMechanics owner, MechanicType mechanicType)
+    {
+        m_allMechanics.TryGetValue(owner, out MechanicsList mechanicsList);
         if (mechanicsList == null)
         {
             return null;
@@ -88,7 +103,11 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public int GetMechanicsStack(Fighter fighter, MechanicType mechanicType)
     {
-        if (!m_allMechanics.TryGetValue(fighter, out MechanicsList mechanicsList))
+        return GetMechanicsStack(fighter as IHaveMechanics, mechanicType);
+    }
+    public int GetMechanicsStack(IHaveMechanics owner, MechanicType mechanicType)
+    {
+        if (!m_allMechanics.TryGetValue(owner, out MechanicsList mechanicsList))
         {
             return -1;
         }
@@ -107,9 +126,13 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public bool Contains(Fighter fighter, MechanicType mechanic)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        return Contains(fighter as IHaveMechanics, mechanic);
+    }
+    public bool Contains(IHaveMechanics owner, MechanicType mechanic)
+    {
+        if (m_allMechanics.ContainsKey(owner))
         {
-            if (m_allMechanics[fighter].Contains(mechanic))
+            if (m_allMechanics[owner].Contains(mechanic))
             {
                 return true;
             }
@@ -120,9 +143,13 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public bool ContainsAny(Fighter fighter, List<MechanicType> mechanics)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        return ContainsAny(fighter as IHaveMechanics, mechanics);
+    }
+    public bool ContainsAny(IHaveMechanics owner, List<MechanicType> mechanics)
+    {
+        if (m_allMechanics.ContainsKey(owner))
         {
-            if (m_allMechanics[fighter].ContainsAny(mechanics))
+            if (m_allMechanics[owner].ContainsAny(mechanics))
             {
                 return true;
             }
@@ -132,9 +159,10 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public bool AnyEnemyContainsAny(List<MechanicType> mechanics)
     {
-        foreach (KeyValuePair<Fighter,MechanicsList> Item in m_allMechanics)
+        foreach (KeyValuePair<IHaveMechanics,MechanicsList> Item in m_allMechanics)
         {
-            if (Item.Key.CompareTag("Player"))
+            Fighter possiblePlayer = Item.Key as Fighter;
+            if (possiblePlayer != null && possiblePlayer.CompareTag("Player"))
             {
                 continue;
             }
@@ -146,10 +174,14 @@ public class MechanicsManager : Singleton<MechanicsManager>
         }
         return false;
     }
-    
+
     public int GetMechanicsCount(Fighter fighter, MechanicCategory mechanicCategory)
     {
-        if (!m_allMechanics.TryGetValue(fighter, out MechanicsList mechanicsList))
+        return GetMechanicsCount(fighter as IHaveMechanics, mechanicCategory);
+    }
+    public int GetMechanicsCount(IHaveMechanics owner, MechanicCategory mechanicCategory)
+    {
+        if (!m_allMechanics.TryGetValue(owner, out MechanicsList mechanicsList))
         {
             return -1;
         }
@@ -173,31 +205,51 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public void CreateMechanicsList(Fighter fighter)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        CreateMechanicsList(fighter as IHaveMechanics);
+    }
+    public void CreateMechanicsList(IHaveMechanics owner)
+    {
+        if (m_allMechanics.ContainsKey(owner))
         {
-            Debug.Log($"Fighter {fighter.name} already has mechanics list");
+            Debug.Log($"Fighter {owner.GetType()} already has mechanics list");
             return;
         }
-        
-        bool isPlayer = fighter.CompareTag("Player");
-        MechanicsList mechanicsList = new MechanicsList(isPlayer);
-        m_allMechanics.Add(fighter, mechanicsList);
 
-        HUD.Instance.SpawnMechanicsDisplay(fighter, mechanicsList);
+        if (owner is Fighter fighter)
+        {
+            bool isPlayer = fighter.CompareTag("Player");
+            MechanicsList mechanicsList = new MechanicsList(isPlayer);
+            m_allMechanics.Add(fighter, mechanicsList);
+            HUD.Instance.SpawnMechanicsDisplay(fighter, mechanicsList);
+            return;
+        }
+
+
+        if (owner is IHaveHUD hud)
+        {
+            MechanicsList list = new MechanicsList(false);
+            m_allMechanics.Add(owner, list);
+            HUD.Instance.SpawnMechanicsDisplay(hud, list);
+        }
     }
     public void RemoveMechanicsList(Fighter fighter)
     {
         m_allMechanics.Remove(fighter);
     }
-    
+
     public void AddMechanic(BaseMechanic mechanic, Fighter sender = null)
+    {
+        AddMechanic(mechanic, sender as IHaveMechanics);
+    }
+    public void AddMechanic(BaseMechanic mechanic, IHaveMechanics sender)
     {
         if (sender == null)
         {
             sender = GameInfoHelper.GetPlayer();
         }
-        Fighter fighter = mechanic.GetFighter();
-        if (fighter == null)
+
+        IHaveMechanics owner = mechanic.GetMechanicOwner();
+        if (owner == null)
         {
             return;
         }
@@ -209,22 +261,29 @@ public class MechanicsManager : Singleton<MechanicsManager>
             return;
         }
 
-        if (m_allMechanics.TryGetValue(fighter, out MechanicsList list))
+        if (m_allMechanics.TryGetValue(owner, out MechanicsList list))
         {
             list.Add(mechanic);
         }
         else
         {
-            CreateMechanicsList(fighter);
-            m_allMechanics[fighter].Add(mechanic);
+            CreateMechanicsList(owner);
+            m_allMechanics[owner].Add(mechanic);
         }
-        
-        GameplayEvents.SendMechanicAddedToFighter(fighter, sender, m_allMechanics[fighter].GetMechanic(mechanicType));
+
+        if (owner is Fighter fighter && sender is Fighter senderfighter)
+        {
+            GameplayEvents.SendMechanicAddedToFighter(fighter, senderfighter, m_allMechanics[owner].GetMechanic(mechanicType));
+        }
     }
 
-    public void AddMechanic(int stack, MechanicType mechanicType, Fighter fighter, bool hasGuard, int guardMin)
+    public void AddMechanic(int stack, MechanicType mechanicType, Fighter fighter, bool hasGuard = false, int guardMin = 0)
     {
-        BaseMechanic mec = CreateMechanicOfType(stack, mechanicType, fighter, hasGuard, guardMin);
+        AddMechanic(stack, mechanicType, fighter as IHaveMechanics, hasGuard, guardMin);
+    }
+    public void AddMechanic(int stack, MechanicType mechanicType, IHaveMechanics owner, bool hasGuard = false, int guardMin = 0)
+    {
+        BaseMechanic mec = CreateMechanicOfType(stack, mechanicType, owner, hasGuard, guardMin);
         if (mec == null)
         {
             Debug.Log("could not create mechanic of type");
@@ -233,51 +292,57 @@ public class MechanicsManager : Singleton<MechanicsManager>
         
         AddMechanic(mec);
     }
-    
-    private static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+
+    private static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, Fighter fighter,
+        bool hasGuard = false, int guardMin = 0)
+    {
+        return CreateMechanicOfType(stack, mechanicType, fighter as IHaveMechanics, hasGuard, guardMin);
+    }
+    private static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, IHaveMechanics owner,
+        bool hasGuard = false, int guardMin = 0)
     {
         BaseMechanic mechanic = null;
         
         switch (mechanicType)
         {
             case MechanicType.STRENGTH:
-                mechanic = new StrenghtMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new StrenghtMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.BLOCK:
-                mechanic = new BlockMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new BlockMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.FORTIFIED:
-                mechanic = new FortifiedMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new FortifiedMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.DEXTERITY:
-                mechanic = new DexterityMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new DexterityMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.THORNS:
-                mechanic = new ThornsMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new ThornsMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.FRENZY:
-                mechanic = new FrenzyMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new FrenzyMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.IMPALE:
-                mechanic = new ImpaleMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new ImpaleMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.BLEED:
-                mechanic = new BleedMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new BleedMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.BURN:
-                mechanic = new BurnMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new BurnMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.DAZE:
-                mechanic = new DazeMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new DazeMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.STUN:
-                mechanic = new StunMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new StunMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.VULNERABLE:
-                mechanic = new VulnerableMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new VulnerableMechanic(stack, owner, hasGuard, guardMin);
                 break;
             case MechanicType.IMPROVISE:
-                mechanic = new ImproviseMechanic(stack, fighter, hasGuard, guardMin);
+                mechanic = new ImproviseMechanic(stack, owner, hasGuard, guardMin);
                 break;
             default:
                 Debug.Log("Unknown mechanic type");
@@ -298,17 +363,25 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public void RemoveMechanic(Fighter fighter, MechanicType mechanicType)
     {
-        if (fighter != null && m_allMechanics.ContainsKey(fighter))
+        RemoveMechanic(fighter as IHaveMechanics, mechanicType);
+    }
+    public void RemoveMechanic(IHaveMechanics owner, MechanicType mechanicType)
+    {
+        if (owner != null && m_allMechanics.ContainsKey(owner))
         {
-            m_allMechanics[fighter].Remove(mechanicType);
+            m_allMechanics[owner].Remove(mechanicType);
         }
     }
 
     public void ReduceMechanic(Fighter fighter, MechanicType mechanicType, int amount)
     {
-        if (fighter != null && m_allMechanics.ContainsKey(fighter))
+        ReduceMechanic(fighter as IHaveMechanics, mechanicType, amount);
+    }
+    public void ReduceMechanic(IHaveMechanics owner, MechanicType mechanicType, int amount)
+    {
+        if (owner != null && m_allMechanics.ContainsKey(owner))
         {
-            m_allMechanics[fighter].ReduceMechanic(mechanicType, amount);
+            m_allMechanics[owner].ReduceMechanic(mechanicType, amount);
         }
     }
 
@@ -320,17 +393,25 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public void RemoveAllMechancis(Fighter fighter)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        RemoveAllMechancis(fighter as IHaveMechanics);
+    }
+    public void RemoveAllMechancis(IHaveMechanics owner)
+    {
+        if (m_allMechanics.ContainsKey(owner))
         {
-            m_allMechanics[fighter].RemoveAllMechanicsOfCategory(MechanicCategory.ALL);
+            m_allMechanics[owner].RemoveAllMechanicsOfCategory(MechanicCategory.ALL);
         }
     }
 
     public void RemoveAllMechanicsOfCatigory(Fighter fighter, MechanicCategory mechanicCategory)
     {
-        if (m_allMechanics.ContainsKey(fighter))
+        RemoveAllMechanicsOfCatigory(fighter as IHaveMechanics, mechanicCategory);
+    }
+    public void RemoveAllMechanicsOfCatigory(IHaveMechanics owner, MechanicCategory mechanicCategory)
+    {
+        if (m_allMechanics.ContainsKey(owner))
         {
-            m_allMechanics[fighter].RemoveAllMechanicsOfCategory(mechanicCategory);
+            m_allMechanics[owner].RemoveAllMechanicsOfCategory(mechanicCategory);
         }
     }
 

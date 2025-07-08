@@ -17,6 +17,7 @@ abstract class ChimeraHead {
 + EnemyTurnOver()
 + DetermineIntention()
 + ShowIntention()
++ GetAnimation(): string
 + ExecuteIntention() 
 + ReceiveTaunt()
 }

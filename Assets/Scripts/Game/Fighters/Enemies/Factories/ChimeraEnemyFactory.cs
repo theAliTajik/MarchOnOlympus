@@ -24,17 +24,9 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
         
         SetupMind(mind, position, rotation);
 
-        foreach (var headPair in mind.HeadPositions)
+        foreach (var head in mind.Heads)
         {
-            IHaveIntention headIntention = mind.Heads.Find(x => x.GetType() == headPair.Key);
-
-            if (headIntention == null)
-            {
-                Debug.Log("ERROR: did not find chimera head in list of heads");
-                continue;
-            }
-            
-            SetupHead(headIntention, headPair.Value.position);
+            SetupHead(head);
         }
     }
     
@@ -60,7 +52,7 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
         EnemiesManager.Instance.AddEnemey(enemy);
     }
 
-    private void SetupHead(IHaveIntention headIntention, Vector3 position)
+    private void SetupHead(IHaveIntention headIntention)
     {
         if (headIntention == null)
         {
@@ -68,6 +60,11 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
             return;
         }
                     
-        HUD.Instance.SpawnEnemyIntentionWidget(headIntention, position);
+        HUD.Instance.SpawnEnemyIntentionWidget(headIntention, headIntention.GetHeadPosition());
+
+        if (headIntention is ChimeraSerpent serpent)
+        {
+            MechanicsManager.Instance.CreateMechanicsList(serpent);
+        }
     }
 }
