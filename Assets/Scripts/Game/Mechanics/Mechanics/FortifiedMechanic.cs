@@ -11,12 +11,10 @@ public class FortifiedMechanic : BaseMechanic
         
     }
 
-    public FortifiedMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public FortifiedMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;
-        m_fighter = fighter;
-        m_hasGuard = hasGuard;
-        m_guardMin = guardMin;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()

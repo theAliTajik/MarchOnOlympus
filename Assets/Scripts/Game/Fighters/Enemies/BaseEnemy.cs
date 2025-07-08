@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 
 
-public abstract class BaseEnemy : Fighter
+public abstract class BaseEnemy : Fighter, IGetStunned
 {
     [System.Serializable]
     public struct MoveData
@@ -18,6 +18,14 @@ public abstract class BaseEnemy : Fighter
         public int chance;
         public float[] probabilities;
 
+        public MoveData(string clientID)
+        {
+            this.clientID = clientID;
+            description = null;
+            chance = 0;
+            probabilities = new float[] { };
+        }
+        
         public MoveData(string clientID, string description1, int chance = 10, float[] probabilities = null)
         {
             this.clientID = clientID;
@@ -39,7 +47,13 @@ public abstract class BaseEnemy : Fighter
     protected  MoveData? m_previusMove;
     protected  int m_moveRepeats = 1;
     protected bool m_stuned = false;
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+        m_damageable = new EnemyDamageBehaviour();
+        m_damageable.OnDamage += m_fighterHP.TakeDamage;
+    }
 
     public virtual void DetermineIntention()
     {
@@ -47,12 +61,6 @@ public abstract class BaseEnemy : Fighter
         {
             m_stuned = true;
         }
-    }
-
-    public virtual void GetStuned()
-    {
-        m_stuned = true;
-        CallOnIntentionDetermined(Intention.STUNED, "stuned");
     }
     
     public virtual void RandomIntentionPicker(WeightedList<MoveData> moves)
@@ -166,6 +174,12 @@ public abstract class BaseEnemy : Fighter
             MoveData md = moves[i];
             m_moves.Add(md, md.chance);
         } 
+    }
+
+    public void Stun()
+    {
+        m_stuned = true;
+        CallOnIntentionDetermined(Intention.STUNED, "stuned");
     }
 }
 

@@ -10,12 +10,10 @@ public class ImproviseMechanic : BaseMechanic
         
     }
 
-    public ImproviseMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public ImproviseMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;    
-        m_fighter = fighter;
-        m_hasGuard = hasGuard;
-        m_guardMin = guardMin;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()

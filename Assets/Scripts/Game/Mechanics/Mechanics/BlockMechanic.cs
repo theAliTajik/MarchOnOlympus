@@ -11,12 +11,10 @@ public class BlockMechanic : BaseMechanic
         
     }
 
-    public BlockMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public BlockMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;
-        m_fighter = fighter;
-        m_hasGuard = hasGuard;
-        m_guardMin = guardMin;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     public override MechanicType GetMechanicType()
     {
@@ -39,12 +37,16 @@ public class BlockMechanic : BaseMechanic
         {
             return;
         }
-        if (MechanicsManager.Instance.Contains(context.Target, MechanicType.BLOCK))
+
+
+        if (!MechanicsManager.Instance.Contains(context.Target, MechanicType.BLOCK))
         {
-            BaseMechanic block = MechanicsManager.Instance.GetMechanic(context.Target, MechanicType.BLOCK);
-            int blockToReduce = Math.Min(context.ModifiedDamage, block.Stack);
-            MechanicsManager.Instance.ReduceMechanic(context.Target, MechanicType.BLOCK, blockToReduce);
-            context.ModifiedDamage -= blockToReduce;
+            return;
         }
+
+        BaseMechanic block = MechanicsManager.Instance.GetMechanic(context.Target, MechanicType.BLOCK);
+        int blockToReduce = Math.Min(context.ModifiedDamage, block.Stack);
+        MechanicsManager.Instance.ReduceMechanic(context.Target, MechanicType.BLOCK, blockToReduce);
+        context.ModifiedDamage -= blockToReduce;
     }
 }

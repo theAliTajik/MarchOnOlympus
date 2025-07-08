@@ -11,10 +11,10 @@ public class BleedMechanic : BaseMechanic
         
     }
 
-    public BleedMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public BleedMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;    
-        m_fighter = fighter;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()
@@ -24,15 +24,16 @@ public class BleedMechanic : BaseMechanic
 
     public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
     {
-        if (phase == CombatPhase.TURN_START && isMyTurn)
+        if (phase != CombatPhase.TURN_START && !isMyTurn)
         {
-            if (m_fighter != null)
-            {
-                m_fighter.TakeDamage(m_stack, m_fighter, false);
-            }
-            ReduceStack(1);
-            return true;
+            return false;
         }
-        return false;
+
+        if(m_mechanicOwner is IDamageable damageable)
+        {
+            damageable.TakeDamage(m_stack, null, false);
+        }
+        ReduceStack(1);
+        return true;
     }
 }

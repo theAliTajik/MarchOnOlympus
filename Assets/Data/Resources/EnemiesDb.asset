@@ -155,10 +155,6 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 1786792893909816965, guid: dc00e15fb6bc35e40a81edccbe13b342, type: 3}
       Factory: 
-  - clientID: Chimera
-    bosses:
-    - Prefab: {fileID: 8391349627649040841, guid: a9d3b258f3e014d4588395a411bbe37b, type: 3}
-      Factory: 
   - clientID: WarHero
     bosses:
     - Prefab: {fileID: 727013420262267302, guid: a1c30fdcb18df3f49b2f8459478e9213, type: 3}
@@ -219,6 +215,10 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 7916077963939100239, guid: 3a02be009fa4df54194d7a439ee809c2, type: 3}
       Factory: 
+  - clientID: Chimera
+    bosses:
+    - Prefab: {fileID: 8391349627649040841, guid: a9d3b258f3e014d4588395a411bbe37b, type: 3}
+      Factory: Chimera
   PlayableEnemies:
   - clientID: Ajax
     bosses:

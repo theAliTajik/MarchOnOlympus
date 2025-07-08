@@ -102,15 +102,19 @@ public class HUD : Singleton<HUD>
 
     public MechanicsDisplay SpawnMechanicsDisplay(Fighter fighter, MechanicsList mechanicsList)
     {
+        return SpawnMechanicsDisplay(fighter as IHaveHUD, mechanicsList);
+    }
+    public MechanicsDisplay SpawnMechanicsDisplay(IHaveHUD owner, MechanicsList mechanicsList)
+    {
         MechanicsDisplay mechanicsDisplay = Instantiate(m_mechanicsDisplayPrefab, transform);
-        mechanicsDisplay.Configure(fighter, mechanicsList);
+        mechanicsDisplay.Configure(owner as IHaveMechanics, mechanicsList);
         RectTransform rectTransform = mechanicsDisplay.transform as RectTransform;
-        rectTransform.anchoredPosition = ConvertWorldPosition(fighter.GetRootPosition() + mechanicsDisplay.GetOffset(), rectTransform.anchorMin, rectTransform.anchorMax);
+        rectTransform.anchoredPosition = ConvertWorldPosition(owner.GetRootPosition() + mechanicsDisplay.GetOffset(), rectTransform.anchorMin, rectTransform.anchorMax);
 
 #if UNITY_EDITOR
-        mechanicsDisplay.name = "Mechanics Display " + fighter.name;
+        mechanicsDisplay.name = "Mechanics Display " + owner.GetType();
 #endif
-        AddHudObject(fighter, HudObjectType.MECHANICS_DISPLAY, mechanicsDisplay.gameObject);
+        AddHudObject(owner, HudObjectType.MECHANICS_DISPLAY, mechanicsDisplay.gameObject);
         return mechanicsDisplay;
     }
     public void RemoveMechanicsDisplay(Fighter fighter)

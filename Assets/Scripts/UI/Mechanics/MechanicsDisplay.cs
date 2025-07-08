@@ -14,7 +14,6 @@ public class MechanicsDisplay : MonoBehaviour
 
     [SerializeField] private Dictionary<MechanicType, MechanicWidget> m_widgets = new Dictionary<MechanicType, MechanicWidget>();
     private MechanicsList m_mechanicsList;
-    private Fighter m_fighter;
 
     private class DisplayOperation
     {
@@ -32,10 +31,9 @@ public class MechanicsDisplay : MonoBehaviour
     private bool isProcessing = false;
 
     
-    public void Configure(Fighter fighter, MechanicsList mechanicsList)
+    public void Configure(IHaveMechanics owner, MechanicsList mechanicsList)
     {
-        m_fighter = fighter;
-        m_mechanicAddList.Config(fighter);
+        m_mechanicAddList.Config(owner);
         
         m_mechanicsList = mechanicsList;
         m_mechanicsList.OnMechanicUpdated += OnMechanicsUpdated;

@@ -10,12 +10,10 @@ public class BurnMechanic : BaseMechanic
         
     }
 
-    public BurnMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public BurnMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_stack = stack;
-        m_fighter = fighter;
-        m_hasGuard = hasGuard;  
-        m_guardMin = guardMin;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     public override MechanicType GetMechanicType()
     {
@@ -34,10 +32,16 @@ public class BurnMechanic : BaseMechanic
     
     public override void Apply(Fighter.DamageContext context)
     {
-        if (MechanicsManager.Instance.Contains(context.Target, MechanicType.BURN) && context.DoesReturnToSender)
+        if (!MechanicsManager.Instance.Contains(context.Target, MechanicType.BURN) && !context.DoesReturnToSender)
         {
-            int returnDamageAmout = MechanicsManager.Instance.GetMechanicsStack(context.Target, MechanicType.BURN);
-            context.Sender.TakeDamage(returnDamageAmout, context.Target, false);
+            return;
+        }
+
+        int returnDamageAmout = MechanicsManager.Instance.GetMechanicsStack(context.Target, MechanicType.BURN);
+
+        if (context.Sender is IDamageable damageable)
+        {
+            damageable.TakeDamage(returnDamageAmout, context.Target as Fighter, false);
         }
     }
 }

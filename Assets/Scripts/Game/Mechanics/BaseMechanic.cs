@@ -10,72 +10,50 @@ public abstract class BaseMechanic
 {
     public event Action<MechanicType> OnEnd;
     public event Action<MechanicType> OnChange;
-    protected int m_stack;
-    protected Fighter m_fighter;
-    protected bool m_isPlayer;
+    protected IntWithGuard m_stack;
+    protected IHaveMechanics m_mechanicOwner;
     
-    protected bool m_hasGuard;
-    protected int m_guardMin;
     
-    public int Stack
+    public int Stack => m_stack;
+    public IHaveMechanics MechanicOwner => m_mechanicOwner;
+    
+    public bool HasGuard => m_stack.HasGuard;
+    public int GuardMin => m_stack.GuardMin;
+
+    public BaseMechanic()
     {
-        get => m_stack;
-        //set => m_stack = value;
+        m_stack = new IntWithGuard();
+        m_stack.OnChange += RaiseOnChange;
+        m_stack.OnZero += RaiseOnEnd;
     }
-    public Fighter Fighter => m_fighter;
-    
-    public bool HasGuard { get => m_hasGuard;}
-    public int GuardMin { get => m_guardMin;}
     
     public abstract MechanicType GetMechanicType();
 
-    public virtual Fighter GetFighter()
+    public virtual IHaveMechanics GetMechanicOwner()
     {
-        return m_fighter;
+        return m_mechanicOwner;
     }
     
     public void SetGuard(int minHP)
     {
-        m_hasGuard = true;
-        m_guardMin = minHP;
+        m_stack.SetGuard(minHP);
     }
 
     public void RemoveGuard()
     {
-        m_hasGuard = false;
-        m_guardMin = 0;
+        m_stack.RemoveGuard();
     }
     
     public abstract bool TryReduceStack(CombatPhase phase, bool isMyTurn);
 
     public virtual void ReduceStack(int amount)
     {
-        if (m_hasGuard && m_stack - amount < m_guardMin)
-        {
-            amount = m_stack - m_guardMin;
-        }
-
-        if (amount < 0)
-        {
-            return;
-        }
-        m_stack -= amount;
-        if (m_stack <= 0)
-        {
-            RaiseOnEnd();
-            return;
-        }
-        RaiseOnChange();
+        m_stack.ReduceStack(amount);
     }
 
     public virtual void IncreaseStack(int amount)
     {
-        if (amount < 0)
-        {
-            return;
-        }
-        m_stack += amount;
-        RaiseOnChange();
+        m_stack.IncreaseStack(amount);
     }
 
     public virtual void Apply(Fighter.DamageContext context)

@@ -21,15 +21,13 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
             return;
         }
 
-        IHaveIntention lion = mind.Lion;
-        IHaveIntention serpent = mind.Serpent;
-        IHaveIntention goat = mind.Goat;
         
         SetupMind(mind, position, rotation);
-        SetupHead(mind, lion, mind.LionPosition.position);
-        SetupHead(mind, serpent, mind.SerpentPosition.position);
-        SetupHead(mind, goat, mind.GoatPosition.position);
 
+        foreach (var head in mind.Heads)
+        {
+            SetupHead(head);
+        }
     }
     
     private void SetupMind(BaseEnemy enemy, Vector3? position = null, Quaternion? rotation = null)
@@ -54,20 +52,19 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
         EnemiesManager.Instance.AddEnemey(enemy);
     }
 
-    private void SetupHead(BaseEnemy mind, IHaveIntention headIntention, Vector3 position)
+    private void SetupHead(IHaveIntention headIntention)
     {
-        if (mind == null)
-        {
-            Debug.Log("null mind sent to setup");
-            return;
-        }
-        
         if (headIntention == null)
         {
             Debug.Log("null head sent to setup");
             return;
         }
                     
-        HUD.Instance.SpawnEnemyIntentionWidget(headIntention, position);
+        HUD.Instance.SpawnEnemyIntentionWidget(headIntention, headIntention.GetHeadPosition());
+
+        if (headIntention is ChimeraSerpent serpent)
+        {
+            MechanicsManager.Instance.CreateMechanicsList(serpent);
+        }
     }
 }

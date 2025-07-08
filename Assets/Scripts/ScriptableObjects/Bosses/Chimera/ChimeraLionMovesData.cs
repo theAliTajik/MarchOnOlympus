@@ -7,6 +7,6 @@ public class ChimeraLionMovesData : ScriptableObject
     [Header("Move 1: Hit 10")]
     public int Move1Damage;
 
-    // [Header("MISCS:")] 
-    
+    [Header("MISCS:")] 
+    public int DamageThresholdForStun;
 }

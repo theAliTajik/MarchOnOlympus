@@ -2,23 +2,69 @@
 using System;
 using UnityEngine;
 
-public class ChimeraSerpent : IChimeraHead, IChimeraHeadStun, IHaveIntention
+[Serializable]
+public class ChimeraSerpent : ChimeraHead, IHaveIntention, IHaveMechanics
 {
-    public event Action<Intention, string> OnIntentionDetermined;
-    public event Action<BaseEnemy, int> OnDamaged;
-
-    public void DetermineIntention()
+    public ChimeraSerpent(Chimera mind)
     {
-        throw new NotImplementedException();
+        m_mind = mind;
     }
 
-    public void ExecuteIntention(Action finishCallBack)
+    public override event Action<Intention, string> OnIntentionDetermined;
+    
+    [SerializeField] private ChimeraSerpentMoveData m_data;
+    
+    private MechanicsList m_mechanicsList;
+
+    public override void Config()
     {
-        throw new NotImplementedException();
+        m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.RANDOM, m_movesData);
+
+        m_stun = new NormalStun(m_data.DamageThresholdForStun);
+        m_taunt = new NormalTaunt();
+    }
+    
+    public override void ShowIntention()
+    {
+        if (m_nextMoveData == null)
+        {
+            Debug.Log("ERROR: tried to show intention when next move was null");
+            return;
+        }
+
+        switch (m_nextMoveData.Value.clientID)
+        {
+            case "card":
+                OnIntentionDetermined?.Invoke(Intention.CAST_DEBUFF, m_nextMoveData.Value.description);
+                break;
+            case "Stunned":
+                OnIntentionDetermined?.Invoke(Intention.STUNED, "Stunned");
+                break;
+        }
     }
 
-    public void Stun()
+    public override string GetAnimation()
     {
-        Debug.Log("serpent stunned");
+        return null;
+    }
+
+    public override void ExecuteIntention(Action finishCallBack)
+    {
+        switch (m_nextMoveData.Value.clientID)
+        {
+            case "card":
+                GameActionHelper.SpawnCard(m_data.Card, CardStorage.DRAW_PILE);
+                finishCallBack?.Invoke();
+                break;
+            case "Stunned":
+                finishCallBack?.Invoke();
+                break;
+        }
+    }
+
+    public MechanicsList GetMechanicsList()
+    {
+        return m_mechanicsList;
     }
 }
+

@@ -392,9 +392,9 @@ public class EnemiesManager : Singleton<EnemiesManager>
                 enemy.ExecuteAction(() => isActionComplete = true);
             }
 
-            Debug.Log($"enemy play turn: {enemy.name}");
+            // Debug.Log($"enemy play turn: {enemy.name}");
             yield return new WaitUntil(() => isActionComplete);
-            Debug.Log($"enemy played turn: {enemy.name}");
+            // Debug.Log($"enemy played turn: {enemy.name}");
         }
         
         yield return new WaitForSeconds(1f);

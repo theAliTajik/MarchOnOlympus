@@ -1,8 +1,10 @@
 using System;
 using Game;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class Chimera : BaseEnemy
 {
@@ -22,35 +24,81 @@ public class Chimera : BaseEnemy
 
     [SerializeField] private ChimeraMovesData m_data;
 
+    private List<ChimeraHead> m_heads = new List<ChimeraHead>();
+
     [SerializeField] private ChimeraLion m_lion;
-    private ChimeraSerpent m_serpent = new ChimeraSerpent();
-    private ChimeraGoat m_goat = new ChimeraGoat();
+    [SerializeField] private ChimeraSerpent m_serpent;
+    [SerializeField] private ChimeraGoat m_goat;
+
+    private Dictionary<Type, Transform> m_HeadPositions = new Dictionary<Type, Transform>();
     
-    [SerializeField] private Transform m_lionPosition;
-    [SerializeField] private Transform m_serpentPosition;
-    [SerializeField] private Transform m_goatPosition;
+    public List<ChimeraHead> Heads => m_heads;
+    public Dictionary<Type, Transform> HeadPositions => m_HeadPositions;
+    
+    
+    private ChimeraHead m_TargetedHead;
 
     public Chimera()
     {
         m_lion = new ChimeraLion(this);
+        m_serpent = new ChimeraSerpent(this);
+        m_goat = new ChimeraGoat(this);
+        
+        m_heads.Add(m_lion);
+        m_heads.Add(m_serpent);
+        m_heads.Add(m_goat);
     }
-
-
-    public ChimeraLion Lion => m_lion;
-    public ChimeraSerpent Serpent => m_serpent;
-    public ChimeraGoat Goat => m_goat;
     
-    public Transform LionPosition => m_lionPosition;
-    public Transform SerpentPosition => m_serpentPosition;
-    public Transform GoatPosition => m_goatPosition;
-
     protected override void Awake()
     {
         base.Awake();
-
         
         ConfigFighterHP();
 
+        foreach (var head in m_heads)
+        {
+            head.Config();
+        }
+        
+        GameplayEvents.ColliderSelected += OnColliderSelected;
+        GameplayEvents.GamePhaseChanged += OnPhaseChange;
+    }
+
+    private void OnPhaseChange(EGamePhase phase)
+    {
+        switch (phase)
+        {
+            case EGamePhase.ENEMY_TURN_END:
+                foreach (var head in m_heads)
+                {
+                    head.TurnEnded();
+                }
+                break;
+            case EGamePhase.ENEMY_TURN_START:
+                foreach (var head in m_heads)
+                {
+                    head.TurnStarted();
+                }
+
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameplayEvents.ColliderSelected -= OnColliderSelected;
+    }
+
+    private void OnColliderSelected(Collider2D targetCollider)
+    {
+        ChimeraHead headHit = MatchColliderToHead(targetCollider);
+        if (headHit == null)
+        {
+            return;
+        }
+        
+        m_TargetedHead = headHit;
+        Debug.Log($"set head to: {headHit.GetType()}");
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -61,7 +109,29 @@ public class Chimera : BaseEnemy
         }
         base.OnTookDamage(damage, isCritical);
         m_animation.Play(ANIM_02_WOUND);
+        if (m_TargetedHead != null)
+        {
+            m_TargetedHead.TakeDamage(damage);
+            m_TargetedHead = null;
+        }
+        else
+        {
+            Debug.Log("null target head");
+        }
+
     }
+
+    private ChimeraHead MatchColliderToHead(Collider2D targetCollider)
+    {
+        foreach (var head in m_heads)
+        {
+            if (head.IsMyCollider(targetCollider))
+                return head;
+        }
+        
+        return null;
+    }
+
 
     protected override void OnDeath()
     {
@@ -75,13 +145,19 @@ public class Chimera : BaseEnemy
 
     public override void DetermineIntention()
     {
-        m_lion.DetermineIntention();
+        foreach (var head in m_heads)
+        {
+            head.DetermineIntention();
+        }
         ShowIntention();
     }
 
     public override void ShowIntention()
     {
-        m_lion.ShowIntention();
+        foreach (var head in m_heads)
+        {
+            head.ShowIntention();
+        }
     }
 
     public override void ExecuteAction(Action finishCallback)
@@ -94,10 +170,23 @@ public class Chimera : BaseEnemy
 
     private IEnumerator WaitAndExecute(Action finishCallback)
     {
-        bool headFinished = false;
-        m_lion.ExecuteIntention(() => headFinished = true);
-        yield return new WaitUntil(() => headFinished);
-        
+        foreach (var head in m_heads)
+        {
+            bool headFinished = false;
+            bool animationFinished = true;
+            
+            string animName = head.GetAnimation();
+            if (!string.IsNullOrEmpty(animName))
+            {
+                animationFinished = false;
+                WaitForAnimation(animName, () => { animationFinished = true; });
+            }
+            
+            head.ExecuteIntention(() => headFinished = true);
+            
+            yield return new WaitUntil(() => headFinished);
+            yield return new WaitUntil(() => animationFinished);
+        }
         
         finishCallback?.Invoke();
     }
@@ -106,5 +195,13 @@ public class Chimera : BaseEnemy
     {
         m_fighterHP.SetMax(m_data.HP);
         m_fighterHP.ResetHP();
+    }
+
+    public void TauntHeads()
+    {
+        foreach (var head in m_heads)
+        {
+            head.ReceiveTaunt();
+        }
     }
 }

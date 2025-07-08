@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class DazeMechanic : BaseMechanic
 {
-    public DazeMechanic(int stack, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public DazeMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
-        m_fighter = fighter;
-        m_stack = stack;
-        m_hasGuard = hasGuard;  
-        m_guardMin = guardMin;
+        m_stack.SetValue(stack);
+        m_mechanicOwner = mOwner;
     }
     
     public override MechanicType GetMechanicType()

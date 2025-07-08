@@ -18,6 +18,7 @@ public class DynamicArrow : MonoBehaviour
     private bool m_previousHitWasEnemy = false;
     private RaycastHit2D m_previousHit;
     private Fighter m_selectedTarget;
+    private Collider2D m_selectedTargetCollider;
     private CardDisplay m_card;
     
     
@@ -61,6 +62,7 @@ public class DynamicArrow : MonoBehaviour
             }
             else
             {
+                GameplayEvents.SendColliderSelected(m_selectedTargetCollider);
                 OnEnemySelected?.Invoke(m_card, m_selectedTarget);
             }
             Disable();
@@ -91,12 +93,14 @@ public class DynamicArrow : MonoBehaviour
                 if (enemy != null)
                 {
                     m_selectedTarget = enemy;
+                    m_selectedTargetCollider = hit.collider;
                     m_previousHitWasEnemy = true;
                 }
             }
             else if (m_previousHitWasEnemy)
             {
                 m_selectedTarget = null;
+                m_selectedTargetCollider = null;
                 m_previousHitWasEnemy = false;
             }
     
