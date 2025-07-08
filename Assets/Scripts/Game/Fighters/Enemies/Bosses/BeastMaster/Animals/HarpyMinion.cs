@@ -22,6 +22,8 @@ public class HarpyMinion : BaseAnimal
     private bool m_dead = false;
     public bool isDead => m_dead;
 
+    public Action<HarpyMinion> OnDead;
+
 
 	protected override void Awake()
     {
@@ -56,6 +58,8 @@ public class HarpyMinion : BaseAnimal
         base.OnDeath();
         m_animation.Play(ANIM_DEATH);
         m_dead = true;
+
+		OnDead?.Invoke(this);
 	}
     
     

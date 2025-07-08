@@ -21,7 +21,7 @@ public class Harpy : BaseEnemy
     [SerializeField] private HarpyMovesData m_data;
 
     private List<HarpyMinion> m_minions = new List<HarpyMinion>();
-    private int m_turnCounter = 0;
+    private int m_turnCounter = 0, m_inAirboneTurnCounter = 0;
     private bool m_isOnAirbone = false, m_take100PercentDamage = false;
 
     protected override void Awake()
@@ -49,9 +49,7 @@ public class Harpy : BaseEnemy
         if (percentage == m_data.Phase1HPPercentageTrigger)
         {
             Debug.Log("Airbone at 66");
-            m_turnCounter = 0;
             SetAirbone(true);
-            ReleaseAnimal();
         }
 
         if (percentage == m_data.Phase2HPPercentageTrigger)
@@ -92,22 +90,14 @@ public class Harpy : BaseEnemy
 
     public override void DetermineIntention()
     {
-        if (m_isOnAirbone)
-        {
-            m_turnCounter++;
-            Debug.Log("Turn OnAirbone: " + m_turnCounter);
+		if (m_isOnAirbone && m_inAirboneTurnCounter < 3)
+		{
+			m_nextMove = m_moves[0];
+			ShowIntention();
+            return;
+		}
 
-            if (m_turnCounter < 3)
-            {
-                m_nextMove = m_moves[0];
-                ShowIntention();
-                return;
-            }
-            else
-                SetAirbone(false);
-        }
-
-        RandomIntentionPicker(m_moves);
+		RandomIntentionPicker(m_moves);
         ShowIntention();
     }
 
@@ -139,10 +129,9 @@ public class Harpy : BaseEnemy
         StartCoroutine(WaitAndExecute(finishCallback));
     }
 
-
     private IEnumerator WaitAndExecute(Action finishCallback)
     {
-        if (m_stuned)
+		if (m_stuned)
         {
             m_stuned = false;
             finishCallback?.Invoke();
@@ -154,7 +143,7 @@ public class Harpy : BaseEnemy
                 m_animation.Play(ANIM_HOWL, finishCallback);
                 Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
-                GameActionHelper.AddMechanicToFighter(this, m_data.Move1Bleed, MechanicType.BLEED);
+                GameActionHelper.AddMechanicToFighter(player, m_data.Move1Bleed, MechanicType.BLEED);
                 break;
             case "ScreechDaze":
                 Screech();
@@ -165,7 +154,28 @@ public class Harpy : BaseEnemy
                 m_animation.Play(ANIM_WOUND, finishCallback);
                 break;
         }
-    }
+
+
+		if (m_isOnAirbone)
+		{
+			m_inAirboneTurnCounter++;
+			Debug.Log("--- Airbone-Turn : " + m_inAirboneTurnCounter);
+
+			if (m_inAirboneTurnCounter > 2)
+				SetAirbone(false);
+		}
+		else
+		{
+			m_turnCounter++;
+			Debug.Log("--- Turn : " + m_turnCounter);
+
+			if (m_turnCounter > 2)
+			{
+				SetAirbone(true);
+				m_turnCounter = 0;
+			}
+		}
+	}
 
     public override void ConfigFighterHP()
     {
@@ -173,11 +183,24 @@ public class Harpy : BaseEnemy
         m_fighterHP.ResetHP();
     }
 
-    public void ReleaseAnimal()
+	private void Screech()
+	{
+		m_animation.Play(ANIM_ATTACK);
+		Fighter player = GameInfoHelper.GetPlayer();
+		GameActionHelper.AddMechanicToFighter(player, m_data.Move2Daze, MechanicType.DAZE);
+	}
+
+	public void ReleaseAnimal()
     {
+       if (m_minions.Count > 0)
+            return;
+
+        Debug.Log("--- ReleaseAnimals");
+
         for (int i = 0; i < 2; i++)
         {
             HarpyMinion minion = EnemiesManager.Instance.SpawnBoss("HarpyMinion")[0] as HarpyMinion;
+            minion.OnDead += RemoveFromList;
 
             if (minion != null)
             {
@@ -187,38 +210,37 @@ public class Harpy : BaseEnemy
         }
     }
 
-    private void SetAirbone(bool value)
+    public void RemoveFromList(HarpyMinion hm)
     {
-        m_isOnAirbone = value;
+        if (m_minions.Contains(hm))
+        {
+            m_minions.Remove(hm);
+			StartCoroutine(DestroyDeadAfterDelay(hm, 2));
+		}
+	}
+
+	private IEnumerator DestroyDeadAfterDelay(Fighter fighter, float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		EnemiesManager.Instance.RemoveDeadEnemy(fighter);
+	}
+
+	private void SetAirbone(bool value)
+    {
+        Debug.Log("----------- Set Aitbone: " + value);
+		m_inAirboneTurnCounter = 0;
+
+		m_isOnAirbone = value;
         SetCanBeTarget(!value);
         SetMoves(value ? m_movesDatasAirbone : m_movesDatas);
 
-        if (!value)
-            AirbonDone(IsMinionsDead());
+		if (value) ReleaseAnimal();
+		else AirbonDone();
 	}
 
-    private void Screech()
+    private void AirbonDone()
     {
-        m_animation.Play(ANIM_ATTACK);
-        GameActionHelper.AddMechanicToFighter(this, m_data.Move2Daze, MechanicType.DAZE);
-    }
-
-    private bool IsMinionsDead()
-    {
-        bool IsMinionsDead = true;
-
-        foreach (HarpyMinion m in m_minions)
-        {
-            if (!m.isDead)
-                IsMinionsDead = false;
-        }
-
-        return IsMinionsDead;
-    }
-
-    private void AirbonDone(bool minionsDead)
-    {
-        if (minionsDead) //100% Damage
+        if (IsMinionsDead()) //100% Damage
         {
             m_take100PercentDamage = true;
 			return;
@@ -228,4 +250,19 @@ public class Harpy : BaseEnemy
         Fighter player = GameInfoHelper.GetPlayer();
         GameActionHelper.DamageFighter(player, this, 40);
     }
+
+	private bool IsMinionsDead()
+	{
+        /*bool IsMinionsDead = true;
+
+		foreach (HarpyMinion m in m_minions)
+		{
+			if (!m.isDead)
+				IsMinionsDead = false;
+		}
+
+		return IsMinionsDead;*/
+
+        return m_minions.Count == 0;
+	}
 }
