@@ -12,14 +12,9 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
     [SerializeField] private EnemiesDb enemiesDb;
     [SerializeField] private string[] m_enemiesToLoad;
+    
+    
 
-    [Serializable]
-    private class SpawnPoint
-    {
-        public Transform Point;
-        [NonSerialized] public List<BaseEnemy> Occupant = new List<BaseEnemy>();
-    }
-    [SerializeField] private List<SpawnPoint> m_spawnPoints = new List<SpawnPoint>();
     
     [SerializeField] private Dictionary<string, IEnemyFactory> m_factories = new Dictionary<string, IEnemyFactory>();
     
@@ -29,7 +24,6 @@ public class EnemiesManager : Singleton<EnemiesManager>
     private List<Fighter> m_enemiesToPlayTwice = new List<Fighter>();
     
     
-    private int m_currentSpawnPoint = -1;
     private int m_currentWave = 0;
     private CombatWavesDb.CombatWaveSet m_combatWaveSet;
 
@@ -130,9 +124,8 @@ public class EnemiesManager : Singleton<EnemiesManager>
             BaseEnemy enemy = factory.SpawnEnemy(info.bosses[i], transform);
             spawnedEnemeis.Add(enemy);
 
-            SpawnPoint spawnPoint = GetNextSpawnPoint();
-            spawnPoint.Occupant.Add(enemy);
-            factory.SetupEnemy(enemy, spawnPoint.Point.position);
+            Vector3 pos = EnemiesPositionManager.Instance.AddOccupantToNextSpawnPoint(enemy);
+            factory.SetupEnemy(enemy, pos);
             if (determineIntention)
             {
                 enemy.DetermineIntention();
@@ -167,9 +160,8 @@ public class EnemiesManager : Singleton<EnemiesManager>
         BaseEnemy enemy = factory.SpawnEnemy(boss, transform);
         spawnedEnemeis.Add(enemy);
 
-        SpawnPoint spawnPoint = GetNextSpawnPoint();
-        spawnPoint.Occupant.Add(enemy);
-        factory.SetupEnemy(enemy, spawnPoint.Point.position);
+        Vector3 pos = EnemiesPositionManager.Instance.AddOccupantToNextSpawnPoint(enemy);
+        factory.SetupEnemy(enemy, pos);
         if (determineIntention)
         {
             enemy.DetermineIntention();
@@ -183,82 +175,6 @@ public class EnemiesManager : Singleton<EnemiesManager>
         m_enemies.Add(enemy);
     }
 
-    private SpawnPoint GetNextSpawnPoint()
-    {
-        SpawnPoint emptySpawnPoint = null;
-        foreach (SpawnPoint point in m_spawnPoints)
-        {
-            if (point.Occupant == null || point.Occupant.Count == 0)
-            {
-                emptySpawnPoint = point;
-                break;
-            }
-        }
-
-        if (emptySpawnPoint == null)
-        {
-            emptySpawnPoint = GetLeastCroudedSpawnPoint();
-        }
-
-        return emptySpawnPoint;
-    }
-
-    private SpawnPoint GetLeastCroudedSpawnPoint()
-    {
-        SpawnPoint leastCroudedSpawnPoint = m_spawnPoints[0];
-        foreach (SpawnPoint point in m_spawnPoints)
-        {
-            if (point.Occupant == null || point.Occupant.Count < leastCroudedSpawnPoint.Occupant.Count)
-            {
-                leastCroudedSpawnPoint = point;
-                break;
-            }
-        }
-        
-        return leastCroudedSpawnPoint;
-    }
-
-    private void OccupySpawnPoint(Transform spawnPoint, BaseEnemy enemy)
-    {
-        SpawnPoint keyPoint = m_spawnPoints.Find(x => x.Point == spawnPoint);
-
-        if (keyPoint == null)
-        {
-            Debug.Log("did not find spawn point to occupy");
-            return;
-        }
-        
-        keyPoint.Occupant.Add(enemy);
-    }
-
-    private void RemoveEnemyFromSpawnPoint(Fighter enemy)
-    {
-        SpawnPoint keyPoint = FindSpawnPointOfEnemy(enemy);
-        keyPoint.Occupant.Remove((BaseEnemy)enemy);
-    }
-
-    private SpawnPoint FindSpawnPointOfEnemy(Fighter enemy)
-    {
-        SpawnPoint keyPoint = null;
-        foreach (SpawnPoint point in m_spawnPoints)
-        {
-            foreach (BaseEnemy occupant in point.Occupant)
-            {
-                if (occupant == enemy)
-                {
-                    keyPoint = point;
-                    break;
-                }
-            }
-
-            if (keyPoint != null)
-            {
-                break;
-            }
-        }
-
-        return keyPoint;
-    }
     
     public BaseEnemy SetupEnemy(BaseEnemy enemy, Vector3? position = null)
     {
@@ -299,7 +215,7 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
         // Remove from enemies list
         m_enemies.Remove(enemy);
-        RemoveEnemyFromSpawnPoint(enemy);
+        EnemiesPositionManager.Instance.RemoveEnemyFromSpawnPoint(enemy);
         // Destroy enemy GameObject
         Destroy(enemy.gameObject);
     }
@@ -339,7 +255,6 @@ public class EnemiesManager : Singleton<EnemiesManager>
         {
             RemoveDeadEnemy(enemy);
         }
-        m_currentSpawnPoint = 0;
     }
 
 
@@ -438,5 +353,11 @@ public class EnemiesManager : Singleton<EnemiesManager>
     public int GetNumOfEnemies()
     {
         return m_enemies.Count;
+    }
+
+    public Fighter FindEnemyOfType(Type type)
+    {
+        Fighter e = m_enemies.Find(e => type.IsInstanceOfType(e));
+        return e;
     }
 }

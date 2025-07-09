@@ -219,6 +219,16 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 8391349627649040841, guid: a9d3b258f3e014d4588395a411bbe37b, type: 3}
       Factory: Chimera
+  - clientID: Nymphs
+    bosses:
+    - Prefab: {fileID: 4782642993870188052, guid: 6bb86f02266479e40805951d05989bec, type: 3}
+      Factory: Nymph
+    - Prefab: {fileID: 1638736674174968237, guid: f23720b572729d547ad053d2ee480ce1, type: 3}
+      Factory: 
+    - Prefab: {fileID: 4344186612151503614, guid: 801757e8451d4e74a980f5ac56b7795a, type: 3}
+      Factory: 
+    - Prefab: {fileID: 4908096665168079017, guid: a2e88a04ff983834988766eaf9000281, type: 3}
+      Factory: 
   PlayableEnemies:
   - clientID: Ajax
     bosses:

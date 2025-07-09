@@ -9,9 +9,6 @@ public class ChimeraMovesData : ScriptableObject
     public int Move1Damage;
 
     [Header("MISCS:")] 
-    public FighterHP.TriggerPercentage Phase1PercentageTrigger;
-    public FighterHP.TriggerPercentage Phase2PercentageTrigger;
-    public int PhaseOneUntilThisPrecentOfHP;
-    public int PhaseTwoUntilThisPrecentOfHP;
-    public int EachCardUsedByPlayerDamageToPlayer;
+    public FighterHP.TriggerPercentage PoisonPercentageTrigger;
+    public FighterHP.TriggerPercentage TauntPercentageTrigger;
 }

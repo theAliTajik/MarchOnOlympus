@@ -254,6 +254,8 @@ MonoBehaviour:
       chance: 0
       probabilities: []
     m_data: {fileID: 11400000, guid: f7ceebca987624e04a53f05473368be9, type: 2}
+  m_poisonHitMultiplier: 2
+  m_poisonCard: {fileID: 11400000, guid: 4052ac949b72442af9dc8739c18937f7, type: 2}
 --- !u!61 &5572731448897329188
 BoxCollider2D:
   m_ObjectHideFlags: 0

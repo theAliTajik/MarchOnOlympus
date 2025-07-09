@@ -5,8 +5,8 @@ public class StandardDamageBehaviour : IDamageable
 {
     public event Action<int> OnDamage;
 
-    private IHaveMechanics m_mechanicsOwner;
-    private MechanicsList m_mechanicsList;
+    protected IHaveMechanics m_mechanicsOwner;
+    protected MechanicsList m_mechanicsList;
 
     #region ctors
 
@@ -34,7 +34,7 @@ public class StandardDamageBehaviour : IDamageable
             damage = 0;
         }
 
-        if (m_mechanicsList == null)
+        if (m_mechanicsList == null && m_mechanicsOwner != null)
         {
             m_mechanicsList = MechanicsManager.Instance.GetMechanicsList(m_mechanicsOwner);
         }

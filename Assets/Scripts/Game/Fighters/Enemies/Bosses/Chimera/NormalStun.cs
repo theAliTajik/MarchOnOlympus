@@ -14,7 +14,7 @@ public class NormalStun : IChimeraHeadStunBehaviour
     public bool Stun(int damage, ChimeraHead head)
     {
         m_damageThisTurn += damage;
-        Debug.Log($"got damaged. total:{m_damageThisTurn}");
+        // Debug.Log($"got damaged. total:{m_damageThisTurn}");
 
         if (m_damageThisTurn >= m_damageThreshold)
         {
@@ -27,7 +27,7 @@ public class NormalStun : IChimeraHeadStunBehaviour
 
     public void TurnChanged()
     {
-        Debug.Log("reset damage");
+        // Debug.Log("reset damage");
         m_damageThisTurn = 0;
     }
 }

@@ -64,7 +64,7 @@ public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMecha
 
     public virtual void Heal(int heal)
     {
-        Debug.Log(this.gameObject.name + " restored: " + heal);
+        // Debug.Log(this.gameObject.name + " restored: " + heal);
         m_fighterHP.Heal(heal);
         GameplayEvents.SendFighterRestoredHP(this, heal);
     }

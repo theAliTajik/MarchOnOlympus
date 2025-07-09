@@ -20,6 +20,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
         MechanicType.STUN,
         MechanicType.DAZE,
         MechanicType.BURN,
+        MechanicType.PETRIFY
     };
     
     public List<MechanicType> DebuffMechanics { get { return m_DebuffMechanics; } }
@@ -73,7 +74,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
     {
         if (owner == null)
         {
-            Debug.Log("ERROR: tried to get mechanic of null owner");
+            // Debug.Log("ERROR: tried to get mechanic of null owner");
             return null;
         }
         
@@ -130,6 +131,12 @@ public class MechanicsManager : Singleton<MechanicsManager>
     }
     public bool Contains(IHaveMechanics owner, MechanicType mechanic)
     {
+        if (owner == null)
+        {
+            // Debug.Log("WARNING: Tried to check if owner has mechanic of type. Owner was null.");
+            return false;
+        }
+        
         if (m_allMechanics.ContainsKey(owner))
         {
             if (m_allMechanics[owner].Contains(mechanic))

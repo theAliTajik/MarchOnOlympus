@@ -16,9 +16,9 @@ public interface IEnemyFactory
 
 public  class BaseEnemyFactory : MonoBehaviour, IEnemyFactory
 {
-    public string FactoryID { get; } = "Default";
+    public virtual string FactoryID { get; } = "Default";
 
-    public BaseEnemy SpawnEnemy(EnemiesDb.BossInfo bossInfo, Transform parent)
+    public virtual BaseEnemy SpawnEnemy(EnemiesDb.BossInfo bossInfo, Transform parent)
     {
         BaseEnemy enemy = Instantiate(bossInfo.Prefab, Vector3.zero, Quaternion.identity, parent);
 

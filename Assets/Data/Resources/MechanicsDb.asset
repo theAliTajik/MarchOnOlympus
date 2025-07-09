@@ -58,3 +58,6 @@ MonoBehaviour:
   - clientID: improvise
     type: 14
     icon: {fileID: 21300000, guid: ece20912c7d2d4b439dbb3ebbbb6e63f, type: 3}
+  - clientID: petrify
+    type: 15
+    icon: {fileID: 21300000, guid: a17de4ef7bd580f479c24cc612f4f150, type: 3}

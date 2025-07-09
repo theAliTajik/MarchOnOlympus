@@ -5,6 +5,12 @@ using UnityEngine;
 [Serializable]
 public class ChimeraSerpent : ChimeraHead, IHaveIntention, IHaveMechanics
 {
+    #region Animation
+    
+	private const string ANIM_08_SERPENT_HEAD = "08_Serpent_Head";
+
+    #endregion
+    
     public ChimeraSerpent(Chimera mind)
     {
         m_mind = mind;
@@ -18,6 +24,7 @@ public class ChimeraSerpent : ChimeraHead, IHaveIntention, IHaveMechanics
 
     public override void Config()
     {
+        m_damageable = new EnemyDamageBehaviour(this);
         m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.RANDOM, m_movesData);
 
         m_stun = new NormalStun(m_data.DamageThresholdForStun);
@@ -45,7 +52,21 @@ public class ChimeraSerpent : ChimeraHead, IHaveIntention, IHaveMechanics
 
     public override string GetAnimation()
     {
-        return null;
+        if (m_nextMoveData == null)
+        {
+            Debug.Log("ERROR: tried to get animation when next move was null");
+            return null;
+        }
+
+        switch (m_nextMoveData.Value.clientID)
+        {
+            case "card":
+                return ANIM_08_SERPENT_HEAD;
+                break;
+                
+            default:
+                return null;
+        }
     }
 
     public override void ExecuteIntention(Action finishCallBack)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -92,11 +93,12 @@ public class MechanicAddList : MonoBehaviour
                 return new VulnerableMechanic(m_mechanicStack, m_owner);
             case Game.MechanicType.EXPLODE:
                 return new ExplodeMechanic(m_mechanicStack, m_owner);
-
-                // not implemented yet
-            case Game.MechanicType.INGENIUS:
-                return new BlockMechanic(1, m_owner);
             case Game.MechanicType.IMPROVISE:
+                return new ImproviseMechanic(m_mechanicStack, m_owner);
+            case MechanicType.PETRIFY:
+                return new PetrifyMechanic(m_mechanicStack, m_owner);
+            //not implemented yet
+            case Game.MechanicType.INGENIUS:
                 return new BlockMechanic(1, m_owner);
         }
     }

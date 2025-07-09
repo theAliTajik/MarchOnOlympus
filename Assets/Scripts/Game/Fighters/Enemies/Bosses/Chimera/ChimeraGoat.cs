@@ -29,7 +29,8 @@ public class ChimeraGoat : ChimeraHead, IHaveIntention
         cycle[0] = m_movesData[0];
         cycle[1] = m_movesData[0];
         cycle[2] = m_movesData[1];
-        
+
+        m_damageable = new EnemyDamageBehaviour();
         m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.CYCLIC, cycle);
 
         m_stun = new NormalStun(m_data.DamageThresholdForStun);
@@ -62,7 +63,10 @@ public class ChimeraGoat : ChimeraHead, IHaveIntention
     public override string GetAnimation()
     {
         if (m_nextMoveData == null)
+        {
+            Debug.Log("ERROR: tried to get animation when next move was null");
             return null;
+        }
         
         switch (m_nextMoveData.Value.clientID)
         {
@@ -71,9 +75,6 @@ public class ChimeraGoat : ChimeraHead, IHaveIntention
                 
             case "hit":
                 return ANIM_06_GOAT_HEAD_SHOUT_CRIT;
-            
-            case "Stunned":
-                return null;
             
             default:
                 return null;

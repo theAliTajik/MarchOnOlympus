@@ -341,9 +341,10 @@ MonoBehaviour:
   m_head: {fileID: 2136260072074857892}
   m_root: {fileID: 2136260072321045017}
   m_animation: {fileID: 2136260072648656717}
+  m_lastNymphMoveData: {fileID: 11400000, guid: cd332513b37d64be2a226d4577a7dbe0, type: 2}
   m_movesDatas:
   - clientID: Hit
-    description: Apply Hit 15
+    description: Hit 15
     chance: 10
     probabilities:
     - 0.5

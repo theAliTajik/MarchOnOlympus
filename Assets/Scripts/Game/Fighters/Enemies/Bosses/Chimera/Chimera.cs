@@ -2,6 +2,7 @@ using System;
 using Game;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -21,6 +22,7 @@ public class Chimera : BaseEnemy
 	private const string ANIM_09_DEATH_ = "09_Death_";
 
 	#endregion
+    
 
     [SerializeField] private ChimeraMovesData m_data;
 
@@ -37,6 +39,9 @@ public class Chimera : BaseEnemy
     
     
     private ChimeraHead m_TargetedHead;
+    
+    [SerializeField] private int m_poisonHitMultiplier;
+    [SerializeField] private BaseCardData m_poisonCard;
 
     public Chimera()
     {
@@ -45,8 +50,8 @@ public class Chimera : BaseEnemy
         m_goat = new ChimeraGoat(this);
         
         m_heads.Add(m_lion);
-        m_heads.Add(m_serpent);
         m_heads.Add(m_goat);
+        m_heads.Add(m_serpent);
     }
     
     protected override void Awake()
@@ -55,6 +60,9 @@ public class Chimera : BaseEnemy
         
         ConfigFighterHP();
 
+        m_damageable = new ChimeraDamageBehaviour();
+        m_damageable.OnDamage += m_fighterHP.TakeDamage;
+        
         foreach (var head in m_heads)
         {
             head.Config();
@@ -62,6 +70,28 @@ public class Chimera : BaseEnemy
         
         GameplayEvents.ColliderSelected += OnColliderSelected;
         GameplayEvents.GamePhaseChanged += OnPhaseChange;
+        
+        HP.SetTrigger(m_data.PoisonPercentageTrigger);
+        HP.SetTrigger(m_data.TauntPercentageTrigger);
+
+        HP.OnPercentageTrigger += OnHPPercentageTriggered;
+    }
+
+    private void OnHPPercentageTriggered(FighterHP.TriggerPercentage percent)
+    {
+        if (percent == m_data.PoisonPercentageTrigger)
+        {
+            Debug.Log("poison triggered");
+            HitPoison();
+        }
+
+        if (percent == m_data.TauntPercentageTrigger)
+        {
+            Debug.Log("taunt triggered");
+            m_animation.Play(ANIM_05_LION_HEAD_GROW);
+            TauntHeads();
+        }
+        
     }
 
     private void OnPhaseChange(EGamePhase phase)
@@ -97,10 +127,12 @@ public class Chimera : BaseEnemy
             return;
         }
         
+        ChimeraDamageBehaviour damageable = m_damageable as ChimeraDamageBehaviour;
+        damageable.SetTargetedHead(headHit);
         m_TargetedHead = headHit;
-        Debug.Log($"set head to: {headHit.GetType()}");
+        // Debug.Log($"set head to: {headHit.GetType()}");
     }
-
+    
     protected override void OnTookDamage(int damage, bool isCritical)
     {
         if (CombatManager.Instance.IsGameOver)
@@ -109,18 +141,8 @@ public class Chimera : BaseEnemy
         }
         base.OnTookDamage(damage, isCritical);
         m_animation.Play(ANIM_02_WOUND);
-        if (m_TargetedHead != null)
-        {
-            m_TargetedHead.TakeDamage(damage);
-            m_TargetedHead = null;
-        }
-        else
-        {
-            Debug.Log("null target head");
-        }
-
     }
-
+    
     private ChimeraHead MatchColliderToHead(Collider2D targetCollider)
     {
         foreach (var head in m_heads)
@@ -132,6 +154,19 @@ public class Chimera : BaseEnemy
         return null;
     }
 
+    private void HitPoison()
+    {
+        
+        int numOfPoisonCards = GameInfoHelper.CountCardsWithName(m_poisonCard.name, CardStorage.ALL);
+                
+        if (numOfPoisonCards <= 0)
+        {
+            return;
+        }
+
+        int damage = numOfPoisonCards * m_poisonHitMultiplier;
+        GameActionHelper.DamageFighter(GameInfoHelper.GetPlayer(), this, damage);
+    }
 
     protected override void OnDeath()
     {
@@ -179,7 +214,7 @@ public class Chimera : BaseEnemy
             if (!string.IsNullOrEmpty(animName))
             {
                 animationFinished = false;
-                WaitForAnimation(animName, () => { animationFinished = true; });
+                StartCoroutine(WaitForAnimation(animName, () => { animationFinished = true; }));
             }
             
             head.ExecuteIntention(() => headFinished = true);

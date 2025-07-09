@@ -1,0 +1,37 @@
+@startuml
+class NymphsCoordinator{
+- m_nymphsAlive: Nymph
+
++ DoInitialCoordination()
+- OnNymphDied()
+}
+NymphsCoordinator ..> Nymph : Has-Many
+
+
+class BaseEnemy
+Nymph --|> BaseEnemy
+
+class Nymph{
+- m_lastNymphAction: LastNymphAliveAction
+
++ SetDoesCastTwice(bool)
++ SetLastNymphAlive(bool)
+}
+
+class LastNymphAliveAction{
+- m_data: LastNymphAliveMoveData <<serializable>>
+
++ Execute()
+}
+Nymph ..> LastNymphAliveAction : Has-A
+
+class Nymph_1
+class Nymph_2
+class Nymph_3
+class Nymph_4
+
+Nymph_1 --|> Nymph
+Nymph_2 --|> Nymph
+Nymph_3 --|> Nymph
+Nymph_4 --|> Nymph
+@enduml

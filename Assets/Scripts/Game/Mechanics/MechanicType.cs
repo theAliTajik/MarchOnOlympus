@@ -16,7 +16,8 @@ namespace Game
         VULNERABLE,
         EXPLODE,
         INGENIUS,
-        IMPROVISE
+        IMPROVISE,
+        PETRIFY
     }
 
     public enum MechanicCategory

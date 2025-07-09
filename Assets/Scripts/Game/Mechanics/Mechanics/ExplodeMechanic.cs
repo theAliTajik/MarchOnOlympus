@@ -9,11 +9,6 @@ public class ExplodeMechanic : BaseMechanic
     [SerializeField] private int m_waitSecondsBeforeExplode = 2;
     [SerializeField] private int m_damage = 10;
     
-    public ExplodeMechanic()
-    {
-        Explode();
-    }
-
     public ExplodeMechanic(int stack, IHaveMechanics mOwner)
     {
         m_stack.SetValue(stack);

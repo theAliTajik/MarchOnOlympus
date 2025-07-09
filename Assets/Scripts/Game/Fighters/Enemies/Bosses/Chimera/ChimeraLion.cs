@@ -5,6 +5,14 @@ using UnityEngine;
 [Serializable]
 public class ChimeraLion : ChimeraHead
 {
+    #region Animation
+
+    
+	private const string ANIM_04_LION_HEAD_ATTACK = "04_Lion_head_Attack";
+	private const string ANIM_05_LION_HEAD_GROW = "05_Lion_head_Grow";
+
+    #endregion
+    
     public ChimeraLion(Chimera mind)
     {
         m_mind = mind;
@@ -22,6 +30,7 @@ public class ChimeraLion : ChimeraHead
         cycle[1] = m_movesData[0];
         cycle[2] = m_movesData[1];
 
+        m_damageable = new EnemyDamageBehaviour();
         m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.CYCLIC, cycle);
 
         m_stun = new NormalStun(m_data.DamageThresholdForStun);
@@ -52,7 +61,25 @@ public class ChimeraLion : ChimeraHead
 
     public override string GetAnimation()
     {
-        return null;
+        if (m_nextMoveData == null)
+        {
+            Debug.Log("ERROR: tried to get animation when next move was null");
+            return null;
+        }
+        
+        
+        switch (m_nextMoveData.Value.clientID)
+        {
+            case "hit":
+                return ANIM_04_LION_HEAD_ATTACK;
+                break;
+            case "taunt":
+                return ANIM_05_LION_HEAD_GROW;
+                break;
+                
+            default:
+                return null;
+        }
     }
 
     public override void ExecuteIntention(Action finishCallBack)

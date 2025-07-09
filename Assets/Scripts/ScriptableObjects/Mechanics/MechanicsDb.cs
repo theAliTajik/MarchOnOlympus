@@ -39,6 +39,7 @@ public class MechanicsDb : GenericData<MechanicsDb>
 
     public MechanicInfo FindById(string clientId)
     {
+        // Debug.Log($"trying to find mechanic by client id of {clientId}");
         for (int i = 0; i < allMechanics.Length; i++)
         {
             MechanicInfo mechanic = allMechanics[i];

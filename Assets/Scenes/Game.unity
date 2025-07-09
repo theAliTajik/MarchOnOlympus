@@ -20789,10 +20789,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1961486280}
   - component: {fileID: 1961486279}
+  - component: {fileID: 1961486285}
   - component: {fileID: 1961486281}
   - component: {fileID: 1961486282}
   - component: {fileID: 1961486283}
   - component: {fileID: 1961486284}
+  - component: {fileID: 1961486286}
   m_Layer: 0
   m_Name: EnemiesManager
   m_TagString: Untagged
@@ -20815,11 +20817,6 @@ MonoBehaviour:
   enemiesDb: {fileID: 11400000, guid: a5b81f99325c9ec4fa040d9fc4a0d82b, type: 2}
   m_enemiesToLoad:
   - Assassin
-  m_spawnPoints:
-  - Point: {fileID: 1553955051}
-  - Point: {fileID: 1950469479}
-  - Point: {fileID: 1574627249}
-  - Point: {fileID: 838580416}
 --- !u!4 &1961486280
 Transform:
   m_ObjectHideFlags: 0
@@ -20886,6 +20883,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a91c264b85b46ccaec8635d59dadc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1961486285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961486278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5c012e3f9b4a7ebe42827f6f0097cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPoints:
+  - Point: {fileID: 1553955051}
+  - Point: {fileID: 1950469479}
+  - Point: {fileID: 1574627249}
+  - Point: {fileID: 838580416}
+--- !u!114 &1961486286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961486278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30c6352c74d4ae1b8ece20eb7523d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1967979944

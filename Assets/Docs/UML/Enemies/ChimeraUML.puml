@@ -5,11 +5,12 @@ abstract class ChimeraHead {
 
 - m_colliderMatcher : ColliderMatcher <<serializable>>
 
-- m_movesData : BaseEnemy.MoveData[]
-- m_intentionDeterminer : IDetermineIntention
-- m_stun : IChimeraHeadStunBehaviour
-- m_taunt : ITauntBehaviour
-- m_mind : Chimera
+- m_movesData: BaseEnemy.MoveData[]
+- m_damageable: IDamageable
+- m_intentionDeterminer: IDetermineIntention
+- m_stun: IChimeraHeadStunBehaviour
+- m_taunt: ITauntBehaviour
+- m_mind: Chimera
 
 
 + Config()
@@ -21,6 +22,16 @@ abstract class ChimeraHead {
 + ExecuteIntention() 
 + ReceiveTaunt()
 }
+
+interface IDamageable {
++ OnDamage: Action
+
++ TakeDamage()
+}
+
+ChimeraHead --|> IDamageable
+ChimeraHead ..> IDamageable : Has-A >
+
 
 interface ITauntBehaviour {
 + ReceiveTaunt(collider: Collider2D)
