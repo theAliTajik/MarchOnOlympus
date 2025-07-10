@@ -17,7 +17,8 @@ namespace Game
         EXPLODE,
         INGENIUS,
         IMPROVISE,
-        PETRIFY
+        PETRIFY,
+        DOUBLEDAMAGE
     }
 
     public enum MechanicCategory

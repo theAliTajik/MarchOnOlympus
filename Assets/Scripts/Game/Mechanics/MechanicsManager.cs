@@ -351,7 +351,10 @@ public class MechanicsManager : Singleton<MechanicsManager>
             case MechanicType.IMPROVISE:
                 mechanic = new ImproviseMechanic(stack, owner, hasGuard, guardMin);
                 break;
-            default:
+			case MechanicType.DOUBLEDAMAGE:
+				mechanic = new DoubleDamageMechanic(stack, owner, hasGuard, guardMin);
+				break;
+			default:
                 Debug.Log("Unknown mechanic type");
                 break;
         }

@@ -22,7 +22,7 @@ public class Harpy : BaseEnemy
 
     private List<HarpyMinion> m_minions = new List<HarpyMinion>();
     private int m_turnCounter = 0, m_inAirboneTurnCounter = 0;
-    private bool m_isOnAirbone = false, m_take100PercentDamage = false;
+    private bool m_isOnAirbone = false;
 
     protected override void Awake()
     {
@@ -67,12 +67,6 @@ public class Harpy : BaseEnemy
         {
             return;
         }
-
-		if (m_take100PercentDamage)
-		{
-            damage *= 2;
-			m_take100PercentDamage = false;
-		}
 
 		base.OnTookDamage(damage, isCritical);
         m_animation.Play(ANIM_WOUND);
@@ -140,21 +134,21 @@ public class Harpy : BaseEnemy
         switch (m_nextMove.clientID)
         {
             case "HitBleed":
-                m_animation.Play(ANIM_HOWL, finishCallback);
+                m_animation.Play(ANIM_ATTACK, finishCallback);
                 Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
                 GameActionHelper.AddMechanicToFighter(player, m_data.Move1Bleed, MechanicType.BLEED);
-                break;
+				break;
             case "ScreechDaze":
                 Screech();
                 finishCallback?.Invoke();
                 break;
 
             case "Airbone":
-                m_animation.Play(ANIM_WOUND, finishCallback);
-                break;
+				//m_animation.Play(ANIM_WOUND, finishCallback);
+				finishCallback?.Invoke();
+				break;
         }
-
 
 		if (m_isOnAirbone)
 		{
@@ -217,6 +211,9 @@ public class Harpy : BaseEnemy
             m_minions.Remove(hm);
 			StartCoroutine(DestroyDeadAfterDelay(hm, 2));
 		}
+
+        if (m_minions.Count == 0)
+            SetAirbone(false);
 	}
 
 	private IEnumerator DestroyDeadAfterDelay(Fighter fighter, float seconds)
@@ -234,15 +231,18 @@ public class Harpy : BaseEnemy
         SetCanBeTarget(!value);
         SetMoves(value ? m_movesDatasAirbone : m_movesDatas);
 
+		ShowIntention();
+		CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
+
 		if (value) ReleaseAnimal();
 		else AirbonDone();
 	}
-
+    
     private void AirbonDone()
     {
         if (IsMinionsDead()) //100% Damage
         {
-            m_take100PercentDamage = true;
+			GameActionHelper.AddMechanicToFighter(this, m_data.Move1Bleed, MechanicType.DOUBLEDAMAGE);
 			return;
         }
 
