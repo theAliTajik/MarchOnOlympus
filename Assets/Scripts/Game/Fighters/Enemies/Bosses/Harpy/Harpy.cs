@@ -35,16 +35,34 @@ public class Harpy : BaseEnemy
             MoveData md = m_movesDatas[i];
             m_moves.Add(md, md.chance);
         }
-    }
+	}
 
     private void Start()
     {
         HP.SetTrigger(m_data.Phase1HPPercentageTrigger);
         HP.SetTrigger(m_data.Phase2HPPercentageTrigger);
         HP.OnPercentageTrigger += OnHPPercentageTriggred;
-    }
 
-    private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percentage)
+        GameplayEvents.GamePhaseChanged += OnPhaseChange;
+	}
+
+	private void OnDestroy()
+	{
+		GameplayEvents.GamePhaseChanged -= OnPhaseChange;
+		HP.OnPercentageTrigger -= OnHPPercentageTriggred;
+	}
+
+	private void OnPhaseChange(EGamePhase phase)
+	{
+        switch (phase)
+        {
+            case EGamePhase.PLAYER_TURN_END:
+                GameActionHelper.ReduceMechanicStack(this, 1, MechanicType.DOUBLEDAMAGE);
+                break;
+        }
+	}
+
+	private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percentage)
     {
         if (percentage == m_data.Phase1HPPercentageTrigger)
         {
@@ -242,8 +260,8 @@ public class Harpy : BaseEnemy
     {
         if (IsMinionsDead()) //100% Damage
         {
-			GameActionHelper.AddMechanicToFighter(this, m_data.Move1Bleed, MechanicType.DOUBLEDAMAGE);
-			return;
+            GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.DOUBLEDAMAGE);
+            return;
         }
 
         //40 Damage to player

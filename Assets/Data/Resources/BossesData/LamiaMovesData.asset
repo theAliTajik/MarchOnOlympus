@@ -20,7 +20,7 @@ MonoBehaviour:
   Move2Thorns: 3
   Move3Damage: 20
   Move3PetrifyMultiply: 4
-  Move4Damage: 20
+  Move4Damage: 5
   Phase1HPPercentageTrigger:
     Percentage: 66
     TriggerType: 2
