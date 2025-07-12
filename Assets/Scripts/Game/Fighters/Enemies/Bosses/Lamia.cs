@@ -86,7 +86,7 @@ public class Lamia : BaseEnemy
                 BaseMechanic bM = mList.GetMechanic(MechanicType.PETRIFY);
                 if (bM.Stack == 10)
                 {
-                    // ---> END PLAYER TURN, --> HOW?
+                    // ---> END PLAYER TURN
                 }
 				break;
 		}
@@ -177,8 +177,7 @@ public class Lamia : BaseEnemy
 				break;
 			case "HitBlockPetrify":
 				yield return WaitForAnimation(ANIM_05_ATTACK);
-				GameActionHelper.DamageFighter(player, this, m_data.Move3Damage);
-				// --> HOW TO IGNORE BLOCK?
+                GameActionHelper.DamageFighter(player, this, m_data.Move3Damage, isArmorPiercing: true);
 				GameActionHelper.AddMechanicToFighter(player, m_data.Move3PetrifyMultiply, MechanicType.PETRIFY);
 				break;
 			case "IfPetrifyHit":
