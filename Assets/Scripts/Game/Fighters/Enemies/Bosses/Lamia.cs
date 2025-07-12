@@ -81,10 +81,8 @@ public class Lamia : BaseEnemy
 		switch (phase)
 		{
 			case EGamePhase.PLAYER_TURN_START:
-				Fighter player = GameInfoHelper.GetPlayer();
-                var mList = player.GetMechanicsList();
-                BaseMechanic bM = mList.GetMechanic(MechanicType.PETRIFY);
-                if (bM.Stack == 10)
+				int bM = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PETRIFY);
+                if (bM >= 10)
                 {
                     // ---> END PLAYER TURN
                 }
@@ -176,7 +174,7 @@ public class Lamia : BaseEnemy
 				GameActionHelper.AddMechanicToFighter(this, m_data.Move2Thorns, MechanicType.THORNS);
 				break;
 			case "HitBlockPetrify":
-				yield return WaitForAnimation(ANIM_05_ATTACK);
+				yield return WaitForAnimation(ANIM_05_ATTACK, finishCallback);
                 GameActionHelper.DamageFighter(player, this, m_data.Move3Damage, isArmorPiercing: true);
 				GameActionHelper.AddMechanicToFighter(player, m_data.Move3PetrifyMultiply, MechanicType.PETRIFY);
 				break;

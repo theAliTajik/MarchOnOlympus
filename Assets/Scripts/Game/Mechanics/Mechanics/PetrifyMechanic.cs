@@ -5,8 +5,8 @@ using UnityEngine;
 public class PetrifyMechanic : BaseMechanic
 {
     private const int m_triggerThreshold = 10;
-    
-    public PetrifyMechanic(int stack, IHaveMechanics mOwner)
+
+    public PetrifyMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;

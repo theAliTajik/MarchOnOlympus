@@ -354,6 +354,9 @@ public class MechanicsManager : Singleton<MechanicsManager>
 			case MechanicType.DOUBLEDAMAGE:
 				mechanic = new DoubleDamageMechanic(stack, owner, hasGuard, guardMin);
 				break;
+            case MechanicType.PETRIFY:
+                mechanic = new PetrifyMechanic(stack, owner, hasGuard, guardMin);
+                break;
 			default:
                 Debug.Log("Unknown mechanic type");
                 break;
