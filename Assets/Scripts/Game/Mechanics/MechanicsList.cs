@@ -214,6 +214,12 @@ public class MechanicsList
 
     public void ReduceMechanic(MechanicType mechanicType, int amount)
     {
+        if (!m_mechanics.ContainsKey(mechanicType))
+        {
+            Debug.Log($"WARNING: tried to reduce non existent mechanic of type {mechanicType}");
+            return;
+        }
+        
         m_mechanics[mechanicType].ReduceStack(amount);
     }
 

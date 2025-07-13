@@ -260,6 +260,7 @@ public class Harpy : BaseEnemy
     {
         if (IsMinionsDead()) //100% Damage
         {
+	        Debug.Log("minions are dead added Double damage");
             GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.DOUBLEDAMAGE);
             return;
         }

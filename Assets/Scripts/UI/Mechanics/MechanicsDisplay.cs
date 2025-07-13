@@ -94,6 +94,12 @@ public class MechanicsDisplay : MonoBehaviour
     private void DisplayMechanic(MechanicType mechanicType)
     {
         BaseMechanic mechanic = m_mechanicsList.GetMechanic(mechanicType);
+        if (mechanic == null)
+        {
+            Debug.Log($"WARNING: Mechanic of type {mechanicType} could not be displayed. was not found in mechanic list");
+            return;
+        }
+        
         int StackAmount = mechanic.Stack;
 
         bool hasWidget = m_widgets.TryGetValue(mechanicType, out MechanicWidget widget);
