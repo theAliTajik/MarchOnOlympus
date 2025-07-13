@@ -43,14 +43,14 @@ public class Phoenix : BaseEnemy
     {
         if (percentage == m_data.Phase1HPPercentageTrigger)
         {
-            Debug.Log("at 66");
+			Debug.Log("--> [Phoenix] %66 Hit 50 to player, Restore 50");
 			GameActionHelper.DamageFighter(GameInfoHelper.GetPlayer(), this, m_data.At66Damage);
             Heal(m_data.At66Restore);
 		}
 
 		if (percentage == m_data.Phase2HPPercentageTrigger)
         {
-            Debug.Log("at 33");
+			Debug.Log("--> [Phoenix] %33 Hit 50 to player, Use ability Restore");
 			GameActionHelper.DamageFighter(GameInfoHelper.GetPlayer(), this, m_data.At33Damage);
 			Heal(m_data.At33Restore);
 		}
@@ -125,18 +125,24 @@ public class Phoenix : BaseEnemy
         {
             case "BurnDaze":
                 m_animation.Play(ANIM_HOWL, finishCallback);
-                GameActionHelper.AddMechanicToFighter(this, m_data.Move1Burn, MechanicType.BURN);
-				GameActionHelper.AddMechanicToFighter(this, m_data.Move1Daze, MechanicType.DAZE);
+				Fighter player = GameInfoHelper.GetPlayer();
+				GameActionHelper.AddMechanicToFighter(player, m_data.Move1Burn, MechanicType.BURN);
+				GameActionHelper.AddMechanicToFighter(player, m_data.Move1Daze, MechanicType.DAZE);
+				Debug.Log($"--> [Phoenix] | BURN x{m_data.Move1Burn} | DAZE x{m_data.Move1Daze}");
 				break;
+
             case "BurnRestore":
                 m_animation.Play(ANIM_HOWL, finishCallback);
-				GameActionHelper.AddMechanicToFighter(this, m_data.Move2Burn, MechanicType.BURN);
+				GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move2Burn, MechanicType.BURN);
                 Heal(m_data.Move2Restore);
-                break;
+                Debug.Log($"--> [Phoenix] | BURN x{m_data.Move2Burn} | Heal +{m_data.Move2Restore}");
+				break;
+
             case "BlockRestore":
                 m_animation.Play(ANIM_WOUND, finishCallback);
 				GameActionHelper.AddMechanicToFighter(this, m_data.Move3Block, MechanicType.BLOCK);
 				Heal(m_data.Move3Restore);
+				Debug.Log($"--> [Phoenix] | BLOCK x{m_data.Move3Block} | Heal +{m_data.Move3Restore}");
 				break;
         }
     }

@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Lamia : BaseEnemy
 {
     #region Animations
@@ -22,10 +21,11 @@ public class Lamia : BaseEnemy
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
-    [SerializeField] private LamiaMovesData m_data;
 
-    
-    protected override void Awake()
+	[SerializeField] private LamiaMovesData m_data;
+
+
+	protected override void Awake()
     {
         base.Awake();
 
@@ -57,20 +57,21 @@ public class Lamia : BaseEnemy
 	{
         if (percentage == m_data.Phase1HPPercentageTrigger)
         {
-            Debug.Log("at 66");
+            Debug.Log("--> [Lamia] 66% Removes player blocks, vul 3 player");
             // 66% Removes all player block, Apply vulnerable 3 to playey
             Fighter player = GameInfoHelper.GetPlayer();
-            GameActionHelper.ReduceMechanicStack(player, 100, MechanicType.BLOCK);
+
+            if (GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.BLOCK))
+                GameActionHelper.ReduceMechanicStack(player, 100, MechanicType.BLOCK);
+
             GameActionHelper.AddMechanicToFighter(player, 3, MechanicType.VULNERABLE);
         }
 
 		if (percentage == m_data.Phase2HPPercentageTrigger)
 		{
-			Debug.Log("at 33");
+			Debug.Log("--> [Lamia] 33% Auto Petrify 10");
 			// 33% Auto Petrify 10
-			Fighter player = GameInfoHelper.GetPlayer();
-            GameActionHelper.AddMechanicToFighter(player, 10, MechanicType.PETRIFY);
-
+            GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 10, MechanicType.PETRIFY);
 		}
 
 		Debug.Log("percentage triggered: :" + percentage.Percentage);
@@ -85,6 +86,7 @@ public class Lamia : BaseEnemy
                 if (bM >= 10)
                 {
                     // ---> END PLAYER TURN
+                    Debug.Log("---> END PLAYER TURN");
                 }
 				break;
 		}
@@ -157,37 +159,57 @@ public class Lamia : BaseEnemy
 
 		Fighter player = GameInfoHelper.GetPlayer();
 
-		switch (m_nextMove.clientID)
+        switch (m_nextMove.clientID)
         {
-			case "HitPetrify":
-				for (int i = 1; i <= m_data.Move1NumOfAttacks; i++)
-				{
-					yield return WaitForAnimation(ANIM_05_ATTACK);
-					GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
-					GameActionHelper.AddMechanicToFighter(player, 1, MechanicType.PETRIFY);
-				}
-				finishCallback?.Invoke();
-				break;
-			case "BlockThorns":
+            case "HitPetrify":
+                for (int i = 1; i <= m_data.Move1NumOfAttacks; i++)
+                {
+                    yield return WaitForAnimation(ANIM_05_ATTACK);
+                    GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
+                    GameActionHelper.AddMechanicToFighter(player, 1, MechanicType.PETRIFY);
+                    Debug.Log($"--> [Lamia] | Damage: {m_data.Move1Damage} | PETRIFY x1");
+                }
+                finishCallback?.Invoke();
+                break;
+
+            case "BlockThorns":
                 m_animation.Play(ANIM_CAST_CLON, finishCallback);
-				GameActionHelper.AddMechanicToFighter(this, m_data.Move2Block, MechanicType.BLOCK);
-				GameActionHelper.AddMechanicToFighter(this, m_data.Move2Thorns, MechanicType.THORNS);
-				break;
-			case "HitBlockPetrify":
-				yield return WaitForAnimation(ANIM_05_ATTACK, finishCallback);
+                GameActionHelper.AddMechanicToFighter(this, m_data.Move2Block, MechanicType.BLOCK);
+                GameActionHelper.AddMechanicToFighter(this, m_data.Move2Thorns, MechanicType.THORNS);
+                Debug.Log($"--> [Lamia] | BLOCK x{m_data.Move2Block} | THORNS x{m_data.Move2Thorns}");
+                break;
+
+            case "HitBlockPetrify":
+                yield return WaitForAnimation(ANIM_05_ATTACK, finishCallback);
                 GameActionHelper.DamageFighter(player, this, m_data.Move3Damage, isArmorPiercing: true);
-				GameActionHelper.AddMechanicToFighter(player, m_data.Move3PetrifyMultiply, MechanicType.PETRIFY);
-				break;
-			case "IfPetrifyHit":
-				// Only if petrify > 4, Hit 5xPetrify Stack
-				var mList = player.GetMechanicsList();
-				BaseMechanic bM = mList.GetMechanic(MechanicType.PETRIFY);
-				if (bM.Stack > 4)
-				{
-                    GameActionHelper.DamageFighter(player, this, m_data.Move4Damage * bM.Stack);
+                GameActionHelper.AddMechanicToFighter(player, m_data.Move3PetrifyMultiply, MechanicType.PETRIFY);
+                Debug.Log($"--> [Lamia] | Damage: {m_data.Move3Damage} | PETRIFY x{m_data.Move3PetrifyMultiply}");
+                break;
+
+            case "IfPetrifyHit":
+                yield return WaitForAnimation(ANIM_05_ATTACK, finishCallback);
+                // Only if petrify > 4, Hit 5xPetrify Stack
+
+                Debug.Log($"--> [Lamia] IfPetrifyHit");
+                var mList = player.GetMechanicsList();
+
+                if (GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.PETRIFY))
+                {
+                    int PETRIFYStacks = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PETRIFY);
+                    if (PETRIFYStacks > 4)
+                    {
+                        GameActionHelper.DamageFighter(player, this, m_data.Move4Damage * PETRIFYStacks);
+                        Debug.Log($"--> [Lamia] | Damage: {m_data.Move4Damage} * ({PETRIFYStacks} PETRIFY)");
+                    }
+					else
+						Debug.Log($"--> [Lamia] | PETRIFY stacks ({PETRIFYStacks}) are not enough, no damage dealt.");
 				}
-				break;
-		}
+                else
+                {
+                    Debug.Log($"--> [Lamia] | No PETRIFY stacks found, no damage dealt.");
+                }
+                break;
+        }
 
         yield return null;
     }
