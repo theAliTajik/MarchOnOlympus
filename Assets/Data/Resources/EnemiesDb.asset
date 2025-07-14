@@ -229,6 +229,10 @@ MonoBehaviour:
       Factory: 
     - Prefab: {fileID: 4908096665168079017, guid: a2e88a04ff983834988766eaf9000281, type: 3}
       Factory: 
+  - clientID: FearMinion
+    bosses:
+    - Prefab: {fileID: 8052193243663512903, guid: d725cb5dc6564124e9150e22fd985fa0, type: 3}
+      Factory: 
   PlayableEnemies:
   - clientID: Ajax
     bosses:

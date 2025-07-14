@@ -2,6 +2,7 @@ using Game;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WarHero : BaseEnemy
@@ -23,6 +24,9 @@ public class WarHero : BaseEnemy
     
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private WarHeroMovesData m_data;
+	private List<FearMinion> m_minions = new List<FearMinion>();
+
+	private int m_panic;
     
     protected override void Awake()
     {
@@ -36,8 +40,39 @@ public class WarHero : BaseEnemy
             m_moves.Add(md, md.chance);
         }
     }
-    
-    protected override void OnTookDamage(int damage, bool isCritical)
+
+	private void Start()
+	{
+		HP.SetTrigger(m_data.Phase1HPPercentageTrigger);
+		HP.SetTrigger(m_data.Phase2HPPercentageTrigger);
+		HP.OnPercentageTrigger += OnHPPercentageTriggred;
+	}
+
+	private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percentage)
+	{
+		if (percentage == m_data.Phase1HPPercentageTrigger)
+		{
+			Debug.Log("--> [War Hero] 66% Summon 2 Fear, if there are fear minions already, Apply Panic on Player");
+
+            if (IsMinionsDead())
+                ReleaseMinions();
+            else
+            {
+				Debug.Log("--> [War Hero] Apply Panic on Player");
+				//GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.Panic);
+			}
+		}
+
+		if (percentage == m_data.Phase2HPPercentageTrigger)
+		{
+			Debug.Log("--> [War Hero] 33% Permanent Forfity");
+            GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 10, MechanicType.FORTIFIED);
+		}
+
+		Debug.Log("percentage triggered: :" + percentage.Percentage);
+	}
+
+	protected override void OnTookDamage(int damage, bool isCritical)
     {
         if (CombatManager.Instance.IsGameOver)
         {
@@ -68,11 +103,11 @@ public class WarHero : BaseEnemy
         base.ShowIntention();
         switch (m_nextMove.clientID)
         {
-            case "0":
-                //CallOnIntentionDetermined(Intention.BLOCK, m_nextMove.description);
+            case "HitHunt":
+                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
                 break;
-            case "1":
-
+            case "Panic":
+                CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
                 break;
         }
     }
@@ -93,17 +128,58 @@ public class WarHero : BaseEnemy
             finishCallback?.Invoke();
             yield break;
         }
-        switch (m_nextMove.clientID)
+
+		Fighter player = GameInfoHelper.GetPlayer();
+
+		switch (m_nextMove.clientID)
         {
-            case "0":
-                m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
+            case "HitHunt":
+				for (int i = 1; i <= m_data.Move1NumOfAttacks; i++)
+				{
+					yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
+					GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
+
+                    if (!GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.BLOCK))
+                    {
+						Debug.Log("---> [War Hero] Apply Haunt 2 per Attack that hits Player");
+						//---> Apply Haunt 2 per Attack that hits Player (if no block)
+					}
+				}
+				finishCallback?.Invoke();
 				break;
-            case "1":
-                m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
-				yield return new WaitForSeconds(1f);
+
+            case "Panic":
+
+                if (m_panic >= 2)
+                {
+                    m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
+                    GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater2);
+                    Debug.Log("---> [War Hero] m_panic >= 2");
+                }
+                else if (m_panic >= 1)
+                {
+                    for (int i = 1; i <= m_panic; i++)
+                    {
+                        m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
+                        GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
+                        Heal(m_data.Move2Restore);
+                        Debug.Log("---> [War Hero] m_panic >= 1");
+                    }
+                }
+                else
+                {
+					Debug.Log($"--> [War Hero] | No Panic stacks found, no damage dealt.");
+					finishCallback?.Invoke();
+                }
+
 				break;
         }
-        yield return null;
+
+		//---> Always If no "Fear" then Summon 2x "Fear"
+		if (IsMinionsDead())
+			ReleaseMinions();
+
+		yield return null;
     }
     
     public override void ConfigFighterHP()
@@ -111,4 +187,44 @@ public class WarHero : BaseEnemy
         m_fighterHP.SetMax(m_data.HP);
         m_fighterHP.ResetHP();
     }
+
+	public void ReleaseMinions()
+	{
+		if (m_minions.Count > 0)
+			return;
+
+		Debug.Log("---> [War Hero] Release Fear Minions");
+
+		for (int i = 0; i < 2; i++)
+		{
+			FearMinion minion = EnemiesManager.Instance.SpawnBoss("FearMinion")[0] as FearMinion;
+			minion.OnDead += RemoveFromList;
+
+			if (minion != null)
+			{
+				m_minions.Add(minion);
+				minion.DetermineIntention();
+			}
+		}
+	}
+
+	public void RemoveFromList(FearMinion fm)
+	{
+		if (m_minions.Contains(fm))
+		{
+			m_minions.Remove(fm);
+			StartCoroutine(DestroyDeadAfterDelay(fm, 2));
+		}
+	}
+
+	private IEnumerator DestroyDeadAfterDelay(Fighter fighter, float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		EnemiesManager.Instance.RemoveDeadEnemy(fighter);
+	}
+
+	private bool IsMinionsDead()
+	{
+		return m_minions.Count == 0;
+	}
 }

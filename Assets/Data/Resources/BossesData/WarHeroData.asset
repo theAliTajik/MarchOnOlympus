@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: WarHeroData
   m_EditorClassIdentifier: 
   HP: 200
-  Move1Damage: 0
-  Move1NumOfAttacks: 0
-  Phase1PercentageTrigger:
-    Percentage: 0
-    TriggerType: 0
-    Equal: 0
-    RemoveOnTrigger: 0
-  Phase2PercentageTrigger:
-    Percentage: 0
-    TriggerType: 0
-    Equal: 0
-    RemoveOnTrigger: 0
-  PhaseOneUntilThisPrecentOfHP: 0
-  PhaseTwoUntilThisPrecentOfHP: 0
-  EachCardUsedByPlayerDamageToPlayer: 0
+  Move1Damage: 5
+  Move1NumOfAttacks: 2
+  Move1Haunt: 2
+  Move2Damage_PanicGreater1: 50
+  Move2Damage_PanicGreater2: 10
+  Move2Restore: 25
+  Phase1HPPercentageTrigger:
+    Percentage: 66
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
+  Phase2HPPercentageTrigger:
+    Percentage: 33
+    TriggerType: 2
+    Equal: 1
+    RemoveOnTrigger: 1
