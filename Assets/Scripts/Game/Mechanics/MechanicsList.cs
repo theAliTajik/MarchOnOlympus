@@ -24,7 +24,9 @@ public class MechanicsList
     
     private readonly IReadOnlyList<MechanicType> m_orderOfMechanics = new List<MechanicType>
     {
-        MechanicType.VULNERABLE,
+        MechanicType.HAUNT,
+		MechanicType.DOUBLEDAMAGE,
+		MechanicType.VULNERABLE,
         MechanicType.FORTIFIED,
         MechanicType.BLOCK,
         MechanicType.THORNS,

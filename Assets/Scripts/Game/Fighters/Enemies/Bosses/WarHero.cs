@@ -2,7 +2,6 @@ using Game;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class WarHero : BaseEnemy
@@ -59,13 +58,13 @@ public class WarHero : BaseEnemy
             else
             {
 				Debug.Log("--> [War Hero] Apply Panic on Player");
-				//GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.Panic);
+				GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.PANIC);
 			}
 		}
 
 		if (percentage == m_data.Phase2HPPercentageTrigger)
 		{
-			Debug.Log("--> [War Hero] 33% Permanent Forfity");
+			Debug.Log("--> [War Hero] 33% Permanent Forfity on Player");
             GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 10, MechanicType.FORTIFIED);
 		}
 
@@ -142,7 +141,7 @@ public class WarHero : BaseEnemy
                     if (!GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.BLOCK))
                     {
 						Debug.Log("---> [War Hero] Apply Haunt 2 per Attack that hits Player");
-						//---> Apply Haunt 2 per Attack that hits Player (if no block)
+						GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Haunt, MechanicType.HAUNT);
 					}
 				}
 				finishCallback?.Invoke();

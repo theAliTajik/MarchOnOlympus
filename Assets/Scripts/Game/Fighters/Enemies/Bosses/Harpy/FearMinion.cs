@@ -1,3 +1,4 @@
+using Game;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -101,6 +102,7 @@ public class FearMinion : BaseEnemy
             case "Haunt":
 				m_animation.Play(ANIM_ATTACK, finishCallback);
                 Debug.Log($"[{gameObject.name}] : Apply Haunt x{m_data.Move1Haunt} to Player");
+				GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Haunt, MechanicType.HAUNT);
 				break;
         }
     }

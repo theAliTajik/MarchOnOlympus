@@ -20,8 +20,9 @@ public class MechanicsManager : Singleton<MechanicsManager>
         MechanicType.STUN,
         MechanicType.DAZE,
         MechanicType.BURN,
-        MechanicType.PETRIFY
-    };
+        MechanicType.PETRIFY,
+		MechanicType.HAUNT
+	};
     
     public List<MechanicType> DebuffMechanics { get { return m_DebuffMechanics; } }
     
@@ -357,6 +358,12 @@ public class MechanicsManager : Singleton<MechanicsManager>
             case MechanicType.PETRIFY:
                 mechanic = new PetrifyMechanic(stack, owner, hasGuard, guardMin);
                 break;
+			case MechanicType.PANIC:
+				mechanic = new PanicMechanic(stack, owner, hasGuard, guardMin);
+				break;
+			case MechanicType.HAUNT:
+				mechanic = new HauntMechanic(stack, owner, hasGuard, guardMin);
+				break;
 			default:
                 Debug.Log("Unknown mechanic type");
                 break;
