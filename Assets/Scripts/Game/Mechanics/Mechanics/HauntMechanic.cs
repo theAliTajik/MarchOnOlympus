@@ -26,7 +26,8 @@ public class HauntMechanic : BaseMechanic
     {
         if (m_stack >= 10)
         {
-            GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.PANIC);
+            Fighter target = GameInfoHelper.GetPlayer();
+			GameActionHelper.AddMechanicToFighter(target, 1, MechanicType.PANIC);
             ReduceStack(10);
             return true;
         }
@@ -36,6 +37,7 @@ public class HauntMechanic : BaseMechanic
             ReduceStack(m_stack / 2);
             return true;
         }
+
         return false;
     }
     

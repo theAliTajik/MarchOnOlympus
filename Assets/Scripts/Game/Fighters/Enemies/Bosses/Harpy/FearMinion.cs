@@ -100,7 +100,7 @@ public class FearMinion : BaseEnemy
         switch (m_nextMove.clientID)
         {
             case "Haunt":
-				m_animation.Play(ANIM_ATTACK, finishCallback);
+				yield return WaitForAnimation(ANIM_ATTACK, finishCallback);
                 Debug.Log($"[{gameObject.name}] : Apply Haunt x{m_data.Move1Haunt} to Player");
 				GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Haunt, MechanicType.HAUNT);
 				break;

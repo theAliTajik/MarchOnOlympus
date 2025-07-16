@@ -24,8 +24,6 @@ public class WarHero : BaseEnemy
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private WarHeroMovesData m_data;
 	private List<FearMinion> m_minions = new List<FearMinion>();
-
-	private int m_panic;
     
     protected override void Awake()
     {
@@ -148,19 +146,20 @@ public class WarHero : BaseEnemy
 				break;
 
             case "Panic":
+				int panics = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PANIC);
 
-                if (m_panic >= 2)
+				if (panics >= 2)
                 {
-                    m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
+                    yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
                     GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater2);
                     Debug.Log("---> [War Hero] m_panic >= 2");
                 }
-                else if (m_panic >= 1)
+                else if (panics >= 1)
                 {
-                    for (int i = 1; i <= m_panic; i++)
+                    for (int i = 1; i <= panics; i++)
                     {
-                        m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
-                        GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
+						yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
+						GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
                         Heal(m_data.Move2Restore);
                         Debug.Log("---> [War Hero] m_panic >= 1");
                     }
@@ -168,9 +167,8 @@ public class WarHero : BaseEnemy
                 else
                 {
 					Debug.Log($"--> [War Hero] | No Panic stacks found, no damage dealt.");
-					finishCallback?.Invoke();
                 }
-
+				finishCallback?.Invoke();
 				break;
         }
 

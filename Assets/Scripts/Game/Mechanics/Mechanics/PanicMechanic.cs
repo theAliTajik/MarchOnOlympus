@@ -23,11 +23,11 @@ public class PanicMechanic : BaseMechanic
 
     public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
     {
-        if (phase == CombatPhase.PLAYER_TURN_START)
+        if (phase == CombatPhase.TURN_START && isMyTurn)
         {
             Fighter player = GameInfoHelper.GetPlayer();
-			player.TakeDamage(4, player, true, true);
-            Debug.Log("[PLAYER_TURN_START] : [Panic] ---> Damage: 4");
+            player.TakeDamage(4, player, false, true);
+            Debug.Log("---> [PLAYER_TURN_START] : [Panic] ---> Damage: 4");
 			return true;
         }
         return false;
