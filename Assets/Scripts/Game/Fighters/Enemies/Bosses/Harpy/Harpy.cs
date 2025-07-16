@@ -249,8 +249,8 @@ public class Harpy : BaseEnemy
         SetCanBeTarget(!value);
         SetMoves(value ? m_movesDatasAirbone : m_movesDatas);
 
+        DetermineIntention();
 		ShowIntention();
-		CallOnIntentionDetermined(Intention.ATTACK, m_nextMove.description);
 
 		if (value) ReleaseAnimal();
 		else AirbonDone();
@@ -258,6 +258,7 @@ public class Harpy : BaseEnemy
     
     private void AirbonDone()
     {
+	    
         if (IsMinionsDead()) //100% Damage
         {
 	        Debug.Log("minions are dead added Double damage");

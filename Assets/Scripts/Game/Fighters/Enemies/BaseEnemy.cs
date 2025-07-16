@@ -51,7 +51,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
     protected override void Awake()
     {
         base.Awake();
-        m_damageable = new EnemyDamageBehaviour();
+        m_damageable = new EnemyDamageBehaviour(this);
         m_damageable.OnDamage += m_fighterHP.TakeDamage;
     }
 

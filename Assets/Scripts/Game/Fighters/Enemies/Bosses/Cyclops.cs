@@ -97,7 +97,7 @@ public class Cyclops : BaseEnemy
         // play intention
         base.ExecuteAction(finishCallback);
 
-        Debug.Log("this action is played: " + m_nextMove.clientID);
+        // Debug.Log("this action is played: " + m_nextMove.clientID);
         StartCoroutine(WaitAndExecute(finishCallback));
     }
     

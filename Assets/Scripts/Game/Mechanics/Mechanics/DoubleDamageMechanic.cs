@@ -23,11 +23,6 @@ public class DoubleDamageMechanic : BaseMechanic
 
     public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
     {
-        if (phase == CombatPhase.CARD_PLAYED)
-        {
-            ReduceStack(1);
-            return true;
-        }
         return false;
     }
     
