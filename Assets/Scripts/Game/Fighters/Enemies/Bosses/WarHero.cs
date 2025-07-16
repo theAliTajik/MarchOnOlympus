@@ -2,7 +2,6 @@ using Game;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class WarHero : BaseEnemy
@@ -25,8 +24,6 @@ public class WarHero : BaseEnemy
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] private WarHeroMovesData m_data;
 	private List<FearMinion> m_minions = new List<FearMinion>();
-
-	private int m_panic;
     
     protected override void Awake()
     {
@@ -59,13 +56,13 @@ public class WarHero : BaseEnemy
             else
             {
 				Debug.Log("--> [War Hero] Apply Panic on Player");
-				//GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.Panic);
+				GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.PANIC);
 			}
 		}
 
 		if (percentage == m_data.Phase2HPPercentageTrigger)
 		{
-			Debug.Log("--> [War Hero] 33% Permanent Forfity");
+			Debug.Log("--> [War Hero] 33% Permanent Forfity on Player");
             GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 10, MechanicType.FORTIFIED);
 		}
 
@@ -142,26 +139,27 @@ public class WarHero : BaseEnemy
                     if (!GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.BLOCK))
                     {
 						Debug.Log("---> [War Hero] Apply Haunt 2 per Attack that hits Player");
-						//---> Apply Haunt 2 per Attack that hits Player (if no block)
+						GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Haunt, MechanicType.HAUNT);
 					}
 				}
 				finishCallback?.Invoke();
 				break;
 
             case "Panic":
+				int panics = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PANIC);
 
-                if (m_panic >= 2)
+				if (panics >= 2)
                 {
-                    m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
+                    yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
                     GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater2);
                     Debug.Log("---> [War Hero] m_panic >= 2");
                 }
-                else if (m_panic >= 1)
+                else if (panics >= 1)
                 {
-                    for (int i = 1; i <= m_panic; i++)
+                    for (int i = 1; i <= panics; i++)
                     {
-                        m_animation.Play(ANIM_ATTACK_COMONWARRIOR, finishCallback);
-                        GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
+						yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
+						GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
                         Heal(m_data.Move2Restore);
                         Debug.Log("---> [War Hero] m_panic >= 1");
                     }
@@ -169,9 +167,8 @@ public class WarHero : BaseEnemy
                 else
                 {
 					Debug.Log($"--> [War Hero] | No Panic stacks found, no damage dealt.");
-					finishCallback?.Invoke();
                 }
-
+				finishCallback?.Invoke();
 				break;
         }
 

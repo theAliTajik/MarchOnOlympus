@@ -64,3 +64,9 @@ MonoBehaviour:
   - clientID: doubleDamage
     type: 16
     icon: {fileID: 21300000, guid: d516bc68462f81d4a97edeca6a597cdc, type: 3}
+  - clientID: panic
+    type: 17
+    icon: {fileID: 21300000, guid: fbdfb991af11079469637d2a0a863cdb, type: 3}
+  - clientID: haunt
+    type: 18
+    icon: {fileID: 21300000, guid: a17de4ef7bd580f479c24cc612f4f150, type: 3}

@@ -18,8 +18,10 @@ namespace Game
         INGENIUS,
         IMPROVISE,
         PETRIFY,
-        DOUBLEDAMAGE
-    }
+        DOUBLEDAMAGE,
+        PANIC,
+		HAUNT
+	}
 
     public enum MechanicCategory
     {
