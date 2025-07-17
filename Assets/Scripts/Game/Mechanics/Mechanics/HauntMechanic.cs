@@ -52,7 +52,7 @@ public class HauntMechanic : BaseMechanic
 
         if (context.Sender is IDamageable damageable)
         {
-            damageable.TakeDamage(returnDamageAmout, context.Target as Fighter, false);
+            damageable.TakeDamage(returnDamageAmout, null, false);
         }
     }
 }

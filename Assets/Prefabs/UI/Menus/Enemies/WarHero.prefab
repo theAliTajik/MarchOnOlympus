@@ -232,7 +232,14 @@ MonoBehaviour:
   m_head: {fileID: 6016320941213213795}
   m_root: {fileID: 4578737801698960469}
   m_animation: {fileID: 984700289372730207}
-  m_movesDatas:
+  m_movesDatasSimple:
+  - clientID: HitHunt
+    description: Hit 2x5, Apply Haunt 2 per Attack that hits Player (if no block)
+    chance: 10
+    probabilities:
+    - 0.5
+    - 0
+  m_movesDatasWithPanic:
   - clientID: HitHunt
     description: Hit 2x5, Apply Haunt 2 per Attack that hits Player (if no block)
     chance: 10

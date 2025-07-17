@@ -21,21 +21,16 @@ public class WarHero : BaseEnemy
 
     public Action OnPhase1;
     
-    [SerializeField] protected MoveData[] m_movesDatas;
-    [SerializeField] private WarHeroMovesData m_data;
+    [SerializeField] protected MoveData[] m_movesDatasSimple;
+    [SerializeField] protected MoveData[] m_movesDatasWithPanic;
+	[SerializeField] private WarHeroMovesData m_data;
 	private List<FearMinion> m_minions = new List<FearMinion>();
     
     protected override void Awake()
     {
         base.Awake();
-
         ConfigFighterHP();
-        
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatasSimple);
     }
 
 	private void Start()
@@ -82,16 +77,19 @@ public class WarHero : BaseEnemy
     protected override void OnDeath()
     {
         if (CombatManager.Instance.IsGameOver)
-        {
             return;
-        }
+
         base.OnDeath();
         m_animation.Play(ANIM_DEAD_COMONWARRIOR);
     }
     
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+		int panics = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PANIC);
+		SetMoves(panics > 0 ? m_movesDatasWithPanic : m_movesDatasSimple);
+        Debug.Log($"---> [War Hero] Player has panic: {panics > 0}");
+
+		RandomIntentionPicker(m_moves);
         ShowIntention();
     }
 
@@ -138,7 +136,7 @@ public class WarHero : BaseEnemy
 
                     if (!GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.BLOCK))
                     {
-						Debug.Log("---> [War Hero] Apply Haunt 2 per Attack that hits Player");
+						Debug.Log("---> [War Hero] + Haunt 2 per Attack that hits Player");
 						GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), m_data.Move1Haunt, MechanicType.HAUNT);
 					}
 				}
@@ -146,22 +144,22 @@ public class WarHero : BaseEnemy
 				break;
 
             case "Panic":
-				int panics = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PANIC);
+				int panics = GameInfoHelper.GetMechanicStack(player, MechanicType.PANIC);
 
 				if (panics >= 2)
                 {
                     yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
                     GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater2);
-                    Debug.Log("---> [War Hero] m_panic >= 2");
+                    Debug.Log("---> [War Hero] Panic >= 2");
                 }
                 else if (panics >= 1)
                 {
                     for (int i = 1; i <= panics; i++)
                     {
 						yield return WaitForAnimation(ANIM_ATTACK_COMONWARRIOR);
-						GameActionHelper.DamageFighter(player, this, m_data.Move2Damage_PanicGreater1);
+						GameActionHelper.DamageFighter(player, this, panics * m_data.Move2Damage_PanicGreater1);
                         Heal(m_data.Move2Restore);
-                        Debug.Log("---> [War Hero] m_panic >= 1");
+                        Debug.Log("---> [War Hero] Panic >= 1");
                     }
                 }
                 else

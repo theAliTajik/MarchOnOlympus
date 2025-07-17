@@ -16,7 +16,8 @@ public class MechanicsList
 
     private readonly IReadOnlyList<MechanicType> m_orderOfSenderMechanics = new List<MechanicType>
     {
-        MechanicType.FRENZY,
+		MechanicType.HAUNT,
+		MechanicType.FRENZY,
         MechanicType.DAZE,
         MechanicType.STRENGTH,
         MechanicType.IMPALE,
