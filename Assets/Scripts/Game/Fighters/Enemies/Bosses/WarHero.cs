@@ -58,7 +58,7 @@ public class WarHero : BaseEnemy
 		if (percentage == m_data.Phase2HPPercentageTrigger)
 		{
 			Debug.Log("--> [War Hero] 33% Permanent Forfity on Player");
-            GameActionHelper.AddMechanicToFighter(GameInfoHelper.GetPlayer(), 1, MechanicType.FORTIFIED, true, 1);
+            GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, true, 1);
 		}
 
 		Debug.Log("percentage triggered: :" + percentage.Percentage);

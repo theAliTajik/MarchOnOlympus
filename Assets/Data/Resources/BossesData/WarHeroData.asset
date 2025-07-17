@@ -16,8 +16,8 @@ MonoBehaviour:
   Move1Damage: 5
   Move1NumOfAttacks: 2
   Move1Haunt: 2
-  Move2Damage_PanicGreater1: 50
-  Move2Damage_PanicGreater2: 10
+  Move2Damage_PanicGreater1: 10
+  Move2Damage_PanicGreater2: 50
   Move2Restore: 25
   Phase1HPPercentageTrigger:
     Percentage: 66
