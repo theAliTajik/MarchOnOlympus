@@ -240,14 +240,14 @@ MonoBehaviour:
     - 0.5
     - 0
   m_movesDatasWithPanic:
-  - clientID: HitHunt
-    description: Hit 2x5, Apply Haunt 2 per Attack that hits Player (if no block)
+  - clientID: Panic1
+    description: Panic Count x Hit 10 , Restore 25
     chance: 10
     probabilities:
     - 0.5
     - 0
-  - clientID: Panic
-    description: Panic Count x Hit 10 , Restore 25 OR Hit 50
+  - clientID: Panic2
+    description: Hit 50
     chance: 10
     probabilities:
     - 0.5

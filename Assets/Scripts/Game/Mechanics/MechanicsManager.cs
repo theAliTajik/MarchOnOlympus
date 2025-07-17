@@ -20,8 +20,7 @@ public class MechanicsManager : Singleton<MechanicsManager>
         MechanicType.STUN,
         MechanicType.DAZE,
         MechanicType.BURN,
-        MechanicType.PETRIFY,
-		MechanicType.HAUNT
+        MechanicType.PETRIFY
 	};
     
     public List<MechanicType> DebuffMechanics { get { return m_DebuffMechanics; } }

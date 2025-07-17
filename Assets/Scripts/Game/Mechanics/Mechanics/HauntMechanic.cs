@@ -32,27 +32,6 @@ public class HauntMechanic : BaseMechanic
             return true;
         }
 
-        if (phase == CombatPhase.TURN_START && isMyTurn)
-        {
-            ReduceStack(m_stack / 2);
-            return true;
-        }
-
         return false;
-    }
-    
-    public override void Apply(Fighter.DamageContext context)
-    {
-        if (!MechanicsManager.Instance.Contains(context.Target, MechanicType.HAUNT) && !context.DoesReturnToSender)
-        {
-            return;
-        }
-
-        int returnDamageAmout = MechanicsManager.Instance.GetMechanicsStack(context.Target, MechanicType.HAUNT);
-
-        if (context.Sender is IDamageable damageable)
-        {
-            damageable.TakeDamage(returnDamageAmout, null, false);
-        }
     }
 }
