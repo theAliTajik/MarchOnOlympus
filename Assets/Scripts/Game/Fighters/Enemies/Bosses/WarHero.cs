@@ -38,7 +38,6 @@ public class WarHero : BaseEnemy
 		HP.SetTrigger(m_data.Phase1HPPercentageTrigger);
 		HP.SetTrigger(m_data.Phase2HPPercentageTrigger);
 		HP.OnPercentageTrigger += OnHPPercentageTriggred;
-		ReleaseMinions();
 	}
 
 	private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percentage)
@@ -174,6 +173,10 @@ public class WarHero : BaseEnemy
 				break;
 		}
 
+		//---> Always If no "Fear" then Summon 2x "Fear"
+		if (IsMinionsDead())
+			ReleaseMinions();
+
 		yield return null;
     }
     
@@ -216,10 +219,6 @@ public class WarHero : BaseEnemy
 	{
 		yield return new WaitForSeconds(seconds);
 		EnemiesManager.Instance.RemoveDeadEnemy(fighter);
-
-		//---> Always If no "Fear" then Summon 2x "Fear"
-		if (IsMinionsDead())
-			ReleaseMinions();
 	}
 
 	private bool IsMinionsDead()

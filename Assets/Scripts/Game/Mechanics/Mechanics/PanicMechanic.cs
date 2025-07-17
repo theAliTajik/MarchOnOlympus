@@ -25,9 +25,9 @@ public class PanicMechanic : BaseMechanic
     {
         if (phase == CombatPhase.TURN_START && isMyTurn)
         {
-            Fighter player = GameInfoHelper.GetPlayer();
-            player.TakeDamage(4, player, false, true);
-            Debug.Log("---> [PLAYER_TURN_START] : [Panic] ---> Damage: 4");
+            Fighter target = GameInfoHelper.GetPlayer();
+			target.TakeDamage(m_stack.Amount * 4, null, false, true);
+            Debug.Log($"---> [PLAYER_TURN_START] : [PanicMechanic] ---> Damage: {m_stack.Amount * 4}");
 			return true;
         }
         return false;
