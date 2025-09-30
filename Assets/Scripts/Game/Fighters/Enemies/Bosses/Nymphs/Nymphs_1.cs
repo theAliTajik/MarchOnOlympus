@@ -22,7 +22,9 @@ public class Nymphs_1 : BaseNymph
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
+    [SerializeField] private MoveData m_submergedMoveData;
     [SerializeField] private Nymphs_1_MovesData m_data;
+    
 
   
     protected override void Awake()
@@ -57,7 +59,14 @@ public class Nymphs_1 : BaseNymph
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        if (!m_isTarget)
+        {
+            m_nextMove = m_submergedMoveData;
+            ShowIntention();
+            return;
+        }
+        
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -76,6 +85,9 @@ public class Nymphs_1 : BaseNymph
             case "Vulnerable":
                 CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description);
                 break;
+            case "submerged":
+                CallOnIntentionDetermined(Intention.STUNED, m_nextMove.description);
+                break;
         }
     }
 
@@ -89,6 +101,7 @@ public class Nymphs_1 : BaseNymph
     }
 
     private int m_numOfCasts;
+
     private IEnumerator WaitAndExecute(Action finishCallback)
     {
         if (m_stuned)
@@ -113,6 +126,9 @@ public class Nymphs_1 : BaseNymph
                 m_animation.Play(ANIM_05_ATTACK, () => { animFinished = true; } );
                 GameActionHelper.AddMechanicToPlayer(m_data.Move1Vulnerable, MechanicType.VULNERABLE);
                 break;
+            case "submerged":
+                finishCallback?.Invoke();
+                break;
         }
 
         yield return new WaitUntil(() => animFinished);
@@ -124,6 +140,12 @@ public class Nymphs_1 : BaseNymph
         }
         m_numOfCasts = 0;
         finishCallback?.Invoke();
+    }
+
+    public override void SetCanBeTarget(bool isTarget)
+    {
+        base.SetCanBeTarget(isTarget);
+        DetermineIntention();
     }
 
     public override void ConfigFighterHP()

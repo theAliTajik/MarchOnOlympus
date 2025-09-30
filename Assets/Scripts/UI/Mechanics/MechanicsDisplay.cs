@@ -12,9 +12,7 @@ public class MechanicsDisplay : MonoBehaviour
     [SerializeField] private MechanicAddList m_mechanicAddList;
 
 
-    [SerializeField]
-    private Dictionary<MechanicType, MechanicWidget> m_widgets = new Dictionary<MechanicType, MechanicWidget>();
-
+    [SerializeField] private Dictionary<MechanicType, MechanicWidget> m_widgets = new Dictionary<MechanicType, MechanicWidget>();
     private MechanicsList m_mechanicsList;
 
     private class DisplayOperation
@@ -32,15 +30,15 @@ public class MechanicsDisplay : MonoBehaviour
     private Queue<DisplayOperation> m_DisplayQueue = new Queue<DisplayOperation>();
     private bool isProcessing = false;
 
-
+    
     public void Configure(IHaveMechanics owner, MechanicsList mechanicsList)
     {
         m_mechanicAddList.Config(owner);
-
+        
         m_mechanicsList = mechanicsList;
         m_mechanicsList.OnMechanicUpdated += OnMechanicsUpdated;
         m_mechanicsList.OnMechanicRemoved += OnMechanicsEnd;
-
+        
 
         List<MechanicType> CurrentMechanics = m_mechanicsList.GetAllMechanics();
         if (CurrentMechanics.Count > 0)
@@ -63,7 +61,7 @@ public class MechanicsDisplay : MonoBehaviour
         m_DisplayQueue.Enqueue(new DisplayOperation(mechanicType, false));
         StartCoroutine(ProcessNextOperation());
     }
-
+    
     private IEnumerator ProcessNextOperation()
     {
         if (m_DisplayQueue.Count == 0) yield break;
@@ -89,10 +87,10 @@ public class MechanicsDisplay : MonoBehaviour
         {
             StartCoroutine(ProcessNextOperation());
         }
-
+        
         isProcessing = false;
     }
-
+    
     private void DisplayMechanic(MechanicType mechanicType)
     {
         BaseMechanic mechanic = m_mechanicsList.GetMechanic(mechanicType);
@@ -101,7 +99,6 @@ public class MechanicsDisplay : MonoBehaviour
             Debug.Log($"WARNING: Mechanic of type {mechanicType} could not be displayed. was not found in mechanic list");
             return;
         }
-        
         int StackAmount = mechanic.Stack;
 
         bool hasWidget = m_widgets.TryGetValue(mechanicType, out MechanicWidget widget);

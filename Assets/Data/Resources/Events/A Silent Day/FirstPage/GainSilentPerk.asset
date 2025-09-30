@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainSilentPerk
   m_EditorClassIdentifier: 
   Title: '[Gain Perk]'
-  Description: Silent Perk
+  Description: "A whispering veil of mist that swirls gently around your form \u2014
+    a blessing of silence and stillness."
   ActionAssets:
   - {fileID: 11400000, guid: fd46e7f1dbebf45688d458a2e3d11343, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

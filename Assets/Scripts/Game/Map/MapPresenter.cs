@@ -8,7 +8,9 @@ public class MapPresenter : MonoBehaviour
     [SerializeField] private MapModel m_mapModel;
     [SerializeField] private MapView m_mapView;
     
-    
+    private Scenes m_menuScene = Scenes.Menu;
+
+
     void Start()
     {
         bool mapLoaded = m_mapModel.LoadMap();
@@ -38,6 +40,7 @@ public class MapPresenter : MonoBehaviour
         
         m_mapView.OnNodeClicked += OnNodeClicked;
         m_mapView.OnResetClicked += OnResetMapClicked;
+        m_mapView.OnBackToMenuClicked += OnBackToMenuClicked;
         m_mapModel.OnNodeChanged += OnNodeChanged;
     }
 
@@ -47,6 +50,11 @@ public class MapPresenter : MonoBehaviour
         m_mapModel.GenerateMap();
         m_mapModel.SaveMap();
         m_mapView.DisplayMap(m_mapModel.Map);
+    }
+
+    private void OnBackToMenuClicked()
+    {
+        SceneController.Instance.LoadScene(m_menuScene);
     }
 
     private void LogSelectableMapNodes()

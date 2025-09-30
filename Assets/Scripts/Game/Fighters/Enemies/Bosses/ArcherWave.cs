@@ -21,6 +21,7 @@ public class ArcherWave : BaseEnemy
     [SerializeField] private ArcherWaveMovesData m_data;
 
     public override bool IsRequiredForCombatCompletion => false;
+    public override bool IsInAllEnemiesList => false;
 
     private int m_remainigTurnsCountDown = -1;
     
@@ -41,7 +42,7 @@ public class ArcherWave : BaseEnemy
             return;
         }
         base.OnTookDamage(damage, isCritical);
-        m_animation.Play(ANIM_02_DAMMAGE);
+        // m_animation.Play(ANIM_02_DAMMAGE);
     }
 
     protected override void OnDeath()
@@ -51,25 +52,25 @@ public class ArcherWave : BaseEnemy
             return;
         }
         base.OnDeath();
-        m_animation.Play(ANIM_04_DEAD);
+        // m_animation.Play(ANIM_04_DEAD);
     }
     
 
     public override void DetermineIntention()
     {
-        if (m_remainigTurnsCountDown < 0)
-        {
-            m_remainigTurnsCountDown = m_data.Move1NumOfTurns;
-        }
+        // if (m_remainigTurnsCountDown < 0)
+        // {
+        // }
 
-        if (m_remainigTurnsCountDown > 0)
+        if (m_remainigTurnsCountDown > 1)
         {
             m_nextMove = m_moves[0];
         }
 
-        if (m_remainigTurnsCountDown == 0)
+        if (m_remainigTurnsCountDown <= 1)
         {
             m_nextMove = m_moves[1];
+            m_remainigTurnsCountDown = m_data.Move1NumOfTurns;
         }
         
         ShowIntention();
@@ -122,11 +123,12 @@ public class ArcherWave : BaseEnemy
                 finishCallback?.Invoke();
                 break;
             case "hit":
-                m_animation.Play(ANIM_05_SHOOT, finishCallback);
-                yield return new WaitForSeconds(1);
+                // m_animation.Play(ANIM_05_SHOOT, finishCallback);
+                yield return new WaitForSeconds(0.5f);
                 Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
                 m_nextMove = m_movesDatas[0];
+                finishCallback?.Invoke();
                 break;
         }
 

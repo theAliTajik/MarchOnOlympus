@@ -26,11 +26,7 @@ public class Assassin_B : BaseEnemy
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
         
         ConfigFighterHP();
 
@@ -58,7 +54,7 @@ public class Assassin_B : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 

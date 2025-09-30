@@ -128,7 +128,7 @@ public class WeapopnsMaster : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 

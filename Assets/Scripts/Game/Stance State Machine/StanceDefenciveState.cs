@@ -17,6 +17,15 @@ public class StanceDefenciveState : StanceBaseState
         GameActionHelper.AddMechanicToPlayer(2, MechanicType.THORNS);
     }
 
+    public override void OnExit()
+    {
+        base.OnExit();
+
+        Fighter player = GameInfoHelper.GetPlayer();
+        GameActionHelper.ReduceMechanicStack(player,3, MechanicType.DEXTERITY);
+        GameActionHelper.ReduceMechanicStack(player,2, MechanicType.THORNS);
+    }
+
     public override Stance GetStance()
     {
         return Stance.DEFENCIVE;

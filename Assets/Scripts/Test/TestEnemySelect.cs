@@ -35,7 +35,7 @@ public class TestEnemySelect : MonoBehaviour
         bool firstOne = true;
         foreach (EnemiesDb.EnemyInfo enemy in EnemiesDb.Instance.allEnemies)
         {
-            m_list.AddItem(enemy.clientID, enemy.clientID, null);
+            // m_list.AddItem(enemy.clientID, enemy.clientID, null);
 
             if (firstOne)
             {

@@ -7,16 +7,26 @@ public class DamageIndicator : MonoBehaviour
 {
     [SerializeField] private Vector3 m_offset;
     [SerializeField] private DamageIndicatorWidget m_Widget;
-    [SerializeField] private Fighter m_fighter;
     
     public void Config(Fighter fighter)
     {
-        m_fighter = fighter;
-        m_fighter.HP.OnTookDamage += OnFighterDamaged;
+        fighter.HP.OnTookDamage += OnFighterDamaged;
+        m_Widget.gameObject.SetActive(false);
+    }
+    
+    public void Config(IHaveHUD owner)
+    {
+        if (owner is not IDamageable damageable)
+        {
+            Debug.Log($"ERROR: Damage indicator passed hud owner which was not a IDamageable. owner: {owner.GetType()}");
+            return;
+        }
+        
+        damageable.OnDamage += damage => OnFighterDamaged(damage);
         m_Widget.gameObject.SetActive(false);
     }
 
-    public void OnFighterDamaged(int damage, bool HasDied)
+    public void OnFighterDamaged(int damage, bool HasDied = false)
     {
         m_Widget.gameObject.SetActive(true);
         m_Widget.Play(damage, () => OnAnimationFinished());

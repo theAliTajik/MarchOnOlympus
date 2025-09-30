@@ -59,11 +59,7 @@ public class SoulMaster : BaseEnemy
         base.Awake();
 
 
-        for (int i = 0; i < m_attackMovesDatas.Length; i++)
-        {
-            MoveData md = m_attackMovesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_attackMovesDatas);
         
         ConfigFighterHP();
         
@@ -110,16 +106,22 @@ public class SoulMaster : BaseEnemy
     {
         if (m_numOfSoulsAlive < 1)
         {
+            m_numOfTurnsWhereSoulsLessThanOne++;
+            if (m_numOfTurnsWhereSoulsLessThanOne > 4)
+            {
+                m_numOfTurnsWhereSoulsLessThanOne = 1;
+            }
+            
             m_nextMove = m_movesDatas[0];
 
-            if (m_numOfTurnsWhereSoulsLessThanOne >= 2 && m_numOfTurnsWhereSoulsLessThanOne <= 3) 
+            if (m_numOfTurnsWhereSoulsLessThanOne is 2 or 3) 
             {
                 m_nextMove = m_movesDatas[3];
             }
         }
         else
         {
-            RandomIntentionPicker(m_moves);
+            RandomIntentionPicker();
         }
         OnSoulIntentionDetermined?.Invoke(m_nextMove);
         ShowIntention();

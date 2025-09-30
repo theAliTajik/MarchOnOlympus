@@ -18,6 +18,10 @@ public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMecha
 
         public bool DoesReturnToSender;
         public bool IsArmorPiercing;
+        public bool IsDamageSentByThorns;
+        public bool IsDamageSentByBurn;
+
+        public bool AreSenderMechanicsAlreadyApplied;
     }
     
     public event Action<Fighter> Death;
@@ -28,7 +32,7 @@ public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMecha
     [SerializeField] protected Transform m_root;
 
     protected IDamageable m_damageable;
-    private MechanicsList m_mechanicsList;
+    protected MechanicsList m_mechanicsList;
 
     public FighterHP HP => m_fighterHP;
 
@@ -56,9 +60,10 @@ public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMecha
         Death?.Invoke(this);
     }
 
-    public virtual int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
+    public virtual DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false,
+        DamageContext damageContext = null)
     {
-        return m_damageable.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+        return m_damageable.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing, damageContext);
     }
     
 

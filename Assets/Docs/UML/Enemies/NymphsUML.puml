@@ -1,12 +1,19 @@
 @startuml
-class NymphsCoordinator{
+class NymphsCoordinator <<Static>>{
 - m_nymphsAlive: Nymph
 
++ Reset()
++ RegisterNymph()
 + DoInitialCoordination()
 - OnNymphDied()
 }
 NymphsCoordinator ..> Nymph : Has-Many
+Nymph ..> NymphsCoordinator : Registers
 
+class NymphEnemyFactory{
+
+}
+NymphEnemyFactory ..> NymphsCoordinator: Resets when first nymph spawns
 
 class BaseEnemy
 Nymph --|> BaseEnemy

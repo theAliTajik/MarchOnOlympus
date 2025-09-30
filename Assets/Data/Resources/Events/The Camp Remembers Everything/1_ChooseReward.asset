@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
   m_Name: 1_ChooseReward
   m_EditorClassIdentifier: 
-  DialogueText: Choose Reward
+  DialogueText: "Night settles heavy as you light a small campfire beneath the twisted
+    ruins of a forgotten watchtower. The flames flicker strangely, stretching tall
+    shadows against the broken stone. As sleep begins to pull at your eyes, voices
+    rise from the darkness\u2014familiar, yet long lost.\n\nOne by one, figures emerge
+    from the wavering light: comrades you once fought beside. Their faces are calm,
+    their armor dulled and worn, but their presence feels steady and real."
   Choices:
   - {fileID: 11400000, guid: ab99809ab97eb4e71b5248426dec7f58, type: 2}
   - {fileID: 11400000, guid: 4a81d253b909f4d208feafc0cc2c8a44, type: 2}

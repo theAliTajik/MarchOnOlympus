@@ -7,6 +7,7 @@ public class NormalTaunt : ITauntBehaviour
     public void ReceiveTaunt(Collider2D collider)
     {
         collider.enabled = false;
+        m_collider = collider;
     }
 
     public void TurnChanged()

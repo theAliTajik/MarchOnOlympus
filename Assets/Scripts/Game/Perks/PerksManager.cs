@@ -82,6 +82,7 @@ public class PerksManager : Singleton<PerksManager>
         
         string perkID = MakePerk(perk);
 
+        // perkID = perkID.Replace("Perk", "");
         m_perkIds.Add(perkID);
         OnPerkAdded?.Invoke(perkID);
         SavePerksToJson();
@@ -130,6 +131,7 @@ public class PerksManager : Singleton<PerksManager>
         
         string perkID = MakePerk(perksInstance);
         
+        // perkID = perkID.Replace("Perk", "");
         m_perkIds.Add(perkID);
         OnPerkAdded?.Invoke(perkID);
         // Debug.Log("invoked perk added");
@@ -193,6 +195,7 @@ public class PerksManager : Singleton<PerksManager>
         }
 
         
+        // string perkID = perk.GetType().Name.Replace("Perk", "");
         string perkID = perk.GetType().Name.Replace("Perk", "");
         Debug.Log("perk id to remove: " + perkID);
         m_perkIds.Remove(perkID);
@@ -265,6 +268,13 @@ public class PerksManager : Singleton<PerksManager>
             return;
         }
 
+        CustomDebug.Log("Saved changed perks to json: perks:", Categories.Perks.SaveAndLoad);
+        foreach (string perkId in m_perkIds)
+        {
+            CustomDebug.Log($"Perk: {perkId}", Categories.Perks.SaveAndLoad);
+        }
+
+        
         GameProgress.Instance.Data.PerkIds = m_perkIds;
     }
 

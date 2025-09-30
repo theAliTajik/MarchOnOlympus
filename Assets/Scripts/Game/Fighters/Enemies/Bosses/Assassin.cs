@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
-using Spine.Unity.Examples;
 using UnityEngine;
 
 
@@ -99,7 +98,7 @@ public class Assassin : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         SetClonesIntentions();
         ShowIntention();
     }
@@ -207,7 +206,7 @@ public class Assassin : BaseEnemy
     private IEnumerator DestroyCloneAfterDelay(Fighter fighter, float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        EnemiesManager.Instance.RemoveDeadEnemy(fighter);
+        EnemiesManager.Instance.RemoveDeadEnemyBody(fighter);
     }
 
     private void OnMechanicAdded(Fighter fighter,BaseMechanic mechanic)

@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
   m_Name: 1_ChooseReward
   m_EditorClassIdentifier: 
-  DialogueText: Choose Reward
+  DialogueText: "The river is unusually still, its surface smooth as polished glass.
+    As you approach, the sounds of the forest fade until not even the wind dares
+    to stir. From the mist above the water, a figure takes shape\u2014tall, faceless,
+    draped in flowing garments that shimmer like moonlight on silver.\n\nIt does
+    not resemble any god you\u2019ve ever heard of; its presence feels older, stranger,
+    as though it belongs to a time forgotten even by the myths. The being does not
+    speak, yet you feel its thoughts moving through yours, like ripples disturbing
+    calm water.\n\nSlowly, it extends an open hand toward you, and three radiant
+    symbols drift in the air:"
   Choices:
   - {fileID: 11400000, guid: f27e1f5351ba74c86a7d9bb289e60bf3, type: 2}
   - {fileID: 11400000, guid: f16caf6cee4b24eb5a5af0a00f4c6a33, type: 2}

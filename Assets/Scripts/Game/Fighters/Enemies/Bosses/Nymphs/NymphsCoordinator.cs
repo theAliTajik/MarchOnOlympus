@@ -5,17 +5,21 @@ using UnityEngine;
 public static class NymphsCoordinator
 {
     private static List<BaseNymph> m_nymphsAlive = new List<BaseNymph>();
-    
     private const int m_standardNumberOfNymphs = 4;
+    
+    private static ITurnCounter m_turnCounter;
+
+    private static readonly DebugCategory cat = Categories.Fighters.Enemies.Nymphs;
 
     public static void Reset()
     {
+        CustomDebug.Log("Reset", cat);
         m_nymphsAlive.Clear();
     }
     
     public static void RegisterNymph(BaseNymph nymph)
     {
-        // Debug.Log($"nymph registered {nymph.GetType()}");
+        CustomDebug.Log($"Nymph registered: {nymph.GetType()}", cat);
         m_nymphsAlive.Add(nymph);
         nymph.Death += OnNymphDied;
             
@@ -27,18 +31,101 @@ public static class NymphsCoordinator
 
     public static IEnumerator DoInitialCoordination()
     {
+        CustomDebug.Log("Initial Coordination", cat);
         yield return new WaitForSeconds(1);
         BaseNymph frontNymph = GetFrontmostNymph();
+        
         frontNymph.SetDoesCastTwice(true);
+        m_turnCounter = new StandardEnemyTurnCounter();
+        GameplayEvents.GamePhaseChanged += OnPhaseChanged;
+        m_turnCounter.NextTurn();
+        int turn = m_turnCounter.GetRelativeTurn();
+        AlternateNymphsTargetability(turn);
+    }
+
+    private static void OnPhaseChanged(EGamePhase phase)
+    {
+        switch (phase)
+        {
+            case EGamePhase.PLAYER_TURN_START:
+                m_turnCounter.NextTurn();
+                int turn = m_turnCounter.GetRelativeTurn();
+                AlternateNymphsTargetability(turn);
+                break;
+            case EGamePhase.COMBAT_END:
+                CustomDebug.Log("Combat end for nymphs coordinator", cat);
+                GameplayEvents.GamePhaseChanged -= OnPhaseChanged;
+                break;
+        }
+        
+    }
+
+    private static void AlternateNymphsTargetability(int turn)
+    {
+        bool isOdd = turn % 2 != 0;
+        CustomDebug.Log($"Alternated nymphs the turn is: {turn}, isOdd: {isOdd}", cat);
+        List<BaseNymph> oddNymps = GetOddNymphs();
+        List<BaseNymph> evenNymphs = GetEvenNymphs();
+
+        SetNymphsTargetability(oddNymps, isOdd);
+        SetNymphsTargetability(evenNymphs, !isOdd);
+    }
+
+    private static void SetNymphsTargetability(List<BaseNymph> nymphs, bool isTarget)
+    {
+        foreach (var nymph in nymphs)
+        {
+            nymph.SetCanBeTarget(isTarget);
+        }
+    }
+
+    private static List<BaseNymph> GetOddNymphs()
+    {
+        List<BaseNymph> oddNymphs = new List<BaseNymph>();
+
+        foreach (var nymph in m_nymphsAlive)
+        {
+            if (nymph is Nymphs_1)
+            {
+                oddNymphs.Add(nymph);
+            }
+            
+            if (nymph is Nymphs_3)
+            {
+                oddNymphs.Add(nymph);
+            }
+        }
+        
+        return oddNymphs;
+    }
+    
+    private static List<BaseNymph> GetEvenNymphs()
+    {
+        List<BaseNymph> evenNymphs = new List<BaseNymph>();
+
+        foreach (var nymph in m_nymphsAlive)
+        {
+            if (nymph is Nymphs_2)
+            {
+                evenNymphs.Add(nymph);
+            }
+            
+            if (nymph is Nymphs_4)
+            {
+                evenNymphs.Add(nymph);
+            }
+        }
+        
+        return evenNymphs;
     }
 
     private static void OnNymphDied(Fighter fighter)
     {
-        // Debug.Log("nymphDied");
         BaseNymph nymph = fighter as BaseNymph;
+        CustomDebug.Log($"Nymph Died: {nymph.GetType()}", cat);
         if (nymph == null)
         {
-            Debug.Log("ERROR: null nymph in on nymph died");
+            CustomDebug.LogError("Null nymph passed on nymph died", cat);
             return;
         }
         
@@ -52,16 +139,15 @@ public static class NymphsCoordinator
         BaseNymph frontNymph = GetFrontmostNymph();
         frontNymph.SetDoesCastTwice(true);
 
-        // Debug.Log($"nymphs alive {m_nymphsAlive.Count}");
+        CustomDebug.Log($"Nymphs alive {m_nymphsAlive.Count}", cat);
         if (m_nymphsAlive.Count == 2)
         {
-            // Debug.Log("nymphs equal 2");
             SetAllNymphsToCastTwice();
         }
 
         if (m_nymphsAlive.Count == 1)
         {
-            // Debug.Log("only one nymph remains");
+            CustomDebug.Log("Only one nymph remains", cat);
             m_nymphsAlive[0].SetDoesCastTwice(false);
             m_nymphsAlive[0].SetLastNymphAlive(true);
         }
@@ -69,6 +155,7 @@ public static class NymphsCoordinator
 
     private static void SetAllNymphsToCastTwice()
     {
+        CustomDebug.Log("Set all nymphs to cast twice", cat);
         foreach (var nymph in m_nymphsAlive)
         {
             nymph.SetDoesCastTwice(true);
@@ -85,7 +172,7 @@ public static class NymphsCoordinator
             return null;
         }
 
-        // Debug.Log($"frontmost nymph was: {frontNymph.GetType()}");
+        CustomDebug.Log($"Frontmost nymph was: {frontNymph.GetType()}", cat);
 
         return frontNymph;
     }

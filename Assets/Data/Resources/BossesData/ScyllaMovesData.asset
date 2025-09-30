@@ -29,3 +29,7 @@ MonoBehaviour:
     TriggerType: 2
     Equal: 1
     RemoveOnTrigger: 1
+  Phase1Fortify: 2
+  Phase1Damage: 25
+  Phase2Restore: 50
+  Phase2Fortify: 3

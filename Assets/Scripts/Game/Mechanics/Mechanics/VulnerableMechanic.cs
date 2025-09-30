@@ -10,10 +10,12 @@ public class VulnerableMechanic : BaseMechanic
         
     }
 
-    public VulnerableMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public VulnerableMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
+        
+        m_stack.SetGuard(guardMin);
     }
     
     public override MechanicType GetMechanicType()
@@ -21,7 +23,7 @@ public class VulnerableMechanic : BaseMechanic
         return MechanicType.VULNERABLE;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         if (phase == CombatPhase.CARD_PLAYED)
         {

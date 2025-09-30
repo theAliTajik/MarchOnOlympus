@@ -94,7 +94,7 @@ public class PerksDisplay : MonoBehaviour
 
         for (var i = 0; i < m_perksWidgets.Count; i++)
         {
-            if (m_perksWidgets[i].ClientID == perkId)
+            if (m_perksWidgets[i].ClientID.StartsWith(perkId))
             {
                 perk = m_perksWidgets[i];
             }

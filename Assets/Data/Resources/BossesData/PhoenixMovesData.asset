@@ -17,8 +17,11 @@ MonoBehaviour:
   Move1Daze: 1
   Move2Burn: 4
   Move2Restore: 25
-  Move3Block: 50
-  Move3Restore: 50
+  Move3Block: 25
+  Move3Restore: 25
+  Move4Block: 50
+  Move4Restore: 100
+  Move4Damage: 50
   At66Damage: 50
   At66Restore: 50
   At33Damage: 50

@@ -39,11 +39,7 @@ public class Paris : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
     }
 
     private void Start()
@@ -92,7 +88,7 @@ public class Paris : BaseEnemy
         
         m_hector = FindHector();
         
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -175,7 +171,7 @@ public class Paris : BaseEnemy
                 
                 finishCallback?.Invoke();
                 
-                EnemiesManager.Instance.RemoveDeadEnemy(this);
+                EnemiesManager.Instance.RemoveDeadEnemyBody(this);
                 yield return new WaitForSeconds(0.1f);
                 Destroy(this);
                 break;

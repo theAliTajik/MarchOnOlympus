@@ -1,0 +1,197 @@
+War_Hero.png
+size:3922,3939
+filter:Linear,Linear
+pma:true
+Arm-left
+bounds:2183,3708,229,350
+offsets:8,8,245,366
+rotate:90
+Arm-right
+bounds:2044,3369,391,337
+Atack
+bounds:1151,1765,599,910
+offsets:9,11,620,931
+rotate:90
+Attack
+bounds:2547,2256,554,553
+offsets:11,8,577,571
+Belt
+bounds:3193,3701,393,236
+Belt-02
+bounds:309,3779,158,441
+rotate:90
+Belt-03
+bounds:2820,3321,357,945
+rotate:90
+Belt-04
+bounds:1252,2390,737,528
+Berd
+bounds:2,3071,408,463
+offsets:8,10,421,483
+rotate:90
+Cape-01
+bounds:467,2997,1092,438
+offsets:5,7,1103,450
+Cape-02
+bounds:311,3481,296,363
+offsets:4,3,303,369
+rotate:90
+Cape-04
+bounds:2575,2844,475,521
+offsets:0,0,475,527
+rotate:90
+Chain-01
+bounds:2535,3703,656,234
+offsets:0,5,662,239
+Chain-02
+bounds:1561,2920,440,1012
+offsets:6,7,452,1023
+rotate:90
+Chain-03
+bounds:3098,2811,806,508
+offsets:0,6,813,517
+Chain-04
+bounds:676,3437,1366,284
+offsets:5,7,1378,298
+Chain-05
+bounds:2541,579,1379,1174
+offsets:7,8,1391,1190
+Chest
+bounds:671,2475,520,579
+rotate:90
+Cloth-Arm-left
+bounds:1397,3746,191,201
+rotate:90
+Cloth-Arm-right
+bounds:1921,3723,214,260
+rotate:90
+Covering
+bounds:914,1084,1625,669
+offsets:0,0,1625,675
+Covering-03
+bounds:2063,1755,1597,498
+offsets:3,6,1600,510
+Desktop Screenshot 2025.02.25 - 16.28.04.53
+bounds:2,2,1920,1080
+Forarm-left
+bounds:3588,3680,257,315
+offsets:0,1,257,316
+rotate:90
+Forearm-Right
+bounds:752,3756,181,451
+offsets:7,6,188,463
+rotate:90
+Fury
+bounds:3103,2255,554,584
+offsets:11,8,577,602
+rotate:90
+Fury_Death
+bounds:2,1924,554,591
+offsets:11,1,577,602
+rotate:90
+Hair-01
+bounds:153,3786,151,154
+offsets:8,8,167,170
+rotate:90
+Hair-02
+bounds:2,2480,667,515
+offsets:6,5,678,524
+Hand-right
+bounds:2,3483,307,294
+offsets:6,3,320,303
+Neck
+bounds:1205,3754,183,190
+offsets:8,8,199,206
+rotate:90
+Neutral
+bounds:2,1318,599,910
+offsets:9,11,620,931
+rotate:90
+Normal
+bounds:1991,2366,554,552
+offsets:11,9,577,571
+Pain
+bounds:595,1919,554,554
+offsets:11,8,577,572
+Sholder-Left
+bounds:1600,3732,205,319
+offsets:8,8,221,335
+rotate:90
+Sholder-Right
+bounds:2437,3362,381,339
+Sholder-Right-02
+bounds:2,3790,149,147
+offsets:8,8,165,163
+
+War_Hero_2.png
+size:3574,2903
+filter:Linear,Linear
+pma:true
+Camada 435
+bounds:2029,1720,1185,1181
+Cape-03
+bounds:2,26,2487,1204
+offsets:3,6,2494,1216
+Covering-02
+bounds:2,1232,2025,1669
+offsets:3,0,2029,1673
+Covering-04
+bounds:2491,2,1716,1081
+offsets:2,7,1725,1094
+rotate:90
+
+War_Hero_3.png
+size:1500,1028
+filter:Linear,Linear
+pma:true
+FX/aura (185)
+bounds:2,2,1024,1024
+FX/aura (205)
+bounds:1280,159,114,113
+offsets:7,7,128,128
+rotate:90
+FX/element (459)
+bounds:1276,405,128,128
+FX/impact (142)
+bounds:1028,25,250,243
+offsets:5,0,256,256
+FX/motion (113)
+bounds:1276,275,128,128
+FX/motion (116)
+bounds:1280,57,128,100
+offsets:0,5,128,128
+FX/smoke (5)
+bounds:1028,520,248,246
+offsets:3,6,256,256
+rotate:90
+FX/smoke (6)
+bounds:1028,270,246,248
+offsets:3,3,256,256
+FX/texture (113)
+bounds:1028,770,256,256
+FX/texture (45)
+bounds:1286,827,199,183
+offsets:25,30,256,256
+rotate:90
+FX/texture (5)
+bounds:1276,535,222,233
+offsets:17,15,256,256
+
+War_Hero_4.png
+size:1286,1028
+filter:Linear,Linear
+pma:true
+FX_Sword/slash (178)
+bounds:1028,386,88,122
+offsets:10,6,128,128
+FX_Sword/slash (206)
+bounds:1158,640,123,128
+offsets:3,0,128,128
+FX_Sword/slash (48)
+bounds:2,2,1024,1024
+FX_Sword/slash (57)
+bounds:1028,770,256,256
+FX_Sword/slash (63)
+bounds:1028,640,128,128
+FX_Sword/slash (75)
+bounds:1028,510,128,128

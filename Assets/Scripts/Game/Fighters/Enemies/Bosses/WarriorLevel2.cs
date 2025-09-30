@@ -30,11 +30,7 @@ public class WarriorLevel2 : BaseEnemy
 
         ConfigFighterHP();
         
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
     }
 
     private void OnDestroy()
@@ -65,7 +61,7 @@ public class WarriorLevel2 : BaseEnemy
     
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -139,10 +135,15 @@ public class WarriorLevel2 : BaseEnemy
     }
     private List<BaseEnemy> GetAllEnemiesExcludingSelf()
     {
-        List<BaseEnemy> allEnemies = GameInfoHelper.GetAllEnemies()?.Cast<BaseEnemy>().ToList();
-        allEnemies?.Remove(this);
+        List<Fighter> allEnemies = GameInfoHelper.GetAllEnemies();
+        if (allEnemies == null || allEnemies.Count == 0)
+        {
+            return null;
+        }
+        List<BaseEnemy> enemies = allEnemies.Cast<BaseEnemy>().ToList();
+        enemies.Remove(this);
 
-        return allEnemies;
+        return enemies;
     }
     
     public override void ConfigFighterHP()

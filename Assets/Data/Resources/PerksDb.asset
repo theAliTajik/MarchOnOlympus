@@ -559,4 +559,25 @@ MonoBehaviour:
     PerkData: {fileID: 11400000, guid: f653c6f9ee4bb4410854e336bccbe38b, type: 2}
     IsImplemented: 1
     ActionScriptName: 
+  - ClientID: NearDeathExperiance
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk NearDeathExperiance
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 216a492aa1a15401296d186a4f56fda4, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: GainFortify5Event
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk GainFortify5EventPerk
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 412ef92c3d0ca4c72b532113bcca7366, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LoseOneEnergyEvent
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LoseOneEnergyEventPerk
+    Invisible: 1
+    PerkData: {fileID: 11400000, guid: 7ce845510d1c3415ea644abce9075a0b, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
   defaultIcon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}

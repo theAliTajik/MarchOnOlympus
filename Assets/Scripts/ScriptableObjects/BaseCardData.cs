@@ -17,7 +17,9 @@ public enum CardPacks
     COMBO,
     STR,
     DEBUFF,
-    TECH
+    TECH,
+    PRACTICAL,
+    GENIUS
 }
 
 public enum CardType
@@ -41,9 +43,12 @@ public class BaseCardData : ScriptableObject, ICloneable
     [JsonIgnore]
     public Sprite Image;
     public Stance MStance;
+    public bool Ingenius;
 
     public BaseCardDataSet normalDataSet;
     public BaseCardDataSet stanceDataSet;
+
+    public List<BaseCardData> Upgrades = new();
     
 #if UNITY_EDITOR
 
@@ -117,6 +122,7 @@ public class BaseCardData : ScriptableObject, ICloneable
         Debug.LogWarning(Name + " card does not provide descriptions");
         return null;
     }
+    
 
     public object Clone()
     {

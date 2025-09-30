@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainHealthyPerk
   m_EditorClassIdentifier: 
   Title: '[Gain Perk]'
-  Description: Healthy Perk
+  Description: "A softly glowing laurel wreath that pulses with warmth \u2014 a blessing
+    of health."
   ActionAssets:
   - {fileID: 11400000, guid: 469b219d6d2ff480ca8982737f240351, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

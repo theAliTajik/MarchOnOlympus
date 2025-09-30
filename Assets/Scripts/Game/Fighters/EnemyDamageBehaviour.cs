@@ -11,11 +11,13 @@ public class EnemyDamageBehaviour : StandardDamageBehaviour
         m_mechanicsOwner = owner;
     }
     
-    public override int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
+    public override Fighter.DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender,
+        bool isArmorPiercing = false,
+        Fighter.DamageContext damageContext = null)
     {
-        int finalDamage = base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+        Fighter.DamageContext context = base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing, damageContext);
         GameplayEvents.SendGamePhaseChanged(EGamePhase.ENEMY_DAMAGED);
 
-        return finalDamage;
+        return context;
     }
 }

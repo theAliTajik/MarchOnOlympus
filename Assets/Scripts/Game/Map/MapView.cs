@@ -7,6 +7,7 @@ public class MapView : MonoBehaviour
 {
     public Action<MapNode> OnNodeClicked;
     public Action OnResetClicked;
+    public Action OnBackToMenuClicked;
     
     [SerializeField] private Transform m_NodesContainer;
     [SerializeField] private MapNodeDisplay m_NodeDisplayPrefab;
@@ -158,5 +159,10 @@ public class MapView : MonoBehaviour
     public void OnResetButtonClicked()
     {
         OnResetClicked?.Invoke();
+    }
+    
+    public void OnBackToMenuButtonClicked()
+    {
+        OnBackToMenuClicked?.Invoke();
     }
 }

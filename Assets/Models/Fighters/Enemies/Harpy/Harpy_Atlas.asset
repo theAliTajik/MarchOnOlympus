@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Harpy_Atlas
+  m_EditorClassIdentifier: 
+  textureLoadingMode: 0
+  onDemandTextureLoader: {fileID: 0}
+  atlasFile: {fileID: 4900000, guid: 859f6bec995494ec7883465c6d9ec7f0, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 19bcf1984cf43423a839c46d5171426b, type: 2}
+  - {fileID: 2100000, guid: 2029515ff4cb84aa998ab728b7d5c59a, type: 2}
+  - {fileID: 2100000, guid: cfd0f36d0960743e9a478505672e533f, type: 2}
+  - {fileID: 2100000, guid: 82482b9a9423b48d68e5975bd625579d, type: 2}
+  - {fileID: 2100000, guid: 65a79bd4d40ab424989d31b1c0102022, type: 2}
+  - {fileID: 2100000, guid: 4ce6e518fda8443c4a2a561c65f15794, type: 2}
+  - {fileID: 2100000, guid: 37c782fea00f14154bd5da76dd3001b6, type: 2}
+  - {fileID: 2100000, guid: eb9d17a6f210d481197fd508b27b9b29, type: 2}
+  - {fileID: 2100000, guid: 9a542b52a80da4d1c87a472aeb49fe8b, type: 2}
+  - {fileID: 2100000, guid: ac76c16ec2835461f85b003e6045d737, type: 2}
+  - {fileID: 2100000, guid: 7b6bea54d3e8b4b93bf92d4bc6547318, type: 2}
+  - {fileID: 2100000, guid: a5829f6eed4fb4b3685916b34afe0424, type: 2}
+  - {fileID: 2100000, guid: 97393f84705f74e54a420082e601f5bf, type: 2}

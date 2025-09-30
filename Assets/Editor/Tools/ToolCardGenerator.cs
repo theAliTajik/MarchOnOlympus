@@ -7,14 +7,15 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor.Compilation;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 public class ToolCardGenerator : EditorWindow
 {
     private const string CLASS_TEMPLATE_PATH = "Assets/Scripts/ScriptableObjects/Cards/CardsData/_CardTemplate.txt";
     private const string ACTION_TEMPLATE_PATH = "Assets/Scripts/ScriptableObjects/Cards/CardsActions/_CardActionTemplate.txt";
 
-    private const string CLASS_PATH = "Assets/Scripts/ScriptableObjects/Cards/";
-    private const string ACTION_CLASS_PATH = "Assets/Scripts/ScriptableObjects/CardsActions/";
+    private const string CLASS_PATH = "Assets/Scripts/ScriptableObjects/Cards/CardsData/";
+    private const string ACTION_CLASS_PATH = "Assets/Scripts/ScriptableObjects/Cards/CardsActions/";
 
     
     private const string SCRIPTABLE_OBJECT_PATH = "Assets/Data/Resources/CardsData/";
@@ -56,6 +57,13 @@ public class ToolCardGenerator : EditorWindow
                 return;
             }
 
+            string className = FormatClassName(m_className);
+            if (File.Exists(GenerateClassPath(className)))
+            {
+                Debug.LogError("Class already exists.");
+                return;
+            }
+
             if (!File.Exists(CLASS_TEMPLATE_PATH))
             {
                 Debug.LogError($"Template file not found at path: {CLASS_TEMPLATE_PATH}");
@@ -68,22 +76,74 @@ public class ToolCardGenerator : EditorWindow
                 return;
             }
 
-            GenerateFiles(m_className);
+            CreateCard(m_className);
         }
+    }
+
+    private void CreateCard(string className)
+    {
+        GenerateFiles(className);
     }
 
     private void GenerateFiles(string className)
     {
-        string templateContent, classContent, classFilePath;
+        string  classContent, classFilePath;
 
         Directory.CreateDirectory(CLASS_PATH);
         Directory.CreateDirectory(ACTION_CLASS_PATH);
 
-        templateContent = File.ReadAllText(CLASS_TEMPLATE_PATH);
-        classContent = templateContent.Replace("_CardName", className);
+        className = FormatClassName(className);
+        classContent = CreateClassContent(className);
 
-        className += "Card";
-        string classNameSeperatedByCapitals = Regex.Replace(className, "(?<!^)([A-Z])", " $1");
+        classFilePath = GenerateClassPath(className);
+        File.WriteAllText(classFilePath, classContent);
+
+        string actionClassName = FormatActionClassName(className);
+        string ActionClassContent = CreateActionClassContent(actionClassName, className);
+
+        classFilePath = Path.Combine(ACTION_CLASS_PATH, $"{actionClassName}.cs");
+        File.WriteAllText(classFilePath, ActionClassContent);
+
+
+        CompilationPipeline.compilationFinished += CompilationFinished;
+        AssetDatabase.Refresh();
+    }
+
+    private string FormatClassName(string className)
+    {
+        if (className.Contains("Card"))
+        {
+            return className;
+        }
+
+        return className + "Card";
+    }
+
+    private string FormatActionClassName(string actionClassName)
+    {
+        actionClassName = FormatClassName(actionClassName);
+
+        if (actionClassName.Contains("Action"))
+        {
+            return actionClassName;
+        }
+        
+        return actionClassName + "Action";
+    }
+
+    private string GenerateClassPath(string className)
+    {
+        return Path.Combine(CLASS_PATH, $"{className}.cs");
+    }
+
+    private string CreateClassContent(string className)
+    {
+        string templateContent, classContent;
+        
+        templateContent = File.ReadAllText(CLASS_TEMPLATE_PATH);
+        classContent = templateContent.Replace("_CardName", className.Replace("Card", ""));
+
+        // string classNameSeperatedByCapitals = Regex.Replace(className, "(?<!^)([A-Z])", " $1");
 
         classContent = classContent.Replace("_CardMenuName", className);
         classContent = classContent.Replace("_CardTemplate", className);
@@ -91,7 +151,7 @@ public class ToolCardGenerator : EditorWindow
         
         if (m_formatStance)
         {
-            classContent = classContent.Replace("*STANCE*", "return string.Format(stanceDataSet.description, name);");
+            classContent = classContent.Replace("*STANCE*", "return string.Format(stanceDataSet.description, Damage);");
         }
         else
         {
@@ -100,7 +160,7 @@ public class ToolCardGenerator : EditorWindow
 
         if (m_formatNormal)
         {
-            classContent = classContent.Replace("*NORMAL*", "return string.Format(normalDataSet.description, name);");
+            classContent = classContent.Replace("*NORMAL*", "return string.Format(normalDataSet.description, Damage);");
         }
         else
         {
@@ -108,27 +168,24 @@ public class ToolCardGenerator : EditorWindow
         }
 
 
-        classFilePath = Path.Combine(CLASS_PATH, $"{className}.cs");
-        File.WriteAllText(classFilePath, classContent);
-
-
-        string newClassName = className + "Action";
+        return classContent;
+    }
+    
+    private string CreateActionClassContent(string actionClassName, string className)
+    {
+        string templateContent, classContent;
+        
 
         templateContent = File.ReadAllText(ACTION_TEMPLATE_PATH);
-        classContent = templateContent.Replace("_CardActionTemplate", newClassName);
+        classContent = templateContent.Replace("_CardActionTemplate", actionClassName);
         classContent = classContent.Replace("_CardClassName", className);
-        classFilePath = Path.Combine(ACTION_CLASS_PATH, $"{newClassName}.cs");
-        File.WriteAllText(classFilePath, classContent);
-
-
-        CompilationPipeline.compilationFinished += CompilationFinished;
-        AssetDatabase.Refresh();
+        
+        return classContent;
     }
 
 
     private void CreateScriptableObjectAsset(string className)
     {
-        
         ScriptableObject asset = ScriptableObject.CreateInstance(className + "Card");
         if (asset == null)
         {
@@ -144,6 +201,19 @@ public class ToolCardGenerator : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         
+        AddCardToDevTesting(cardData);
+        
+        //add to all cards Db
+        AddCardToCardsDb(cardData);
+    }
+
+    private void AddCardToCardsDb(BaseCardData cardData)
+    { 
+        CardsDb.Instance.CreateCard(cardData);
+    }
+
+    private void AddCardToDevTesting(BaseCardData cardData)
+    {
         //add to dev testing deck template
         DeckTemplates.Deck devtemplate = DeckTemplates.FindById("Dev Testing");
         if (devtemplate != null)
@@ -154,9 +224,6 @@ public class ToolCardGenerator : EditorWindow
             devtemplate.CardsInDeck.Insert(0, cardInDeck);
             DeckTemplates.Save();
         }
-        
-        //add to all cards Db
-        CardsDb.Instance.CreateCard(cardData);
     }
 
 

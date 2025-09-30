@@ -1,0 +1,46 @@
+@startuml
+
+class DamageInvoker {
+- Commands: Queue<DamageCommand>
+
++ Enqueue(damageCommand) 
+}
+
+DamageInvoker ..|> DamageCommand : Has-Many
+
+class DamageCommand {
++ Execute(preview: bool)
+}
+
+DamageCommand ..|> DamageContext : Has-A
+
+class DamageContext {
++ OriginalDamage: int
++ Modifications: Record<DamageModification>
++ Damage : int
+
++ Source: IDamageSource
++ Originator: IDamageOrigin
++ Target: IDamageable
+
++ Tags: List<DamageTags>
+
++ Id: Guid
+}
+
+DamageContext ..|> DamageModification : Has-Many
+
+class DamageModification {
++ Reason: DamageModReason
+
+- Modifier: IParamModifier
+}
+
+DamageModification --|> IParamModifier : Has-A
+DamageModification --|> DamageModReason : Has-A
+
+Interface IParamModifier<int>
+enum DamageModReason
+
+
+@enduml

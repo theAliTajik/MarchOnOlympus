@@ -76,13 +76,13 @@ public class EnemiesManager : Singleton<EnemiesManager>
             Debug.Log("combat wave set is null");
             return;
         }
-
-
         List<EnemiesDb.BossInfo> enemiesToSpawn = m_combatWaveSet.Waves[m_currentWave].Enemies;
         foreach (var boss in enemiesToSpawn)
         {
             SpawnBoss(boss, true);
         }
+        
+        GameplayEvents.SendOnNewWaveOfEnemies();
     }
     
     public void LoadEnemies(params string[] enemyIds)
@@ -197,9 +197,27 @@ public class EnemiesManager : Singleton<EnemiesManager>
         return enemy;
     }
     
-    public void RemoveDeadEnemy(Fighter enemy)
+    private IEnumerator RemoveDeadEnemyWithDelay(Fighter enemy, float delay)
+    {
+        RemoveDeadEnemyLogic(enemy);
+        yield return new WaitForSeconds(delay);
+        RemoveDeadEnemyBody(enemy);
+    }
+    
+    public void RemoveDeadEnemyBody(Fighter enemy)
     {
         if (enemy == null) return;
+        
+        // Destroy enemy GameObject
+        Destroy(enemy.gameObject);
+    }
+
+    public void RemoveDeadEnemyLogic(Fighter enemy)
+    {
+        if (enemy == null) return;
+        if(!m_deadEnemies.Contains(enemy)) return;
+        
+        m_deadEnemies.Remove(enemy);
 
         enemy.Death -= OnEnemyDied;
 
@@ -216,14 +234,21 @@ public class EnemiesManager : Singleton<EnemiesManager>
         // Remove from enemies list
         m_enemies.Remove(enemy);
         EnemiesPositionManager.Instance.RemoveEnemyFromSpawnPoint(enemy);
-        // Destroy enemy GameObject
-        Destroy(enemy.gameObject);
     }
 
 
     public List<Fighter> GetAllEnemies()
     {
-        return m_enemies;
+        List<Fighter> enemies = new List<Fighter>();
+        foreach (var fighter in m_enemies)
+        {
+            var enemy = (BaseEnemy)fighter;
+            if (enemy.IsInAllEnemiesList)
+            {
+                enemies.Add(enemy);
+            }
+        }
+        return enemies;
     }
 
     public Fighter GetRandomEnemy()
@@ -236,25 +261,30 @@ public class EnemiesManager : Singleton<EnemiesManager>
         m_enemies.Remove(enemy);
         m_deadEnemies.Add(enemy);
         GameplayEvents.SendGamePhaseChanged(EGamePhase.ENEMY_KILLED);
-        if (EnemiesAreDead())
+        StartCoroutine(RemoveDeadEnemyWithDelay(enemy,1.4f));
+        bool enemiesAreDead = EnemiesAreDead();
+        if (enemiesAreDead && NextWaveExists())
         {
-            if (NextWaveExists())
-            {
-                m_currentWave++;
-                ClearEnemies();
-                SpawnWave();
-                return;
-            }
+            m_currentWave++;
+            ClearEnemies();
+            SpawnWave();
+            return;
+        }
+
+        if (enemiesAreDead)
+        {
             OnAllEnemiesDestroyed?.Invoke();
         }
+        
     }
+
 
     private void ClearEnemies()
     {
-        foreach (var enemy in m_deadEnemies)
-        {
-            RemoveDeadEnemy(enemy);
-        }
+        // foreach (var enemy in m_deadEnemies)
+        // {
+        //     RemoveDeadEnemy(enemy);
+        // }
     }
 
 

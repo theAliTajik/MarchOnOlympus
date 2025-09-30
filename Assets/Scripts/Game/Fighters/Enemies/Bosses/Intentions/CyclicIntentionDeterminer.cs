@@ -8,8 +8,13 @@ public class CyclicIntentionDeterminer : IDetermineIntention
     {
         m_moves = moves;
     }
-    
-    public BaseEnemy.MoveData DetermineIntention()
+
+    public void SetMoves(BaseEnemy.MoveData[] moves)
+    {
+        m_moves = moves;
+    }
+
+    public BaseEnemy.MoveData? DetermineIntention()
     {
         BaseEnemy.MoveData move = m_moves[m_currentMove];
         m_currentMove++;

@@ -29,11 +29,7 @@ public class TrojanGeneral : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
     }
 
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -60,7 +56,7 @@ public class TrojanGeneral : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -130,7 +126,7 @@ public class TrojanGeneral : BaseEnemy
 
     public void SetFortify()
     {
-        GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, true, 1);
+        GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, 1);
     }
     
     private TrojanGeneralTower FindTower()

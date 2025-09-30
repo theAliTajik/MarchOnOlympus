@@ -12,15 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4857908714d794b83970fa11e1a5d6, type: 3}
   m_Name: MinotaurData
   m_EditorClassIdentifier: 
-  HP: 0
-  Move1Damage: 0
-  Phase1HPPercentageTrigger:
+  HP: 200
+  Move1Damage: 5
+  Move1Str: 2
+  Move2StrThreshold: 1
+  Move2Damage: 20
+  Move2StrMultiplier: 4
+  Move3PlayerHPPercentage: 51
+  Move3Str: 5
+  Move3StrReduce: 5
+  Move4PlayerHPPercentage: 50
+  Move4Restore: 50
+  Move5StrThreshold: 20
+  Move5Damage: 100
+  GainStrHPPercentageTrigger:
     Percentage: 66
     TriggerType: 2
     Equal: 1
     RemoveOnTrigger: 1
-  Phase2HPPercentageTrigger:
+  PercentageTriggerStrGain: 5
+  UseShoutsHPPercentageTrigger:
     Percentage: 33
     TriggerType: 2
     Equal: 1
     RemoveOnTrigger: 1
+  OnDeathStrThreshold: 20
+  OnDeathPerkName: NearDeathExperiance

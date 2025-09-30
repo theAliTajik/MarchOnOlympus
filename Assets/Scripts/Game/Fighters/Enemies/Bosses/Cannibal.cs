@@ -81,12 +81,7 @@ public class Cannibal : BaseEnemy
         }
         m_fighterHP.ResetHP();
         
-        m_moves.Clear();
-        for (int i = 0; i < m_selectedMoves.Length; i++)
-        {
-            MoveData md = m_selectedMoves[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_selectedMoves);
     }
     
     protected override void OnTookDamage(int damage, bool isCritical)
@@ -112,7 +107,7 @@ public class Cannibal : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 

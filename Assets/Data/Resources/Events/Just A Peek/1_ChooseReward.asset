@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
   m_Name: 1_ChooseReward
   m_EditorClassIdentifier: 
-  DialogueText: Choose Reward
+  DialogueText: "As you walk along the edge of a crystal-clear spring, a faint laugh
+    drifts through the misty air. Parting the tall reeds, you glimpse a shimmering
+    figure gliding across the water\u2014a nymph, though you cannot tell if she is
+    dancing\u2026 or quietly watching you.\n\nIn the hush that follows, three ghostly
+    visions ripple across the water\u2019s surface:"
   Choices:
   - {fileID: 11400000, guid: fbf5b339dd28244e1a79261ec8f0e4f1, type: 2}
   - {fileID: 11400000, guid: 696e9c030773240a8835330a50e51d53, type: 2}

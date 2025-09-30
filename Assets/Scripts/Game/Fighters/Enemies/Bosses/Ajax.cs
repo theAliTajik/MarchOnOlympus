@@ -32,11 +32,7 @@ public class Ajax : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
         
         HP.SetTrigger(m_data.Phase1PercentageUnTrigger);
         HP.SetTrigger(m_data.Phase1PercentageTrigger);
@@ -51,7 +47,7 @@ public class Ajax : BaseEnemy
         {
             Debug.Log("at 66");
             //m_DamageBonus = m_data.DamageBonusAtPhase1;
-            GameActionHelper.AddMechanicToFighter(this, m_data.DamageBonusAtPhase1, MechanicType.STRENGTH, true, 10);
+            GameActionHelper.AddMechanicToFighter(this, m_data.DamageBonusAtPhase1, MechanicType.STRENGTH, 10);
             m_hasDamageBonus = true;
         }
         
@@ -100,7 +96,7 @@ public class Ajax : BaseEnemy
         }
         //remove fortified from moves:
         
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
         
     }

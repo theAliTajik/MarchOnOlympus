@@ -22,6 +22,7 @@ public class Nymphs_3 : BaseNymph
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
+    [SerializeField] private MoveData m_submergedMoveData;
     [SerializeField] private Nymphs_3_MovesData m_data;
 
   
@@ -29,11 +30,7 @@ public class Nymphs_3 : BaseNymph
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
         
         ConfigFighterHP();
 
@@ -61,7 +58,14 @@ public class Nymphs_3 : BaseNymph
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        if (!m_isTarget)
+        {
+            m_nextMove = m_submergedMoveData;
+            ShowIntention();
+            return;
+        }
+        
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -80,6 +84,9 @@ public class Nymphs_3 : BaseNymph
         {
             case "Hit":
                 CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description);
+                break;
+            case "submerged":
+                CallOnIntentionDetermined(Intention.STUNED, m_nextMove.description);
                 break;
         }
     }
@@ -119,6 +126,9 @@ public class Nymphs_3 : BaseNymph
 				Fighter player = GameInfoHelper.GetPlayer();
 				GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
 				break;
+            case "submerged":
+                finishCallback?.Invoke();
+                break;
         }
 
         yield return new WaitUntil(() => animFinished);
@@ -130,6 +140,12 @@ public class Nymphs_3 : BaseNymph
         }
         m_numOfCasts = 0;
         finishCallback?.Invoke();
+    }
+    
+    public override void SetCanBeTarget(bool isTarget)
+    {
+        base.SetCanBeTarget(isTarget);
+        DetermineIntention();
     }
 
     public override void ConfigFighterHP()

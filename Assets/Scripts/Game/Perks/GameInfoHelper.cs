@@ -27,6 +27,31 @@ public static class GameInfoHelper
     {
         return GameSessionParams.DeckTemplateClientId;
     }
+
+    public static int GetHonor()
+    {
+        if (!GameProgress.Instance)
+        {
+            return 0;
+        }
+        
+        return GameProgress.Instance.Data.Honor;
+    }
+
+    public static int GetInvent()
+    {
+        return 2;
+    }
+    
+    public static int GetInventLevel()
+    {
+        return 1;
+    }
+    
+    public static int GetInventionsThisMatch()
+    {
+        return 1;
+    }
     
     // ### Cards
     public static class CardsData
@@ -45,6 +70,12 @@ public static class GameInfoHelper
         return cards[0];
     }
 
+    public static BaseCardData GetRandomCard()
+    {
+        int rand = UnityEngine.Random.Range(0, CardsDb.Instance.AllCards.Count);
+        BaseCardData randCard = CardsDb.Instance.AllCards[rand].CardData;
+        return randCard;
+    }
     
     public static int CountNumOfCardsInDeck(CardStorage cardStorage)
     {
@@ -216,6 +247,12 @@ public static class GameInfoHelper
         return CombatManager.Instance.ExtraCardsDrawThisTurn;
     }
 
+    public static int GetStartingDeckSize()
+    {
+        //TODO: fix this
+        return 1;
+    }
+
     public static int GetCardsEnergy(CardDisplay cardDisplay)
     {
         return cardDisplay.CardInDeck.CurrentState.GetEnergy();
@@ -281,6 +318,18 @@ public static class GameInfoHelper
     public static CardPile GetCardPile(CardStorage cardStorage)
     {
         return CombatManager.Instance.Deck.GetCardPile(cardStorage);
+    }
+
+    public static int GetNumOfStartingDeckChunks(int Chunk)
+    {
+        if (Chunk < 1)
+        {
+            CustomDebug.LogWarning("Cannot devide by less than one", Categories.Combat.Cards);
+            return 0;
+        }
+        
+        int startingDeckSize = GetStartingDeckSize();
+        return startingDeckSize / Chunk;
     }
 
     
@@ -382,7 +431,12 @@ public static class GameInfoHelper
         return CombatManager.Instance.DamageDoneToEnemiesOverAll;
     }
 
-    
+    public static bool CheckIfAnyEnemyIsAttackingThisTurn()
+    {
+        CustomDebug.LogWarning("Enemy attacking check needs implementation", Categories.Fighters.Enemies.Root);
+        return true;
+    }
+   
     // ### Mechanics
     public static class MechanicsData
     {
@@ -398,6 +452,11 @@ public static class GameInfoHelper
         return MechanicsManager.Instance.GetMechanicsStack(fighter, mechanicType);
     }
 
+    public static int GetMechanicStack(IHaveMechanics owner, MechanicType mechanicType)
+    {
+        return MechanicsManager.Instance.GetMechanicsStack(owner, mechanicType);
+    }
+    
     public static bool CheckIfFighterHasMechanic(Fighter fighter, MechanicType mechanicType)
     {
         return MechanicsManager.Instance.Contains(fighter, mechanicType);
@@ -430,5 +489,11 @@ public static class GameInfoHelper
         return MechanicsManager.Instance.DebuffMechanics;
     }
 
+
+   public static int GetNumOfDebuffMechanics(Fighter target)
+   {
+       return MechanicsManager.Instance.GetDebuffsCount(target);
+   }
+   
 
 }

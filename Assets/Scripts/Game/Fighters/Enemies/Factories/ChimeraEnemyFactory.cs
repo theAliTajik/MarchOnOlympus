@@ -47,7 +47,8 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
                 
         HUD.Instance.SpawnHPBar(enemy);
         HUD.Instance.SpawnDamageIndicator(enemy);
-        MechanicsManager.Instance.CreateMechanicsList(enemy);
+        MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(enemy);
+        HUD.Instance.SpawnMechanicsDisplay(enemy, list);
         CombatManager.Instance.SubscribeToEnemyDamage(enemy);
         EnemiesManager.Instance.AddEnemey(enemy);
     }
@@ -62,9 +63,16 @@ public class ChimeraEnemyFactory : MonoBehaviour, IEnemyFactory
                     
         HUD.Instance.SpawnEnemyIntentionWidget(headIntention, headIntention.GetHeadPosition());
 
-        if (headIntention is ChimeraSerpent serpent)
+        if (headIntention is IHaveMechanics owner)
         {
-            MechanicsManager.Instance.CreateMechanicsList(serpent);
+            MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(owner);
+            
+            if (owner is ChimeraSerpent serpent)
+            {
+                HUD.Instance.SpawnMechanicsDisplay(serpent, list);
+                return;
+            }
+        
         }
     }
 }

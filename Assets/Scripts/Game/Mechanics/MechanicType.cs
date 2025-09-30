@@ -20,8 +20,11 @@ namespace Game
         PETRIFY,
         DOUBLEDAMAGE,
         PANIC,
-		HAUNT
-	}
+        HAUNT,
+        ACIDIC,
+        ACIDICDOT,
+        ACIDICDOTTWO,
+    }
 
     public enum MechanicCategory
     {

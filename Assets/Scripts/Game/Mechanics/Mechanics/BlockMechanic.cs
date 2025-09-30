@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game;
+using TMPro;
 using UnityEngine;
 
 public class BlockMechanic : BaseMechanic
@@ -11,21 +12,23 @@ public class BlockMechanic : BaseMechanic
         
     }
 
-    public BlockMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public BlockMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
+        
+        m_stack.SetGuard(guardMin);
     }
     public override MechanicType GetMechanicType()
     {
         return MechanicType.BLOCK;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         if (phase == CombatPhase.TURN_START && isMyTurn)
         {
-            ReduceStack(m_stack/2);
+            ReduceStack((m_stack+ 1) / 2);
             return true;
         }
         return false;

@@ -10,7 +10,7 @@ public class StunMechanic : BaseMechanic
         
     }
 
-    public StunMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public StunMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
@@ -19,6 +19,8 @@ public class StunMechanic : BaseMechanic
         {
             stunnable.Stun();
         }
+        
+        m_stack.SetGuard(guardMin);
     }
     
     public override MechanicType GetMechanicType()
@@ -26,7 +28,7 @@ public class StunMechanic : BaseMechanic
         return MechanicType.STUN;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         if (phase == CombatPhase.TURN_START && isMyTurn)
         {

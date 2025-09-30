@@ -1,0 +1,114 @@
+Phoenix.png
+size:2029,1779
+filter:Linear,Linear
+Agrupar 1 copiar
+bounds:877,19,232,314
+rotate:90
+Atack
+bounds:2,995,463,479
+offsets:10,11,485,500
+BG_dot_1x1
+bounds:806,1525,1,1
+Body
+bounds:1868,72,129,182
+offsets:1,0,131,183
+Claw-01
+bounds:467,982,364,492
+offsets:7,3,377,503
+Claw-02
+bounds:863,661,410,358
+offsets:9,7,422,374
+rotate:90
+Fury
+bounds:2,514,463,479
+offsets:10,11,485,500
+Head ornament-01
+bounds:806,1528,457,249
+offsets:9,8,472,266
+Head ornament-02
+bounds:1734,1502,275,288
+offsets:8,7,286,304
+rotate:90
+Neck
+bounds:467,508,472,394
+offsets:9,7,490,408
+rotate:90
+Neutral
+bounds:467,54,452,408
+offsets:10,11,474,429
+rotate:90
+Pain
+bounds:2,33,463,479
+offsets:10,11,485,500
+Paw-01
+bounds:833,1073,342,453
+offsets:10,10,362,473
+Paw-02
+bounds:1478,1164,242,378
+offsets:10,10,262,398
+Small wing
+bounds:2,1476,802,301
+offsets:9,1,811,308
+Tail-01
+bounds:1193,360,251,299
+offsets:1,1,253,301
+Tail-02
+bounds:1689,85,177,169
+offsets:0,0,178,170
+Tail-03
+bounds:1722,1196,282,304
+offsets:0,0,283,304
+Wing-01-01
+bounds:877,253,314,406
+offsets:1,1,315,408
+Wing-01-02
+bounds:1177,1122,299,404
+offsets:2,2,303,408
+Wing-02-01
+bounds:1223,716,213,404
+offsets:0,1,214,405
+Wing-02-02
+bounds:1438,744,239,376
+offsets:2,2,243,380
+aura (362)
+bounds:1679,761,227,227
+offsets:15,15,256,256
+fire (10)
+bounds:1908,869,115,119
+offsets:9,6,128,128
+fire (13)
+bounds:1193,2,228,98
+offsets:8,15,256,128
+fire (15)
+bounds:1685,256,212,228
+offsets:19,15,256,256
+fire (18)
+bounds:1451,37,208,236
+offsets:15,0,256,256
+rotate:90
+fire (19)
+bounds:1451,247,232,237
+offsets:13,8,256,256
+fire (21)
+bounds:1704,523,208,236
+offsets:16,0,256,256
+fire (22)
+bounds:1722,990,204,252
+offsets:20,4,256,256
+rotate:90
+fire (23)
+bounds:833,1017,23,54
+offsets:4,1,32,64
+fire (29)
+bounds:1899,393,128,128
+glow (171)
+bounds:1265,1544,467,233
+offsets:20,16,512,256
+glow (23)
+bounds:1193,102,256,256
+glow (26)
+bounds:1446,486,256,256
+glow (33)
+bounds:1899,263,128,128
+sps_new
+bounds:1908,803,64,64

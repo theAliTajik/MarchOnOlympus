@@ -91,6 +91,7 @@ public class FighterHP : MonoBehaviour
     private bool m_hasGuard = false;
     private int m_guardMin = 0;
 
+
     private bool m_hadDamageGurad = false;
     private float m_damageGuardMaxPercentage = 1;    
 
@@ -101,11 +102,11 @@ public class FighterHP : MonoBehaviour
     
     public bool HadDamageGurad { get { return m_hadDamageGurad; } }
     
-#if UNITY_EDITOR
 
     [ContextMenu("Kill")]
     public void Kill()
     {
+        RemoveGuard();
         int dmg = m_current;
         TakeDamage(dmg);
     }
@@ -144,7 +145,6 @@ public class FighterHP : MonoBehaviour
         }
     }
 
-#endif
 
     public void SetGuard(int minHP)
     {
@@ -202,14 +202,14 @@ public class FighterHP : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (damage <= 0)
-        {
-            return;
-        }
-        
         if (damage > m_current)
         {
             damage = m_current;
+        }
+
+        if (damage <= 0)
+        {
+            return;
         }
         
         float DamagePercentage = (float)damage / m_max;
@@ -223,6 +223,8 @@ public class FighterHP : MonoBehaviour
             damage = m_current - m_guardMin;
         }
         m_current -= damage;
+
+        // Debug.Log($"damage reached fighter hp current:{m_current} max:{m_max}");
         if (m_current == 0)
         {
             OnHPChanged?.Invoke();
@@ -308,8 +310,18 @@ public class FighterHP : MonoBehaviour
                 }
             }
 
+            CheckIsAlive();
         }
     }
-    
-    
+
+
+    public bool CheckIsAlive()
+    {
+        if (m_current > 0)
+        {
+            return true;
+        }
+        
+        return false;
+    }
 }

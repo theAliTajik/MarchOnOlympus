@@ -11,10 +11,12 @@ public class ThornsMechanic : BaseMechanic
         
     }
 
-    public ThornsMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public ThornsMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
+
+        m_stack.SetGuard(guardMin);
     }
     
     public override MechanicType GetMechanicType()
@@ -22,7 +24,7 @@ public class ThornsMechanic : BaseMechanic
         return MechanicType.THORNS;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         return false;
     }
@@ -40,7 +42,8 @@ public class ThornsMechanic : BaseMechanic
         {
             return;
         }
-        
-        damageable.TakeDamage(thorns.Stack, context.Target as Fighter, false);
+
+        context.IsDamageSentByThorns = true;
+        damageable.TakeDamage(thorns.Stack, context.Target as Fighter, false, false, context);
     }
 }

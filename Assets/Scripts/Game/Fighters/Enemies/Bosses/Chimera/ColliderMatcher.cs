@@ -2,8 +2,13 @@
 using System;
 using UnityEngine;
 
+public interface IColliderMatcher
+{
+    public bool IsMyCollider(Collider2D collider);
+}
+
 [Serializable]
-public class ColliderMatcher
+public class ColliderMatcher : IColliderMatcher
 {
     [SerializeField] private Collider2D m_collider;
     

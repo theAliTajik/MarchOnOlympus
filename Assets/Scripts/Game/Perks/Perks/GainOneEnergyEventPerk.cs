@@ -31,7 +31,7 @@ public class GainOneEnergyEventPerk : BasePerk
 
     public override float GetPriority()
     {
-        return -1;
+        return 1;
     }
 
     public override void OnPhaseActivate(EGamePhase phase, Action callback)

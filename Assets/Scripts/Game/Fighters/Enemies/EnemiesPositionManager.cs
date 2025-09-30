@@ -80,7 +80,11 @@ public class EnemiesPositionManager : Singleton<EnemiesPositionManager>
 
     public void RemoveEnemyFromSpawnPoint(Fighter enemy)
     {
+        if(enemy == null) return;
+        
         SpawnPoint keyPoint = FindSpawnPointOfEnemy(enemy);
+        if(keyPoint == null) return;
+        
         keyPoint.Occupant.Remove((BaseEnemy)enemy);
     }
 

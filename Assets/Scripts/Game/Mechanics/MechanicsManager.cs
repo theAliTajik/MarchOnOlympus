@@ -20,8 +20,9 @@ public class MechanicsManager : Singleton<MechanicsManager>
         MechanicType.STUN,
         MechanicType.DAZE,
         MechanicType.BURN,
-        MechanicType.PETRIFY
-	};
+        MechanicType.PETRIFY,
+        MechanicType.HAUNT
+    };
     
     public List<MechanicType> DebuffMechanics { get { return m_DebuffMechanics; } }
     
@@ -89,13 +90,37 @@ public class MechanicsManager : Singleton<MechanicsManager>
 
     public BaseMechanic GetMechanic(Fighter fighter, MechanicType mechanicType)
     {
+        if (fighter == null)
+        {
+            Debug.Log("WARRNING: GetMechanic failed: Null fighter passed");
+            return null;
+        }
+        
         return GetMechanic(fighter as IHaveMechanics, mechanicType);
     }
     public BaseMechanic GetMechanic(IHaveMechanics owner, MechanicType mechanicType)
     {
+        if (owner == null)
+        {
+            Debug.Log("WARRNING: GetMechanic failed: Null owner passed");
+            return null;
+        }
+        
         m_allMechanics.TryGetValue(owner, out MechanicsList mechanicsList);
         if (mechanicsList == null)
         {
+            Debug.Log($"WARNING: No mechanic list found for owner: {((MonoBehaviour)owner).name}");
+            
+            MonoBehaviour ownerBehaviour = owner as MonoBehaviour;
+            
+            Debug.LogError($"Mechanic lookup failed for owner '{ownerBehaviour.name}' (Instance ID: {ownerBehaviour.GetInstanceID()}). This key was not found in the dictionary.", ownerBehaviour);
+            
+            // Log all current keys for comparison
+            foreach (var key in m_allMechanics.Keys)
+            {
+                var keyBehaviour = key as UnityEngine.Object;
+                Debug.Log($"Available Key in Dictionary: '{keyBehaviour.name}' (Instance ID: {keyBehaviour.GetInstanceID()})");
+            }
             return null;
         }
         
@@ -210,34 +235,29 @@ public class MechanicsManager : Singleton<MechanicsManager>
         }
     }
 
-    public void CreateMechanicsList(Fighter fighter)
+    public MechanicsList CreateMechanicsList(Fighter fighter)
     {
-        CreateMechanicsList(fighter as IHaveMechanics);
+        return CreateMechanicsList(fighter as IHaveMechanics);
     }
-    public void CreateMechanicsList(IHaveMechanics owner)
+    public MechanicsList CreateMechanicsList(IHaveMechanics owner)
     {
         if (m_allMechanics.ContainsKey(owner))
         {
             Debug.Log($"Fighter {owner.GetType()} already has mechanics list");
-            return;
+            return null;
         }
 
+        bool isPlayer = false;
         if (owner is Fighter fighter)
         {
-            bool isPlayer = fighter.CompareTag("Player");
-            MechanicsList mechanicsList = new MechanicsList(isPlayer);
-            m_allMechanics.Add(fighter, mechanicsList);
-            HUD.Instance.SpawnMechanicsDisplay(fighter, mechanicsList);
-            return;
+            isPlayer = fighter.CompareTag("Player");
         }
 
 
-        if (owner is IHaveHUD hud)
-        {
-            MechanicsList list = new MechanicsList(false);
-            m_allMechanics.Add(owner, list);
-            HUD.Instance.SpawnMechanicsDisplay(hud, list);
-        }
+        MechanicsList list = new MechanicsList(isPlayer);
+        m_allMechanics.Add(owner, list);
+        // Debug.Log($"Made mechanics list for {owner.GetType()}");
+        return list;
     }
     public void RemoveMechanicsList(Fighter fighter)
     {
@@ -284,13 +304,13 @@ public class MechanicsManager : Singleton<MechanicsManager>
         }
     }
 
-    public void AddMechanic(int stack, MechanicType mechanicType, Fighter fighter, bool hasGuard = false, int guardMin = 0)
+    public void AddMechanic(int stack, MechanicType mechanicType, Fighter fighter, int guardMin = 0)
     {
-        AddMechanic(stack, mechanicType, fighter as IHaveMechanics, hasGuard, guardMin);
+        AddMechanic(stack, mechanicType, fighter as IHaveMechanics, guardMin);
     }
-    public void AddMechanic(int stack, MechanicType mechanicType, IHaveMechanics owner, bool hasGuard = false, int guardMin = 0)
+    public void AddMechanic(int stack, MechanicType mechanicType, IHaveMechanics owner, int guardMin = 0)
     {
-        BaseMechanic mec = CreateMechanicOfType(stack, mechanicType, owner, hasGuard, guardMin);
+        BaseMechanic mec = CreateMechanicOfType(stack, mechanicType, owner, guardMin);
         if (mec == null)
         {
             Debug.Log("could not create mechanic of type");
@@ -300,71 +320,78 @@ public class MechanicsManager : Singleton<MechanicsManager>
         AddMechanic(mec);
     }
 
-    private static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, Fighter fighter,
-        bool hasGuard = false, int guardMin = 0)
+    public static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, Fighter fighter,
+        int guardMin = 0)
     {
-        return CreateMechanicOfType(stack, mechanicType, fighter as IHaveMechanics, hasGuard, guardMin);
+        return CreateMechanicOfType(stack, mechanicType, fighter as IHaveMechanics, guardMin);
     }
-    private static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, IHaveMechanics owner,
-        bool hasGuard = false, int guardMin = 0)
+    public static BaseMechanic CreateMechanicOfType(int stack, MechanicType mechanicType, IHaveMechanics owner,
+        int guardMin = 0)
     {
         BaseMechanic mechanic = null;
         
         switch (mechanicType)
         {
             case MechanicType.STRENGTH:
-                mechanic = new StrenghtMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new StrenghtMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.BLOCK:
-                mechanic = new BlockMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new BlockMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.FORTIFIED:
-                mechanic = new FortifiedMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new FortifiedMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.DEXTERITY:
-                mechanic = new DexterityMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new DexterityMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.THORNS:
-                mechanic = new ThornsMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new ThornsMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.FRENZY:
-                mechanic = new FrenzyMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new FrenzyMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.IMPALE:
-                mechanic = new ImpaleMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new ImpaleMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.BLEED:
-                mechanic = new BleedMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new BleedMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.BURN:
-                mechanic = new BurnMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new BurnMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.DAZE:
-                mechanic = new DazeMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new DazeMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.STUN:
-                mechanic = new StunMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new StunMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.VULNERABLE:
-                mechanic = new VulnerableMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new VulnerableMechanic(stack, owner, guardMin);
                 break;
             case MechanicType.IMPROVISE:
-                mechanic = new ImproviseMechanic(stack, owner, hasGuard, guardMin);
+                mechanic = new ImproviseMechanic(stack, owner, guardMin);
                 break;
-			case MechanicType.DOUBLEDAMAGE:
-				mechanic = new DoubleDamageMechanic(stack, owner, hasGuard, guardMin);
-				break;
             case MechanicType.PETRIFY:
-                mechanic = new PetrifyMechanic(stack, owner, hasGuard, guardMin);
+                return new PetrifyMechanic(stack, owner, guardMin);
                 break;
-			case MechanicType.PANIC:
-				mechanic = new PanicMechanic(stack, owner, hasGuard, guardMin);
-				break;
-			case MechanicType.HAUNT:
-				mechanic = new HauntMechanic(stack, owner, hasGuard, guardMin);
-				break;
-			default:
-                Debug.Log("Unknown mechanic type");
+            case MechanicType.DOUBLEDAMAGE:
+                return new DoubleDamageMechanic(stack, owner, guardMin);
+                break;
+            case MechanicType.PANIC:
+                return new PanicMechanic(stack, owner, guardMin);
+            case MechanicType.HAUNT:
+                return new HauntMechanic(stack, owner, guardMin);
+            case MechanicType.EXPLODE:
+                return new ExplodeMechanic(stack, owner);
+            case MechanicType.ACIDIC:
+                return new AcidicMechanic(stack, owner, guardMin);
+            case MechanicType.ACIDICDOT:
+                return new AcidicDotMechanic(stack, owner, guardMin);
+            case MechanicType.ACIDICDOTTWO:
+                return new AcidicDotTwoMechanic(stack, owner, guardMin);
+            
+            default:
+                Debug.Log($"Unknown mechanic type {mechanicType.ToString()}");
                 break;
         }
         return mechanic;
@@ -459,6 +486,28 @@ public class MechanicsManager : Singleton<MechanicsManager>
         }
 
         return present;
+    }
+
+    public int GetDebuffsCount(Fighter fighter)
+    {
+        if (fighter is IHaveMechanics owner)
+        {
+            return GetDebuffsCount(owner);
+        }
+        
+        CustomDebug.LogWarning("Fighter was not of type IHaveMechanics", Categories.Mechanics.Root);
+        return 0;
+    }
+
+    public int GetDebuffsCount(IHaveMechanics owner)
+    {
+        if (m_allMechanics.ContainsKey(owner))
+        {
+            return m_allMechanics[owner].GetDebuffsCount();
+        }
+
+        CustomDebug.LogWarning("Did not find mechanic owner", Categories.Mechanics.Root);
+        return 0;
     }
 
 

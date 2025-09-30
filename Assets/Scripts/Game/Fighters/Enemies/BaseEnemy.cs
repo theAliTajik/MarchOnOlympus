@@ -5,7 +5,7 @@ using Game;
 using KaimiraGames;
 using UnityEngine;
 using UnityEngine.Serialization;
-
+using Random = UnityEngine.Random;
 
 
 public abstract class BaseEnemy : Fighter, IGetStunned
@@ -17,6 +17,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
         public string description;
         public int chance;
         public float[] probabilities;
+        public Func<bool> Condition;
 
         public MoveData(string clientID)
         {
@@ -24,6 +25,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
             description = null;
             chance = 0;
             probabilities = new float[] { };
+            Condition = null;
         }
         
         public MoveData(string clientID, string description1, int chance = 10, float[] probabilities = null)
@@ -32,6 +34,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
             this.description = description1;
             this.chance = chance;
             this.probabilities = probabilities ?? new float[] {0.5f, 0};
+            Condition = null;
         }
     }
 
@@ -39,18 +42,22 @@ public abstract class BaseEnemy : Fighter, IGetStunned
     public event Action<Intention, string> OnIntentionDetermined;
 
     public virtual bool IsRequiredForCombatCompletion => true;
+    public virtual bool IsInAllEnemiesList => true;
 
     [SerializeField] protected AnimatorHelper m_animation;
     
     protected WeightedList<MoveData> m_moves = new();
+    protected IDetermineIntention m_intentionPicker;
     protected  MoveData m_nextMove;
     protected  MoveData? m_previusMove;
     protected  int m_moveRepeats = 1;
     protected bool m_stuned = false;
+    protected bool m_isTarget = true;
 
     protected override void Awake()
     {
         base.Awake();
+        m_intentionPicker = new RandomIntentionDeterminer();
         m_damageable = new EnemyDamageBehaviour(this);
         m_damageable.OnDamage += m_fighterHP.TakeDamage;
     }
@@ -63,34 +70,22 @@ public abstract class BaseEnemy : Fighter, IGetStunned
         }
     }
     
-    public virtual void RandomIntentionPicker(WeightedList<MoveData> moves)
+    public virtual void RandomIntentionPicker()
     {
-        m_nextMove = moves.Next();
-        if (m_previusMove.HasValue && m_nextMove.clientID == m_previusMove.Value.clientID)
+        if (m_intentionPicker == null)
         {
-            m_moveRepeats++;
-            //Debug.Log("Move repeat detected. num of repeats: " + m_moveRepeats);
+            Debug.Log($"WARNING: Intention picker of enemy: {this.GetType()} was null");
+            return;
         }
-        else if (m_previusMove.HasValue)
+        var nextMove = m_intentionPicker.DetermineIntention();
+
+        if (!nextMove.HasValue)
         {
-            if (m_moveRepeats > 1)
-            {
-                //Debug.Log("Move repeat streak broken. move: " + m_previusMove.Value.clientID + " has it's weight set to: " + m_previusMove.Value.chance);    
-            }
-
-            if (moves.Contains(m_previusMove.Value))
-            {
-                moves.SetWeight(m_previusMove.Value, m_previusMove.Value.chance);
-            }
-            m_moveRepeats = 1;
+            Debug.Log($"WARNING: Intention picker of enemy: {this.GetType()} returned null next move");
+            return;
         }
-
-        int moveRepeatsClamped = Mathf.Clamp(m_moveRepeats, 1, m_nextMove.probabilities.Length);
         
-        int weight = Mathf.RoundToInt(m_nextMove.chance * m_nextMove.probabilities[moveRepeatsClamped-1]); 
-        moves.SetWeight(m_nextMove, weight);
-
-        m_previusMove = m_nextMove;
+        m_nextMove = nextMove.Value;
     }
 
     public virtual void ShowIntention()
@@ -135,12 +130,13 @@ public abstract class BaseEnemy : Fighter, IGetStunned
     }
 
 
-    public void SetCanBeTarget(bool isTarget)
+    public virtual void SetCanBeTarget(bool isTarget)
     {
+        // Debug.Log($"enemy: {this.GetType()} set can be target: {isTarget}");
         Collider2D myCollider = GetComponent<Collider2D>();
         if (myCollider == null)
         {
-            Debug.Log("enemy did not find collider");
+            CustomDebug.LogError("Enemy did not find collider", Categories.Fighters.Enemies.Root);
             return;
         }
         
@@ -152,6 +148,8 @@ public abstract class BaseEnemy : Fighter, IGetStunned
         {
             myCollider.enabled = false;
         }
+        
+        m_isTarget = isTarget;
     }
     
     protected void CallOnIntentionDetermined(Intention intention, string description)
@@ -174,6 +172,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
             MoveData md = moves[i];
             m_moves.Add(md, md.chance);
         } 
+        m_intentionPicker.SetMoves(moves);
     }
 
     public void Stun()

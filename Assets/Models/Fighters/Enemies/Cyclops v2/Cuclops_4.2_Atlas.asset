@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Cuclops_4.2_Atlas
+  m_EditorClassIdentifier: 
+  textureLoadingMode: 0
+  onDemandTextureLoader: {fileID: 0}
+  atlasFile: {fileID: 4900000, guid: 9edb37430c2ab4990be22707445bc86e, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4091214ff94ac487fa678d1af095415f, type: 2}
+  - {fileID: 2100000, guid: 3d3a7dfcb19c44b06929bc9e3f8bf7ea, type: 2}
+  - {fileID: 2100000, guid: d67751f1730cf4d69a9f70ca9b726d52, type: 2}
+  - {fileID: 2100000, guid: fde6049ba2fee41f6a5afbe6ff28a6c5, type: 2}
+  - {fileID: 2100000, guid: dca8e5ee05210484db84096f5e0857f2, type: 2}
+  - {fileID: 2100000, guid: 4dffd09e13d434c84a4b1f5f35858dfd, type: 2}
+  - {fileID: 2100000, guid: be38753f5b56e439ba6fec4dfe278c72, type: 2}
+  - {fileID: 2100000, guid: 2afce33d4546e468fb050abc3034bf84, type: 2}
+  - {fileID: 2100000, guid: ab319294dd9ea4691808047d2b57cec5, type: 2}

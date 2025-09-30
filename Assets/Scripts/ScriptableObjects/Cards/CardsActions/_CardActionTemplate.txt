@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class _CardActionTemplate : BaseCardAction
 {
+    private _CardClassName m_data;
+    
     public override void Play(BaseCardData cardData, Action finishCallback, Fighter target, CardDisplay cardDisplay)
     {
         StartCoroutine(WaitAndExecute(finishCallback, 2f,cardData, target, cardDisplay));
@@ -13,8 +15,8 @@ public class _CardActionTemplate : BaseCardAction
 
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
-        _CardClassName c = (_CardClassName)cardData;
-        target.TakeDamage(c.Damage, CombatManager.Instance.Player, true);
+        m_data = (_CardClassName)cardData;
+        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

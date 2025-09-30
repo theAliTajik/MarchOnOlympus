@@ -55,7 +55,7 @@ public class NarcicistPerk : BasePerk
                 if (!isConditionMet && playerHPPercentge > m_perkData.HPPercentageTrigger)
                 {
                     isConditionMet = true;
-                    GameActionHelper.AddMechanicToPlayer(m_perkData.Str, m_perkData.MechanicType, true,
+                    GameActionHelper.AddMechanicToPlayer(m_perkData.Str, m_perkData.MechanicType,
                         m_perkData.Str);
                 }
                 break;

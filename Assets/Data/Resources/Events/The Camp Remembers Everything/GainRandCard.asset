@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainRandCard
   m_EditorClassIdentifier: 
   Title: '[Gain Card]'
-  Description: Gain Random Card
+  Description: 'A third presses a weathered card into your hand, the faint glow of
+    forgotten tactics etched upon it '
   ActionAssets:
   - {fileID: 11400000, guid: 40d5eb735ed2948afbb937a5782db2a7, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

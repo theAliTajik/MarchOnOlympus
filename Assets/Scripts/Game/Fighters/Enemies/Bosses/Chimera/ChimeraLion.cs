@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [Serializable]
-public class ChimeraLion : ChimeraHead
+public class ChimeraLion : ChimeraHead, IHaveMechanics
 {
     #region Animation
 
@@ -21,6 +21,8 @@ public class ChimeraLion : ChimeraHead
     public override event Action<Intention, string> OnIntentionDetermined;
     
     [SerializeField] private ChimeraLionMovesData m_data;
+    
+    private MechanicsList m_mechanicsList;
 
     public override void Config()
     {
@@ -30,7 +32,7 @@ public class ChimeraLion : ChimeraHead
         cycle[1] = m_movesData[0];
         cycle[2] = m_movesData[1];
 
-        m_damageable = new EnemyDamageBehaviour();
+        m_damageable = new EnemyDamageBehaviour(this);
         m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.CYCLIC, cycle);
 
         m_stun = new NormalStun(m_data.DamageThresholdForStun);
@@ -101,4 +103,8 @@ public class ChimeraLion : ChimeraHead
         }
     }
 
+    public MechanicsList GetMechanicsList()
+    {
+        return m_mechanicsList;
+    }
 }

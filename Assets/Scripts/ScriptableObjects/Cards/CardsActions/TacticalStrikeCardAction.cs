@@ -12,7 +12,7 @@ public class TacticalStrikeCardAction : BaseCardAction
 
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
-            CombatManager.Instance.SpawnCard("Tactical Strike", CardStorage.DISCARD_PILE);
+            CombatManager.Instance.SpawnCard("TacticalStrike", CardStorage.DISCARD_PILE);
         }
 
         StartCoroutine(WaitAndExecute(finishCallback, 2f));

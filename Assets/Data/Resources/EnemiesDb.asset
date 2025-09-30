@@ -27,9 +27,9 @@ MonoBehaviour:
       Factory: 
   - clientID: Diomedes&Archer
     bosses:
-    - Prefab: {fileID: 3021905948194845025, guid: f3193eba67c314522ba5cc900da1b9a6, type: 3}
-      Factory: 
     - Prefab: {fileID: 6394598590285146880, guid: a5bafe8f2f99c4615a367303e55476c2, type: 3}
+      Factory: 
+    - Prefab: {fileID: 3021905948194845025, guid: f3193eba67c314522ba5cc900da1b9a6, type: 3}
       Factory: 
   - clientID: Diomedes
     bosses:
@@ -73,9 +73,9 @@ MonoBehaviour:
       Factory: 
   - clientID: Hector&Paris
     bosses:
-    - Prefab: {fileID: 4990843099871153840, guid: 8b9886092ed5940e193bc1713cb0a8d9, type: 3}
-      Factory: 
     - Prefab: {fileID: 6155499130491812502, guid: 0d6b59ca67a5d4797a037cdce88ade72, type: 3}
+      Factory: 
+    - Prefab: {fileID: 4990843099871153840, guid: 8b9886092ed5940e193bc1713cb0a8d9, type: 3}
       Factory: 
   - clientID: Hector
     bosses:
@@ -99,14 +99,14 @@ MonoBehaviour:
       Factory: 
   - clientID: TrojanGeneral
     bosses:
-    - Prefab: {fileID: 2693138379110094841, guid: 3d3953460e1c34653bbabd9e90a3dbbf, type: 3}
-      Factory: TrojanGeneral
     - Prefab: {fileID: 2779489260938786069, guid: 70afe86e61c7544c090a6efa2939f524, type: 3}
       Factory: 
     - Prefab: {fileID: 7787332252885303513, guid: b24e60fc1ee6d4f7eb2fb2f12ece2e81, type: 3}
       Factory: 
     - Prefab: {fileID: -2812004488212880521, guid: a62b6b231ae564b6b9bb6b9a2d74f4bb, type: 3}
       Factory: 
+    - Prefab: {fileID: 2693138379110094841, guid: 3d3953460e1c34653bbabd9e90a3dbbf, type: 3}
+      Factory: TrojanGeneral
   - clientID: SoulMaster
     bosses:
     - Prefab: {fileID: -124724260323325013, guid: f664c22a388694c229410c2653fa7aca, type: 3}
@@ -154,14 +154,18 @@ MonoBehaviour:
   - clientID: Cyclops
     bosses:
     - Prefab: {fileID: 1786792893909816965, guid: dc00e15fb6bc35e40a81edccbe13b342, type: 3}
-      Factory: 
+      Factory: Cyclops
   - clientID: WarHero
     bosses:
     - Prefab: {fileID: 727013420262267302, guid: a1c30fdcb18df3f49b2f8459478e9213, type: 3}
       Factory: 
+  - clientID: FearMinion
+    bosses:
+    - Prefab: {fileID: 8052193243663512903, guid: d725cb5dc6564124e9150e22fd985fa0, type: 3}
+      Factory: 
   - clientID: Harpy
     bosses:
-    - Prefab: {fileID: 2199157896041138579, guid: a69f33378e870d24caf14925b5f2ae78, type: 3}
+    - Prefab: {fileID: 4355954329475364092, guid: 167516d74ee274b229b86e05a4254367, type: 3}
       Factory: 
   - clientID: HarpyMinion
     bosses:
@@ -178,7 +182,7 @@ MonoBehaviour:
   - clientID: Scylla
     bosses:
     - Prefab: {fileID: 1835654958518076131, guid: d86868f786f70bd4f86b5139a43c939d, type: 3}
-      Factory: 
+      Factory: Scylla
   - clientID: AttackTentacle
     bosses:
     - Prefab: {fileID: 4157735035104155688, guid: 9ac9266f143160d49946537977311cae, type: 3}
@@ -191,26 +195,10 @@ MonoBehaviour:
     bosses:
     - Prefab: {fileID: 384537749133793597, guid: ccf98104366c5584c82e41d2c8f643f0, type: 3}
       Factory: 
-  - clientID: Nymphs_1
-    bosses:
-    - Prefab: {fileID: 4782642993870188052, guid: 6bb86f02266479e40805951d05989bec, type: 3}
-      Factory: 
-  - clientID: Nymphs_2
-    bosses:
-    - Prefab: {fileID: 1638736674174968237, guid: f23720b572729d547ad053d2ee480ce1, type: 3}
-      Factory: 
-  - clientID: Nymphs_3
-    bosses:
-    - Prefab: {fileID: 4344186612151503614, guid: 801757e8451d4e74a980f5ac56b7795a, type: 3}
-      Factory: 
-  - clientID: Nymphs_4
-    bosses:
-    - Prefab: {fileID: 4908096665168079017, guid: a2e88a04ff983834988766eaf9000281, type: 3}
-      Factory: 
   - clientID: Hydra
     bosses:
     - Prefab: {fileID: 6771532340500296216, guid: f3a2932f8fed8d340a42340580522c45, type: 3}
-      Factory: 
+      Factory: Hydra
   - clientID: Minotaur
     bosses:
     - Prefab: {fileID: 7916077963939100239, guid: 3a02be009fa4df54194d7a439ee809c2, type: 3}
@@ -221,17 +209,13 @@ MonoBehaviour:
       Factory: Chimera
   - clientID: Nymphs
     bosses:
-    - Prefab: {fileID: 4782642993870188052, guid: 6bb86f02266479e40805951d05989bec, type: 3}
+    - Prefab: {fileID: 4344186612151503614, guid: 801757e8451d4e74a980f5ac56b7795a, type: 3}
       Factory: Nymph
     - Prefab: {fileID: 1638736674174968237, guid: f23720b572729d547ad053d2ee480ce1, type: 3}
       Factory: 
-    - Prefab: {fileID: 4344186612151503614, guid: 801757e8451d4e74a980f5ac56b7795a, type: 3}
+    - Prefab: {fileID: 4782642993870188052, guid: 6bb86f02266479e40805951d05989bec, type: 3}
       Factory: 
     - Prefab: {fileID: 4908096665168079017, guid: a2e88a04ff983834988766eaf9000281, type: 3}
-      Factory: 
-  - clientID: FearMinion
-    bosses:
-    - Prefab: {fileID: 8052193243663512903, guid: d725cb5dc6564124e9150e22fd985fa0, type: 3}
       Factory: 
   PlayableEnemies:
   - clientID: Ajax

@@ -18,8 +18,9 @@ public class OverpowerCard : BaseCardData
         return typeof(OverpowerCardAction);
     }
     
-    public override string GetDescription(bool Stance)
+    public override string GetDescription(bool Stance = false)
     {
+        Debug.Log($"the overpower stance bool was : {Stance}");
         if (Stance)
         {
             return string.Format(stanceDataSet.description, DamageThreshold);

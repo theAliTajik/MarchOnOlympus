@@ -24,7 +24,7 @@ public class TrojanGeneralCaptain3 : TrojanGeneralCaptain
         }
         else
         {
-            RandomIntentionPicker(m_moves);
+            RandomIntentionPicker();
         }
         ShowIntention();
     }

@@ -33,7 +33,7 @@ public abstract class CardPile
 
         if (quantity > m_cards.Count)
         {
-            Debug.LogWarning("draw quantity is greater than card count in card pile: " + nameof(This));
+            Debug.LogWarning("draw quantity is greater than card count in card pile: " + this.GetType().Name);
             quantity = m_cards.Count;
         }
 

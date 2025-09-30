@@ -1,10 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Game;
-using Spine;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerController : Fighter
 {
@@ -13,7 +9,7 @@ public class PlayerController : Fighter
     
     private const string ANIM_01_FIER_COMAND = "01_Fier Comand";
     private const string ANIM_01_IDDLE_NORMAL = "01_Iddle_Normal";
-    private const string ANIM_01_SOLO_COMAND = "01_Solo_Comand";
+    private const string ANIM_01_WOUND = "01_Wound";
     private const string ANIM_02_ATTACK = "02_Attack";
     private const string ANIM_02_ATTACK2 = "02_Attack2";
     private const string ANIM_02_IDDLEWOUND = "02_IddleWound";
@@ -22,17 +18,44 @@ public class PlayerController : Fighter
     private const string ANIM_VOLLEY = "Volley";
     private const string ANIM_VOLLEY2 = "Volley2";
     private const string ANIM_VOLLEY3 = "Volley3";
-    private const string ANIM_VOLLEY4 = "Volley4";
+    private const string ANIM_VOLLEY4 = "Volley4";    
     
     #endregion
 
     
-    [SerializeField] private AnimatorHelper m_animator;
+    [SerializeField] protected AnimatorHelper m_animator;
     [SerializeField] private int m_health;
-    private PlayerInventory m_PlayerInventory;
     
+    private PlayerInventory m_PlayerInventory;
+    private const string AnimHasBlockBoolName = "HasBlock";
+    
+    protected virtual void Start()
+    {
+        m_mechanicsList = MechanicsManager.Instance.GetMechanicsList(this);
+        if (m_mechanicsList == null)
+        {
+            CustomDebug.LogError("Player is missing mechanic list", Categories.Fighters.Player.Root);
+            return;
+        }
+        m_mechanicsList.OnMechanicUpdated += OnMechanicUpdated;
+        m_mechanicsList.OnMechanicRemoved += OnMechanicRemoved;
+    }
 
-    public float PlayAttackAnimation(Action finishCallBack)
+    private void OnMechanicRemoved(MechanicType obj)
+    {
+        if (obj != MechanicType.BLOCK) return;
+        
+        m_animator.SetBool(AnimHasBlockBoolName, false);
+    }
+
+    private void OnMechanicUpdated(MechanicType obj)
+    {
+        if (obj != MechanicType.BLOCK) return;
+
+        m_animator.SetBool(AnimHasBlockBoolName, true);
+    }
+
+    public virtual float PlayAttackAnimation(Action finishCallBack)
     {
         int rand = UnityEngine.Random.Range(0, 2);
         if (GameInfoHelper.CheckIfLastCardPlayedWas("Dual Strike", true) || GameInfoHelper.CheckIfLastCardPlayedWas("Obliterate", true) && CombatManager.Instance.CurrentStance == Stance.BERSERKER)
@@ -57,6 +80,7 @@ public class PlayerController : Fighter
     protected override void OnTookDamage(int damage, bool isCritical)
     {
         base.OnTookDamage(damage, isCritical);
+        m_animator.Play(ANIM_01_WOUND);
         GameplayEvents.SendGamePhaseChanged(EGamePhase.PLAYER_DAMAGED);
     }
 

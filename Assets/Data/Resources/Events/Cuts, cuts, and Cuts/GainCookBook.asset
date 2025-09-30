@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainCookBook
   m_EditorClassIdentifier: 
   Title: '[Gain Card]'
-  Description: Cook Book
+  Description: "The first calmly slices bread and herbs, filling the air with the
+    warmth of shared meals\u2014nurturing skill. (Cook Book)"
   ActionAssets:
   - {fileID: 11400000, guid: b6a0917f2c55340ccabdbadaf2795eec, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

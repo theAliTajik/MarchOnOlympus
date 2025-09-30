@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
   m_Name: 1_ChooseReward
   m_EditorClassIdentifier: 
-  DialogueText: Choose Reward
+  DialogueText: "The city bells toll in a frantic chorus. From the crashing shoreline,
+    a beast rises\u2014its scales glinting like wet bronze, waves curling high behind
+    it. The people scatter, the gates slam shut, and cries of fear echo through narrow
+    streets.\n\nAkhilleus does not wait for counsel, nor for omens. He straps on
+    his sword-belt, steps forward, and speaks in a voice that cuts through the chaos:\n\"Victory
+    does not come to those who hesitate. One step forward\u2026 and the battle is
+    already half-won.\""
   Choices:
   - {fileID: 11400000, guid: f531b7afe53ed4d74acca6e4cd411f23, type: 2}
-  - {fileID: 11400000, guid: ffc5445e905794fcc97c586ce7447d76, type: 2}
+  - {fileID: 11400000, guid: 41300e9c1059e467f9c6496406a9c84b, type: 2}
   - {fileID: 11400000, guid: 1e394127afda640779f133d3a9f98623, type: 2}

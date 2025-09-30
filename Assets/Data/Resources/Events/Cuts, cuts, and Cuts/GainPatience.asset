@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainPatience
   m_EditorClassIdentifier: 
   Title: '[Gain Card]'
-  Description: Patience
+  Description: "The third traces glowing lines in the mist, revealing fleeting visions
+    of unseen paths\u2014patience and insight. (Gain Patience)"
   ActionAssets:
   - {fileID: 11400000, guid: b35a06863d1a4461fb4f3f8acfb51c90, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

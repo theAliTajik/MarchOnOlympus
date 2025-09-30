@@ -44,7 +44,8 @@ public class TrojanGeneralEnemyFactory : MonoBehaviour, IEnemyFactory
         HUD.Instance.SpawnHPBar(enemy);
         HUD.Instance.SpawnDamageIndicator(enemy);
         HUD.Instance.SpawnEnemyIntentionWidget(enemy);
-        MechanicsManager.Instance.CreateMechanicsList(enemy);
+        MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(enemy);
+        HUD.Instance.SpawnMechanicsDisplay(enemy, list);
         CombatManager.Instance.SubscribeToEnemyDamage(enemy);
         EnemiesManager.Instance.AddEnemey(enemy);
     }

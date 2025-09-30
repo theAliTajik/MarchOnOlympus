@@ -94,6 +94,27 @@ public class HUD : Singleton<HUD>
         AddHudObject(fighter, HudObjectType.HEALTHBAR, hpBar.gameObject);
         return hpBar;
     }
+    
+    public HealthBar SpawnHPBar(IHaveHUD owner)
+    {
+        if (owner is not IHaveHP HpOwner)
+        {
+            Debug.Log("ERROR: tried to Spawn HP bard for hud owner that does not have HP");
+            return null;
+        }
+        
+        HealthBar hpBar;
+        hpBar = Instantiate(m_enemyHealthBarPrefab, transform);
+         
+        hpBar.Config(HpOwner);
+
+        RectTransform rectTransform = hpBar.transform as RectTransform;
+        rectTransform.anchoredPosition = ConvertWorldPosition(owner.GetRootPosition() + hpBar.GetOffset(), rectTransform.anchorMin, rectTransform.anchorMax);
+        
+        AddHudObject(owner, HudObjectType.HEALTHBAR, hpBar.gameObject);
+        return hpBar;
+    }
+    
     public void RemoveHPBar(Fighter enemy)
     {
         RemoveHudObject(enemy, HudObjectType.HEALTHBAR);
@@ -158,6 +179,15 @@ public class HUD : Singleton<HUD>
         damageIndicator.name = "DamageIndicator " + fighter.name;
 #endif
         AddHudObject(fighter, HudObjectType.DAMAGE_INDICATOR, damageIndicator.gameObject);
+        return damageIndicator;
+    }
+    
+    public DamageIndicator SpawnDamageIndicator(IHaveHUD owner)
+    {
+        DamageIndicator damageIndicator = Instantiate(m_damageIndicatorPrefab, transform);
+        damageIndicator.Config(owner);
+        damageIndicator.transform.position = owner.GetHeadPosition();
+        AddHudObject(owner, HudObjectType.DAMAGE_INDICATOR, damageIndicator.gameObject);
         return damageIndicator;
     }
     public void RemoveDamageIndicator(Fighter fighter)

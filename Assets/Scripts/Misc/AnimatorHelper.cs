@@ -463,6 +463,15 @@ public class AnimatorHelper : MonoBehaviour
     {
         m_animator.enabled = false;
     }
+    
+    public void AddOnAnimationFinishedCallback(Action callback, int layer = 0)
+    {
+        if (m_animatorLayerDatas.ContainsKey(layer))
+        {
+            // Combine with existing callbacks if any
+            m_animatorLayerDatas[layer].animationCompleteCallback += callback;
+        }
+    }
 
 //Params
 #region  Paramaters

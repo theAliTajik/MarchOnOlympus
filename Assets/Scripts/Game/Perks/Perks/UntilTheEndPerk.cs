@@ -49,7 +49,7 @@ public class UntilTheEndPerk : BasePerk
                     if (!isConditionMet)
                     {
                         isConditionMet = true;
-                        GameActionHelper.AddMechanicToPlayer(m_perkData.Str, m_perkData.MechanicType, true,
+                        GameActionHelper.AddMechanicToPlayer(m_perkData.Str, m_perkData.MechanicType,
                             m_perkData.Str);
                     }
                 }

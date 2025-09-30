@@ -61,12 +61,21 @@ MonoBehaviour:
   - clientID: petrify
     type: 15
     icon: {fileID: 21300000, guid: a17de4ef7bd580f479c24cc612f4f150, type: 3}
-  - clientID: doubleDamage
+  - clientID: doubleDamge
     type: 16
     icon: {fileID: 21300000, guid: d516bc68462f81d4a97edeca6a597cdc, type: 3}
   - clientID: panic
     type: 17
-    icon: {fileID: 21300000, guid: fbdfb991af11079469637d2a0a863cdb, type: 3}
+    icon: {fileID: 21300000, guid: 50ba276126983a947a6ca415877f62f4, type: 3}
   - clientID: haunt
     type: 18
-    icon: {fileID: 21300000, guid: a17de4ef7bd580f479c24cc612f4f150, type: 3}
+    icon: {fileID: 21300000, guid: d516bc68462f81d4a97edeca6a597cdc, type: 3}
+  - clientID: acidic
+    type: 19
+    icon: {fileID: 21300000, guid: 19b6f4aecf46c4ced89647ada6b51643, type: 3}
+  - clientID: acidicDot
+    type: 20
+    icon: {fileID: 21300000, guid: f379f28b9622441c593db2b1818a25b9, type: 3}
+  - clientID: acidicDotTwo
+    type: 21
+    icon: {fileID: 21300000, guid: f379f28b9622441c593db2b1818a25b9, type: 3}

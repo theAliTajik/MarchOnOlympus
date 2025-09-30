@@ -1,0 +1,149 @@
+Cyclops_ 4.2.png
+size:2002,1589
+filter:Linear,Linear
+pma:true
+Cloth-02
+bounds:674,812,390,775
+offsets:7,6,403,788
+rotate:90
+Cord-02
+bounds:2,2,888,392
+offsets:1,0,893,395
+Cord-03
+bounds:638,396,773,414
+offsets:0,4,776,418
+Foot 01
+bounds:1451,729,549,473
+offsets:7,7,562,484
+Foot 02
+bounds:2,996,670,395
+offsets:6,7,765,753
+Hand 02
+bounds:2,442,634,552
+offsets:8,8,650,569
+Leg 02-02
+bounds:959,1204,383,680
+offsets:8,9,481,697
+rotate:90
+Skulls
+bounds:1413,25,702,556
+rotate:90
+ground (15)
+bounds:327,1434,175,153
+offsets:74,58,256,256
+ground (31)
+bounds:735,1379,222,208
+offsets:13,28,256,256
+ground (35)
+bounds:504,1393,194,229
+offsets:24,15,256,256
+rotate:90
+objects (44)
+bounds:248,1512,75,77
+offsets:26,26,128,128
+rotate:90
+objects (45)
+bounds:88,1522,65,78
+offsets:28,25,128,128
+rotate:90
+objects (46)
+bounds:168,1515,72,78
+offsets:24,23,128,128
+rotate:90
+objects (47)
+bounds:2,1526,84,61
+offsets:22,36,128,128
+
+Cyclops_ 4.2_2.png
+size:1924,1886
+filter:Linear,Linear
+pma:true
+Hand - Club_2
+bounds:2,944,1920,940
+Layer 1
+bounds:2,2,1920,940
+
+Cyclops_ 4.2_3.png
+size:2001,1829
+filter:Linear,Linear
+pma:true
+Body
+bounds:2,2,1443,1825
+Layer 2
+bounds:1447,640,1187,552
+offsets:13,11,1207,563
+rotate:90
+
+Cyclops_ 4.2_4.png
+size:1786,2016
+filter:Linear,Linear
+pma:true
+Atack
+bounds:2,762,730,666
+Cord-01
+bounds:2,1430,866,584
+offsets:3,0,869,584
+Forearm 02
+bounds:734,2,715,688
+Leg 01-01
+bounds:734,692,673,1050
+offsets:8,8,689,1066
+rotate:90
+Neutral
+bounds:870,1367,730,647
+Pain
+bounds:2,83,730,677
+
+Cyclops_ 4.2_5.png
+size:1924,1433
+filter:Linear,Linear
+pma:true
+Fury
+bounds:2,731,700,775
+rotate:90
+Hand - Club_3
+bounds:2,2,1920,711
+Leg 01-02
+bounds:779,715,716,797
+rotate:90
+
+Cyclops_ 4.2_6.png
+size:1317,1607
+filter:Linear,Linear
+pma:true
+Cloth-01
+bounds:2,2,1313,1603
+offsets:6,4,1322,1608
+
+Cyclops_ 4.2_7.png
+size:1965,1637
+filter:Linear,Linear
+pma:true
+Arm 02
+bounds:2,892,743,1082
+offsets:0,112,743,1194
+rotate:90
+Forearm 01
+bounds:2,2,754,1507
+offsets:3,7,763,1514
+rotate:90
+Leg 02-01
+bounds:1086,758,877,877
+offsets:8,9,893,894
+
+Cyclops_ 4.2_8.png
+size:1144,1110
+filter:Linear,Linear
+pma:true
+Arm 01
+bounds:2,2,1106,1140
+offsets:14,591,1292,1739
+rotate:90
+
+Cyclops_ 4.2_9.png
+size:1115,1156
+filter:Linear,Linear
+pma:true
+Arm 01_1
+bounds:2,2,1111,1152
+offsets:13,34,1148,1191

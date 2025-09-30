@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c4384b967f81e4ca282ba0e429da47, type: 3}
   m_Name: HydraData
   m_EditorClassIdentifier: 
-  HP: 25
-  HPCount: 9
-  Move1Damage: 0
+  OnHeadDestroyedDamage: 5
+  NumOfMechanic: 1
+  MechanicToAdd: 19
+  NumOfRevives: 2
+  BurnAmount: 20

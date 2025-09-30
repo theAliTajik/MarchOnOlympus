@@ -4,7 +4,7 @@ using Game;
 using UnityEngine;
 
 [Serializable]
-public class ChimeraGoat : ChimeraHead, IHaveIntention
+public class ChimeraGoat : ChimeraHead, IHaveIntention, IHaveMechanics
 {
     #region Animations
     
@@ -21,16 +21,18 @@ public class ChimeraGoat : ChimeraHead, IHaveIntention
     public override event Action<Intention, string> OnIntentionDetermined;
     
     [SerializeField] private ChimeraGoatMoveData m_data;
+    private MechanicsList m_mechanicsList;
 
     public override void Config()
     {
         // moves cycle
-        BaseEnemy.MoveData[] cycle = new BaseEnemy.MoveData[3];
+        BaseEnemy.MoveData[] cycle = new BaseEnemy.MoveData[4];
         cycle[0] = m_movesData[0];
         cycle[1] = m_movesData[0];
-        cycle[2] = m_movesData[1];
+        cycle[2] = m_movesData[0];
+        cycle[3] = m_movesData[1];
 
-        m_damageable = new EnemyDamageBehaviour();
+        m_damageable = new EnemyDamageBehaviour(this);
         m_intentionDeterminer = IntentionDeterminerFactory.CreateDeterminer(IntentionDeterminerType.CYCLIC, cycle);
 
         m_stun = new NormalStun(m_data.DamageThresholdForStun);
@@ -123,6 +125,11 @@ public class ChimeraGoat : ChimeraHead, IHaveIntention
     {
         IHaveMechanics serpent = GetSerpentMechanics();
         MechanicsManager.Instance.AddMechanic(1, MechanicType.FORTIFIED, serpent);
+    }
+
+    public MechanicsList GetMechanicsList()
+    {
+        return m_mechanicsList;
     }
 }
 

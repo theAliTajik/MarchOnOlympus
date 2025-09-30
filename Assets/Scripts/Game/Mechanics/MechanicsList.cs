@@ -16,7 +16,7 @@ public class MechanicsList
 
     private readonly IReadOnlyList<MechanicType> m_orderOfSenderMechanics = new List<MechanicType>
     {
-		MechanicType.FRENZY,
+        MechanicType.FRENZY,
         MechanicType.DAZE,
         MechanicType.STRENGTH,
         MechanicType.IMPALE,
@@ -24,8 +24,8 @@ public class MechanicsList
     
     private readonly IReadOnlyList<MechanicType> m_orderOfMechanics = new List<MechanicType>
     {
-		MechanicType.DOUBLEDAMAGE,
-		MechanicType.VULNERABLE,
+        MechanicType.DOUBLEDAMAGE,
+        MechanicType.VULNERABLE,
         MechanicType.FORTIFIED,
         MechanicType.BLOCK,
         MechanicType.THORNS,
@@ -56,6 +56,7 @@ public class MechanicsList
     private void OnMechanicChanged(MechanicType mechanicType)
     {
         OnMechanicUpdated?.Invoke(mechanicType);
+        CustomDebug.Log("OnMechanicChanged", Categories.Mechanics.Root);
     }
 
     
@@ -131,11 +132,14 @@ public class MechanicsList
     
     public void ApplyMechanics(Fighter.DamageContext context)
     {
-        foreach (MechanicType mechanicType in m_orderOfSenderMechanics)
+        if (!context.AreSenderMechanicsAlreadyApplied)
         {
-            if (MechanicsManager.Instance.Contains(context.Sender, mechanicType))
+            foreach (MechanicType mechanicType in m_orderOfSenderMechanics)
             {
-               MechanicsManager.Instance.ApplyMechanic(mechanicType, context);
+                if (MechanicsManager.Instance.Contains(context.Sender, mechanicType))
+                {
+                    MechanicsManager.Instance.ApplyMechanic(mechanicType, context);
+                }
             }
         }
         
@@ -204,6 +208,7 @@ public class MechanicsList
         mechanic.OnEnd += OnMechanicEnd;
         mechanic.OnChange += OnMechanicChanged;
         OnMechanicUpdated?.Invoke(mechanicType);
+        CustomDebug.Log("OnMechanicChanged", Categories.Mechanics.Root);
         return success;
     }
 
@@ -219,7 +224,7 @@ public class MechanicsList
         {
             Debug.Log($"WARNING: tried to reduce non existent mechanic of type {mechanicType}");
             return;
-        }
+        } 
         
         m_mechanics[mechanicType].ReduceStack(amount);
     }
@@ -229,17 +234,39 @@ public class MechanicsList
     public void OnPhaseChange(CombatPhase phase)
     {
         bool isMyTurn = IsMyTurn();
+        bool isFirstTimeInTurn = IsFirstTimeInTurn();
         
         List<BaseMechanic> mechanicsValues = m_mechanics.Values.ToList();
         for (int i = 0; i < mechanicsValues.Count; i++)
         {
-            mechanicsValues[i].TryReduceStack(phase, isMyTurn);
+            mechanicsValues[i].TryReduceStack(phase, isMyTurn, isFirstTimeInTurn);
         }
     }
 
     protected bool IsMyTurn()
     {
         return CombatManager.Instance.IsPlayersTurn == m_isPlayer;
+    }
+
+    private bool isFirstTime = true;
+    private bool wasMyTurnLastCheck = false;
+
+    private bool IsFirstTimeInTurn()
+    {
+        bool isMyTurn = IsMyTurn();
+
+        if (isMyTurn && !wasMyTurnLastCheck)
+        {
+            wasMyTurnLastCheck = true;
+            return true;
+        }
+
+        if (!isMyTurn)
+        {
+            wasMyTurnLastCheck = false;
+        }
+
+        return false;
     }
 
     public void RemoveAllMechanicsOfCategory(MechanicCategory category)

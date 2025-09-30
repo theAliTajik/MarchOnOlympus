@@ -88,7 +88,7 @@ public class DynamicArrow : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                BaseEnemy enemy = hit.collider.GetComponent<BaseEnemy>();
+                BaseEnemy enemy = hit.collider.GetComponentInParent<BaseEnemy>();
         
                 if (enemy != null)
                 {

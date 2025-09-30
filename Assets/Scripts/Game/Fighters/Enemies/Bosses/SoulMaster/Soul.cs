@@ -34,11 +34,7 @@ public class Soul : BaseAnimal
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
 
         m_soulMaster = FindSoulMaster();
         if (m_soulMaster != null)
@@ -66,12 +62,13 @@ public class Soul : BaseAnimal
         }
         base.OnDeath();
         m_animation.Play(ANIM_DEATH);
+        m_soulMaster.OnSoulDeath();
     }
     
     
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -143,7 +140,7 @@ public class Soul : BaseAnimal
 
     private void OnSoulMasterIntentionDetermined(MoveData moveData)
     {
-        m_movesToChooseFrom = new MoveData[m_movesDatas.Length - 1];
+        m_movesToChooseFrom = new MoveData[m_movesDatas.Length];
 
         int j = 0;
         for (var i = 0; i < m_movesDatas.Length; i++)

@@ -1,11 +1,8 @@
 using DG.Tweening;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 
-    CardsPositionManager : MonoBehaviour
+public class CardsPositionManager : MonoBehaviour
 {
     [SerializeField] private Vector3 m_centerPoint = new Vector3(0, 0, 0);
     [SerializeField] private float m_distance = 50;

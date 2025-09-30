@@ -328,3 +328,51 @@ MonoBehaviour:
   - clientID: Whetstone
     CardData: {fileID: 11400000, guid: 9f8fe69c449fc442abf6096d619a0a80, type: 2}
     IsImplemented: 1
+  - clientID: WrathOfDev
+    CardData: {fileID: 11400000, guid: cea12e764018040fc906d00c1ceab2d2, type: 2}
+    IsImplemented: 1
+  - clientID: Honorable
+    CardData: {fileID: 11400000, guid: 4f0660b1272284f2baf267795a62b6c7, type: 2}
+    IsImplemented: 1
+  - clientID: FireArrow
+    CardData: {fileID: 11400000, guid: 301116d7de974476fb8af472c8a9a866, type: 2}
+    IsImplemented: 1
+  - clientID: Boom
+    CardData: {fileID: 11400000, guid: 59a6103c738474ac9b17bcb98e234de3, type: 2}
+    IsImplemented: 1
+  - clientID: Pyromaniac
+    CardData: {fileID: 11400000, guid: 8d37e4f44777648f39f66db9187d6432, type: 2}
+    IsImplemented: 1
+  - clientID: Pyre
+    CardData: {fileID: 11400000, guid: 514b2f98286d04d1a89bc359b9dea44a, type: 2}
+    IsImplemented: 1
+  - clientID: Recalculate
+    CardData: {fileID: 11400000, guid: 00795b2d770254a0c9b9ca638b474ec2, type: 2}
+    IsImplemented: 1
+  - clientID: FireArrow_STAR
+    CardData: {fileID: 11400000, guid: a95c8377db2014d33a087097ba1223ae, type: 2}
+    IsImplemented: 1
+  - clientID: FireArrow_PLUS
+    CardData: {fileID: 11400000, guid: ee8def811c51843a8addc1222ee93ba0, type: 2}
+    IsImplemented: 1
+  - clientID: Boom_STAR
+    CardData: {fileID: 11400000, guid: ecba53e064ed14d01894b14be9e1f7cb, type: 2}
+    IsImplemented: 1
+  - clientID: Boom_PLUS
+    CardData: {fileID: 11400000, guid: b5ed63e2c439747bd9f82be4ac7459a9, type: 2}
+    IsImplemented: 1
+  - clientID: Pyromaniac_STAR
+    CardData: {fileID: 11400000, guid: 457b80c1f61e44a219a65ff00e23e1e0, type: 2}
+    IsImplemented: 1
+  - clientID: Pyromaniac_PLUS
+    CardData: {fileID: 11400000, guid: 03ff16139f0894f5f96be5ee2365d364, type: 2}
+    IsImplemented: 1
+  - clientID: CleansingFire
+    CardData: {fileID: 11400000, guid: 15baa9281520e49328a45e02ef68413f, type: 2}
+    IsImplemented: 1
+  - clientID: Pyre_PLUS
+    CardData: {fileID: 11400000, guid: 3ba8914da3c1644138176562911d73e3, type: 2}
+    IsImplemented: 1
+  - clientID: Repurpose
+    CardData: {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
+    IsImplemented: 1

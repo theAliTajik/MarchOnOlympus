@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: Cyclops_ 4.2_Atlas
+  m_EditorClassIdentifier: 
+  textureLoadingMode: 0
+  onDemandTextureLoader: {fileID: 0}
+  atlasFile: {fileID: 4900000, guid: 839cdac93677f4f3188bcfd35bd69084, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 292903ef1bfa946e69cb4182acd7120a, type: 2}
+  - {fileID: 2100000, guid: 0381454f2cb5a42e6befb3daadd48a44, type: 2}
+  - {fileID: 2100000, guid: 4594992dff0ed4af684aa75abe7cc467, type: 2}
+  - {fileID: 2100000, guid: 8c5b04f12df774deba2c21948840cee7, type: 2}
+  - {fileID: 2100000, guid: 986304c17e2dd443ca73268113230988, type: 2}
+  - {fileID: 2100000, guid: 0b95025e67d524eeaba5caa2fed1e6f3, type: 2}
+  - {fileID: 2100000, guid: 5a07b7642289747989f19c21bc68ad34, type: 2}
+  - {fileID: 2100000, guid: ca9cfd4b576fc422da710d159cf00f22, type: 2}
+  - {fileID: 2100000, guid: aa974868e57d04795b5d5e3d240c779b, type: 2}

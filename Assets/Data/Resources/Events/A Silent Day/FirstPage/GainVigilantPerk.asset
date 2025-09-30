@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainVigilantPerk
   m_EditorClassIdentifier: 
   Title: '[Gain Perk]'
-  Description: Vigilant Perk
+  Description: "A silver pendant shaped like an unblinking eye \u2014 a blessing
+    of vigilance."
   ActionAssets:
   - {fileID: 11400000, guid: 2ba425c51445e4d5ba3be30e3e376cb5, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

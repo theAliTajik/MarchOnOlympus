@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainDrawOneLessCard
   m_EditorClassIdentifier: 
   Title: '[Reduce Draw]'
-  Description: Draw One Less Card
+  Description: "Charge without pause: You rush headlong into the fray, sacrificing
+    caution for raw speed \u2014 next combat, -1 card draw but +1 Energy."
   ActionAssets:
   - {fileID: 11400000, guid: 5bcbe481b7c2345ce8c517b78285b62d, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

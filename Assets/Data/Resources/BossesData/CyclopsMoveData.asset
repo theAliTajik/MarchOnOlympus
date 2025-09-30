@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: CyclopsMoveData
   m_EditorClassIdentifier: 
   HP: 300
+  ClubHP: 50
+  EyeHP: 150
   Move1Damage: 5
   Move1NumOfAttacks: 2
   Move2Damage: 10
   Move2NumOfAttacks: 2
   Move3Fortify: 2
+  StrGainIfClubAlive: 1

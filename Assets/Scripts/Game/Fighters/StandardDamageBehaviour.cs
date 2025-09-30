@@ -1,5 +1,6 @@
 
 using System;
+using UnityEngine;
 
 public class StandardDamageBehaviour : IDamageable
 {
@@ -27,7 +28,10 @@ public class StandardDamageBehaviour : IDamageable
 
     #endregion
     
-    public virtual int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
+    
+    public virtual Fighter.DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender,
+        bool isArmorPiercing = false,
+        Fighter.DamageContext damageContext = null)
     {
         if (damage < 0)
         {
@@ -36,9 +40,12 @@ public class StandardDamageBehaviour : IDamageable
 
         if (m_mechanicsList == null && m_mechanicsOwner != null)
         {
+            // Debug.Log("getting mechanic list");
             m_mechanicsList = MechanicsManager.Instance.GetMechanicsList(m_mechanicsOwner);
         }
 
+
+        // Debug.Log($"mechanic list is null: {m_mechanicsList == null}");
         Fighter.DamageContext context = new Fighter.DamageContext();
         context.ModifiedDamage = damage;
         if (m_mechanicsList != null)
@@ -49,12 +56,18 @@ public class StandardDamageBehaviour : IDamageable
             context.DoesReturnToSender = doesReturnToSender;
             context.IsArmorPiercing = isArmorPiercing;
 
+            if (damageContext != null)
+            {
+                context.IsDamageSentByThorns = damageContext.IsDamageSentByThorns;
+                context.IsDamageSentByBurn = damageContext.IsDamageSentByBurn;
+            }
+
             m_mechanicsList.ApplyMechanics(context);
         }
 
         //Debug.Log(gameObject.name + " has taken: " + modifiedDamage + " damage");
         OnDamage?.Invoke(context.ModifiedDamage);
 
-        return context.ModifiedDamage;
+        return context;
     }
 }

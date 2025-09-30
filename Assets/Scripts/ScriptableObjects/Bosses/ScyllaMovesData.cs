@@ -20,4 +20,10 @@ public class ScyllaMovesData : ScriptableObject
 	[Header("MISCS:")]
 	public FighterHP.TriggerPercentage Phase1HPPercentageTrigger;
 	public FighterHP.TriggerPercentage Phase2HPPercentageTrigger;
+
+	public int Phase1Fortify;
+	public int Phase1Damage;
+
+	public int Phase2Restore;
+	public int Phase2Fortify;
 }

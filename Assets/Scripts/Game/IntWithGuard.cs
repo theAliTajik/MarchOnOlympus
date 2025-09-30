@@ -27,10 +27,15 @@ public class IntWithGuard
     public bool HasGuard => m_hasGuard;
     public int GuardMin => m_guardMin;
     
-    public void SetGuard(int minHP)
+    public void SetGuard(int minValue)
     {
+        if (minValue <= 0)
+        {
+            return;
+        }
+        
         m_hasGuard = true;
-        m_guardMin = minHP;
+        m_guardMin = minValue;
     }
 
     public void RemoveGuard()

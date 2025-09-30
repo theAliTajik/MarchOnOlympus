@@ -13,7 +13,7 @@ public class StanceBerserkerState : StanceBaseState
     public override void OnEnter()
     {
         base.OnEnter();
-        GameActionHelper.AddMechanicToPlayer(2, MechanicType.STRENGTH, true, 2);
+        GameActionHelper.AddMechanicToPlayer(2, MechanicType.STRENGTH, 2);
     }
 
     public override void OnExit()

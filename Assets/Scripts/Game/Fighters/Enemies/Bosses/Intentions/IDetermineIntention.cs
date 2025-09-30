@@ -1,4 +1,6 @@
 public interface IDetermineIntention
 {
-    public BaseEnemy.MoveData DetermineIntention();
+    public void SetMoves(BaseEnemy.MoveData[] moves);
+    
+    public BaseEnemy.MoveData? DetermineIntention();
 }

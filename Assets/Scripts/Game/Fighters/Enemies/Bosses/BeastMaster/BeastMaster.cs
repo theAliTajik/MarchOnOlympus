@@ -48,11 +48,7 @@ public class BeastMaster : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
     }
 
     private void Start()
@@ -94,7 +90,7 @@ public class BeastMaster : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -179,6 +175,7 @@ public class BeastMaster : BaseEnemy
             animal.SetMaster(this);
             m_animals.Add(m_phase, animal);
             animal.DetermineIntention();
+            animal.Death += OnAnimalDeath;
         }
         m_phase = (EPhase)((int)m_phase + 1);
         if (m_phase == EPhase.END)
@@ -187,7 +184,16 @@ public class BeastMaster : BaseEnemy
         }
     }
     
-    
+    private void OnAnimalDeath(Fighter animal)
+    {
+        var kvp = m_animals.FirstOrDefault(x => x.Value == animal);
+        if (!kvp.Equals(default(KeyValuePair<EPhase, BaseAnimal>)))
+        {
+            m_animals.Remove(kvp.Key);
+        }
+    }
+
+
     public override void ConfigFighterHP()
     {
         m_fighterHP.SetMax(m_data.HP);

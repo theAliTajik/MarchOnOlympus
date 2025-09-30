@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class GameSessionParams
 {
+    public static string CharacterId;
     public static string EnemyClientId;
     public static string DeckTemplateClientId;
     public static string EventId;

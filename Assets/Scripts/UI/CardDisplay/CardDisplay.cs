@@ -62,18 +62,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public float CanvasScaleFactor => m_canvasScaleFactor;
     public float SelectY => m_selectY;
     
-    private void Awake()
-	{
-
-
-
-	}
-
-	void Start()
-	{
-
-		
-	}
 	
 	private void OnDestroy()
 	{
@@ -147,10 +135,11 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 		m_stanceDescriptionText.text = m_cardInDeck.StanceState.GetDescription();
 		m_cardClassText.text = m_cardInDeck.GetCardPack().ToString();
 		
-		if (m_stanceDescriptionText.text == "")
+		if (string.IsNullOrEmpty(m_stanceDescriptionText.text))
 		{
 			m_StanceIcon.SetActive(false);
 			m_StanceIconGlow.SetActive(false);
+			m_stanceDescriptionText.gameObject.SetActive(false);
 			m_StanceDescriptionIcon.SetActive(false);
 		}
 		else
@@ -184,11 +173,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 		m_manaText.text = m_cardInDeck.CurrentState.GetEnergy().ToString();
 	}
-
-	bool hasEnergyBeenChanged = false;
-	private int m_originalEnergyCost;
-	private int m_stanceOriginalEnergyCost;
-	
 	
 	public void SetStance(Stance stance)
 	{

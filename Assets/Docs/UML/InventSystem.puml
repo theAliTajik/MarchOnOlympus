@@ -1,0 +1,19 @@
+@startuml
+
+class InventActionData{
+}
+
+interface IInventActionBehaviour
+
+class InventActionLevel {
++ RequiredPoints: int
++ Description: string
++ Action: IInventActionBehaviour
+}
+
+class InventAction {
++ ID
++ Levels: List<InventActionLevel>
+}
+
+@enduml

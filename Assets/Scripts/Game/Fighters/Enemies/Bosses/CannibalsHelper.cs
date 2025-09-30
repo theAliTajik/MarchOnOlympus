@@ -22,7 +22,7 @@ public static class CannibalsHelper
             Cannibal randCannibal = m_cannibals[Random.Range(0, m_cannibals.Count)];
             randCannibal.LevelUp(deadCannibal.Level, () =>
             {
-                EnemiesManager.Instance.RemoveDeadEnemy(deadCannibal);
+                EnemiesManager.Instance.RemoveDeadEnemyBody(deadCannibal);
             });
         }
     }

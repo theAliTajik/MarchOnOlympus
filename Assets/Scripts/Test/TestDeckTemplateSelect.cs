@@ -20,6 +20,7 @@ public class TestDeckTemplateSelect : MonoBehaviour
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(ButtonClicked);
+        MenuEventBus.OnDeckSelected += SetSelected;
         Init();
     }
 
@@ -54,7 +55,12 @@ public class TestDeckTemplateSelect : MonoBehaviour
         m_list.Clear();
         foreach (DeckTemplates.Deck deck in DeckTemplates.Decks)
         {
-            m_list.AddItem(deck.clientID, deck.clientID, null);
+            SelectableItemDisplayData m = new SelectableItemDisplayData()
+            {
+                Id = deck.clientID,
+                Text = deck.clientID,
+            };
+            m_list.AddItem(m);
             m_decks.Add(deck.clientID);
         }
     }

@@ -44,7 +44,7 @@ public abstract class BaseMechanic
         m_stack.RemoveGuard();
     }
     
-    public abstract bool TryReduceStack(CombatPhase phase, bool isMyTurn);
+    public abstract bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false);
 
     public virtual void ReduceStack(int amount)
     {

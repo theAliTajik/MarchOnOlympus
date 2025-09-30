@@ -14,12 +14,7 @@ public class HonorableCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         HonorableCard c = (HonorableCard)cardData;
-        int damage = 0;
-        if (GameProgress.Instance)
-        {
-            damage = GameProgress.Instance.Data.Honor;
-        }
-        
+        int damage = GameInfoHelper.GetHonor();
         target.TakeDamage(damage, CombatManager.Instance.Player, true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

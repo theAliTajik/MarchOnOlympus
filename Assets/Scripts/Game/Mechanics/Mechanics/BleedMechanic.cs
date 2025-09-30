@@ -6,15 +6,19 @@ using UnityEngine;
 
 public class BleedMechanic : BaseMechanic
 {
+    private const string m_SoundEffectID = "BleedTic";
+
     public BleedMechanic()
     {
         
     }
 
-    public BleedMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public BleedMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
+
+        m_stack.SetGuard(guardMin);
     }
     
     public override MechanicType GetMechanicType()
@@ -22,7 +26,7 @@ public class BleedMechanic : BaseMechanic
         return MechanicType.BLEED;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         if (phase != CombatPhase.TURN_START && !isMyTurn)
         {
@@ -34,6 +38,7 @@ public class BleedMechanic : BaseMechanic
             damageable.TakeDamage(m_stack, null, false);
         }
         ReduceStack(1);
+        SoundEffectsEventBus.SendPlay(m_SoundEffectID);
         return true;
     }
 }

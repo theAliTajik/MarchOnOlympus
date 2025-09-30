@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Codice.Client.BaseCommands;
 using Game;
 using Game.ModifiableParam;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public static class GameActionHelper
@@ -44,6 +44,11 @@ public static class GameActionHelper
         CombatManager.Instance.OnEndTurnButtonClicked();
     }
 
+    public static void AddPerk(string PerkID)
+    {
+        GameProgress.Instance.Data.PerkIds.Add(PerkID);
+        GameProgress.Instance.Save();
+    }
     
     // ### Cards
     public static void PlayCard(CardDisplay card, Fighter target)
@@ -56,6 +61,14 @@ public static class GameActionHelper
         return CombatManager.Instance.DrawCard(amount);
     }
 
+    public static CardDisplay SpawnRandomCard(CardStorage cardStorage)
+    {
+        BaseCardData randCard = GameInfoHelper.GetRandomCard();
+        CardDisplay cardInstance = SpawnCard(randCard, cardStorage);
+
+        return cardInstance;
+    }
+    
     public static void MoveCardToHand(CardDisplay card)
     {
         CombatManager.Instance.MoveCardToHand(card);
@@ -65,6 +78,12 @@ public static class GameActionHelper
     {
         CombatManager.Instance.DiscardCard(card);
     }
+    
+    public static void DiscardCard(int num)
+    {
+        CombatManager.Instance.DiscardCard(num);
+    }
+    
 
     public static void ModifyDrawAmount(IParamModifier<int> modifier)
     {
@@ -350,6 +369,13 @@ public static class GameActionHelper
         MechanicsList mechanics = MechanicsManager.Instance.GetMechanicsList(fighter);
         mechanics.RemoveAllMechanicsOfCategory(catigory);
     }
+
+    public static int RemoveMechanicOfType(Fighter fighter, MechanicType mechanic)
+    {
+        int stack = GameInfoHelper.GetMechanicStack(fighter, mechanic);
+        MechanicsManager.Instance.RemoveMechanic(fighter, mechanic);
+        return stack;
+    }
     
     // ### Player
     public static void IncreasePlayerMaxHP(int amount)
@@ -361,6 +387,11 @@ public static class GameActionHelper
     public static void DecreasePlayerMaxHP(int amount)
     {
         CombatManager.Instance.Player.HP.DecreaseMaxHP(amount);
+    }
+
+    public static void DamagePlayer(Fighter sender, int amount)
+    {
+        DamageFighter(GameInfoHelper.GetPlayer(), sender, amount);
     }
     
     public static void HealPlayer(int amount)
@@ -377,9 +408,9 @@ public static class GameActionHelper
     }
     
     // ### Mechanics
-    public static void AddMechanicToPlayer(int stack, MechanicType mechanicType, bool hasGuard = false, int guardMin = 0)
+    public static void AddMechanicToPlayer(int stack, MechanicType mechanicType, int guardMin = 0)
     {
-        MechanicsManager.Instance.AddMechanic(stack, mechanicType, CombatManager.Instance.Player, hasGuard, guardMin);
+        MechanicsManager.Instance.AddMechanic(stack, mechanicType, CombatManager.Instance.Player, guardMin);
     }
     
     public static void RemoveMechanicFromPlayer(MechanicType mechanicType)
@@ -388,14 +419,24 @@ public static class GameActionHelper
     }
     
     public static void AddMechanicToFighter(Fighter fighter, int stack, MechanicType mechanicType,
-        bool hasGuard = false, int guardMin = 0)
+        int guardMin = 0)
     {
-        MechanicsManager.Instance.AddMechanic(stack, mechanicType, fighter, hasGuard, guardMin);
+        MechanicsManager.Instance.AddMechanic(stack, mechanicType, fighter, guardMin);
+    }
+    
+    public static void AddMechanicToOwner(IHaveMechanics owner, int stack, MechanicType mechanicType, int guardMin = 0)
+    {
+        MechanicsManager.Instance.AddMechanic(stack, mechanicType, owner, guardMin);
     }
 
     public static void ReduceMechanicStack(Fighter fighter, int amount, MechanicType mechanicType)
     {
         MechanicsManager.Instance.ReduceMechanic(fighter, mechanicType, amount);
+    }
+    
+    public static void ReduceMechanicStack(IHaveMechanics owner, int amount, MechanicType mechanicType)
+    {
+        MechanicsManager.Instance.ReduceMechanic(owner, mechanicType, amount);
     }
     
     public static void RemovePlayerMechanicGuard(MechanicType mechanicType)

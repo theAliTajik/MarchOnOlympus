@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 public class Energy : MonoBehaviour
 {
-    private ModifiableParam<int> m_Max;
+    private ModifiableParam<int> m_Max = new ModifiableParam<int>();
     private int m_Current;
     
     public int Max => m_Max;
@@ -87,11 +87,12 @@ public class Energy : MonoBehaviour
     {
         if (amount < 0)
         {
-            Debug.LogWarning("Invalid amount of energy (energy lower than 0), max energy set to 0");
+            CustomDebug.LogWarning("Invalid amount of energy (energy lower than 0), max energy set to 0", Categories.Combat.Energy);
             m_Max = 0;
             return;
         }
         m_Max = amount;
+        CustomDebug.Log($"set max energy {m_Max.Value}", Categories.Combat.Energy);
         UpdateEnergyWidget();
     }
 
@@ -104,6 +105,7 @@ public class Energy : MonoBehaviour
 
     public void AddModifier(IParamModifier<int> modifier)
     {
+        Debug.Log($"added modifier {modifier}");
         m_Max.AddModifier(modifier);
         UpdateEnergyWidget();
     }

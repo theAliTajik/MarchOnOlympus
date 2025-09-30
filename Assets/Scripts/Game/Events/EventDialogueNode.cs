@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EventDialogueNode", menuName = "Events/EventDialogueNode")]
 public class EventDialogueNode : ScriptableObject
 {
+    [TextArea]  
     public string DialogueText;
     
     public List<EventChoiceData> Choices = new List<EventChoiceData>();

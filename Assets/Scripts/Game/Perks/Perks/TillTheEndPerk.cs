@@ -49,7 +49,7 @@ public class TillTheEndPerk : BasePerk
             case EGamePhase.PLAYER_DAMAGED:
                 if (!isConditionMet && playerHPPercentage < m_perkData.HPThresholdPercentage)
                 {
-                    GameActionHelper.AddMechanicToPlayer(m_perkData.StrGain, MechanicType.STRENGTH, true, m_perkData.StrGain);
+                    GameActionHelper.AddMechanicToPlayer(m_perkData.StrGain, MechanicType.STRENGTH, m_perkData.StrGain);
                     isConditionMet = true;
                 }
                 break;

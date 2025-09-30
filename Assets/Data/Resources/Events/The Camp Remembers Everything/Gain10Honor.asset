@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Gain10Honor
   m_EditorClassIdentifier: 
   Title: '[Gain Honor]'
-  Description: Gain 10 Honor
+  Description: "One claps your shoulder with a firm, proud hand, whispering you \"Camp
+    Remembers!\"\u2014 you feel your spirit swell with Honor."
   ActionAssets:
   - {fileID: 11400000, guid: 008a1da4c4a9e49828dbf418c03c4304, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

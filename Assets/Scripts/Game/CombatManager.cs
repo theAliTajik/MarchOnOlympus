@@ -13,7 +13,7 @@ public class CombatManager : Singleton<CombatManager>
     public event Action<bool> OnCombatOver;
     
     [SerializeField] private Energy m_energy;
-    [SerializeField] private PlayerController m_playerController;
+    private PlayerController m_playerController;
     [SerializeField] private EnemiesManager m_enemiesManager;
     [SerializeField] private CardsUIManager m_cardsUIManager;
     [SerializeField] private CardsUIManager m_uiManager;
@@ -64,10 +64,9 @@ public class CombatManager : Singleton<CombatManager>
     }
     private List<CardsToPlayTwiceData> m_cardsToPlayTwice = new List<CardsToPlayTwiceData>{};
     private bool m_isPlayersTurn;
+    private bool m_playerIsStunned;
     private CombatPhase m_combatPhase;
     private CardDisplay m_pickedCard;
-    private int m_DefualtEnergy = 0;
-    private int m_EnergyModifier = 0;
     private int m_extraCardsDrawnThisTurn = 0;
     private List<CardDisplay> m_cardsNotUsedThisTurn = new List<CardDisplay>();
     
@@ -101,30 +100,44 @@ public class CombatManager : Singleton<CombatManager>
     public int CurrentTurn { get {return m_currentTurn;} }
     public List<CardDisplay> CardsNotUsedThisTurn { get {return m_cardsNotUsedThisTurn;} }
     
-    
-    
-    private void OnEnable()
-    {
-        m_uiManager.OnCardPick += OnCardPicked;
-        m_enemiesManager.OnAllEnemiesDestroyed += OnAllEnemiesDead;
-        m_playerController.Death += OnPlayerDead;
-    }
-
     private void Start()
     {
         GameplayEvents.StanceChanged += OnStanceSelected;
+        GameplayEvents.OnNewWaveOfEnemies += StartOnNewWaveOfEnemies;
+    }
+
+    private void StartOnNewWaveOfEnemies()
+    {
+        StartCoroutine(OnNewWaveOfEnemies());
+    }
+
+    private IEnumerator OnNewWaveOfEnemies()
+    {
+        yield return EndPlayerTurn();
+        
+        yield return new WaitForSeconds(0.5f);
+        
+        StartPlayerTurn();
     }
 
     private void OnDestroy()
     {
+        GameplayEvents.SendGamePhaseChanged(EGamePhase.COMBAT_END);
         GameplayEvents.StanceChanged -= OnStanceSelected;
+        GameplayEvents.OnNewWaveOfEnemies -= StartOnNewWaveOfEnemies;
         m_playerController.HP.OnTookDamage -= OnPlayerDamaged;
     }
     
     
     public void StartCombat()
     {
-        MechanicsManager.Instance.CreateMechanicsList(m_playerController);
+        m_uiManager.OnCardPick += OnCardPicked;
+        m_enemiesManager.OnAllEnemiesDestroyed += OnAllEnemiesDead;
+        m_playerController.Death += OnPlayerDead;
+        
+        m_energy.SetMaxEnergy(GameData.Instance.StartingEnergy);
+        MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(m_playerController);
+        HUD.Instance.SpawnMechanicsDisplay(m_playerController, list);
         m_playerController.ConfigFighterHP();
         GameplayEvents.SendGamePhaseChanged(EGamePhase.COMBAT_START);
         m_playerController.HP.OnTookDamage += OnPlayerDamaged;
@@ -145,11 +158,8 @@ public class CombatManager : Singleton<CombatManager>
 
     public void OnEndTurnButtonClicked()
     {
-        StartCoroutine(EndPlayerTurn());
+        StartCoroutine(EndPlayerTurnThenStartEnemiesTurn());
     }
-    
-    
-
 
 
     public void StartPlayerTurn()
@@ -157,13 +167,21 @@ public class CombatManager : Singleton<CombatManager>
         m_isPlayersTurn = true;
         
         m_enemiesManager.DetermineAllEnemiesIntentions();
-        
-        m_energy.SetMaxEnergy(GameData.Instance.StartingEnergy + m_EnergyModifier);
-        m_energy.ResetEnergy();
-        
 
 
-        m_currentTurn++;    
+        m_currentTurn++;
+
+        GameplayEvents.SendGamePhaseChanged(EGamePhase.PLAYER_TURN_START);
+        m_combatPhase = CombatPhase.TURN_START;
+        OnCombatPhaseChanged?.Invoke(m_combatPhase);
+
+        if (m_playerIsStunned)
+        {
+            m_playerIsStunned = false;
+            StartCoroutine(EndPlayerTurnThenStartEnemiesTurn());
+            return;
+        }
+
         if (MechanicsManager.Instance.Contains(m_playerController, MechanicType.IMPROVISE))
         {
             int drawExtra = MechanicsManager.Instance.GetMechanicsStack(m_playerController, MechanicType.IMPROVISE);
@@ -172,20 +190,18 @@ public class CombatManager : Singleton<CombatManager>
 
         }
         m_deck.DrawCards();
-      
 
+
+        HUD.Instance.SetEnergyWidgetAnimation(true);
+        HUD.Instance.SetEndTurnWidgetAnimation(true);
+
+
+        m_energy.ResetEnergy();
         StartCoroutine(m_uiManager.DisplayCurrentHand(m_deck.GetAllCardsIn(CardStorage.HAND)));
         foreach (CardDisplay cardDisplay in m_deck.GetAllCardsIn(CardStorage.HAND))
         {
             m_cardActions[cardDisplay].CardDrawn(cardDisplay.CardInDeck.GetCardData());
         }
-        
-        HUD.Instance.SetEnergyWidgetAnimation(true);
-        HUD.Instance.SetEndTurnWidgetAnimation(true);
-        
-        GameplayEvents.SendGamePhaseChanged(EGamePhase.PLAYER_TURN_START);
-        m_combatPhase = CombatPhase.TURN_START;
-        OnCombatPhaseChanged?.Invoke(m_combatPhase);
     }
 
     public IEnumerator EndPlayerTurn()
@@ -212,7 +228,12 @@ public class CombatManager : Singleton<CombatManager>
         m_deck.DiscardCurrentHand();
 
         yield return new WaitUntil(() => !CardsQueue.Instance.IsProcessing);
-        
+    }
+
+    public IEnumerator EndPlayerTurnThenStartEnemiesTurn()
+    {
+        yield return EndPlayerTurn();
+        yield return new WaitForSeconds(0.5f);
         StartCoroutine(StartEnemeiesTurn());
     }
     
@@ -223,7 +244,6 @@ public class CombatManager : Singleton<CombatManager>
         
         m_combatPhase = CombatPhase.TURN_START;
         OnCombatPhaseChanged?.Invoke(m_combatPhase);
-        
         GameplayEvents.SendGamePhaseChanged(EGamePhase.ENEMY_TURN_START);
         
         m_enemiesManager.PlayEnemiesTurns(OnEnemiesFinishedTurn);
@@ -572,5 +592,21 @@ public class CombatManager : Singleton<CombatManager>
         
     }
 
+    public void StunPlayer()
+    {
+        m_playerIsStunned = true;
+        StartCoroutine(EndPlayerTurnThenStartEnemiesTurn());
+    }
+
+    public void SetPlayerReference(Fighter player)
+    {
+        if (player is not PlayerController playerController)
+        {
+            CustomDebug.LogError("Fighter is not a PlayerController", Categories.Fighters.Player.Root);
+            return;
+        }
+        
+        m_playerController = playerController;
+    }
 
 }

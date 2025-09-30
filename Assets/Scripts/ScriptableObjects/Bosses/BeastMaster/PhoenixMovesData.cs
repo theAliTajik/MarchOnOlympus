@@ -17,6 +17,11 @@ public class PhoenixMovesData : ScriptableObject
 	public int Move3Block;
 	public int Move3Restore;
 
+	[Header("Move 4: Pump. restore if block > 0 else: hit 50")]
+	public int Move4Block;
+	public int Move4Restore;
+	public int Move4Damage;
+
 	[Header("At 66")]
 	public int At66Damage;
 	public int At66Restore;

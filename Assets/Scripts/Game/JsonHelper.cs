@@ -5,6 +5,8 @@ using System.Reflection;
 using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
+using Type = System.Type;
 
 public static class JsonHelper
 {
@@ -80,7 +82,8 @@ public static class JsonHelper
             return false;
         }
     }
-    
+
+    static string myAssembly = "AllScripts";
     public static T LoadAdvanced<T>(string path)
     {
         if (!File.Exists(path))
@@ -97,11 +100,57 @@ public static class JsonHelper
             ContractResolver = new DefaultContractResolver
             {
                 DefaultMembersSearchFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance
-            }
+            },
+            
+            SerializationBinder = new TypeNameSerializationBinder(myAssembly)
         };
 
         T saveObject = JsonConvert.DeserializeObject<T>(fileContent, settings);
         
         return saveObject;
+    }
+}
+
+
+/// <summary>
+/// A helper class to guide the deserializer to find types in their new assembly.
+/// This version is more robust and handles nested generic types.
+/// </summary>
+public class TypeNameSerializationBinder : ISerializationBinder
+{
+    private readonly string _newAssemblyName;
+
+    public TypeNameSerializationBinder(string newAssemblyName)
+    {
+        _newAssemblyName = newAssemblyName;
+    }
+
+    public Type BindToType(string assemblyName, string typeName)
+    {
+        // THE FIX IS HERE:
+        // We now look for "Assembly-CSharp" inside the entire type name string,
+        // which handles nested generic types.
+        if (typeName.Contains("Assembly-CSharp"))
+        {
+            // Replace the old assembly name with the new one wherever it appears.
+            typeName = typeName.Replace("Assembly-CSharp", _newAssemblyName);
+        }
+
+        // We use the original assemblyName unless it's the one we are trying to replace.
+        string finalAssemblyName = assemblyName.Contains("Assembly-CSharp") ? _newAssemblyName : assemblyName;
+
+        // Reconstruct the fully qualified name to pass to GetType.
+        string fullyQualifiedName = string.Format("{0}, {1}", typeName, finalAssemblyName);
+
+        // It's safer to use the non-throwing version of GetType and handle the null.
+        return Type.GetType(fullyQualifiedName, false); // Use 'false' to avoid throwing an exception here.
+        // Let the serializer handle the error if it's still not found.
+    }
+
+    public void BindToName(Type serializedType, out string assemblyName, out string typeName)
+    {
+        // This part remains the same.
+        assemblyName = serializedType.Assembly.FullName;
+        typeName = serializedType.FullName;
     }
 }

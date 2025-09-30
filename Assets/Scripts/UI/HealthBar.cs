@@ -28,6 +28,14 @@ public class HealthBar : MonoBehaviour
         SetHealth();
         setMaxHealth(m_fighterHp.Max);
     }
+    
+    public void Config(IHaveHP owner)
+    {
+        m_fighterHp = owner.GetHP();
+        m_fighterHp.OnHPChanged += OnHPChanged;
+        SetHealth();
+        setMaxHealth(m_fighterHp.Max);
+    }
 
     private void OnDestroy()
     {

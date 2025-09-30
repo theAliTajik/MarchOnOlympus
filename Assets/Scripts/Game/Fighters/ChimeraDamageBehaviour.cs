@@ -5,14 +5,26 @@ public class ChimeraDamageBehaviour : StandardDamageBehaviour
 {
     private ChimeraHead m_TargetedHead;
 
+    public ChimeraDamageBehaviour()
+    {
+        
+    }
+
+    public ChimeraDamageBehaviour(IHaveMechanics owner)
+    {
+        m_mechanicsOwner = owner;
+    }
+
     public void SetTargetedHead(ChimeraHead head)
     {
         m_TargetedHead = head;
     }
     
-    public override int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
+    public override Fighter.DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender,
+        bool isArmorPiercing = false,
+        Fighter.DamageContext damageContext = null)
     {
-        damage = m_TargetedHead.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
-        return base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+        Fighter.DamageContext context = m_TargetedHead.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+        return base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing, context);
     }
 }

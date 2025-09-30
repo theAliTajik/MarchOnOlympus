@@ -1,0 +1,28 @@
+{
+    "name": "AllScripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:72d1fea872bd7a449bf3818f2b0a6708",
+        "GUID:68765d262e2128e4ab49c983f3411946",
+        "GUID:2c8115fef53c440a1873e4077e45b326",
+        "GUID:fb24642277b1db2449da7ac148ce939d",
+        "GUID:81dcdc43a74004ddaa6ad1d5df1941d9",
+        "GUID:50b2bdd4833ec8043a7227258a04ccb7",
+        "GUID:a02547252a8685b458cb58325927f320",
+        "GUID:dbe7cf6698bd54a63bc00412d71f8b48",
+        "GUID:ad10a660d2aec9d449de236f5524cb5c",
+        "GUID:a5d04fa5e431fa844be99e9199658b16",
+        "GUID:b2b4ba6eb36b7bb49beadaf8e4db329a",
+        "GUID:0ea4188915c00fb4688accb5ae29f133"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

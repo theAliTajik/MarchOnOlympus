@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HarpyMinionMovesData
   m_EditorClassIdentifier: 
   HP: 30
-  Move1Damage: 15
+  Move1Damage: 5

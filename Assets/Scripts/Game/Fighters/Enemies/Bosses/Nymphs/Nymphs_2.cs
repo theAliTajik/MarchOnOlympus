@@ -22,6 +22,7 @@ public class Nymphs_2 : BaseNymph
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
+    [SerializeField] private MoveData m_submergedMoveData;
     [SerializeField] private Nymphs_2_MovesData m_data;
 
   
@@ -29,11 +30,7 @@ public class Nymphs_2 : BaseNymph
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
         
         ConfigFighterHP();
 
@@ -61,8 +58,18 @@ public class Nymphs_2 : BaseNymph
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        if (!m_isTarget)
+        {
+            m_nextMove = m_submergedMoveData;
+            ShowIntention();
+            // Debug.Log($"enemy {this.GetType()} next move: {m_nextMove.description}");
+            return;
+        }
+        
+        RandomIntentionPicker();
         ShowIntention();
+
+        // Debug.Log($"enemy {this.GetType()} next move: {m_nextMove.description}");
     }
 
     public override void ShowIntention()
@@ -79,6 +86,9 @@ public class Nymphs_2 : BaseNymph
         {
             case "Bleed":
                 CallOnIntentionDetermined(Intention.CAST_DEBUFF, m_nextMove.description);
+                break;
+            case "submerged":
+                CallOnIntentionDetermined(Intention.STUNED, m_nextMove.description);
                 break;
         }
     }
@@ -117,6 +127,9 @@ public class Nymphs_2 : BaseNymph
                 m_animation.Play(ANIM_05_ATTACK, () => { animFinished = true; } );
                 GameActionHelper.AddMechanicToPlayer(m_data.Move1Bleed, MechanicType.BLEED);
                 break;
+            case "submerged":
+                finishCallback?.Invoke();
+                break;
         }
 
         yield return new WaitUntil(() => animFinished);
@@ -128,6 +141,12 @@ public class Nymphs_2 : BaseNymph
         }
         m_numOfCasts = 0;
         finishCallback?.Invoke();
+    }
+    
+    public override void SetCanBeTarget(bool isTarget)
+    {
+        base.SetCanBeTarget(isTarget);
+        DetermineIntention();
     }
 
     public override void ConfigFighterHP()

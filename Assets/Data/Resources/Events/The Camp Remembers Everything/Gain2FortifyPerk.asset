@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Gain2FortifyPerk
   m_EditorClassIdentifier: 
   Title: '[Gain Fortify]'
-  Description: Gain 2 Fortify at the start of next combat
+  Description: "Another kneels, carefully reinforcing your battered gear, whispering
+    old words of protection \u2014 your resolve hardens"
   ActionAssets:
   - {fileID: 11400000, guid: 2b4f34b3d22c94cb9994a2506faece96, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

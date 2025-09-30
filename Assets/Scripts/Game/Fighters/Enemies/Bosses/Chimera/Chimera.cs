@@ -60,21 +60,48 @@ public class Chimera : BaseEnemy
         
         ConfigFighterHP();
 
-        m_damageable = new ChimeraDamageBehaviour();
+        m_damageable = new ChimeraDamageBehaviour(this);
         m_damageable.OnDamage += m_fighterHP.TakeDamage;
         
         foreach (var head in m_heads)
         {
             head.Config();
         }
-        
-        GameplayEvents.ColliderSelected += OnColliderSelected;
+
         GameplayEvents.GamePhaseChanged += OnPhaseChange;
+        GameplayEvents.ColliderSelected += OnColliderSelected;
         
         HP.SetTrigger(m_data.PoisonPercentageTrigger);
         HP.SetTrigger(m_data.TauntPercentageTrigger);
 
         HP.OnPercentageTrigger += OnHPPercentageTriggered;
+    }
+
+
+    private void OnDisable()
+    {
+	    GameplayEvents.ColliderSelected -= OnColliderSelected;
+        GameplayEvents.GamePhaseChanged -= OnPhaseChange;
+    }
+
+    private void OnPhaseChange(EGamePhase phase)
+    {
+        switch (phase)
+        {
+            case EGamePhase.PLAYER_TURN_END:
+                foreach (var head in m_heads)
+                {
+                    head.TurnChanged();
+                }
+                break;
+            
+            case EGamePhase.ENEMY_TURN_END:
+                foreach (var head in m_heads)
+                {
+                    head.EnemyTurnOver();
+                }
+                break;
+        }
     }
 
     private void OnHPPercentageTriggered(FighterHP.TriggerPercentage percent)
@@ -93,27 +120,6 @@ public class Chimera : BaseEnemy
         }
         
     }
-
-    private void OnPhaseChange(EGamePhase phase)
-    {
-        switch (phase)
-        {
-            case EGamePhase.ENEMY_TURN_END:
-                foreach (var head in m_heads)
-                {
-                    head.TurnEnded();
-                }
-                break;
-            case EGamePhase.ENEMY_TURN_START:
-                foreach (var head in m_heads)
-                {
-                    head.TurnStarted();
-                }
-
-                break;
-        }
-    }
-
     private void OnDestroy()
     {
         GameplayEvents.ColliderSelected -= OnColliderSelected;

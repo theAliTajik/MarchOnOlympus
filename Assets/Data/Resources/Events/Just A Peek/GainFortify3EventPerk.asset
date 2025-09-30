@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainFortify3EventPerk
   m_EditorClassIdentifier: 
   Title: '[Gain Fortify]'
-  Description: Gain fortify 3 at the start of next combat
+  Description: "A shield woven from droplets of light \u2014 a safe haven against
+    the uncertainties ahead."
   ActionAssets:
   - {fileID: 11400000, guid: fe11c3fd00afc42baa9688db3b607e52, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

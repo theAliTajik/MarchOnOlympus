@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainHonorable
   m_EditorClassIdentifier: 
   Title: '[Gain Card]'
-  Description: Honorable
+  Description: "The second moves with quiet strength, their blade sweeping with noble
+    precision\u2014honor and courage. (Gain Honorable)"
   ActionAssets:
   - {fileID: 11400000, guid: 21c1514f95ba441448b5c42817dfc325, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

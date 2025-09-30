@@ -2,23 +2,31 @@ using Game;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Harpy : BaseEnemy
 {
     #region Animations
 
-    private const string ANIM_ATTACK = "Attack";
+    private const string ANIM_001_FLAY = "001_Flay";
+    private const string ANIM_002_DAMAGE = "002_Damage";
+    private const string ANIM_003_FLYUP = "003_FlyUP";
+    private const string ANIM_004_ATTACK = "004_Attack";
+    private const string ANIM_005_ATTACK_CRIT = "005_Attack_Crit";
+    private const string ANIM_006_SCREEM = "006_Screem";
     private const string ANIM_DEATH = "Death";
-    private const string ANIM_HOWL = "Howl";
-    private const string ANIM_IDDLE = "Iddle";
-    private const string ANIM_WOUND = "Wound";
-
+    private const string ANIM_FLY2 = "Fly2";
+    private const string ANIM_FLY_SETUP = "Fly[setup]";
+    
     #endregion
 
     [SerializeField] protected MoveData[] m_movesDatas;
     [SerializeField] protected MoveData[] m_movesDatasAirbone;
     [SerializeField] private HarpyMovesData m_data;
+
+    [SerializeField] private Vector3 m_airborneOffset;
+    private Vector3 m_spawnPos;
 
     private List<HarpyMinion> m_minions = new List<HarpyMinion>();
     private int m_turnCounter = 0, m_inAirboneTurnCounter = 0;
@@ -30,11 +38,7 @@ public class Harpy : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        SetMoves(m_movesDatas);
 	}
 
     private void Start()
@@ -44,6 +48,7 @@ public class Harpy : BaseEnemy
         HP.OnPercentageTrigger += OnHPPercentageTriggred;
 
         GameplayEvents.GamePhaseChanged += OnPhaseChange;
+        m_spawnPos = transform.position;
 	}
 
 	private void OnDestroy()
@@ -87,7 +92,7 @@ public class Harpy : BaseEnemy
         }
 
 		base.OnTookDamage(damage, isCritical);
-        m_animation.Play(ANIM_WOUND);
+        m_animation.Play(ANIM_002_DAMAGE);
     }
 
     protected override void OnDeath()
@@ -109,7 +114,7 @@ public class Harpy : BaseEnemy
             return;
 		}
 
-		RandomIntentionPicker(m_moves);
+		RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -149,24 +154,28 @@ public class Harpy : BaseEnemy
             finishCallback?.Invoke();
             yield break;
         }
+
+        bool finishedAnim = false;
         switch (m_nextMove.clientID)
         {
             case "HitBleed":
-                m_animation.Play(ANIM_ATTACK, finishCallback);
+                m_animation.Play(ANIM_004_ATTACK, () => finishedAnim = true);
                 Fighter player = GameInfoHelper.GetPlayer();
                 GameActionHelper.DamageFighter(player, this, m_data.Move1Damage);
                 GameActionHelper.AddMechanicToFighter(player, m_data.Move1Bleed, MechanicType.BLEED);
 				break;
             case "ScreechDaze":
                 Screech();
-                finishCallback?.Invoke();
+				m_animation.Play(ANIM_006_SCREEM, () => finishedAnim = true);
                 break;
 
             case "Airbone":
-				//m_animation.Play(ANIM_WOUND, finishCallback);
-				finishCallback?.Invoke();
+				m_animation.Play(ANIM_003_FLYUP, () => finishedAnim = true);
 				break;
         }
+
+        yield return new WaitUntil(() => finishedAnim);
+        finishCallback?.Invoke();
 
 		if (m_isOnAirbone)
 		{
@@ -197,7 +206,6 @@ public class Harpy : BaseEnemy
 
 	private void Screech()
 	{
-		m_animation.Play(ANIM_ATTACK);
 		Fighter player = GameInfoHelper.GetPlayer();
 		GameActionHelper.AddMechanicToFighter(player, m_data.Move2Daze, MechanicType.DAZE);
 	}
@@ -237,7 +245,7 @@ public class Harpy : BaseEnemy
 	private IEnumerator DestroyDeadAfterDelay(Fighter fighter, float seconds)
 	{
 		yield return new WaitForSeconds(seconds);
-		EnemiesManager.Instance.RemoveDeadEnemy(fighter);
+		EnemiesManager.Instance.RemoveDeadEnemyBody(fighter);
 	}
 
 	private void SetAirbone(bool value)
@@ -252,8 +260,26 @@ public class Harpy : BaseEnemy
         DetermineIntention();
 		ShowIntention();
 
-		if (value) ReleaseAnimal();
-		else AirbonDone();
+		if (value)
+		{
+			ReleaseAnimal();
+			MoveUp();
+		}
+		else
+		{
+			AirbonDone();
+			MoveDown();
+		}
+	}
+
+	private void MoveUp()
+	{
+		transform.DOMove(m_spawnPos + m_airborneOffset, 0.5f);
+	}
+
+	private void MoveDown()
+	{
+		transform.DOMove(m_spawnPos, 0.5f);
 	}
     
     private void AirbonDone()

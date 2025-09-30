@@ -33,11 +33,7 @@ public class Archer : BaseEnemy
 
         ConfigFighterHP();
         
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
 
     }
 
@@ -48,7 +44,7 @@ public class Archer : BaseEnemy
         {
             m_diomedes.Death += OnDiomedesDeath;
             m_diomedes.OnPhase1 += OnPhase1OfDiomedes;
-            GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, true, 1);
+            GameActionHelper.AddMechanicToFighter(this, 1, MechanicType.FORTIFIED, 1);
         }
     }
 
@@ -80,7 +76,7 @@ public class Archer : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -162,7 +158,7 @@ public class Archer : BaseEnemy
         yield return new WaitUntil(() => !m_isPlayingMove);
         Debug.Log("animation finished");
         //remove diomedes
-        EnemiesManager.Instance.RemoveDeadEnemy(m_diomedes);
+        EnemiesManager.Instance.RemoveDeadEnemyBody(m_diomedes);
         // spawn diomedes level 2 
         EnemiesManager.Instance.SpawnBoss(m_data.DiomedesLevel2Id, true);
 

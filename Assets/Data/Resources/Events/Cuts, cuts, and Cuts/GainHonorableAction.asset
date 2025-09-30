@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d803a449eff347bfaf571ce4a8886a61, type: 3}
   m_Name: GainHonorableAction
   m_EditorClassIdentifier: 
-  m_cardData: {fileID: 11400000, guid: 3cc992787f0b741fbb8048d5bc64173e, type: 2}
+  m_cardData: {fileID: 11400000, guid: 4f0660b1272284f2baf267795a62b6c7, type: 2}

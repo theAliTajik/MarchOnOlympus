@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Game;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class ExplodeMechanic : BaseMechanic
@@ -31,7 +30,7 @@ public class ExplodeMechanic : BaseMechanic
         ReduceStack(10000);
     }
     
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         return false;
     }

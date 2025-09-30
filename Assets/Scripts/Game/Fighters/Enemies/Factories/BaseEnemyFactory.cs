@@ -14,7 +14,7 @@ public interface IEnemyFactory
     public void SetupEnemy(BaseEnemy enemy, Vector3? position = null, Quaternion? rotation = null);
 }
 
-public  class BaseEnemyFactory : MonoBehaviour, IEnemyFactory
+public class BaseEnemyFactory : MonoBehaviour, IEnemyFactory
 {
     public virtual string FactoryID { get; } = "Default";
 
@@ -25,7 +25,7 @@ public  class BaseEnemyFactory : MonoBehaviour, IEnemyFactory
         return enemy;
     }
 
-    public void SetupEnemy(BaseEnemy enemy, Vector3? position = null, Quaternion? rotation = null)
+    public virtual void SetupEnemy(BaseEnemy enemy, Vector3? position = null, Quaternion? rotation = null)
     {
         if (position != null)
         {
@@ -37,7 +37,8 @@ public  class BaseEnemyFactory : MonoBehaviour, IEnemyFactory
         HUD.Instance.SpawnHPBar(enemy);
         HUD.Instance.SpawnDamageIndicator(enemy);
         HUD.Instance.SpawnEnemyIntentionWidget(enemy);
-        MechanicsManager.Instance.CreateMechanicsList(enemy);
+        MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(enemy);
+        HUD.Instance.SpawnMechanicsDisplay(enemy, list);
         CombatManager.Instance.SubscribeToEnemyDamage(enemy);
         EnemiesManager.Instance.AddEnemey(enemy);
     }

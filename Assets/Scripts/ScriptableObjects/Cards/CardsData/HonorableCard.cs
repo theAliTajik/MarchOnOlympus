@@ -19,7 +19,7 @@ public class HonorableCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description);
+            return normalDataSet.description;
         }
     }
 }

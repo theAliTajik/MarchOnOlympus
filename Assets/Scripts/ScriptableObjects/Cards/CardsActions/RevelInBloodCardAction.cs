@@ -15,9 +15,9 @@ public class RevelInBloodCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target)
     {
         RevelInBloodCard c = (RevelInBloodCard)cardData;
-        int finalDamage = target.TakeDamage(c.Damage, CombatManager.Instance.Player, true);
+        Fighter.DamageContext context = target.TakeDamage(c.Damage, CombatManager.Instance.Player, true);
 
-        MechanicsManager.Instance.AddMechanic(new BleedMechanic(finalDamage, target));
+        MechanicsManager.Instance.AddMechanic(new BleedMechanic(context.ModifiedDamage, target));
 
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

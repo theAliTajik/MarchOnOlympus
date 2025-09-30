@@ -1,0 +1,63 @@
+@startuml
+class BaseEnemy
+
+class Cyclops{
+- m_turnCounter: TurnCounter
+- m_club: CyclopsClub
+- m_eye: CyclopsEye
+
+- OnEyeDeath()
+- OnClubDeath()
+- SetNextMoveToGettingClub()
+- SetEyeState()
+
+}
+Cyclops --|> BaseEnemy
+Cyclops ..> StandardTurnCounter: Has-A
+Cyclops ..> CyclopsClub: Has-A
+Cyclops ..> CyclopsEye: Has-A
+
+Interface ITurnCounter{
++ GetCurrentTurn(): int
++ GetRelativeTurn(): int
+}
+
+class StandardTurnCounter
+StandardTurnCounter --|> ITurnCounter
+
+
+class CyclopsClub{
++ OnDeath: Action
+
+- m_colliderMatcher: ColliderMatcher
+- m_damageable: Damageable
+- m_hp: FighterHP
+}
+CyclopsClub ..> ColliderMatcher: Has-A
+CyclopsClub ..> Damageable: Has-A
+CyclopsClub ..> FighterHP: Has-A
+
+class CyclopsEye{
++ OnDeath: Action
+
+- m_colliderMatcher: ColliderMatcher
+- m_damageable: Damageable
+- m_hp: FighterHP
+
++ SetState(bool)
+}
+CyclopsEye ..> ColliderMatcher: Has-A
+CyclopsEye ..> Damageable: Has-A
+CyclopsEye ..> FighterHP: Has-A
+
+
+class Damageable
+class FighterHP
+
+class ColliderMatcher{
+- m_collider: Collider2D <<serializable>>
+
++ IsMyCollider() : bool
+}
+
+@enduml

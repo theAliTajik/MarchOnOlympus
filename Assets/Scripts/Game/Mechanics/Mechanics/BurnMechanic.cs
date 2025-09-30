@@ -10,20 +10,26 @@ public class BurnMechanic : BaseMechanic
         
     }
 
-    public BurnMechanic(int stack, IHaveMechanics mOwner, bool hasGuard = false, int guardMin = 0)
+    public BurnMechanic(int stack, IHaveMechanics mOwner, int guardMin = 0)
     {
         m_stack.SetValue(stack);
         m_mechanicOwner = mOwner;
+        
+        m_stack.SetGuard(guardMin);
     }
     public override MechanicType GetMechanicType()
     {
         return MechanicType.BURN;
     }
 
-    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn)
+    public override bool TryReduceStack(CombatPhase phase, bool isMyTurn, bool isFirstTimeInTurn = false)
     {
         if (phase == CombatPhase.TURN_START && isMyTurn)
         {
+            if (m_mechanicOwner is IDamageable damageable)
+            {
+                damageable.TakeDamage(m_stack, null, false, false);
+            }
             ReduceStack(m_stack/2);
             return true;
         }
@@ -38,10 +44,11 @@ public class BurnMechanic : BaseMechanic
         }
 
         int returnDamageAmout = MechanicsManager.Instance.GetMechanicsStack(context.Target, MechanicType.BURN);
+        context.IsDamageSentByBurn = true;
 
         if (context.Sender is IDamageable damageable)
         {
-            damageable.TakeDamage(returnDamageAmout, context.Target as Fighter, false);
+            damageable.TakeDamage(returnDamageAmout, context.Target as Fighter, false, false, context);
         }
     }
 }

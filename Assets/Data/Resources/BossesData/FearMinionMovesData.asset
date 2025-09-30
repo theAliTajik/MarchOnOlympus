@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ce8a7a4acf803429f25dbdb2cd2dc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 43732393fa3eb42c6bb985c93d4fbd37, type: 3}
   m_Name: FearMinionMovesData
   m_EditorClassIdentifier: 
   HP: 20

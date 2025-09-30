@@ -70,12 +70,14 @@ public class CardsQueue : Singleton<CardsQueue>
         if (!m_isAnimating)
         {
             m_isAnimating = true;
-            float waitTime = CombatManager.Instance.Player.PlayAttackAnimation(() => m_isAnimating = false);
         }
+        float waitTime = CombatManager.Instance.Player.PlayAttackAnimation(() => m_isAnimating = false);
         //yield return new WaitForSeconds(waitTime); // wait until hitting point of animation
         
         CardQueueItem item = m_cardQueue.Dequeue();
         item.action.Play(item.cardDisplay.CardInDeck.GetCardData(), () => cardFinished = true , item.target, item.cardDisplay);
+        CustomDebug.Log($"Card Played: {item.cardDisplay.CardInDeck.GetCardName()}", Categories.Combat.Cards);
+        GameplayEvents.SendOnCardPlayed(item.cardDisplay);
         
         //play extra actions
         for (int i = 0; i < m_extraActions.Count; i++)

@@ -34,6 +34,7 @@ public enum EGamePhase
 public class GameplayEvents
 {
     public static event System.Action<int> OnEnergyChanged;
+
     public static void SendOnEnergyChanged(int energy)
     {
         OnEnergyChanged?.Invoke(energy);
@@ -166,5 +167,30 @@ public class GameplayEvents
     {
         ColliderSelected?.Invoke(collider);
     }
+    
+    public static event System.Action OnNewWaveOfEnemies;
 
+    public static void SendOnNewWaveOfEnemies()
+    {
+        OnNewWaveOfEnemies?.Invoke();
+    }
+
+    public static event System.Action<CardDisplay> OnCardPlayed;
+    public static void SendOnCardPlayed(CardDisplay card)
+    {
+        OnCardPlayed?.Invoke(card);
+    }
+
+    public static event Action<int> OnGainInvent;
+    public static void SendOnGainInvent(int amount)
+    {
+        CustomDebug.Log("On Gain Invent: {amount}", Categories.Invent.Root);
+        OnGainInvent?.Invoke(amount);
+    }
+    
+    public static event Action OnInventPlayed;
+    public static void SendOnInventPlayed()
+    {
+        OnInventPlayed?.Invoke();
+    }
 }

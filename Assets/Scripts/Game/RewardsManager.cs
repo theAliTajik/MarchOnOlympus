@@ -39,6 +39,23 @@ public class RewardsManager : MonoBehaviour
         }
     }
 
+    private void DisplaySelection(List<BaseCardData> rewards)
+    {
+        List<CardClickableItem> clickableCardItems = new List<CardClickableItem>();
+        for (int i = 0; i < rewards.Count; i++)
+        {
+            clickableCardItems.Add(m_cardPool.GetItem());
+
+            BaseCardData cardData = rewards[i];
+            
+            clickableCardItems[i].Configure(cardData);
+            clickableCardItems[i].OnClick += OnCardRewardSelected;
+            clickableCardItems[i].transform.SetParent(m_cardRewardsContainer.transform, false);
+            clickableCardItems[i].transform.localScale = Vector3.one;
+            clickableCardItems[i].RefreshUI();
+        }
+    }
+
     private void GiveHonorReward()
     {
         GameProgress.Instance.Data.Honor += m_honorAmount;

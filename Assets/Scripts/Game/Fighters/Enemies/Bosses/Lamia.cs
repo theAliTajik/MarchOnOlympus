@@ -2,6 +2,7 @@ using System;
 using Game;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Lamia : BaseEnemy
@@ -21,6 +22,7 @@ public class Lamia : BaseEnemy
     #endregion
     
     [SerializeField] protected MoveData[] m_movesDatas;
+    [SerializeField] private MoveData m_hitXPetrifyMoveData;
 
 	[SerializeField] private LamiaMovesData m_data;
 
@@ -29,16 +31,26 @@ public class Lamia : BaseEnemy
     {
         base.Awake();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+        List<MoveData> moves = new List<MoveData>();
+        m_hitXPetrifyMoveData.Condition = IsPetrifyAboveFour;
+        moves.Add(m_hitXPetrifyMoveData);
+        moves.AddRange(m_movesDatas);
+
+
+        m_intentionPicker = new ConditionalRandomIntentionDeterminer(moves);
         
         ConfigFighterHP();
     }
 
-	private void Start()
+    private bool IsPetrifyAboveFour()
+    {
+        int petrify = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PETRIFY);
+        bool isAbove = petrify > 4;
+        
+        return isAbove;
+    }
+
+    private void Start()
 	{
 		HP.SetTrigger(m_data.Phase1HPPercentageTrigger);
 		HP.SetTrigger(m_data.Phase2HPPercentageTrigger);
@@ -114,7 +126,7 @@ public class Lamia : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -188,26 +200,11 @@ public class Lamia : BaseEnemy
 
             case "IfPetrifyHit":
                 yield return WaitForAnimation(ANIM_05_ATTACK, finishCallback);
-                // Only if petrify > 4, Hit 5xPetrify Stack
-
-                Debug.Log($"--> [Lamia] IfPetrifyHit");
-                var mList = player.GetMechanicsList();
-
-                if (GameInfoHelper.CheckIfFighterHasMechanic(player, MechanicType.PETRIFY))
-                {
-                    int PETRIFYStacks = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PETRIFY);
-                    if (PETRIFYStacks > 4)
-                    {
-                        GameActionHelper.DamageFighter(player, this, m_data.Move4Damage * PETRIFYStacks);
-                        Debug.Log($"--> [Lamia] | Damage: {m_data.Move4Damage} * ({PETRIFYStacks} PETRIFY)");
-                    }
-					else
-						Debug.Log($"--> [Lamia] | PETRIFY stacks ({PETRIFYStacks}) are not enough, no damage dealt.");
-				}
-                else
-                {
-                    Debug.Log($"--> [Lamia] | No PETRIFY stacks found, no damage dealt.");
-                }
+                
+                int PETRIFYStacks = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.PETRIFY);
+                GameActionHelper.DamageFighter(player, this, m_data.Move4Damage * PETRIFYStacks);
+                
+                Debug.Log($"--> [Lamia] | Damage: {m_data.Move4Damage} * ({PETRIFYStacks} PETRIFY)");
                 break;
         }
 

@@ -11,6 +11,7 @@ public class GameplayController : Singleton<GameplayController>
     [SerializeField] private CardsUIManager m_cardsUIManager;
     [SerializeField] private PerksManager m_perksManager;
     [SerializeField] private CombatManager m_combatManager;
+    [SerializeField] private PlayerSpawner m_playerSpawner;
     [SerializeField] private HUD m_HUD;
     [SerializeField] private RewardsManager m_rewardsManager;
     [SerializeField] private EnemiesManager m_enemiesManager;
@@ -28,6 +29,9 @@ public class GameplayController : Singleton<GameplayController>
 
     private void Start()
     {
+        Fighter player = m_playerSpawner.SpawnPlayer();
+        m_combatManager.SetPlayerReference(player);
+        
         DeckTemplates.Deck template;
         bool isDevTestingTemplate = false;
         DeckTemplates.LoadAllDecks();

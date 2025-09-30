@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d46a5bd483eb449986dcebc9c23707a, type: 3}
   m_Name: 1_ChooseReward
   m_EditorClassIdentifier: 
-  DialogueText: Choose Reward
+  DialogueText: "On a quiet hilltop, you find an ancient marble altar, its edges
+    worn smooth by centuries of wind. From the mist emerge three silent figures,
+    each holding a small, shining knife.  Together, their voices echo softly: \"\"Traveler\u2026
+    choose the cut that feels true to your heart, for each choice shapes the road
+    ahead.\"\""
   Choices:
   - {fileID: 11400000, guid: 0ac6507a564f6478e88eafcdb77b0f3d, type: 2}
   - {fileID: 11400000, guid: c9a270ac7c14e4e82a9317bd174d6bb1, type: 2}

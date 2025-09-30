@@ -33,7 +33,13 @@ public class PerksAddList : MonoBehaviour
         {
             if (perk.IsImplemented)
             {
-                m_list.AddItem(perk.ClientID, perk.ClientID, perk.Icon);
+                SelectableItemDisplayData m = new SelectableItemDisplayData()
+                {
+                    Id = perk.ClientID,
+                    Text = perk.ClientID,
+                    Sprite = perk.Icon
+                };
+                m_list.AddItem(m);
             }
         }
 

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GainDraw3EventPerk
   m_EditorClassIdentifier: 
   Title: '[Draw More]'
-  Description: Draw 3 Additional cards at the start of next combat
+  Description: "A glowing scroll left on the shore \u2014 a fleeting doorway to hidden
+    wisdom. "
   ActionAssets:
   - {fileID: 11400000, guid: e2eb7e1fef67e4ebea97975eeb1084dc, type: 2}
   NextDialogueNode: {fileID: 11400000, guid: 86aa9b46896a64eba84b083ef29261cc, type: 2}

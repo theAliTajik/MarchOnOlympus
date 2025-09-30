@@ -29,11 +29,7 @@ public class Hector : BaseEnemy
 
         ConfigFighterHP();
 
-        for (int i = 0; i < m_movesDatas.Length; i++)
-        {
-            MoveData md = m_movesDatas[i];
-            m_moves.Add(md, md.chance);
-        }
+SetMoves(m_movesDatas);
     }
 
     private void Start()
@@ -78,7 +74,7 @@ public class Hector : BaseEnemy
 
     public override void DetermineIntention()
     {
-        RandomIntentionPicker(m_moves);
+        RandomIntentionPicker();
         ShowIntention();
     }
 
@@ -160,9 +156,11 @@ public class Hector : BaseEnemy
         }
     }
 
-    public override int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing)
+    public override DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender,
+        bool isArmorPiercing = false,
+        DamageContext damageContext = null)
     {
-        int result = base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+        DamageContext result = base.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing, damageContext);
         m_charge -= m_data.Move2ChargeReduction;
         if (m_charge < 0)
         {

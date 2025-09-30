@@ -15,12 +15,12 @@ public class OverpowerCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target)
     {
         OverpowerCard c = (OverpowerCard)cardData;
-        int finalDamage = target.TakeDamage(c.Damage, CombatManager.Instance.Player, true);
+        Fighter.DamageContext finalDamage = target.TakeDamage(c.Damage, CombatManager.Instance.Player, true);
 
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
-            if (finalDamage > c.DamageThreshold)
+            if (finalDamage.ModifiedDamage > c.DamageThreshold)
             {
                 Debug.Log("gave daze");
                 MechanicsManager.Instance.AddMechanic(new DazeMechanic(c.Daze, target));

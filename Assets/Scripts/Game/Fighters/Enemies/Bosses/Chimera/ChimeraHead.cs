@@ -37,24 +37,30 @@ public abstract class ChimeraHead : IHaveIntention, IDamageable
     {
     }
 
-    public virtual int TakeDamage(int damage, Fighter sender, bool doesReturnToSender, bool isArmorPiercing = false)
+    public virtual Fighter.DamageContext TakeDamage(int damage, Fighter sender, bool doesReturnToSender,
+        bool isArmorPiercing = false,
+        Fighter.DamageContext damageContext = null)
     {
+        Fighter.DamageContext context = damageContext; 
         if (m_damageable != null)
         {
-            damage = m_damageable.TakeDamage(damage, sender, isArmorPiercing);
+             context = m_damageable.TakeDamage(damage, sender, isArmorPiercing);
+             context.AreSenderMechanicsAlreadyApplied = true;
         }
-        m_stun.Stun(damage, this);
-        return damage;
+
+        if (context == null)
+        {
+            context = new Fighter.DamageContext();
+            context.ModifiedDamage = damage;
+        }
+        
+        m_stun.Stun(context.ModifiedDamage, this);
+        return context;
     }
 
-    public virtual void TurnStarted()
+    public virtual void TurnChanged()
     {
         m_taunt.TurnChanged();
-    }
-    
-    public virtual void TurnEnded()
-    {
-        m_stun.TurnChanged();
     }
 
     public virtual void Stun()
