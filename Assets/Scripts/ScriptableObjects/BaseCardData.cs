@@ -19,7 +19,12 @@ public enum CardPacks
     DEBUFF,
     TECH,
     PRACTICAL,
-    GENIUS
+    GENIUS,
+    ARROW,
+    BURN,
+    DISCARD,
+    BUFF_REMOVE,
+    IMPROVISE
 }
 
 public enum CardType
