@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: RendingMechanism
   m_EditorClassIdentifier: 
   Name: RendingMechanism
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 3
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0

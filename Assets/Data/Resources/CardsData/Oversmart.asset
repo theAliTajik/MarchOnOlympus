@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Oversmart
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
@@ -34,7 +34,9 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: 6a17f36a98beb4a808b220690e3ee5a9, type: 2}
+  - {fileID: 11400000, guid: 3b6d62cfcd356425ebcfe416d103d677, type: 2}
   Draw: 3
   Fortified: 1
   Energy: 1

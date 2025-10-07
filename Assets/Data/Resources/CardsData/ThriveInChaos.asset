@@ -20,10 +20,10 @@ MonoBehaviour:
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Hit {0}x Deck Size
     targetingType: 0
-    actionType: 
+    actionType: 00000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  DamageMultiplier: 2

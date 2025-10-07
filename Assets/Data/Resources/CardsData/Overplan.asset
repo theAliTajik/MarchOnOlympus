@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Overplan
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 1
     description: Apply Vulnerable, If Invent Level is > {0} , Gain Fortified
-    targetingType: 1
-    actionType: 0400000003000000
+    targetingType: 0
+    actionType: 0300000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,7 +33,9 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: bceac16c663d144e2b56e4b505cc751d, type: 2}
+  - {fileID: 11400000, guid: ddfe005d6628a43d18c5bd67d999685a, type: 2}
   Vulnerable: 1
   InventLevelThreshold: 1
   Fortified: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Bowstrike
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
@@ -33,6 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: 05272798b68c6427b8921dc87fdc8a2a, type: 2}
+  - {fileID: 11400000, guid: c752af3d978514b4cac144ab31675d38, type: 2}
   InventThreshold: 1
   Damage: 5

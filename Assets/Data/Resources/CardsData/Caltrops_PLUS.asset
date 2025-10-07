@@ -17,7 +17,7 @@ MonoBehaviour:
   Type: 0
   CardPack: 2
   Image: {fileID: 0}
-  MStance: 1
+  MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 2

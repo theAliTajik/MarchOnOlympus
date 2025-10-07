@@ -15,13 +15,13 @@ MonoBehaviour:
   Name: OverBackstab
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 2
-    description: Hit {0}, Gain {1} energy if enemy has a debuff
+    description: Hit {0}, Gain an energy if enemy has a debuff
     targetingType: 1
     actionType: 0000000005000000
     doesPerish: 0

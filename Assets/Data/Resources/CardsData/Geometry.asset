@@ -15,9 +15,10 @@ MonoBehaviour:
   Name: Geometry
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
+  Ingenius: 0
   normalDataSet:
     energyCost: 2
     description: Gain {0} Invent

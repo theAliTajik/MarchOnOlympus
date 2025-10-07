@@ -15,15 +15,16 @@ MonoBehaviour:
   Name: Oversmart_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: If evemy is attacking you this turn, Gain Fortified, Restore {0},
+      Gain {1} Str
     targetingType: 0
-    actionType: 
+    actionType: 0300000002000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +35,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Fortified: 1
+  Restore: 10
+  Strength: 2

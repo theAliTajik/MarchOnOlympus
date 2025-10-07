@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: CalculatedShot_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 1
+    description: Hit {0}, If Invent>{1}, Hit {2}
     targetingType: 0
-    actionType: 
+    actionType: 0000000005000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 5
+  InventThreshold: 40
+  InventDamage: 25

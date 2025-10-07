@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: BurningBash
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 1
+    description: Remove Burn, Hit {0} x Removed Burn
     targetingType: 0
-    actionType: 
+    actionType: 04000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,7 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 0b87a02c7538f4934a3f66f1a6c38fdc, type: 2}
+  - {fileID: 11400000, guid: bffd1883a318642a38280813d2353f5f, type: 2}
+  BurnMultiplier: 2

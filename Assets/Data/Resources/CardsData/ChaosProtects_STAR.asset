@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: ChaosProtects_STAR
   m_EditorClassIdentifier: 
   Name: ChaosProtects_STAR
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: For each {0} Cards in your starting deck size, Hit {1}-{2}
     targetingType: 0
     actionType: 
     doesPerish: 0
@@ -34,4 +34,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  ForEeachNumOfCardsInStartingDeck: 10
+  DamageButtomRange: 1
+  DamageTopRange: 10

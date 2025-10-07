@@ -17,11 +17,11 @@ MonoBehaviour:
   Type: 0
   CardPack: 1
   Image: {fileID: 0}
-  MStance: 2
-  Ingenius: 1
+  MStance: 0
+  Ingenius: 0
   normalDataSet:
     energyCost: 2
-    description: HIt {0}
+    description: Hit {0}
     targetingType: 1
     actionType: 00000000
     doesPerish: 0

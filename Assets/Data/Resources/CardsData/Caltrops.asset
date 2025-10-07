@@ -23,7 +23,7 @@ MonoBehaviour:
     energyCost: 2
     description: Block {0}, Thorns {1}
     targetingType: 0
-    actionType: 01000000
+    actionType: 0100000003000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:

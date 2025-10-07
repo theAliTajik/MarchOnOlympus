@@ -15,9 +15,10 @@ MonoBehaviour:
   Name: PiercingArrow_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 3
   Image: {fileID: 0}
   MStance: 0
+  Ingenius: 0
   normalDataSet:
     energyCost: 1
     description: Bleed {0}, Apply Vulnerable
@@ -33,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Bleed: 0
+  Bleed: 2

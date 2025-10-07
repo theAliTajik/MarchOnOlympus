@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: ChaosProtects
   m_EditorClassIdentifier: 
   Name: ChaosProtects
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
-  Ingenius: 0
+  Ingenius: 1
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 1
+    description: For each {0} Cards in your starting deck size, Gain Fortified, Perish,
+      Ingenius
     targetingType: 0
     actionType: 
     doesPerish: 0
@@ -33,5 +34,10 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 11bd4e3def27c4683911574073005458, type: 2}
+  - {fileID: 11400000, guid: 4a4b79030e10f4e19a3d9d0ff29f93eb, type: 2}
+  ForeachNumOfCards: 10
+  Fortified: 1
+  Exile: 1
+  Ingenius: 1

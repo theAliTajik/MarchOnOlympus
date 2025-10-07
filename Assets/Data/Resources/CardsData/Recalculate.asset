@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Recalculate
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: 
+    description: Discard {0}, Draw {1}
     targetingType: 0
-    actionType: 
+    actionType: 05000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: b1e0fd08043b64408919ea1112b14fe4, type: 2}
+  - {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
+  Discard: 1
+  Draw: 1

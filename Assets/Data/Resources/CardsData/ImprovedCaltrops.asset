@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: ImprovedCaltrops
   Rarity: 0
-  Type: 0
-  CardPack: 0
+  Type: 1
+  CardPack: 3
   Image: {fileID: 0}
   MStance: 0
-  Ingenius: 0
+  Ingenius: 1
   normalDataSet:
     energyCost: 2
-    description: Block {0}, Bleed {1}
+    description: Whenever you use a tech card or Invent!, apply {0} bleed, Ingenius
     targetingType: 2
-    actionType: 0100000004000000
+    actionType: 04000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:

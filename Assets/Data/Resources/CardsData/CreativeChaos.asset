@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: CreativeChaos
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Gain Invent equal to starting deck size
     targetingType: 0
-    actionType: 
+    actionType: 05000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,6 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 0aee947b4cab045bcbdc31e5c6b266db, type: 2}
+  - {fileID: 11400000, guid: 26a448e84080e448c839ea5fc46da1f2, type: 2}

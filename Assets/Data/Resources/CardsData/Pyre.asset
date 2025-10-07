@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Pyre
   m_EditorClassIdentifier: 
   Name: Pyre
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 12
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 3
+    description: Burn self {0}, Enemy {1}
+    targetingType: 2
+    actionType: 04000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 3ba8914da3c1644138176562911d73e3, type: 2}
+  - {fileID: 11400000, guid: 15baa9281520e49328a45e02ef68413f, type: 2}
+  SelfBurn: 10
+  EnemyBurn: 20

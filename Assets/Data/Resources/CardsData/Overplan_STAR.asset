@@ -21,9 +21,9 @@ MonoBehaviour:
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: 
+    description: Discard {0}, Gain Fortified
     targetingType: 0
-    actionType: 
+    actionType: 0400000003000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Discard: 1
+  Fortified: 1

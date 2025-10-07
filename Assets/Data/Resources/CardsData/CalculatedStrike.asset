@@ -15,14 +15,14 @@ MonoBehaviour:
   Name: CalculatedStrike
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 15
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
+    energyCost: 2
+    description: Hit {0} Gain Improvise {1}
+    targetingType: 1
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 8
+  Improvize: 2

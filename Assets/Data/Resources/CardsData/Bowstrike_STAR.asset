@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Bowstrike_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 1
+    description: Apply Stun, If Invent level > {0}, Hit {1}
+    targetingType: 1
+    actionType: 0400000000000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,6 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Stun: 1
+  InventLevelThreshold: 1
+  Damage: 5

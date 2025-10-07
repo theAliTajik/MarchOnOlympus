@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: BurnDrain_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 7
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 1
+    description: Remove burn, Restore Equal hp
     targetingType: 0
-    actionType: 
+    actionType: 0400000005000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,3 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0

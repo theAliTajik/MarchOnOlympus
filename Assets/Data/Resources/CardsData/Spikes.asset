@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Spikes
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 2
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Block {0}, Bleed {1}
     targetingType: 0
-    actionType: 
+    actionType: 0100000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Block: 5
+  Bleed: 5
