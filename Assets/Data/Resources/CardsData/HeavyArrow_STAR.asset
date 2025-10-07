@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: HeavyArrow_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 11
   Image: {fileID: 0}
-  MStance: 0
+  MStance: 2
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: Hit {0}, Gain {1} Str
+    targetingType: 1
+    actionType: 0000000003000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 17

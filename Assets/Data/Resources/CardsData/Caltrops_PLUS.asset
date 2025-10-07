@@ -15,13 +15,13 @@ MonoBehaviour:
   Name: Caltrops_PLUS
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 2
   Image: {fileID: 0}
-  MStance: 0
+  MStance: 1
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Block {0}, Thorns {1}
     targetingType: 0
     actionType: 
     doesPerish: 0
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Block: 10
+  Thorns: 5

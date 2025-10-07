@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Recalibrate
   Rarity: 0
-  Type: 0
-  CardPack: 0
+  Type: 1
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
-  Ingenius: 0
+  Ingenius: 1
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Whenever you discard a card{0}, Gain 3 Invent{1}, Ingenius{2}
     targetingType: 0
-    actionType: 
+    actionType: 05000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:

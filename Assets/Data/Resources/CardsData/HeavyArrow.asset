@@ -15,23 +15,25 @@ MonoBehaviour:
   Name: HeavyArrow
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 1
   Image: {fileID: 0}
-  MStance: 0
-  Ingenius: 0
+  MStance: 2
+  Ingenius: 1
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: HIt {0}
+    targetingType: 1
+    actionType: 00000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 2
+    description: Hit {0}
     targetingType: 0
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 871f2b71339e74ed09edc8a0d0e4263c, type: 2}
+  - {fileID: 11400000, guid: 258c9462848d148a0be3abef0c294745, type: 2}
+  Damage: 12

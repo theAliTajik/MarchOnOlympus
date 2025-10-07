@@ -18,12 +18,12 @@ MonoBehaviour:
   CardPack: 0
   Image: {fileID: 0}
   MStance: 0
-  Ingenius: 1
+  Ingenius: 0
   normalDataSet:
     energyCost: 2
-    description: Whenever you use a tech card or Invent!, apply {0} bleed, Ingenius
-    targetingType: 1
-    actionType: 04000000
+    description: Block {0}, Bleed {1}
+    targetingType: 2
+    actionType: 0100000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,5 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Bleed: 2
-  ingenious: 1
+  Bleed: 5

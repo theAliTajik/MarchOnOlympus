@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Caltrops
   Rarity: 0
-  Type: 1
-  CardPack: 3
+  Type: 0
+  CardPack: 2
   Image: {fileID: 0}
-  MStance: 2
+  MStance: 1
+  Ingenius: 0
   normalDataSet:
     energyCost: 2
-    description: Whenever you use a tech card, apply {0} bleed
-    targetingType: 1
-    actionType: 04000000
+    description: Block {0}, Thorns {1}
+    targetingType: 0
+    actionType: 01000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -32,5 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  CardType: 1
-  Bleed: 2
+  Upgrades:
+  - {fileID: 11400000, guid: 1082cbaa9154744af8f4eaf2077ec6d7, type: 2}
+  - {fileID: 11400000, guid: d2a113c7d7a884bf09237d12fa7b1ed6, type: 2}
+  CardType: 0
+  Bleed: 0
