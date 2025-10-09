@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e11e366b8f48497f9b14a1af45118cc, type: 3}
+  m_Name: Boom
+  m_EditorClassIdentifier: 
+  Name: Boom
+  Rarity: 0
+  Type: 0
+  CardPack: 12
+  Image: {fileID: 0}
+  MStance: 0
+  Ingenius: 0
+  normalDataSet:
+    energyCost: 2
+    description: Hit {0}, If enemy has vulnerable Burn {1}
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 0
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Upgrades:
+  - {fileID: 11400000, guid: b5ed63e2c439747bd9f82be4ac7459a9, type: 2}
+  - {fileID: 11400000, guid: ecba53e064ed14d01894b14be9e1f7cb, type: 2}
+  Damage: 3
+  Burn: 7

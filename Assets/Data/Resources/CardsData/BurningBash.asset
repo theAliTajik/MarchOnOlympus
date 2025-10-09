@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb78ce14b42a476e9094f674e5767bd, type: 3}
+  m_Name: BurningBash
+  m_EditorClassIdentifier: 
+  Name: BurningBash
+  Rarity: 0
+  Type: 0
+  CardPack: 10
+  Image: {fileID: 0}
+  MStance: 0
+  Ingenius: 0
+  normalDataSet:
+    energyCost: 1
+    description: Remove Burn, Hit {0} x Removed Burn
+    targetingType: 0
+    actionType: 04000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 0
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 0b87a02c7538f4934a3f66f1a6c38fdc, type: 2}
+  - {fileID: 11400000, guid: bffd1883a318642a38280813d2353f5f, type: 2}
+  BurnMultiplier: 2

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea3d849d18bf4a678faf3feeed32299, type: 3}
+  m_Name: Recalculate
+  m_EditorClassIdentifier: 
+  Name: Recalculate
+  Rarity: 0
+  Type: 0
+  CardPack: 13
+  Image: {fileID: 0}
+  MStance: 0
+  Ingenius: 0
+  normalDataSet:
+    energyCost: 0
+    description: Discard {0}, Draw {1}
+    targetingType: 0
+    actionType: 05000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 0
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Upgrades:
+  - {fileID: 11400000, guid: b1e0fd08043b64408919ea1112b14fe4, type: 2}
+  - {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
+  Discard: 1
+  Draw: 1

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c5403816d5d4836a235dd9e243b848, type: 3}
+  m_Name: Oversmart
+  m_EditorClassIdentifier: 
+  Name: Oversmart
+  Rarity: 0
+  Type: 0
+  CardPack: 7
+  Image: {fileID: 0}
+  MStance: 0
+  Ingenius: 0
+  normalDataSet:
+    energyCost: 2
+    description: If evemy is attacking you this turn, Draw {0}, Gain {1} Fortified,
+      Gain {2} energy
+    targetingType: 0
+    actionType: 0300000005000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 0
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Upgrades:
+  - {fileID: 11400000, guid: 6a17f36a98beb4a808b220690e3ee5a9, type: 2}
+  - {fileID: 11400000, guid: 3b6d62cfcd356425ebcfe416d103d677, type: 2}
+  Draw: 3
+  Fortified: 1
+  Energy: 1

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cfa1c79554c4434a2c8eee4001652d, type: 3}
+  m_Name: BurnDrain
+  m_EditorClassIdentifier: 
+  Name: BurnDrain
+  Rarity: 0
+  Type: 0
+  CardPack: 10
+  Image: {fileID: 0}
+  MStance: 0
+  Ingenius: 0
+  normalDataSet:
+    energyCost: 1
+    description: Remove Burn, Apply Bleed of same amount
+    targetingType: 0
+    actionType: 04000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 0
+    description: 
+    targetingType: 0
+    actionType: 
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Upgrades:
+  - {fileID: 11400000, guid: ffa4cc27302e447c38a464042c6abe27, type: 2}
+  - {fileID: 11400000, guid: d4b5a4a2f296041eab524f29ed45630a, type: 2}
