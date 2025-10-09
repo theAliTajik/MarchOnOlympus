@@ -2,16 +2,17 @@ using System;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "PoisonArrow_PLUS", menuName = "Cards/PoisonArrow_PLUSCard")]
-public class PoisonArrow_PLUSCard : BaseCardData
+[CreateAssetMenu(fileName = "ImprovisedArrow_PLUS", menuName = "Cards/ImprovisedArrow_PLUSCard")]
+public class ImprovisedArrow_PLUSCard : BaseCardData
 {
     public int Damage;
-
+    public int Impale;
+    
     protected override Type GetActionType()
     {
-        return typeof(PoisonArrow_PLUSCardAction);
+        return typeof(ImprovisedArrow_PLUSCardAction);
     }
-
+    
     public override string GetDescription(bool isInStance)
     {
         if (isInStance)

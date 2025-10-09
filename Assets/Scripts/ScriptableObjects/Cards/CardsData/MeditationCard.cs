@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Meditation", menuName = "Cards/MeditationCard")]
 public class MeditationCard : BaseCardData
 {
-    public int Damage;
-    
     protected override Type GetActionType()
     {
         return typeof(MeditationCardAction);
@@ -20,7 +18,7 @@ public class MeditationCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description);
         }
     }
 }

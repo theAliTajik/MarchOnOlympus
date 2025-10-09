@@ -3,14 +3,15 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Rejuvenate_STAR", menuName = "Cards/Rejuvenate_STARCard")]
-public class Rejuvenate_STARCard : BaseCardData
+[CreateAssetMenu(fileName = "Rejuvenate", menuName = "Cards/RejuvenateCard")]
+public class RejuvenateCard : BaseCardData
 {
     public int Restore;
+    public int Invent;
     
     protected override Type GetActionType()
     {
-        return typeof(Rejuvenate_STARCardAction);
+        return typeof(RejuvenateCardAction);
     }
     
     public override string GetDescription(bool isInStance)

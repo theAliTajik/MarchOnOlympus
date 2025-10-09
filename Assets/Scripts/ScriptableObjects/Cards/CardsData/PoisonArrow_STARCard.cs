@@ -6,6 +6,7 @@ using UnityEngine;
 public class PoisonArrow_STARCard : BaseCardData
 {
     public int Damage;
+    public int Restore;
     
     protected override Type GetActionType()
     {
@@ -20,7 +21,7 @@ public class PoisonArrow_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Damage, Restore);
         }
     }
 }

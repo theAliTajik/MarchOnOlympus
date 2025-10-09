@@ -23,7 +23,7 @@ public class ChaosProtects_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, DamageButtomRange);
+            return string.Format(normalDataSet.description, ForEeachNumOfCardsInStartingDeck, DamageButtomRange, DamageTopRange);
         }
     }
 }

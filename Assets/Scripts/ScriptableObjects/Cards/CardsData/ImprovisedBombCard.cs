@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Recalibrate", menuName = "Cards/RecalibrateCard")]
-public class RecalibrateCard : BaseCardData
+[CreateAssetMenu(fileName = "ImprovisedBomb", menuName = "Cards/ImprovisedBombCard")]
+public class ImprovisedBombCard : BaseCardData
 {
+    public int Damage;
     public int Invent;
+    public int Impale;
     
     protected override Type GetActionType()
     {
-        return typeof(RecalibrateCardAction);
+        return typeof(ImprovisedBombCardAction);
     }
     
     public override string GetDescription(bool isInStance)
@@ -21,7 +22,7 @@ public class RecalibrateCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Invent);
+            return string.Format(normalDataSet.description, Damage, Invent, Impale);
         }
     }
 }

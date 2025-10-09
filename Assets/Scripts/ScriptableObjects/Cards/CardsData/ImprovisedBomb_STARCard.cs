@@ -2,15 +2,15 @@ using System;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "HeavyArrow_STAR", menuName = "Cards/HeavyArrow_STARCard")]
-public class HeavyArrow_STARCard : BaseCardData
+[CreateAssetMenu(fileName = "ImprovisedBomb_STAR", menuName = "Cards/ImprovisedBomb_STARCard")]
+public class ImprovisedBomb_STARCard : BaseCardData
 {
     public int Damage;
-    public int Strength;
+    public int Vulnerable;
     
     protected override Type GetActionType()
     {
-        return typeof(HeavyArrow_STARCardAction);
+        return typeof(ImprovisedBomb_STARCardAction);
     }
     
     public override string GetDescription(bool isInStance)
@@ -21,7 +21,7 @@ public class HeavyArrow_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage, Strength);
+            return string.Format(normalDataSet.description, Damage, Vulnerable);
         }
     }
 }

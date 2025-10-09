@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 
-[CreateAssetMenu(fileName = "Rejuvenate_STAR", menuName = "Cards/Rejuvenate_STARCard")]
-public class Rejuvenate_STARCard : BaseCardData
+[CreateAssetMenu(fileName = "AllInXYZ", menuName = "Cards/AllInXYZCard")]
+public class AllInXYZCard : BaseCardData
 {
-    public int Restore;
+    public int DamageMultiplier;
     
     protected override Type GetActionType()
     {
-        return typeof(Rejuvenate_STARCardAction);
+        return typeof(AllInXYZCardAction);
     }
     
     public override string GetDescription(bool isInStance)
@@ -21,7 +21,7 @@ public class Rejuvenate_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Restore);
+            return string.Format(normalDataSet.description, DamageMultiplier);
         }
     }
 }

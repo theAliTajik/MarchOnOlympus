@@ -2,15 +2,15 @@ using System;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "HeavyArrow_STAR", menuName = "Cards/HeavyArrow_STARCard")]
-public class HeavyArrow_STARCard : BaseCardData
+[CreateAssetMenu(fileName = "Boomerang", menuName = "Cards/BoomerangCard")]
+public class BoomerangCard : BaseCardData
 {
     public int Damage;
-    public int Strength;
+    public int ExtraDamageEachTimeDiscarded;
     
     protected override Type GetActionType()
     {
-        return typeof(HeavyArrow_STARCardAction);
+        return typeof(BoomerangCardAction);
     }
     
     public override string GetDescription(bool isInStance)
@@ -21,7 +21,7 @@ public class HeavyArrow_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage, Strength);
+            return string.Format(normalDataSet.description, Damage, ExtraDamageEachTimeDiscarded);
         }
     }
 }

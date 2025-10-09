@@ -2,16 +2,17 @@ using System;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "PoisonArrow_PLUS", menuName = "Cards/PoisonArrow_PLUSCard")]
-public class PoisonArrow_PLUSCard : BaseCardData
+[CreateAssetMenu(fileName = "ImprovisedArrow", menuName = "Cards/ImprovisedArrowCard")]
+public class ImprovisedArrowCard : BaseCardData
 {
     public int Damage;
-
+    public int Impale;
+    
     protected override Type GetActionType()
     {
-        return typeof(PoisonArrow_PLUSCardAction);
+        return typeof(ImprovisedArrowCardAction);
     }
-
+    
     public override string GetDescription(bool isInStance)
     {
         if (isInStance)
@@ -20,7 +21,7 @@ public class PoisonArrow_PLUSCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Damage, Impale);
         }
     }
 }

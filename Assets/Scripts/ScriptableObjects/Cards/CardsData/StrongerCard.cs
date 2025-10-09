@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(fileName = "Stronger", menuName = "Cards/StrongerCard")]
 public class StrongerCard : BaseCardData
 {
-    public int Damage;
+    public int Invent;
     
     protected override Type GetActionType()
     {
@@ -20,7 +21,7 @@ public class StrongerCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Invent);
         }
     }
 }
