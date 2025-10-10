@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5af5c371b2f74299bfe2ee810e3b1e6, type: 3}
+  m_Name: Crush
+  m_EditorClassIdentifier: 
+  Name: Crush
+  Rarity: 1
+  Type: 0
+  CardPack: 0
+  Image: {fileID: 21300000, guid: 79315af1d276ec547a22cecc2ea30a60, type: 3}
+  MStance: 3
+  normalDataSet:
+    energyCost: 3
+    description: Perish, Deal {0} Damage
+    targetingType: 1
+    actionType: 00000000
+    doesPerish: 1
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 2
+    description: Costs {0} less
+    targetingType: 1
+    actionType: 05000000
+    doesPerish: 1
+    doesPerishIfNotUsed: 0
+  Damage: 40
+  CostLess: 1

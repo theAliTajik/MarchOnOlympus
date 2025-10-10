@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be015c1785c654e3d89b21ea955d6e6c, type: 3}
+  m_Name: ForcefulHit
+  m_EditorClassIdentifier: 
+  Name: Forceful Hit
+  Rarity: 0
+  Type: 0
+  CardPack: 6
+  Image: {fileID: 21300000, guid: 145af1a409c834789a4db60f1bbee244, type: 3}
+  MStance: 3
+  normalDataSet:
+    energyCost: 2
+    description: Hit {0} Damage, Str effects this card {1} times more
+    targetingType: 1
+    actionType: 0000000005000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  stanceDataSet:
+    energyCost: 2
+    description: Hit {0} Damage, Str effects this card {1} times more
+    targetingType: 1
+    actionType: 0000000005000000
+    doesPerish: 0
+    doesPerishIfNotUsed: 0
+  Damage: 8
+  StrMultiplier: 2
+  StanceDamage: 8
+  StanceStrMultiplier: 3
