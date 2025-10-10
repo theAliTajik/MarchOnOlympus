@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: ImprovisedArrow
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 1
+    description: When discarded or played, Deal Hit {0}, Impale {1}
+    targetingType: 1
+    actionType: 0000000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: b7c61c60402414b3e82fcac32b9afcba, type: 2}
+  - {fileID: 11400000, guid: bcaa9657a629748fa91622f96cf4a39b, type: 2}
+  Damage: 5
+  Impale: 2

@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ImprovisedBomb
   m_EditorClassIdentifier: 
   Name: ImprovisedBomb
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: When discarded or played, Deal {0}, Gain {1} Invent, Impale {2}
+    targetingType: 1
+    actionType: 000000000500000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,9 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: b2e5fe205a4604dd8b91547a335370a0, type: 2}
+  - {fileID: 11400000, guid: 86ce7911718ce4d2eb2da6f54be0ab2a, type: 2}
+  Damage: 15
+  Invent: 10
+  Impale: 5

@@ -22,7 +22,7 @@ MonoBehaviour:
   normalDataSet:
     energyCost: 2
     description: Gain Invent Equal to Bleed on Target, Hit Equal to Invent
-    targetingType: 1
+    targetingType: 2
     actionType: 0500000000000000
     doesPerish: 0
     doesPerishIfNotUsed: 0

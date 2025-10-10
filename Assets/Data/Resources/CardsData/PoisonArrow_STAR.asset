@@ -35,3 +35,4 @@ MonoBehaviour:
     doesPerishIfNotUsed: 0
   Upgrades: []
   Damage: 5
+  Restore: 5

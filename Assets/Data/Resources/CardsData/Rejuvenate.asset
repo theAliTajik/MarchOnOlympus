@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Rejuvenate
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
+    energyCost: 1
+    description: When discarded or played, Restore {0}, Invent {1}
     targetingType: 0
-    actionType: 
+    actionType: 0200000005000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -33,5 +33,8 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades: []
-  Damage: 0
+  Upgrades:
+  - {fileID: 11400000, guid: fe788dfd92e164d6583ca3ad2f3112e5, type: 2}
+  - {fileID: 11400000, guid: 20520a0376dac4b4992fbd2e7cee4f18, type: 2}
+  Restore: 5
+  Invent: 5

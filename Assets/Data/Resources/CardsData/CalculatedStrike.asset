@@ -23,7 +23,7 @@ MonoBehaviour:
     energyCost: 2
     description: Hit {0} Gain Improvise {1}
     targetingType: 1
-    actionType: 
+    actionType: 0000000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:

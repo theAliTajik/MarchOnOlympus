@@ -15,15 +15,16 @@ MonoBehaviour:
   Name: Boomerang_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: 
+    description: Hit {0}, Each time its discarded or played, increase damage by {1},
+      Ingenius
     targetingType: 0
-    actionType: 
+    actionType: 00000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +35,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 1
+  DamageIncrease: 5

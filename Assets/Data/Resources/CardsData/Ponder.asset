@@ -18,6 +18,7 @@ MonoBehaviour:
   CardPack: 0
   Image: {fileID: 0}
   MStance: 2
+  Ingenius: 0
   normalDataSet:
     energyCost: 2
     description: Draw a card, It costs {0} this turn
@@ -32,5 +33,6 @@ MonoBehaviour:
     actionType: 05000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
+  Upgrades: []
   CardDrawAmount: 1
   CardCost: 0
