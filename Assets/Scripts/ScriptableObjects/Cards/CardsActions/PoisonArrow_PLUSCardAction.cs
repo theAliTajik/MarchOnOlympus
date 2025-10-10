@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,6 +18,7 @@ public class PoisonArrow_PLUSCardAction : BaseCardAction
     {
         m_data = (PoisonArrow_PLUSCard)cardData;
         GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameActionHelper.AddMechanicToFighter(target, stack:1, MechanicType.DAZE);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

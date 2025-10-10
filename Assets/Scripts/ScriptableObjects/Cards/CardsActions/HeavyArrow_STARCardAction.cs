@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,6 +18,7 @@ public class HeavyArrow_STARCardAction : BaseCardAction
     {
         m_data = (HeavyArrow_STARCard)cardData;
         GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameActionHelper.AddMechanicToPlayer(m_data.Strength, MechanicType.STRENGTH);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

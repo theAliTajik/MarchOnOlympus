@@ -17,6 +17,7 @@ public class PoisonArrow_STARCardAction : BaseCardAction
     {
         m_data = (PoisonArrow_STARCard)cardData;
         GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameActionHelper.HealPlayer(m_data.Restore);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

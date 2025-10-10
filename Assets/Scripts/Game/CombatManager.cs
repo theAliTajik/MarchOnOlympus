@@ -79,6 +79,7 @@ public class CombatManager : Singleton<CombatManager>
     private int m_damageDoneToPlayersThisTurn;
     private bool m_isGameOver = false;
     private int m_currentTurn = 0;
+    private int m_numOfStartingCards;
 
     // Game Stat Trackers accesors
     public int NumberOfCardsPlayedThisTurn => m_numberOfCardsPlayedThisTurn;
@@ -87,6 +88,7 @@ public class CombatManager : Singleton<CombatManager>
     public int DamageDoneToEnemiesOverAll => m_damageDoneToEnemiesOverAll;
     public bool IsGameOver => m_isGameOver;
     public int damageDoneToPlayersThisTurn => m_damageDoneToPlayersThisTurn;
+    public int NumOfStartingCards => m_numOfStartingCards;
     
     public Energy Energy => m_energy;
 
@@ -138,9 +140,9 @@ public class CombatManager : Singleton<CombatManager>
         m_energy.SetMaxEnergy(GameData.Instance.StartingEnergy);
         MechanicsList list = MechanicsManager.Instance.CreateMechanicsList(m_playerController);
         HUD.Instance.SpawnMechanicsDisplay(m_playerController, list);
-        m_playerController.ConfigFighterHP();
         GameplayEvents.SendGamePhaseChanged(EGamePhase.COMBAT_START);
         m_playerController.HP.OnTookDamage += OnPlayerDamaged;
+        m_numOfStartingCards = m_deck.CountAllCardsIn(CardStorage.ALL);
         StartPlayerTurn();
     }
 
@@ -297,9 +299,16 @@ public class CombatManager : Singleton<CombatManager>
     {
         Deck.MoveCardTo(card, CardStorage.DISCARD_PILE);
         m_uiManager.DiscardCard(card);
+        GameplayEvents.SendOnCardDiscarded(card);
         //GameplayEvents.SendGamePhaseChanged(EGamePhase.CARD_DISCARDED);
     }
 
+    public void DiscardAllCardsInHand()
+    {
+        int numOfCardsInHand = m_deck.CountAllCardsIn(CardStorage.HAND);
+        DiscardCard(numOfCardsInHand);
+    }
+    
     public CardDisplay SpawnCard(string name, CardStorage pileType)
     {
         CardDisplay cardInstance = CardSpawner.Instance.SpawnCardByName(name);

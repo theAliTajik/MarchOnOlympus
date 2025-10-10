@@ -16,7 +16,7 @@ public class Rejuvenate_STARCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (Rejuvenate_STARCard)cardData;
-        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameActionHelper.HealPlayer(m_data.Restore);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

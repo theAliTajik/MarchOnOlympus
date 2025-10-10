@@ -16,7 +16,7 @@ public class LoremasterCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (LoremasterCard)cardData;
-        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameplayEvents.OnImproviseDraw += OnImproviseDraw;
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
@@ -27,4 +27,9 @@ public class LoremasterCardAction : BaseCardAction
         yield break;
     }
 
+    private void OnImproviseDraw(CardDisplay cardDisplay)
+    {
+        var randEnemy = GameInfoHelper.GetRandomEnemy();
+        GameActionHelper.DamageFighter(randEnemy, GameInfoHelper.GetPlayer(), m_data.Damage);
+    }
 }

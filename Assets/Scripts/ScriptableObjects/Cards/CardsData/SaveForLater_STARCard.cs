@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(fileName = "SaveForLater_STAR", menuName = "Cards/SaveForLater_STARCard")]
 public class SaveForLater_STARCard : BaseCardData
 {
-    public int Damage;
+    public int Strength;
     
     protected override Type GetActionType()
     {
@@ -20,7 +21,7 @@ public class SaveForLater_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Strength);
         }
     }
 }

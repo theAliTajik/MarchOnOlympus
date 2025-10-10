@@ -16,7 +16,8 @@ public class StrongerCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (StrongerCard)cardData;
-        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+
+        GameplayEvents.OnFighterDamaged += OnFighterDamaged;
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
@@ -27,4 +28,11 @@ public class StrongerCardAction : BaseCardAction
         yield break;
     }
 
+    private void OnFighterDamaged(Fighter fighter, int damage)
+    {
+        bool isPlayer = GameInfoHelper.CompareFighterToPlayer(fighter);
+        if(!isPlayer) return;
+        
+        GameActionHelper.GainInvent(m_data.Invent);
+    }
 }

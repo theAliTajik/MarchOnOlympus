@@ -17,7 +17,7 @@ public class BurningBloodCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (BurningBloodCard)cardData;
-        int burnStack = GameInfoHelper.GetMechanicStack(GameInfoHelper.GetPlayer(), MechanicType.BURN);
+        int burnStack = GameInfoHelper.GetMechanicStack(target, MechanicType.BURN);
         int damage = burnStack;
         int bleedAmount = burnStack / 2;
         

@@ -53,6 +53,11 @@ public static class GameInfoHelper
         return 1;
     }
     
+    public static int GetNumOfCardsInHand()
+    {
+        return CombatManager.Instance.Deck.CountAllCardsIn(CardStorage.HAND);
+    }
+    
     // ### Cards
     public static class CardsData
     {
@@ -249,8 +254,7 @@ public static class GameInfoHelper
 
     public static int GetStartingDeckSize()
     {
-        //TODO: fix this
-        return 1;
+       return CombatManager.Instance.NumOfStartingCards;
     }
 
     public static int GetCardsEnergy(CardDisplay cardDisplay)
@@ -284,13 +288,23 @@ public static class GameInfoHelper
         return count;
     }
     
-    public static List<CardDisplay> GetCardsWithName(string name)
+    public static List<CardDisplay> GetCardsWithName(string name, bool contains = false)
     {
         List<CardDisplay> currentHand = CombatManager.Instance.Deck.CardPiles[CardStorage.HAND].Cards;
         List<CardDisplay> SelectedCards = new List<CardDisplay>();
         
         foreach (CardDisplay cardDisplay in currentHand)
         {
+            if (contains)
+            {
+                if (cardDisplay.CardInDeck.GetCardName().Contains(name))
+                {
+                    SelectedCards.Add(cardDisplay);
+                }
+
+                continue;
+            }
+            
             if (cardDisplay.CardInDeck.GetCardName() == name)
             {
                 SelectedCards.Add(cardDisplay);
@@ -298,6 +312,12 @@ public static class GameInfoHelper
         }
         return SelectedCards;
     }
+
+    public static List<BaseCardData> GetCardsWithNameFromDB(string name, bool contains = false)
+    {
+        return CardsDb.Instance.GetCardsWithName(name, contains);
+    }
+    
     
     public static List<CardDisplay> GetAllCardsOfPack(CardPacks pack, CardStorage placeToSearch)
     {
@@ -494,6 +514,4 @@ public static class GameInfoHelper
    {
        return MechanicsManager.Instance.GetDebuffsCount(target);
    }
-   
-
 }

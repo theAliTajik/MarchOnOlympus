@@ -193,4 +193,28 @@ public class GameplayEvents
     {
         OnInventPlayed?.Invoke();
     }
+
+    public static event Action<CardDisplay> OnCardDiscarded;
+    public static void SendOnCardDiscarded(CardDisplay cardDisplay)
+    {
+        OnCardDiscarded?.Invoke(cardDisplay);
+    }
+    
+    public static event Action<Fighter, int> OnFighterDamaged;
+    public static void SendOnFighterDamaged(Fighter fighter, int damage)
+    {
+        OnFighterDamaged?.Invoke(fighter, damage);
+    }
+    
+    public static event Action <CardDisplay> OnImproviseDraw;
+    public static void SendOnImproviseDraw(CardDisplay cardDisplay)
+    {
+        OnImproviseDraw?.Invoke(cardDisplay);
+    }
+    
+    public static event Action<BaseCardData> OnCardRewardSelected;
+    public static void SendOnCardRewardSelected(BaseCardData cardData)
+    {
+        OnCardRewardSelected?.Invoke(cardData);
+    }
 }

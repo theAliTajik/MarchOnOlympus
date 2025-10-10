@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using Game;
-using Unity.Plastic.Newtonsoft.Json.Serialization;
-using UnityEngine;
-using UnityEngine.EventSystems;
 using Action = System.Action;
 
 public class BurnDrain_PLUSCardAction : BaseCardAction

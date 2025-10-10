@@ -13,6 +13,9 @@ public abstract class BaseCardAction : MonoBehaviour
 
     public virtual void NotUsed(BaseCardData cardData){}
 
+    public virtual void Discarded(BaseCardData cardData)
+    {
+    }
 
 }
 

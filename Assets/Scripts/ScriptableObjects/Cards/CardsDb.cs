@@ -149,4 +149,12 @@ public class CardsDb : GenericData<CardsDb>
 
         return cardsInPack[UnityEngine.Random.Range(0, cardsInPack.Count)];
     }
+    
+    public List<BaseCardData> GetCardsWithName(string partialName, bool contains)
+    {
+        return AllCards
+            .Where(c => c.clientID.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0)
+            .Select(c => c.CardData)
+            .ToList();
+    }
 }

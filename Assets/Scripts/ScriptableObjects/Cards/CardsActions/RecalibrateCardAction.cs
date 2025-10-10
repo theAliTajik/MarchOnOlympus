@@ -16,7 +16,7 @@ public class RecalibrateCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (RecalibrateCard)cardData;
-        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+        GameplayEvents.OnCardDiscarded += OnCardDiscarded;
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
@@ -27,4 +27,13 @@ public class RecalibrateCardAction : BaseCardAction
         yield break;
     }
 
+    private void OnCardDiscarded(CardDisplay card)
+    {
+        GainInvent();
+    }
+
+    private void GainInvent()
+    {
+        GameplayEvents.SendOnGainInvent(m_data.Invent);
+    }
 }

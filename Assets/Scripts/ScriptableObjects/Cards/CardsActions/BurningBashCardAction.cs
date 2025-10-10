@@ -1,10 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Game;
-using UnityEditor.Build.Content;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class BurningBashCardAction : BaseCardAction
 {

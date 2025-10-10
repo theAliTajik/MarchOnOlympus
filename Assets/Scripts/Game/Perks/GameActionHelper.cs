@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Codice.Client.BaseCommands;
 using Game;
 using Game.ModifiableParam;
 using UnityEngine;
@@ -50,6 +49,11 @@ public static class GameActionHelper
         GameProgress.Instance.Save();
     }
     
+    public static void GainInvent(int invent)
+    {
+        GameplayEvents.SendOnGainInvent(invent);
+    }
+
     // ### Cards
     public static void PlayCard(CardDisplay card, Fighter target)
     {
@@ -84,6 +88,10 @@ public static class GameActionHelper
         CombatManager.Instance.DiscardCard(num);
     }
     
+    public static void DiscardAllCardsInHand()
+    {
+        CombatManager.Instance.DiscardAllCardsInHand();
+    }
 
     public static void ModifyDrawAmount(IParamModifier<int> modifier)
     {
@@ -489,4 +497,9 @@ public static class GameActionHelper
         }
     }
 
+    // SORT
+    public static void GetSelectionFromPlayer(List<BaseCardData> cards)
+    {
+        throw new NotImplementedException();
+    }
 }

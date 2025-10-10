@@ -16,7 +16,8 @@ public class MeditationCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (MeditationCard)cardData;
-        GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
+
+        GameplayEvents.FighterRestoredHP += OnHealthRestore;
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {
@@ -27,4 +28,15 @@ public class MeditationCardAction : BaseCardAction
         yield break;
     }
 
+    private void OnHealthRestore(Fighter fighter, int amount)
+    {
+        if(!GameInfoHelper.CompareFighterToPlayer(fighter)) return;
+        
+        GameActionHelper.GainInvent(amount);
+    }
+
+    private void OnDestroy()
+    {
+        GameplayEvents.FighterRestoredHP -= OnHealthRestore;
+    }
 }
