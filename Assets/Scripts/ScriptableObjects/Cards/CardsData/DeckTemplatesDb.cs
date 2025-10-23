@@ -23,7 +23,7 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
     [ContextMenu("generate a deck for all cards")]
     public void GenerateDeckForAllCards()
     {
-        if (CardsDb.Instance == null || CardsDb.Instance.AllCards == null || CardsDb.Instance.AllCards.Count == 0)
+        if (CardsDb.Instance == null)
         {
             Debug.LogError("CardsDb is empty or not initialized.");
             return;
@@ -32,12 +32,12 @@ public class DeckTemplatesDb : GenericData<DeckTemplatesDb>
         List<PredefinedDeck> deckList = new List<PredefinedDeck>();
         
         int deckIndex = 0;
-        for (int i = 0; i < CardsDb.Instance.AllCards.Count; i += 25)
+        List<BaseCardData> allCards = CardsDb.Instance.GetAllImplementedCards();
+        for (int i = 0; i < allCards.Count; i += 25)
         {
-            List<BaseCardData> cards = CardsDb.Instance.AllCards
+            List<BaseCardData> cards = allCards
                 .Skip(i)
                 .Take(25)
-                .Select(cardInfo => cardInfo.CardData)
                 .ToList();
             
             PredefinedDeck newTemplate = new PredefinedDeck()

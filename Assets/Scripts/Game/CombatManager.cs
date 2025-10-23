@@ -167,6 +167,9 @@ public class CombatManager : Singleton<CombatManager>
     public void StartPlayerTurn()
     {
         m_isPlayersTurn = true;
+        m_damageDoneToEnemiesThisTurn = 0;
+        m_numberOfCardsPlayedThisTurn = 0; 
+        m_extraCardsDrawnThisTurn = 0;
         
         m_enemiesManager.DetermineAllEnemiesIntentions();
 
@@ -216,9 +219,6 @@ public class CombatManager : Singleton<CombatManager>
         m_combatPhase = CombatPhase.TURN_END;
         OnCombatPhaseChanged?.Invoke(m_combatPhase);
         
-        m_damageDoneToEnemiesThisTurn = 0;
-        m_numberOfCardsPlayedThisTurn = 0; 
-        m_extraCardsDrawnThisTurn = 0;
         m_isPlayersTurn = false;
         
         yield return new WaitForSeconds(0.5f);

@@ -39,6 +39,14 @@ public class PlayerController : Fighter
         }
         m_mechanicsList.OnMechanicUpdated += OnMechanicUpdated;
         m_mechanicsList.OnMechanicRemoved += OnMechanicRemoved;
+        
+        ConfigFighterHP();
+        
+        // create 33 and 66 triggers
+        var trigger33 = new FighterHP.TriggerPercentage(33, ETriggerType.BELOW, true, true);
+        var trigger66 = new FighterHP.TriggerPercentage(66, ETriggerType.BELOW, true, true);
+        m_fighterHP.SetTrigger(trigger33);
+        m_fighterHP.SetTrigger(trigger66);
     }
 
     private void OnMechanicRemoved(MechanicType obj)

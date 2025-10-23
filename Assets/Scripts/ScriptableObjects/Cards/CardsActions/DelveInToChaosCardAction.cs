@@ -59,7 +59,7 @@ public class DelveInToChaosCardAction : BaseCardAction
 
         for (int i = 0; i < num; i++)
         {
-            randCards.Add(GameInfoHelper.GetRandomCard());
+            randCards.Add(GameInfoHelper.GetRandomCardData());
         }
 
         if (randCards.Count == 0)

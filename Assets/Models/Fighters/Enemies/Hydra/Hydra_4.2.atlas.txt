@@ -1,6 +1,7 @@
-Hydra_4.2.png
+hydra_4.2.png
 size:2033,1935
 filter:Linear,Linear
+pma:true
 Arm_01
 bounds:1389,1526,268,615
 offsets:0,0,270,615
@@ -101,9 +102,10 @@ path (72)
 bounds:838,1825,252,108
 offsets:0,17,256,128
 
-Hydra_4.2_2.png
+hydra_4.2_2.png
 size:1964,1645
 filter:Linear,Linear
+pma:true
 Arm_02
 bounds:536,750,893,770
 rotate:90

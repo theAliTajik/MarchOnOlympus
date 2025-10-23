@@ -60,6 +60,11 @@ public class Deck : MonoBehaviour
 
     public int CountAllCardsIn(CardStorage cardStorage)
     {
+        if (cardStorage == CardStorage.ALL)
+        {
+            return GetAllCards().Count;
+        }
+        
         return m_piles[cardStorage].Cards.Count;
     }
 
@@ -81,6 +86,7 @@ public class Deck : MonoBehaviour
         {
             List<CardDisplay> ingeniusCards = m_piles[CardStorage.INGENIUS].DrawCards(ingeniusPileCount);
             m_piles[CardStorage.DRAW_PILE].Cards.InsertRange(0, ingeniusCards);
+            GameplayEvents.SendOnCardDrawnFromImprovise();
         }
 
         if (quantity > m_piles[CardStorage.DRAW_PILE].Cards.Count)

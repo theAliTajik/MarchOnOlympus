@@ -1,6 +1,7 @@
 
 using System;
 using System.Reflection;
+using Object = UnityEngine.Object;
 
 public static class Categories
 {
@@ -45,11 +46,20 @@ public static class Categories
         
         public static readonly DebugCategory Energy = new("Energy", Root);
         public static readonly DebugCategory Cards = new("Cards", Root);
+
+        public static class Invent
+        {
+            public static readonly DebugCategory Root = new("Invent", Combat.Root);
+            public static DebugCategory SaveAndLoad = new("SaveAndLoad", Root);
+        }
+
+        public static readonly DebugCategory EnemySelector = new("EnemySelector", Root);
     }
     
     public static class Fighters
     {
         public static readonly DebugCategory Root = new("Fighters", Categories.Root);
+        public static readonly DebugCategory Health = new("Health", Root);
 
         public static class Enemies
         {
@@ -97,8 +107,20 @@ public static class Categories
         public static readonly DebugCategory SFX = new("SFX", Root);
     }
 
-    public static class Invent
+    public static class VoiceOver
     {
-        public static readonly DebugCategory Root = new("Invent", Categories.Root);
+        public static readonly DebugCategory Root = new("VoiceOver", Categories.Root);
+    }
+
+    public class Rewards
+    {
+        public static readonly DebugCategory Root = new("Rewards", Categories.Root);
+    }
+
+    public class Data
+    {
+        public static readonly DebugCategory Root = new("Data", Categories.Root);
+        
+        public static readonly DebugCategory Cards = new("Cards", Root);
     }
 }

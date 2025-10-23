@@ -21,9 +21,9 @@ MonoBehaviour:
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: 
+    description: Spawn an Arrow of your choice
     targetingType: 0
-    actionType: 
+    actionType: 05000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,3 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0

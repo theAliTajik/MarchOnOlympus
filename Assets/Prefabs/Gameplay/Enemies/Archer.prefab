@@ -229,12 +229,14 @@ MonoBehaviour:
   - clientID: Hit
     description: Hit 1, Give 5 Bleed
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: HitTwice
     description: Hit 2 x 5
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

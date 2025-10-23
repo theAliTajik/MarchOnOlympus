@@ -39,7 +39,7 @@ public class AllOutPerk : BasePerk
         bool allCardsMeetCondition = true;
         foreach (CardDisplay cardDisplay in allCardsInHand)
         {
-            bool cardIsOfActionType = GameInfoHelper.IsCard(cardDisplay, m_perkData.actionType);
+            bool cardIsOfActionType = GameInfoHelper.IsCard(cardDisplay, m_perkData.cardActionType);
             if (!cardIsOfActionType)
             {
                 allCardsMeetCondition = false;

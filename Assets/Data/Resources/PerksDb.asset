@@ -185,8 +185,8 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 041a492c19677df4ba647b9d66413eab, type: 3}
     Desc: Temprary Description for Perk progress
     Invisible: 0
-    PerkData: {fileID: 0}
-    IsImplemented: 0
+    PerkData: {fileID: 11400000, guid: 98b128d1e80f848b5bf086df768eaf62, type: 2}
+    IsImplemented: 1
     ActionScriptName: 
   - ClientID: ExplosivePower
     Icon: {fileID: 21300000, guid: 22fa84983f306034cb37010e2124ebf5, type: 3}
@@ -578,6 +578,125 @@ MonoBehaviour:
     Desc: Temprary Description for Perk LoseOneEnergyEventPerk
     Invisible: 1
     PerkData: {fileID: 11400000, guid: 7ce845510d1c3415ea644abce9075a0b, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Phronesis
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Phronesis
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: cd5e9acf1cc4d4a47857601750328180, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: FastThinking
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk FastThinking
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 0a40f81a5aa494ee3937b125feb8910f, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: ProtectiveMeasures
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk ProtectiveMeasures
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 34f4b30f35a6c4d60aa9608585c92136, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: BombMaster
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk BombMaster
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 432a2e77c994643c48bacd234694ca17, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Reflector
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Reflector
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 539bcf7febb884322be5bea7cab5d770, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Fletching
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Fletching
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: eeb19c88e0bb941199470b4858c459c7, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: MultiShot
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk MultiShot
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 75f221e5315b54253a3eddc008b3c2ad, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Metis
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Metis
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 6909d1d61ea9248a18b2a6ea2da459bf, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Resilient
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Resilient
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 33f6fe19d06454972876e0bf6a7263ea, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: LessIsMoreXYZ
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk LessIsMoreXYZ
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 4abc4f1fd67e0401da9150a6d468b7dc, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: SiegeMaster
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk SiegeMaster
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: eb31905a95afc4c8fb245c2d38370312, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Eureka
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Eureka
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: de4947697d51d4113b0c4de4512ebfe1, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: ImprovisedHealing
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk ImprovisedHealing
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 4f018a2c4b9cc4e2ea288180369fca31, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Resourceful
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Resourceful
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 4d40c81c8a159443f8e03219aaf96acd, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: TriggerHappy
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk TriggerHappy
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 1b1e70d98113a42c2942d81c1da162b4, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: MasterArcher
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk MasterArcher
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 0fc19c6fde07a439abb03d9ee4f915bf, type: 2}
+    IsImplemented: 1
+    ActionScriptName: 
+  - ClientID: Polumetis
+    Icon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}
+    Desc: Temprary Description for Perk Polumetis
+    Invisible: 0
+    PerkData: {fileID: 11400000, guid: 935e830312a9645b08cf3eed7905925d, type: 2}
     IsImplemented: 1
     ActionScriptName: 
   defaultIcon: {fileID: 21300000, guid: 0332568e84f0c8447b9ae83c7a4583a2, type: 3}

@@ -29,7 +29,7 @@ public class ChaosProtectsCardAction : BaseCardAction
 
         int fortifiedGain = m_data.Fortified * numOfRepeats;
         int ExileGain = m_data.Exile * numOfRepeats;
-        int IngeniusGain = m_data.Ingenius * numOfRepeats;
+        int IngeniusGain = m_data.IngeniusGain * numOfRepeats;
 
         GameActionHelper.AddMechanicToPlayer(fortifiedGain, MechanicType.FORTIFIED);
         //TODO: EXILE

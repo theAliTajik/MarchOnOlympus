@@ -21,6 +21,8 @@ public class Ajax : BaseEnemy
     [SerializeField] protected MoveData[] m_specialMovesDatas;
 
     [SerializeField] private AjaxMovesData m_data;
+    
+    [SerializeField] private AjaxVoiceOverHandler m_voiceOverHandler;
 
     private int m_DamageBonus = 0;
     private bool m_hasDamageBonus = false;
@@ -39,6 +41,12 @@ public class Ajax : BaseEnemy
         HP.SetTrigger(m_data.Phase2PercentageTrigger);
 
         HP.OnPercentageTrigger += OnHPPercentageTriggred;
+        m_voiceOverHandler.Configure(this);
+    }
+
+    private void Start()
+    {
+        // m_voiceOverHandler.SubscribeToPlayerEvents();
     }
 
     private void OnHPPercentageTriggred(FighterHP.TriggerPercentage percent)

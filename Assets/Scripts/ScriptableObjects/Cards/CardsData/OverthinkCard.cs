@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Overthink", menuName = "Cards/OverthinkCard")]
 public class OverthinkCard : BaseCardData
 {
-    public int InventGain;
+    public int Invent;
     
     protected override Type GetActionType()
     {
@@ -20,7 +20,7 @@ public class OverthinkCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, InventGain);
+            return string.Format(normalDataSet.description, Invent);
         }
     }
 }

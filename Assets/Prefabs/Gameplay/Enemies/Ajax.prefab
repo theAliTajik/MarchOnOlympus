@@ -473,24 +473,28 @@ MonoBehaviour:
   - clientID: pump
     description: Next turn fortified + hit 50
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: 2hit
     description: 2 x hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: hit10
     description: Hit 10 + apply vulnerable
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: block
     description: Block 15
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
@@ -498,10 +502,23 @@ MonoBehaviour:
   - clientID: fortified
     description: fortified + hit 50
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   m_data: {fileID: 11400000, guid: 4440f1cf0f84c4f9caa3f533e9713ab0, type: 2}
+  m_voiceOverHandler:
+    m_voiceOvers:
+    - {fileID: 11400000, guid: 30b47c0514bc14246b90e73e7bee1655, type: 2}
+    - {fileID: 11400000, guid: c46efa772cc8e4a3fbe9e33dadb0b44e, type: 2}
+    - {fileID: 11400000, guid: ea6f8d25a6b0b496da0980b7f41ab53d, type: 2}
+    - {fileID: 11400000, guid: 10f40ec0fe3c74b9d8d25cd4cafe7727, type: 2}
+    - {fileID: 11400000, guid: ebda09aad559a4b4faab20a5daf4e245, type: 2}
+    - {fileID: 11400000, guid: b6de48706a9dc45259af84f8286e1e09, type: 2}
+    - {fileID: 11400000, guid: 204029d1efe064f259dceaaf16acb96d, type: 2}
+    - {fileID: 11400000, guid: 4d5354d79983a45c0891251ebbdefb96, type: 2}
+    - {fileID: 11400000, guid: 332d10775e0f04614942cbffe24cfdce, type: 2}
+    - {fileID: 11400000, guid: ded995a8adefc4b819a2cb6dd91fd74c, type: 2}
 --- !u!114 &7435012441752274052
 MonoBehaviour:
   m_ObjectHideFlags: 0

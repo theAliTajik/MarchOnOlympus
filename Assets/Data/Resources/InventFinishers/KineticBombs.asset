@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951cf5183c224ae2acee62524b20b2a0, type: 3}
+  m_Name: KineticBombs
+  m_EditorClassIdentifier: 
+  ID: KineticBombs
+  InventActions:
+  - {fileID: 11400000, guid: f4b1c8adf98f041b59968976eb6c59ec, type: 2}
+  - {fileID: 11400000, guid: e4ab0dd79112a4f21ba9a649f4f0045e, type: 2}
+  - {fileID: 11400000, guid: fbad9880532094e42bb7b454e879d2b8, type: 2}

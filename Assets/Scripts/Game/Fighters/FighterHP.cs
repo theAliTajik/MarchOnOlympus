@@ -302,6 +302,7 @@ public class FighterHP : MonoBehaviour
 
             if (isTriggerd)
             {
+                CustomDebug.Log($"On Hp Percentage Triggered: {m_triggerPercentages[i].Percentage}", Categories.Fighters.Health);
                 OnPercentageTrigger?.Invoke(m_triggerPercentages[i]);
                 if (m_triggerPercentages[i].RemoveOnTrigger)
                 {

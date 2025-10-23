@@ -20,7 +20,7 @@ public class KillingThoughtfullyCardAction : BaseCardAction
         GameActionHelper.DamageFighter(target, GameInfoHelper.GetPlayer(), m_data.Damage);
         
         GameActionHelper.AddMechanicToFighter(target, m_data.Bleed, MechanicType.BLEED);
-        GameplayEvents.SendOnGainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

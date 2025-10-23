@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Fletcher", menuName = "Cards/FletcherCard")]
 public class FletcherCard : BaseCardData
 {
-    public int Damage;
     
     protected override Type GetActionType()
     {
@@ -20,7 +19,7 @@ public class FletcherCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description);
         }
     }
 }

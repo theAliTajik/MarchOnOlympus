@@ -1,7 +1,9 @@
 
 
+using UnityEngine.Serialization;
+
 public class AllOutPerkData : BasePerkData
 {
-    public CardActionType actionType;
+    [FormerlySerializedAs("actionType")] public CardActionType cardActionType;
     public int EnergyGain;
 }

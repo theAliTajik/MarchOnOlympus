@@ -184,14 +184,14 @@ public class GameplayEvents
     public static event Action<int> OnGainInvent;
     public static void SendOnGainInvent(int amount)
     {
-        CustomDebug.Log("On Gain Invent: {amount}", Categories.Invent.Root);
+        CustomDebug.Log($"On Gain Invent: {amount}", Categories.Combat.Invent.Root);
         OnGainInvent?.Invoke(amount);
     }
     
-    public static event Action OnInventPlayed;
-    public static void SendOnInventPlayed()
+    public static event Action<InventFinisher, int> OnInventPlayed;
+    public static void SendOnInventPlayed(InventFinisher finisher, int level)
     {
-        OnInventPlayed?.Invoke();
+        OnInventPlayed?.Invoke(finisher, level);
     }
 
     public static event Action<CardDisplay> OnCardDiscarded;
@@ -216,5 +216,33 @@ public class GameplayEvents
     public static void SendOnCardRewardSelected(BaseCardData cardData)
     {
         OnCardRewardSelected?.Invoke(cardData);
+    }
+
+    public static event Action<BaseEnemy> OnEnemyIsGoingToAttack;
+
+    public static void SendOnEnemyIsGoingToAttack(BaseEnemy enemy)
+    {
+        OnEnemyIsGoingToAttack?.Invoke(enemy);
+    }
+    
+    public static event Action OnCardDrawnFromImprovise;
+
+    public static void SendOnCardDrawnFromImprovise()
+    {
+        OnCardDrawnFromImprovise?.Invoke();
+    }
+    
+    public static event Action<InventFinisher> OnInventFinisherSelected;
+
+    public static void SendOnInventFinisherSelected(InventFinisher inventFinisher)
+    {
+        OnInventFinisherSelected?.Invoke(inventFinisher);
+    }
+    
+    public static event Action<int> OnCardGainInvent;
+
+    public static void SendOnCardGainInvent(int amount)
+    {
+        OnCardGainInvent?.Invoke(amount);
     }
 }

@@ -60,9 +60,20 @@ public class ToolPerkGenerator : EditorWindow
                 Debug.LogError($"Template file not found at path: {CLASS_TEMPLATE_PATH}");
                 return;
             }
+            
+            if (File.Exists(GenerateClassPath(m_className + "Perk")))
+            {
+                Debug.LogError("Perk already exists.");
+                return;
+            }
 
             GenerateFiles(m_className);
         }
+    }
+    
+    private string GenerateClassPath(string perkName)
+    {
+        return Path.Combine(CLASS_PATH, $"{perkName}.cs");
     }
 
     private void GenerateFiles(string dataClassName)

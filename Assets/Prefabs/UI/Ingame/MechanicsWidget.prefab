@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6785833543417088972}
   - component: {fileID: 4573405991823097194}
   - component: {fileID: 2370660575962248873}
+  - component: {fileID: 7388289154806613417}
   m_Layer: 5
   m_Name: Perk Ad Button
   m_TagString: Untagged
@@ -135,6 +136,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_list: {fileID: 1605671961467327976}
+--- !u!114 &7388289154806613417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739163108586823176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5b23df4defe462fa28f35f1c6fcff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7625348558652502688
 GameObject:
   m_ObjectHideFlags: 0

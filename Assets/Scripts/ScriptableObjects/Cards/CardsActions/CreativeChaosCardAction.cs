@@ -21,7 +21,7 @@ public class CreativeChaosCardAction : BaseCardAction
 
         if (inventGain > 0)
         {
-            GameplayEvents.SendOnGainInvent(inventGain);
+            GameActionHelper.GainInvent(inventGain, GainedByCard:true);
         }
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

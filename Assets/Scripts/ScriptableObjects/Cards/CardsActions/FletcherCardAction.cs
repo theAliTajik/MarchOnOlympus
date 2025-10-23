@@ -1,10 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Codice.Client.BaseCommands;
-using Unity.Collections.LowLevel.Unsafe;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class FletcherCardAction : BaseCardAction
 {

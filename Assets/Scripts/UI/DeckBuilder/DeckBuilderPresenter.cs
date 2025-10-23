@@ -28,9 +28,7 @@ public class DeckBuilderPresenter : MonoBehaviour
         m_view.OnLoadDecks += OnLoadDecksClicked;
         
 
-        m_view.DisplayAllCards(CardsDb.Instance.AllCards
-            .Where(card => card.IsImplemented)
-            .Select(card => card.CardData).ToList());
+        m_view.DisplayAllCards(CardsDb.Instance.GetAllImplementedCards());
     }
 
 
@@ -164,16 +162,16 @@ public class DeckBuilderPresenter : MonoBehaviour
         return cardsTemplate;
     }
 
-    private List<string> GetAllCardsFromScriptableObject()
-    {
-        List<string> cards = new List<string>();
-        cards.AddRange(CardsDb.Instance.AllCards.Select(t => t.clientID));
-
-        if (cards.Count <= 0)
-        {
-            UnityEngine.Debug.Log("no cards found in scriptable object");
-        }
-        return cards;
-
-    }
+    // private List<string> GetAllCardsFromScriptableObject()
+    // {
+    //     List<string> cards = new List<string>();
+    //     cards.AddRange(CardsDb.Instance.AllCards.Select(t => t.clientID));
+    //
+    //     if (cards.Count <= 0)
+    //     {
+    //         UnityEngine.Debug.Log("no cards found in scriptable object");
+    //     }
+    //     return cards;
+    //
+    // }
 }

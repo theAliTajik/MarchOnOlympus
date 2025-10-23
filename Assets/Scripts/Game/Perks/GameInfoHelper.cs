@@ -75,10 +75,9 @@ public static class GameInfoHelper
         return cards[0];
     }
 
-    public static BaseCardData GetRandomCard()
+    public static BaseCardData GetRandomCardData()
     {
-        int rand = UnityEngine.Random.Range(0, CardsDb.Instance.AllCards.Count);
-        BaseCardData randCard = CardsDb.Instance.AllCards[rand].CardData;
+        BaseCardData randCard = CardsDb.Instance.GetRandom();
         return randCard;
     }
     
@@ -216,7 +215,7 @@ public static class GameInfoHelper
         return false;
     }
     
-    public static bool IsCard(CardDisplay card, CardActionType cardType)
+    public static bool IsCard(CardDisplay card, CardActionType type)
     {
         List<CardActionType> NormalCardActionTypes = card.CardInDeck.NormalState.GetActionsTypes();
         List<CardActionType> StanceCardActionTypes = card.CardInDeck.StanceState.GetActionsTypes();
@@ -225,7 +224,7 @@ public static class GameInfoHelper
         
         foreach (CardActionType cardActionType in NormalCardActionTypes)
         {
-            if (cardActionType == cardType)
+            if (cardActionType == type)
             {
                 return true;
             }    
@@ -233,7 +232,7 @@ public static class GameInfoHelper
         
         foreach (CardActionType cardActionType in StanceCardActionTypes)
         {
-            if (cardActionType == cardType)
+            if (cardActionType == type)
             {
                 return true;
             }    
@@ -286,6 +285,13 @@ public static class GameInfoHelper
             }
         }
         return count;
+    }
+    
+    public static bool DoesCardNameContain(string targetName, CardDisplay card)
+    {
+        string cardName = card.CardInDeck.GetCardName();
+        bool contains = cardName.ToLower().Contains(targetName.ToLower());
+        return contains;
     }
     
     public static List<CardDisplay> GetCardsWithName(string name, bool contains = false)
@@ -352,7 +358,14 @@ public static class GameInfoHelper
         return startingDeckSize / Chunk;
     }
 
+    // ### Invent
     
+    public static List<InventFinisher> GetAllInventFinishersOfPack(InventFinisherPack targetPack)
+    {
+        var finishers = InventPresenter.Instance.GetAllFinishers();
+        finishers.RemoveAll(finisher => finisher.Pack != targetPack);
+        return finishers;
+    }
     
     // ### Fighter
     
@@ -514,4 +527,18 @@ public static class GameInfoHelper
    {
        return MechanicsManager.Instance.GetDebuffsCount(target);
    }
+
+   // SORT
+   
+   public static int GetNumOfCardPlayedThisTurn()
+   {
+       return CombatManager.Instance.NumberOfCardsPlayedThisTurn;
+   }
+
+
+   public static void GetInventFinisherSelectionFromPlayer()
+   {
+       InventPresenter.Instance.GetPlayerSelection();
+   }
+
 }

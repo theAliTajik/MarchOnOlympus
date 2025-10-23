@@ -19,7 +19,7 @@ public class FireArrow_STARCardAction : BaseCardAction
         m_data = (FireArrow_STARCard)cardData;
         
         GameActionHelper.AddMechanicToFighter(target, m_data.Burn, MechanicType.BURN);
-        GameplayEvents.SendOnGainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

@@ -6,35 +6,133 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 #if UNITY_EDITOR
+using System.IO;
 using UnityEditor;
 #endif
 using static EnemiesDb;
 
 
+[System.Serializable]
+public class CardsInfo
+{
+    public string clientID;
+    public BaseCardData CardData;
+
+    public bool IsImplemented;
+    public bool IsUpgrade;
+    public bool IsOdyCard;
+}
+
 
 [CreateAssetMenu(fileName = "CardsDb", menuName = "Olympus/Cards Db")]
 public class CardsDb : GenericData<CardsDb>
 {
-    [System.Serializable]
-    public class CardsInfo
-    {
-        public string clientID;
-        public BaseCardData CardData;
+    public List<CardsInfo> AllLoadedCards;
 
-        public bool IsImplemented;
-
-    }
-
-    public List<CardsInfo> AllCards;
+    [SerializeField] private List<CardInfoContainer> AllCardContainers;
     
 
 
 #if UNITY_EDITOR
     private string CardsFolderPath = "Assets/Data/Resources/CardsData";
+
+    [ContextMenu("Separate upgrade cards")]
+    void SeparateUpgradeOdyCards()
+    {
+        List<CardsInfo> upgradeCards = new List<CardsInfo>();
+        foreach (var card in AllLoadedCards)
+        {
+            if(card.clientID.EndsWith("_STAR") || card.clientID.EndsWith("_PLUS"))
+            {
+                upgradeCards.Add(card);
+            }
+        }
+        
+        var upgradeContainer = new CardInfoContainer();
+        upgradeContainer.AllCards = upgradeCards;
+        AllCardContainers.Add(upgradeContainer);
+    }
+
+    [ContextMenu("separate ody cards")]
+    void MoveOdyCardsFromAllToContainer()
+    {
+        var odyCardNames = GetOdyCardNames();
+
+        List<CardsInfo> MatchedCards = new List<CardsInfo>();
+        foreach (var odyCard in odyCardNames)
+        {
+            var match = AllLoadedCards.Find(c => c.clientID.ToLower() == odyCard);
+
+            if (match != null)
+            {
+                MatchedCards.Add(match);
+            }
+            else
+            {
+                Debug.Log("Did not find card: " + odyCard);
+            }
+        }
+        
+        var container = new CardInfoContainer();
+        container.AllCards = MatchedCards;
+        AllCardContainers.Add(container);
+    }
+
+    [ContextMenu("separate Akh cards")]
+    void SeparateAkhCards()
+    {
+        List<CardsInfo> AkhCards = new();
+        foreach (var card in AllLoadedCards)
+        {
+            var cardMatch = AllCardContainers[0].AllCards.Find(x => x.clientID == card.clientID);
+            if (cardMatch != null)
+            {
+                continue;
+            }
+            
+            cardMatch = AllCardContainers[1].AllCards.Find(x => x.clientID == card.clientID);
+            if (cardMatch != null)
+            {
+                continue;
+            }
+            
+            AkhCards.Add(card);
+        }
+        
+        var container = new CardInfoContainer();
+        container.AllCards = AkhCards;
+        AllCardContainers.Add(container);
+    }
+
+
+    List<string> OdyCardNamesReadFromFile()
+    {
+        List<string> odyCardNames = new List<string>(File.ReadAllLines("Assets/Scripts/ScriptableObjects/Cards/OdyCardsName.csv"));
+        return odyCardNames;
+    }
+
+    List<string> ParseOdyCardNames(List<string> odyNames)
+    {
+        List<string> odyCardNames = new List<string>();
+        foreach (var name in odyNames)
+        {
+            odyCardNames.Add(name.ToLower().Replace(" ", ""));
+        }
+        return odyCardNames;
+    }
+
+    List<string> GetOdyCardNames()
+    {
+        var fileName = OdyCardNamesReadFromFile();
+        var parsedNames = ParseOdyCardNames(fileName);
+
+        return parsedNames;
+    }
     
     [ContextMenu("Make cards")]
     void MakeAllCardsFromFolder()
     {
+        // CustomDebug.LogError("This method is not maintained and does not work", Categories.Data.Cards);
         List<BaseCardData> cards = LoadAllScriptableObjects<BaseCardData>(CardsFolderPath);
         
         foreach (BaseCardData card in cards)
@@ -44,7 +142,7 @@ public class CardsDb : GenericData<CardsDb>
             cardInfo.CardData = card;
             cardInfo.IsImplemented = true;
             
-            AllCards.Add(cardInfo);
+            AllLoadedCards.Add(cardInfo);
         }
 
         EditorUtility.SetDirty(this);
@@ -76,10 +174,10 @@ public class CardsDb : GenericData<CardsDb>
     public CardsInfo FindById(string clientId)
     {
         clientId = clientId.ToLower();
-        for(int i = 0; i < AllCards.Count; i++)
+        for(int i = 0; i < AllCardContainers.Count; i++)
         {
-            CardsInfo card = AllCards[i];
-            if (card.clientID.ToLower() == clientId)
+            CardsInfo card = AllCardContainers[i].FindById(clientId);
+            if (card != null)
             {
                 return card;
             }
@@ -90,12 +188,12 @@ public class CardsDb : GenericData<CardsDb>
 
     public string GetID(BaseCardData cardData)
     {
-        for(int i = 0; i < AllCards.Count; i++)
+        for(int i = 0; i < AllCardContainers.Count; i++)
         {
-            CardsInfo card = AllCards[i];
-            if (card.CardData == cardData)
+            string id = AllCardContainers[i].GetID(cardData);
+            if (!string.IsNullOrEmpty(id))
             {
-                return card.clientID;
+                return id;
             }
         }
         
@@ -104,57 +202,64 @@ public class CardsDb : GenericData<CardsDb>
 
     public void CreateCard(BaseCardData cardData)
     {
-        CardsInfo card = new CardsInfo();
-        card.clientID = cardData.name;
-        card.CardData = cardData;
-        
-        card.IsImplemented = true;
-        
-        AllCards.Add(card);
+        AllCardContainers[0].CreateCard(cardData);
     }
 
     public BaseCardData GetRandom()
     {
-        return AllCards[UnityEngine.Random.Range(0, AllCards.Count)].CardData;
+        string id = GameSessionParams.CharacterId;
+        var container = GetCardContainerForCharacter(id);
+        return container.GetRandom();
+    }
+
+    private CardInfoContainer GetCardContainerForCharacter(string charId)
+    {
+        var container = AllCardContainers.Find(CC => CC.GetCharId() == charId);
+        if (container == null)
+        {
+            CustomDebug.LogError("Did not find character with id: " + charId, Categories.Data.Cards);
+        }
+        
+        return container;
     }
 
     public BaseCardData GetRandomLegen()
     {
-        List<BaseCardData> legenCards = new List<BaseCardData>();
-        for (var i = 0; i < AllCards.Count; i++)
-        {
-            if (AllCards[i].CardData.Rarity == CardRarity.LEGENDARY)
-            {
-                legenCards.Add(AllCards[i].CardData);
-            }
-        }
-        
-        return legenCards[UnityEngine.Random.Range(0, legenCards.Count)];
+        string id = GameSessionParams.CharacterId;
+        var container = GetCardContainerForCharacter(id);
+        return container.GetRandomLegen();
     }
     
     public BaseCardData GetRandomFromPacks(List<CardPacks> packs)
     {
-        List<BaseCardData> cardsInPack = new List<BaseCardData>();
-        for (int i = 0; i < AllCards.Count; i++)
-        {
-            foreach (CardPacks pack in packs)
-            {
-                if (pack == AllCards[i].CardData.CardPack)
-                {
-                    cardsInPack.Add(AllCards[i].CardData);
-                    break;
-                }
-            }
-        }
-
-        return cardsInPack[UnityEngine.Random.Range(0, cardsInPack.Count)];
+        string id = GameSessionParams.CharacterId;
+        var container = GetCardContainerForCharacter(id);
+        return container.GetRandomFromPacks(packs);
     }
     
     public List<BaseCardData> GetCardsWithName(string partialName, bool contains)
     {
-        return AllCards
-            .Where(c => c.clientID.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0)
-            .Select(c => c.CardData)
-            .ToList();
+        foreach (var container in AllCardContainers)
+        {
+            var card = container.GetCardsWithName(partialName, contains);
+
+            if (card != null)
+            {
+                return card;
+            }
+        }
+        
+        return null;
+    }
+
+    public List<BaseCardData> GetAllImplementedCards()
+    {
+        List<BaseCardData> allCard = new();
+        foreach (var container in AllCardContainers)
+        {
+            allCard.AddRange(container.GetAllImplementedCards());
+        }
+        
+        return allCard;
     }
 }

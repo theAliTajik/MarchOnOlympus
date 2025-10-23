@@ -19,7 +19,7 @@ public class PonderInBloodCardAction : BaseCardAction
         m_data = (PonderInBloodCard)cardData;
         
         int inventGain = GameInfoHelper.GetMechanicStack(target, MechanicType.BLEED);
-        GameplayEvents.SendOnGainInvent(inventGain);
+        GameActionHelper.GainInvent(inventGain, GainedByCard:true);
         
         int invent = GameInfoHelper.GetInvent();
         int damage = invent;

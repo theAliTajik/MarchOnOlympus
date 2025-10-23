@@ -16,7 +16,7 @@ public class PonderXYZ_PLUSCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (PonderXYZ_PLUSCard)cardData;
-        GameplayEvents.SendOnGainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

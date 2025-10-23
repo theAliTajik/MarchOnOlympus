@@ -19,7 +19,7 @@ public class RepurposeCardAction : BaseCardAction
         
         GameActionHelper.DiscardCard(m_data.Discard);
         GameActionHelper.DrawCards(m_data.Draw);
-        GameplayEvents.SendOnGainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

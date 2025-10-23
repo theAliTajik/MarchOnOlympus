@@ -19,7 +19,10 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameProgress.Instance.OnDataChanged -= OnHonorChanged;
+        if (GameProgress.Instance)
+        {
+            GameProgress.Instance.OnDataChanged -= OnHonorChanged;
+        }
     }
 
     public void OnHonorChanged()

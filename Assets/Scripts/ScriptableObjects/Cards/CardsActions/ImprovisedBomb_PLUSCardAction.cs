@@ -39,7 +39,7 @@ public class ImprovisedBomb_PLUSCardAction : BaseCardAction
     private void PerformAction()
     {
         GameActionHelper.DamageFighter(m_target, GameInfoHelper.GetPlayer(), m_data.Damage);
-        GameActionHelper.GainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         GameActionHelper.AddMechanicToFighter(m_target, m_data.Impale, MechanicType.IMPALE);
     }
 }

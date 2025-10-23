@@ -17,7 +17,7 @@ public class ThinkCardAction : BaseCardAction
     {
         m_data = (ThinkCard)cardData;
         
-        GameplayEvents.SendOnGainInvent(m_data.InventGain);
+        GameActionHelper.GainInvent(m_data.InventGain, GainedByCard:true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

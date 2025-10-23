@@ -37,7 +37,7 @@ public class RejuvenateCardAction : BaseCardAction
     private void PerformAction()
     {
         GameActionHelper.HealPlayer(m_data.Restore);
-        GameActionHelper.GainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
     }
 
 }

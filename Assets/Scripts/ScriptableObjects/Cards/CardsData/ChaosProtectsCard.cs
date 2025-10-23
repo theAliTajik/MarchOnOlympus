@@ -8,7 +8,7 @@ public class ChaosProtectsCard : BaseCardData
     public int ForeachNumOfCards;
     public int Fortified;
     public int Exile;
-    public int Ingenius;
+    public int IngeniusGain;
     
     protected override Type GetActionType()
     {
@@ -23,7 +23,7 @@ public class ChaosProtectsCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, ForeachNumOfCards, Fortified, Exile, Ingenius);
+            return string.Format(normalDataSet.description, ForeachNumOfCards, Fortified, Exile, IngeniusGain);
         }
     }
 }

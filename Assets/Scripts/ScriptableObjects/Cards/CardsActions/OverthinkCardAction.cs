@@ -16,7 +16,7 @@ public class OverthinkCardAction : BaseCardAction
     private IEnumerator WaitAndExecute(Action finishCallback, float delay, BaseCardData cardData, Fighter target, CardDisplay cardDisplay)
     {
         m_data = (OverthinkCard)cardData;
-        GameplayEvents.SendOnGainInvent(m_data.InventGain);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         GameActionHelper.AddMechanicToPlayer(stack:1, MechanicType.DAZE);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

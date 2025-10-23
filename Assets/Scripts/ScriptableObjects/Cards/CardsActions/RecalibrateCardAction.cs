@@ -29,11 +29,6 @@ public class RecalibrateCardAction : BaseCardAction
 
     private void OnCardDiscarded(CardDisplay card)
     {
-        GainInvent();
-    }
-
-    private void GainInvent()
-    {
-        GameplayEvents.SendOnGainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
     }
 }

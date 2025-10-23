@@ -23,7 +23,7 @@ public class StudyWeaknessCardAction : BaseCardAction
         if (enemyDebuffCount > 0)
         {
             GameActionHelper.AddMechanicToPlayer(m_data.Frenzy, MechanicType.FRENZY);
-            GameplayEvents.SendOnGainInvent(m_data.Invent);
+            GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
         }
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

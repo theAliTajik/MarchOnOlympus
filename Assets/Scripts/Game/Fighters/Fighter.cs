@@ -47,6 +47,7 @@ public abstract class Fighter : MonoBehaviour, IDamageable, IHaveHUD, IHaveMecha
 
     protected virtual void OnTookDamage(int damage, bool isCritical)
     {
+        GameplayEvents.SendOnFighterDamaged(this, damage);
     }
 
     protected virtual void OnDeath()

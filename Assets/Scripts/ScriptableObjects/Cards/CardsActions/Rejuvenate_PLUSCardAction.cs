@@ -1,9 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Codice.Client.ChangeTrackerService;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Rejuvenate_PLUSCardAction : BaseCardAction
 {
@@ -37,6 +33,6 @@ public class Rejuvenate_PLUSCardAction : BaseCardAction
     private void PerformAction()
     {
         GameActionHelper.HealPlayer(m_data.Restore);
-        GameActionHelper.GainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
     }
 }

@@ -48,10 +48,15 @@ public static class GameActionHelper
         GameProgress.Instance.Data.PerkIds.Add(PerkID);
         GameProgress.Instance.Save();
     }
-    
-    public static void GainInvent(int invent)
+
+    public static void GainInvent(int invent, bool GainedByCard = false)
     {
         GameplayEvents.SendOnGainInvent(invent);
+
+        if (GainedByCard)
+        {
+            GameplayEvents.SendOnCardGainInvent(invent);
+        }
     }
 
     // ### Cards
@@ -67,7 +72,7 @@ public static class GameActionHelper
 
     public static CardDisplay SpawnRandomCard(CardStorage cardStorage)
     {
-        BaseCardData randCard = GameInfoHelper.GetRandomCard();
+        BaseCardData randCard = GameInfoHelper.GetRandomCardData();
         CardDisplay cardInstance = SpawnCard(randCard, cardStorage);
 
         return cardInstance;
@@ -163,6 +168,13 @@ public static class GameActionHelper
         CombatManager.Instance.SetCardToBePlayedTwice(index);
     }
 
+    public static void SetNextCardToBePlayedTwice() 
+    {
+        int cardsPlayed = GameInfoHelper.CountNumOfCardsPlayed();
+        int nextCardPlayed = cardsPlayed + 1;
+        SetCardToBePlayedTwice(nextCardPlayed);
+    }
+    
     public static void SetCardToBePlayedTwice(CardPacks pack)
     {
         CombatManager.CardsToPlayTwiceData card =
@@ -235,6 +247,12 @@ public static class GameActionHelper
                 Debug.Log("invalid state");
                 break;
         }
+    }
+
+    public static void ModifyCardEnergy(CardDisplay card, IParamModifier<int> modifier)
+    {
+        card.CardInDeck.NormalState.SetEnergyOverride(modifier);
+        card.CardInDeck.StanceState.SetEnergyOverride(modifier);
     }
 
     public static void RemoveCardEnergyOverride(CardDisplay cardDisplay, ECardInDeckState state)
@@ -351,6 +369,12 @@ public static class GameActionHelper
         target.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
     }
 
+    public static void DamageFighter(IDamageable target, Fighter sender, int damage, bool doesReturnToSender = true,
+        bool isArmorPiercing = false)
+    {
+        target.TakeDamage(damage, sender, doesReturnToSender, isArmorPiercing);
+    }
+    
     public static void SetFighterMaxDamagePercentage(Fighter fighter, int percentage)
     {
         fighter.HP.SetDamageGuard(percentage);
@@ -500,6 +524,6 @@ public static class GameActionHelper
     // SORT
     public static void GetSelectionFromPlayer(List<BaseCardData> cards)
     {
-        throw new NotImplementedException();
+        RewardsManager.Instance.GiveCardReward(cards);
     }
 }

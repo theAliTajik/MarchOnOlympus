@@ -16,363 +16,2838 @@ MonoBehaviour:
   - clientID: AggressiveDefender
     CardData: {fileID: 11400000, guid: 51be505117a9b49cf87ec3bcf8d7feaf, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Alacrity
     CardData: {fileID: 11400000, guid: 6964c80df7c244f648f5cec23d61a6e3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AllIn
     CardData: {fileID: 11400000, guid: 6af9788deeeaf42628edf97b16065d93, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Amok
     CardData: {fileID: 11400000, guid: 1a13cec6e2933471bb791a030f9451d0, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AndBlock
     CardData: {fileID: 11400000, guid: 2040f80922f25426685cc8def6a59695, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AndFire
     CardData: {fileID: 11400000, guid: 693f988bc15774b10b785c049e018ef8, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AndParry
     CardData: {fileID: 11400000, guid: 50029bb490eaa464e9b27cd1fa4c9415, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AndSlash
     CardData: {fileID: 11400000, guid: 802c66ff6f17b4c6492a28c19b82b523, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: AndThrust
     CardData: {fileID: 11400000, guid: 5c9f5eb4ed23a4b50a0d2fd59d0302b6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Apprentice
     CardData: {fileID: 11400000, guid: 538746ed1a18a4fd0a11f88b87e81aa2, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Assasin
     CardData: {fileID: 11400000, guid: 2fee07bcb4efb4cc597275331a695c25, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Backstab
     CardData: {fileID: 11400000, guid: 3da25ac9e5deb47bebcb819311f564a6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: BatheInBlood
     CardData: {fileID: 11400000, guid: 789400a0dc1244cdeb4431c8ddec2a81, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: BerserkersRage
     CardData: {fileID: 11400000, guid: adc222f4245624c60af6eff8950a3a0d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: BlackBlood
     CardData: {fileID: 11400000, guid: e63809bc98f1b401c9b495b6158573d3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Blessing
     CardData: {fileID: 11400000, guid: f025fa909d7ba4ca18ff258c23aead2b, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Block
     CardData: {fileID: 11400000, guid: a83d95e39dd644b1a834dd4db4a90494, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: BlockStrike
     CardData: {fileID: 11400000, guid: 25dab01f7e0744e4d82d523bfd22191d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Bulwark
     CardData: {fileID: 11400000, guid: e6f8c41e7f6474e9c99259e35ed1199e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Caltrops
     CardData: {fileID: 11400000, guid: 58b934aef7d4c46e4b7ab62b6247cb8e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ComboStrike
     CardData: {fileID: 11400000, guid: b11486576fdb04dfcba5a3f64fcc03b8, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: CookBook
     CardData: {fileID: 11400000, guid: 40cdb3e0eaf7b4811a0018ca75132ef6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: CripplingHit
     CardData: {fileID: 11400000, guid: 3a5eacd392ee644c29892333a80e7285, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: CriticalStrike
     CardData: {fileID: 11400000, guid: 87e5534b6b21c4b23bfcdd3c75e84388, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Crush
     CardData: {fileID: 11400000, guid: e4bbef249eb3d4d4f813e8d7426af093, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DaggerMaster
     CardData: {fileID: 11400000, guid: 16fbfae437bd64fe3919bb116c927998, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Dash
     CardData: {fileID: 11400000, guid: c9ba32b32d26249b2899aca3a2ae8be8, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DeathWish
     CardData: {fileID: 11400000, guid: ab47d05fb92934e4db51bcc1cff7bd99, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DefenceIsTheKing
     CardData: {fileID: 11400000, guid: fc1d029ad38ce443aba7326297d2ab97, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DesperateMeasures
     CardData: {fileID: 11400000, guid: d80ed068e1d1a4db4b5244a5d6e29614, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DoubleEdgedSword
     CardData: {fileID: 11400000, guid: 516e0439e26a6405e8b37f5087e9174d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DoubleTrouble
     CardData: {fileID: 11400000, guid: 9ebffe80ba15e41dd889342e202fc97f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: DualStrike
     CardData: {fileID: 11400000, guid: 441fa793b78cb4edaa8f09b0756050ae, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Eviscerate
     CardData: {fileID: 11400000, guid: c60d32902fd99417ba32e14d0f183e8d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Execute
     CardData: {fileID: 11400000, guid: 4db69ac6780624e84aa37085861ecf57, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Expert
     CardData: {fileID: 11400000, guid: 39dea322510914420b5d98dcf0e06e63, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Exploit
     CardData: {fileID: 11400000, guid: 0754e600849184d188edd1f62029b903, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ExposedThrust
     CardData: {fileID: 11400000, guid: 03e3e03b1a5a54eb78964f306121ba88, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Finale
     CardData: {fileID: 11400000, guid: ba6a45653bd1145ad9a00e90d9fc026e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Flow
     CardData: {fileID: 11400000, guid: 689fc14e881104997bd765956cd58837, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Footwork
     CardData: {fileID: 11400000, guid: bc5bf194bd8a04b649c8708e25367c46, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ForcefulHit
     CardData: {fileID: 11400000, guid: edd6c96c50cce41f391404585e9b8a81, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Formation
     CardData: {fileID: 11400000, guid: dc3a836faf79440508b0b222a8df291e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: FortuneFavorsTheBold
     CardData: {fileID: 11400000, guid: 2c81132c3331440f48506cd485758ead, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: FrenziedRegeneration
     CardData: {fileID: 11400000, guid: 161d43ee9249743779753b8a5bbc7621, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Fundamentalist
     CardData: {fileID: 11400000, guid: ca58cd3216d2642e39576caf3092b2a5, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Fury
     CardData: {fileID: 11400000, guid: c028c7c79b9db4e5b9f957e9f1ed42b4, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Hector
     CardData: {fileID: 11400000, guid: ffb5aabca5d634a0cbbfcb9f15057ff4, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Ice
     CardData: {fileID: 11400000, guid: 7a9186029d75540a2b5a2a2c4d393927, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: IgnorePain
     CardData: {fileID: 11400000, guid: ec5016a256aee43a9b8638e4f8f96e8e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Imbalance
     CardData: {fileID: 11400000, guid: 7561c3827db1743c1af282f46ef2d6b3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Impale
     CardData: {fileID: 11400000, guid: fe10daa36394f4846956bf69d6aae667, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Improvise
     CardData: {fileID: 11400000, guid: 999cc8af3d113471fa25389ca48b8046, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: KillingHardly
     CardData: {fileID: 11400000, guid: ca9d21dbc2bbe4a81961f9e875598452, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: KillingSoftly
     CardData: {fileID: 11400000, guid: af925377138e44b7ab0c3cafc90b6488, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: LastStand
     CardData: {fileID: 11400000, guid: a8064220dfa23488a826f7ef9bbeaf20, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: MakeThemBleed
     CardData: {fileID: 11400000, guid: 18929c375c2ef446494156c3e5d265bc, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Master
     CardData: {fileID: 11400000, guid: cee7cd28ce48d41f3a647ef099dc42be, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: NoPainNoGain
     CardData: {fileID: 11400000, guid: f462f9c167f8b4787b53e5134142f03b, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: NoRestForTheWicked
     CardData: {fileID: 11400000, guid: 7fafc0944677f4f729f8ec307798aaf0, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Obliterate
     CardData: {fileID: 11400000, guid: 27ca49036a8a84afb91757200519399a, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Offering
     CardData: {fileID: 11400000, guid: 203ceb3fcabd44dd9b8c4ff4f1b729e7, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: OneFitsAll
     CardData: {fileID: 11400000, guid: a69f863b3c4634c539019d65bd405633, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Optimize
     CardData: {fileID: 11400000, guid: f10a18d99e1894f448d43474e481c93a, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Outsmart
     CardData: {fileID: 11400000, guid: 58563e74d7b514a46ae9a575f73f4adb, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Overpower
     CardData: {fileID: 11400000, guid: 6313f1bd24efd45f596a5c32d548f682, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Patience
     CardData: {fileID: 11400000, guid: 5ba8f5a43443c4e59a3c98106daf3eee, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Penetrate
     CardData: {fileID: 11400000, guid: b4b80493768e041dd8b686c075997858, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: PerfectTechnique
     CardData: {fileID: 11400000, guid: f4cd126158557480abba42b22fc7888f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pierce
     CardData: {fileID: 11400000, guid: 41374a9edb9d34cadaef9c8b7e3cf738, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Plan
     CardData: {fileID: 11400000, guid: f24f91c454ac445e3957f68e79f1c504, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Ponder
     CardData: {fileID: 11400000, guid: 285c05c1b52d34704a1dc30b9d5ca78f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: PracticeMakesPerfect
     CardData: {fileID: 11400000, guid: ff034d5e92f694f5f99df332069e8f0f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Preparation
     CardData: {fileID: 11400000, guid: c6db74739f1514f9fb05b4c2b308f590, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: PrizeForBlood
     CardData: {fileID: 11400000, guid: 486d5a09ba1b546abbe6fb4df230b91f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Punisher
     CardData: {fileID: 11400000, guid: ac08489fb78dc4e38a89ebacb1ccd54b, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Ready
     CardData: {fileID: 11400000, guid: 82028ee998b1b45b8af02fa12f00408e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Refresh
     CardData: {fileID: 11400000, guid: 3dfbfdace0f50429686d791bd3b76577, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Rehearsal
     CardData: {fileID: 11400000, guid: 9d77a24feb2944d8dac8aa38cfdfb99e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Remember
     CardData: {fileID: 11400000, guid: 4c98962c97a71488ab4712924ae12ad6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Rend
     CardData: {fileID: 11400000, guid: ea8a347b1918f47ef90c128efe2b0d30, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Render
     CardData: {fileID: 11400000, guid: ff31c956509f14db7aa9d3073f33092f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Repair
     CardData: {fileID: 11400000, guid: d983e5546548d481e986aac31a7ab0d9, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Repetition
     CardData: {fileID: 11400000, guid: 5ef7df993c0dc43729b3f40e0e95ada7, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Resilience
     CardData: {fileID: 11400000, guid: 7b10a159ed870422daac945ce065a511, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: RevelInBlood
     CardData: {fileID: 11400000, guid: b6d4ce89790cc45ecb772e319c32fb2e, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ShakeItOff
     CardData: {fileID: 11400000, guid: b29a12234d7b843ab9962a04d0acee4a, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ShieldBash
     CardData: {fileID: 11400000, guid: 5e25e1cc62f574bd9a37b5264f53b1d4, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ShieldsUp
     CardData: {fileID: 11400000, guid: 2638610b53491470ba3a3d9be66d8da0, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Shuffle
     CardData: {fileID: 11400000, guid: e73e140d9a1ec4ef9bdb8883326eabc6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Slam
     CardData: {fileID: 11400000, guid: 6e5d2e926dc3a4fda98cfc44be7b9e1a, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Smash
     CardData: {fileID: 11400000, guid: 64aa9c70e39d04f87bdb94a1a179b049, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Strike
     CardData: {fileID: 11400000, guid: 9a38ae778c7a34d7694090e50e164d4b, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Study
     CardData: {fileID: 11400000, guid: 707083c80e2cb40ec8eac945cb7031a6, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Swipe
     CardData: {fileID: 11400000, guid: 4b107963e5a9b488586b58003248a410, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: TacticalStrike
     CardData: {fileID: 11400000, guid: 63c24a4baf9a04421b13ab31f783daf4, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Tempering
     CardData: {fileID: 11400000, guid: 89b7bb0dc8f6c42e0a88d52a2f63bf87, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: TheOnlyOption
     CardData: {fileID: 11400000, guid: 096daa1340be3469592ecf4b4f11b8c3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ThirstForBlood
     CardData: {fileID: 11400000, guid: 850191eb2ff5a4c30a9824f8b5e9b77f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: ThornfulBlock
     CardData: {fileID: 11400000, guid: e916ccd2815f3497c9317f285121d76d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Unbroken
     CardData: {fileID: 11400000, guid: 30be1a6adc5be4df79158d8632221ef4, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: UntilTheEnd
     CardData: {fileID: 11400000, guid: 89904b69bd42f4c4d92255962d95483d, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: WeaponsMaster
     CardData: {fileID: 11400000, guid: 62c19b1b85b1d4c72981076b37387a75, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: WellRoundedWarrior
     CardData: {fileID: 11400000, guid: 56e5bcce6f91c431daf0e662d837fe90, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Whetstone
     CardData: {fileID: 11400000, guid: 9f8fe69c449fc442abf6096d619a0a80, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: WrathOfDev
     CardData: {fileID: 11400000, guid: cea12e764018040fc906d00c1ceab2d2, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Honorable
     CardData: {fileID: 11400000, guid: 4f0660b1272284f2baf267795a62b6c7, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: FireArrow
     CardData: {fileID: 11400000, guid: 301116d7de974476fb8af472c8a9a866, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Boom
     CardData: {fileID: 11400000, guid: 59a6103c738474ac9b17bcb98e234de3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pyromaniac
     CardData: {fileID: 11400000, guid: 8d37e4f44777648f39f66db9187d6432, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pyre
     CardData: {fileID: 11400000, guid: 514b2f98286d04d1a89bc359b9dea44a, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Recalculate
     CardData: {fileID: 11400000, guid: 00795b2d770254a0c9b9ca638b474ec2, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: FireArrow_STAR
     CardData: {fileID: 11400000, guid: a95c8377db2014d33a087097ba1223ae, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: FireArrow_PLUS
     CardData: {fileID: 11400000, guid: ee8def811c51843a8addc1222ee93ba0, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Boom_STAR
     CardData: {fileID: 11400000, guid: ecba53e064ed14d01894b14be9e1f7cb, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Boom_PLUS
     CardData: {fileID: 11400000, guid: b5ed63e2c439747bd9f82be4ac7459a9, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pyromaniac_STAR
     CardData: {fileID: 11400000, guid: 457b80c1f61e44a219a65ff00e23e1e0, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pyromaniac_PLUS
     CardData: {fileID: 11400000, guid: 03ff16139f0894f5f96be5ee2365d364, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: CleansingFire
     CardData: {fileID: 11400000, guid: 15baa9281520e49328a45e02ef68413f, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Pyre_PLUS
     CardData: {fileID: 11400000, guid: 3ba8914da3c1644138176562911d73e3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
   - clientID: Repurpose
     CardData: {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
     IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fletcher
+    CardData: {fileID: 11400000, guid: e6c0c80faec4d48f48f2f274012efddd, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  AllLoadedCards:
+  - clientID: AggressiveDefender
+    CardData: {fileID: 11400000, guid: 51be505117a9b49cf87ec3bcf8d7feaf, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Alacrity
+    CardData: {fileID: 11400000, guid: 6964c80df7c244f648f5cec23d61a6e3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AllIn
+    CardData: {fileID: 11400000, guid: 6af9788deeeaf42628edf97b16065d93, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AllInXYZ
+    CardData: {fileID: 11400000, guid: 03ecee7c9c91c4164a72aa74a76edbbc, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Amok
+    CardData: {fileID: 11400000, guid: 1a13cec6e2933471bb791a030f9451d0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AndBlock
+    CardData: {fileID: 11400000, guid: 2040f80922f25426685cc8def6a59695, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AndFire
+    CardData: {fileID: 11400000, guid: 693f988bc15774b10b785c049e018ef8, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AndParry
+    CardData: {fileID: 11400000, guid: 50029bb490eaa464e9b27cd1fa4c9415, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AndSlash
+    CardData: {fileID: 11400000, guid: 802c66ff6f17b4c6492a28c19b82b523, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: AndThrust
+    CardData: {fileID: 11400000, guid: 5c9f5eb4ed23a4b50a0d2fd59d0302b6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Apprentice
+    CardData: {fileID: 11400000, guid: 538746ed1a18a4fd0a11f88b87e81aa2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Arsenal
+    CardData: {fileID: 11400000, guid: 9de7df2271f95467da3b4965d13720fe, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Assasin
+    CardData: {fileID: 11400000, guid: 2fee07bcb4efb4cc597275331a695c25, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Backstab
+    CardData: {fileID: 11400000, guid: 3da25ac9e5deb47bebcb819311f564a6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BatheInBlood
+    CardData: {fileID: 11400000, guid: 789400a0dc1244cdeb4431c8ddec2a81, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BerserkersRage
+    CardData: {fileID: 11400000, guid: adc222f4245624c60af6eff8950a3a0d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BlackBlood
+    CardData: {fileID: 11400000, guid: e63809bc98f1b401c9b495b6158573d3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Blessing
+    CardData: {fileID: 11400000, guid: f025fa909d7ba4ca18ff258c23aead2b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Block
+    CardData: {fileID: 11400000, guid: a83d95e39dd644b1a834dd4db4a90494, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BlockStrike
+    CardData: {fileID: 11400000, guid: 25dab01f7e0744e4d82d523bfd22191d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BloodForKnowledge
+    CardData: {fileID: 11400000, guid: 894c0cdd15a4248f3b8098969fd0d7c0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boom
+    CardData: {fileID: 11400000, guid: 59a6103c738474ac9b17bcb98e234de3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boom_PLUS
+    CardData: {fileID: 11400000, guid: b5ed63e2c439747bd9f82be4ac7459a9, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boom_STAR
+    CardData: {fileID: 11400000, guid: ecba53e064ed14d01894b14be9e1f7cb, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boomerang
+    CardData: {fileID: 11400000, guid: 0e09eb658912a41948a37589c937f60e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boomerang_PLUS
+    CardData: {fileID: 11400000, guid: fda5127b01d574cb7a48f5a8a221e055, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Boomerang_STAR
+    CardData: {fileID: 11400000, guid: f90419917f45243d8961662c6eb3bc87, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Bowstrike
+    CardData: {fileID: 11400000, guid: 505c0257113a842ebb1b03845f1ecdc8, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Bowstrike_PLUS
+    CardData: {fileID: 11400000, guid: 05272798b68c6427b8921dc87fdc8a2a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Bowstrike_STAR
+    CardData: {fileID: 11400000, guid: c752af3d978514b4cac144ab31675d38, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Bulwark
+    CardData: {fileID: 11400000, guid: e6f8c41e7f6474e9c99259e35ed1199e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurnDrain
+    CardData: {fileID: 11400000, guid: 8166cffdc97444b94a1b79bb112058ae, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurnDrain_PLUS
+    CardData: {fileID: 11400000, guid: ffa4cc27302e447c38a464042c6abe27, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurnDrain_STAR
+    CardData: {fileID: 11400000, guid: d4b5a4a2f296041eab524f29ed45630a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurningBash
+    CardData: {fileID: 11400000, guid: ff8cf52088ace4992aaec412db772ec2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurningBash_PLUS
+    CardData: {fileID: 11400000, guid: 0b87a02c7538f4934a3f66f1a6c38fdc, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurningBash_STAR
+    CardData: {fileID: 11400000, guid: bffd1883a318642a38280813d2353f5f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: BurningBlood
+    CardData: {fileID: 11400000, guid: b8a1445b5a8b648efb975c5e536dc7b5, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CalculatedShot
+    CardData: {fileID: 11400000, guid: c1f9a56918f624419964bf0786862aa2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CalculatedShot_PLUS
+    CardData: {fileID: 11400000, guid: 8eef5884b888447d1b2cefc4faef47b1, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CalculatedShot_STAR
+    CardData: {fileID: 11400000, guid: 1741a29e561d647159cfe6c37de7e0f3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CalculatedStrike
+    CardData: {fileID: 11400000, guid: 52bd8748d81394f438009f66fb8098f4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Caltrops
+    CardData: {fileID: 11400000, guid: 58b934aef7d4c46e4b7ab62b6247cb8e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Caltrops_PLUS
+    CardData: {fileID: 11400000, guid: 1082cbaa9154744af8f4eaf2077ec6d7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CaltropsXYZ
+    CardData: {fileID: 11400000, guid: 956e32599dd5a48cc9307074a324996c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ChaosProtects
+    CardData: {fileID: 11400000, guid: 257694d96727740e1a51a418939b091e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ChaosProtects_PLUS
+    CardData: {fileID: 11400000, guid: 11bd4e3def27c4683911574073005458, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ChaosProtects_STAR
+    CardData: {fileID: 11400000, guid: 4a4b79030e10f4e19a3d9d0ff29f93eb, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CleansingFire
+    CardData: {fileID: 11400000, guid: 15baa9281520e49328a45e02ef68413f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ComboStrike
+    CardData: {fileID: 11400000, guid: b11486576fdb04dfcba5a3f64fcc03b8, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CookBook
+    CardData: {fileID: 11400000, guid: 40cdb3e0eaf7b4811a0018ca75132ef6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CreativeChaos
+    CardData: {fileID: 11400000, guid: f0498bb5efd1744cabd767b327f27c1c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CreativeChaos_PLUS
+    CardData: {fileID: 11400000, guid: 0aee947b4cab045bcbdc31e5c6b266db, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CreativeChaos_STAR
+    CardData: {fileID: 11400000, guid: 26a448e84080e448c839ea5fc46da1f2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CripplingHit
+    CardData: {fileID: 11400000, guid: 3a5eacd392ee644c29892333a80e7285, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: CriticalStrike
+    CardData: {fileID: 11400000, guid: 87e5534b6b21c4b23bfcdd3c75e84388, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Crush
+    CardData: {fileID: 11400000, guid: e4bbef249eb3d4d4f813e8d7426af093, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DaggerMaster
+    CardData: {fileID: 11400000, guid: 16fbfae437bd64fe3919bb116c927998, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Dash
+    CardData: {fileID: 11400000, guid: c9ba32b32d26249b2899aca3a2ae8be8, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DeathWish
+    CardData: {fileID: 11400000, guid: ab47d05fb92934e4db51bcc1cff7bd99, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DefenceIsTheKing
+    CardData: {fileID: 11400000, guid: fc1d029ad38ce443aba7326297d2ab97, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DelveInToChaos
+    CardData: {fileID: 11400000, guid: e7c00cc700df9445aab94d630dc6fb67, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DesperateMeasures
+    CardData: {fileID: 11400000, guid: d80ed068e1d1a4db4b5244a5d6e29614, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Devise
+    CardData: {fileID: 11400000, guid: 6c12162e3cf804ec495bc4a6ceca85ec, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DoubleEdgedSword
+    CardData: {fileID: 11400000, guid: 516e0439e26a6405e8b37f5087e9174d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DoubleTrouble
+    CardData: {fileID: 11400000, guid: 9ebffe80ba15e41dd889342e202fc97f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: DualStrike
+    CardData: {fileID: 11400000, guid: 441fa793b78cb4edaa8f09b0756050ae, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Eureka
+    CardData: {fileID: 11400000, guid: cb4a5eeee0e0e4fe0b90a18b0867f7a4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Eviscerate
+    CardData: {fileID: 11400000, guid: c60d32902fd99417ba32e14d0f183e8d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Execute
+    CardData: {fileID: 11400000, guid: 4db69ac6780624e84aa37085861ecf57, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Exhaust
+    CardData: {fileID: 11400000, guid: b781f712ba0c541ddb2c0e0a16421e6f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Expert
+    CardData: {fileID: 11400000, guid: 39dea322510914420b5d98dcf0e06e63, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Exploit
+    CardData: {fileID: 11400000, guid: 0754e600849184d188edd1f62029b903, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ExploitXYZ
+    CardData: {fileID: 11400000, guid: 3a03ea2ae56754b37903f70c74a71ec1, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ExposedThrust
+    CardData: {fileID: 11400000, guid: 03e3e03b1a5a54eb78964f306121ba88, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Finale
+    CardData: {fileID: 11400000, guid: ba6a45653bd1145ad9a00e90d9fc026e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: FireArrow
+    CardData: {fileID: 11400000, guid: 301116d7de974476fb8af472c8a9a866, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: FireArrow_PLUS
+    CardData: {fileID: 11400000, guid: ee8def811c51843a8addc1222ee93ba0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: FireArrow_STAR
+    CardData: {fileID: 11400000, guid: a95c8377db2014d33a087097ba1223ae, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fletcher
+    CardData: {fileID: 11400000, guid: e6c0c80faec4d48f48f2f274012efddd, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fletcher_PLUS
+    CardData: {fileID: 11400000, guid: 95a4c556745bc4730ac5a5d56425de9b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fletcher_STAR
+    CardData: {fileID: 11400000, guid: 2d36059ea674549129872a2373cfcd79, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Flow
+    CardData: {fileID: 11400000, guid: 689fc14e881104997bd765956cd58837, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Footwork
+    CardData: {fileID: 11400000, guid: bc5bf194bd8a04b649c8708e25367c46, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ForcefulHit
+    CardData: {fileID: 11400000, guid: edd6c96c50cce41f391404585e9b8a81, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Formation
+    CardData: {fileID: 11400000, guid: dc3a836faf79440508b0b222a8df291e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: FortuneFavorsTheBold
+    CardData: {fileID: 11400000, guid: 2c81132c3331440f48506cd485758ead, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: FrenziedRegeneration
+    CardData: {fileID: 11400000, guid: 161d43ee9249743779753b8a5bbc7621, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fundamentalist
+    CardData: {fileID: 11400000, guid: ca58cd3216d2642e39576caf3092b2a5, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Fury
+    CardData: {fileID: 11400000, guid: c028c7c79b9db4e5b9f957e9f1ed42b4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Geometry
+    CardData: {fileID: 11400000, guid: ccaf85a66875d49d39740cdcd2a8ab78, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: HeavyArrow
+    CardData: {fileID: 11400000, guid: 209567a5785024be2bc20eb72495d329, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: HeavyArrow_PLUS
+    CardData: {fileID: 11400000, guid: 871f2b71339e74ed09edc8a0d0e4263c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: HeavyArrow_STAR
+    CardData: {fileID: 11400000, guid: 258c9462848d148a0be3abef0c294745, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Hector
+    CardData: {fileID: 11400000, guid: ffb5aabca5d634a0cbbfcb9f15057ff4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Honorable
+    CardData: {fileID: 11400000, guid: 4f0660b1272284f2baf267795a62b6c7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Ice
+    CardData: {fileID: 11400000, guid: 7a9186029d75540a2b5a2a2c4d393927, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: IgnorePain
+    CardData: {fileID: 11400000, guid: ec5016a256aee43a9b8638e4f8f96e8e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Imbalance
+    CardData: {fileID: 11400000, guid: 7561c3827db1743c1af282f46ef2d6b3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Impale
+    CardData: {fileID: 11400000, guid: fe10daa36394f4846956bf69d6aae667, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovedCaltrops
+    CardData: {fileID: 11400000, guid: d2a113c7d7a884bf09237d12fa7b1ed6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Improvise
+    CardData: {fileID: 11400000, guid: 999cc8af3d113471fa25389ca48b8046, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedArrow
+    CardData: {fileID: 11400000, guid: ce0693593d6e448b1ae3c692c458c596, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedArrow_PLUS
+    CardData: {fileID: 11400000, guid: b7c61c60402414b3e82fcac32b9afcba, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedArrow_STAR
+    CardData: {fileID: 11400000, guid: bcaa9657a629748fa91622f96cf4a39b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedBomb
+    CardData: {fileID: 11400000, guid: 0ede5c8f07b2348eeb59b1af116ce8f2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedBomb_PLUS
+    CardData: {fileID: 11400000, guid: b2e5fe205a4604dd8b91547a335370a0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ImprovisedBomb_STAR
+    CardData: {fileID: 11400000, guid: 86ce7911718ce4d2eb2da6f54be0ab2a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Invent_STAR
+    CardData: {fileID: 11400000, guid: 0d764d0cd74694ee0b24c4a48ee79b93, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: KillingHardly
+    CardData: {fileID: 11400000, guid: ca9d21dbc2bbe4a81961f9e875598452, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: KillingSoftly
+    CardData: {fileID: 11400000, guid: af925377138e44b7ab0c3cafc90b6488, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: KillingThoughtfully
+    CardData: {fileID: 11400000, guid: 3d0fad0f3d9904e659318687fa02b734, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: LastStand
+    CardData: {fileID: 11400000, guid: a8064220dfa23488a826f7ef9bbeaf20, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Loremaster
+    CardData: {fileID: 11400000, guid: 0a27b8452cae0436c8e8ed583d08f053, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MakeshiftDefence
+    CardData: {fileID: 11400000, guid: 5c993b629e3204a499e4313180bd3eb6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MakeshiftDefence_PLUS
+    CardData: {fileID: 11400000, guid: 08cfdc68be2814425a1891bb4e5d00c6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MakeshiftDefence_STAR
+    CardData: {fileID: 11400000, guid: acfb0de106aa742e7bc426dddd83f702, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MakeThemBleed
+    CardData: {fileID: 11400000, guid: 18929c375c2ef446494156c3e5d265bc, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MakeThemBleedMore
+    CardData: {fileID: 11400000, guid: f8dda3e2f18494c818023fe14c11dc5a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Master
+    CardData: {fileID: 11400000, guid: cee7cd28ce48d41f3a647ef099dc42be, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Meditation
+    CardData: {fileID: 11400000, guid: 64bf82ed728a641e09ce0d8dc862d125, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MentalQuickness
+    CardData: {fileID: 11400000, guid: 4fa6efd5216b847ac8ebf1ad164ea4d2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: MentalQuickness_PLUS
+    CardData: {fileID: 11400000, guid: f0aebd666511843ac92cc168438e981c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: NoPainNoGain
+    CardData: {fileID: 11400000, guid: f462f9c167f8b4787b53e5134142f03b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: NoRestForTheWicked
+    CardData: {fileID: 11400000, guid: 7fafc0944677f4f729f8ec307798aaf0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Obliterate
+    CardData: {fileID: 11400000, guid: 27ca49036a8a84afb91757200519399a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Offering
+    CardData: {fileID: 11400000, guid: 203ceb3fcabd44dd9b8c4ff4f1b729e7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Offload
+    CardData: {fileID: 11400000, guid: d87007dc6e0284835900e9cf7600e85d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: OneFitsAll
+    CardData: {fileID: 11400000, guid: a69f863b3c4634c539019d65bd405633, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Optimize
+    CardData: {fileID: 11400000, guid: f10a18d99e1894f448d43474e481c93a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Outsmart
+    CardData: {fileID: 11400000, guid: 58563e74d7b514a46ae9a575f73f4adb, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: OverBackstab
+    CardData: {fileID: 11400000, guid: 9058755dad05647c0ba3b8c243972276, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overcalculate
+    CardData: {fileID: 11400000, guid: 7ba75a7a879e54086aebdf4a12298460, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overplan
+    CardData: {fileID: 11400000, guid: 13ab404ccd817496bbf469abaae097bc, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overplan_PLUS
+    CardData: {fileID: 11400000, guid: bceac16c663d144e2b56e4b505cc751d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overplan_STAR
+    CardData: {fileID: 11400000, guid: ddfe005d6628a43d18c5bd67d999685a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overpower
+    CardData: {fileID: 11400000, guid: 6313f1bd24efd45f596a5c32d548f682, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Oversmart
+    CardData: {fileID: 11400000, guid: 82833b1ce39524b1aadd2fa10ca8a14b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Oversmart_PLUS
+    CardData: {fileID: 11400000, guid: 6a17f36a98beb4a808b220690e3ee5a9, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Oversmart_STAR
+    CardData: {fileID: 11400000, guid: 3b6d62cfcd356425ebcfe416d103d677, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Oversmash
+    CardData: {fileID: 11400000, guid: bd5ddaa35eef7407ea0714b9564e8a75, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overstudy
+    CardData: {fileID: 11400000, guid: d8eb7b48697f84ae28827749cc0d4186, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Overthink
+    CardData: {fileID: 11400000, guid: bc194460e657248e19b5ba8de942dda6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Patience
+    CardData: {fileID: 11400000, guid: 5ba8f5a43443c4e59a3c98106daf3eee, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Penetrate
+    CardData: {fileID: 11400000, guid: b4b80493768e041dd8b686c075997858, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PerfectTechnique
+    CardData: {fileID: 11400000, guid: f4cd126158557480abba42b22fc7888f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pierce
+    CardData: {fileID: 11400000, guid: 41374a9edb9d34cadaef9c8b7e3cf738, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PiercingArrow
+    CardData: {fileID: 11400000, guid: a2ffbefa390104784b5cb9b0563df49f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PiercingArrow_PLUS
+    CardData: {fileID: 11400000, guid: 534d640c1500247a396265be50bb0b1b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PiercingArrow_STAR
+    CardData: {fileID: 11400000, guid: 04983a10f034542c7bc6bf0158b8b97a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Plan
+    CardData: {fileID: 11400000, guid: f24f91c454ac445e3957f68e79f1c504, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PoisonArrow
+    CardData: {fileID: 11400000, guid: 7a8f3b952197a4f6e9a288de1a72c12a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PoisonArrow_PLUS
+    CardData: {fileID: 11400000, guid: a99c2a2c05e984321a415ff6cf55919b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PoisonArrow_STAR
+    CardData: {fileID: 11400000, guid: 65e0469be13434c218fbc3958ca978d3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Ponder
+    CardData: {fileID: 11400000, guid: 285c05c1b52d34704a1dc30b9d5ca78f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PonderInBlood
+    CardData: {fileID: 11400000, guid: 06cd1fa6733744d40ac5f59a45645dcb, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PonderXYZ
+    CardData: {fileID: 11400000, guid: 11d6d2c07c37842f0a0a81643be009fb, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PonderXYZ_PLUS
+    CardData: {fileID: 11400000, guid: 0ed1683e9cb95447f9944b56df46cd64, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PonderXYZ_STAR
+    CardData: {fileID: 11400000, guid: 9a2aa815e4dd84cc29ac8c9984cd4712, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PracticeMakesPerfect
+    CardData: {fileID: 11400000, guid: ff034d5e92f694f5f99df332069e8f0f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Preparation
+    CardData: {fileID: 11400000, guid: c6db74739f1514f9fb05b4c2b308f590, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: PrizeForBlood
+    CardData: {fileID: 11400000, guid: 486d5a09ba1b546abbe6fb4df230b91f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Punisher
+    CardData: {fileID: 11400000, guid: ac08489fb78dc4e38a89ebacb1ccd54b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pyre
+    CardData: {fileID: 11400000, guid: 514b2f98286d04d1a89bc359b9dea44a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pyre_PLUS
+    CardData: {fileID: 11400000, guid: 3ba8914da3c1644138176562911d73e3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pyromaniac
+    CardData: {fileID: 11400000, guid: 8d37e4f44777648f39f66db9187d6432, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pyromaniac_PLUS
+    CardData: {fileID: 11400000, guid: 03ff16139f0894f5f96be5ee2365d364, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Pyromaniac_STAR
+    CardData: {fileID: 11400000, guid: 457b80c1f61e44a219a65ff00e23e1e0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Quickness
+    CardData: {fileID: 11400000, guid: dfdffe740f9be4d66bebb84ea948f265, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Quickness_PLUS
+    CardData: {fileID: 11400000, guid: 953c0a6aa07ed4f20b28583dc96e407a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Quickness_STAR
+    CardData: {fileID: 11400000, guid: a58c02acb2aba4cdea55930d9ed4fdc7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: QuickThinking
+    CardData: {fileID: 11400000, guid: 491a4a6f309cd495181356f4fa72a99e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Ready
+    CardData: {fileID: 11400000, guid: 82028ee998b1b45b8af02fa12f00408e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Recalculate
+    CardData: {fileID: 11400000, guid: 00795b2d770254a0c9b9ca638b474ec2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Recalculate_PLUS
+    CardData: {fileID: 11400000, guid: b1e0fd08043b64408919ea1112b14fe4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Recalibrate
+    CardData: {fileID: 11400000, guid: 9b5279b68eecd4f3f90b7ada65334eae, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Refresh
+    CardData: {fileID: 11400000, guid: 3dfbfdace0f50429686d791bd3b76577, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Rehearsal
+    CardData: {fileID: 11400000, guid: 9d77a24feb2944d8dac8aa38cfdfb99e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Rejuvenate
+    CardData: {fileID: 11400000, guid: 20a1e04a66dfc4219bcea2487eead0ba, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Rejuvenate_PLUS
+    CardData: {fileID: 11400000, guid: fe788dfd92e164d6583ca3ad2f3112e5, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Rejuvenate_STAR
+    CardData: {fileID: 11400000, guid: 20520a0376dac4b4992fbd2e7cee4f18, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Remember
+    CardData: {fileID: 11400000, guid: 4c98962c97a71488ab4712924ae12ad6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Rend
+    CardData: {fileID: 11400000, guid: ea8a347b1918f47ef90c128efe2b0d30, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Render
+    CardData: {fileID: 11400000, guid: ff31c956509f14db7aa9d3073f33092f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: RendingMechanism
+    CardData: {fileID: 11400000, guid: 86ed5627169a242ddada3bb17af35eca, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Repair
+    CardData: {fileID: 11400000, guid: d983e5546548d481e986aac31a7ab0d9, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Repetition
+    CardData: {fileID: 11400000, guid: 5ef7df993c0dc43729b3f40e0e95ada7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Repurpose
+    CardData: {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Resilience
+    CardData: {fileID: 11400000, guid: 7b10a159ed870422daac945ce065a511, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: RevelInBlood
+    CardData: {fileID: 11400000, guid: b6d4ce89790cc45ecb772e319c32fb2e, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: SaveForLater
+    CardData: {fileID: 11400000, guid: 76a518bbdc23445938d9ffe81507e018, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: SaveForLater_PLUS
+    CardData: {fileID: 11400000, guid: 77bf8c79f0e2048b08a3eef148717558, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: SaveForLater_STAR
+    CardData: {fileID: 11400000, guid: 060c6927751e44f2b914148fbad36f35, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: SerpentPoison
+    CardData: {fileID: 11400000, guid: 4052ac949b72442af9dc8739c18937f7, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ShakeItOff
+    CardData: {fileID: 11400000, guid: b29a12234d7b843ab9962a04d0acee4a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ShieldBash
+    CardData: {fileID: 11400000, guid: 5e25e1cc62f574bd9a37b5264f53b1d4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ShieldsUp
+    CardData: {fileID: 11400000, guid: 2638610b53491470ba3a3d9be66d8da0, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Shoot
+    CardData: {fileID: 11400000, guid: 79d0a76eeb4304871964705a23c9be97, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Shuffle
+    CardData: {fileID: 11400000, guid: e73e140d9a1ec4ef9bdb8883326eabc6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Slam
+    CardData: {fileID: 11400000, guid: 6e5d2e926dc3a4fda98cfc44be7b9e1a, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Smash
+    CardData: {fileID: 11400000, guid: 64aa9c70e39d04f87bdb94a1a179b049, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Spikes
+    CardData: {fileID: 11400000, guid: 786a5a4c8cdbf4ae5916e2513848f74d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Stasis
+    CardData: {fileID: 11400000, guid: e0dd858c71a3a4e4a9bcd53bf2d26e87, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Strike
+    CardData: {fileID: 11400000, guid: 9a38ae778c7a34d7694090e50e164d4b, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Stronger
+    CardData: {fileID: 11400000, guid: ce9e6b22932c948aeb0ab0877ea9e385, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Study
+    CardData: {fileID: 11400000, guid: 707083c80e2cb40ec8eac945cb7031a6, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: StudyWeakness
+    CardData: {fileID: 11400000, guid: cfab46f021e24484685741b2b4a5d23c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: StudyWeakness_STAR
+    CardData: {fileID: 11400000, guid: 51525439c4fa24ade96780cd63e5914d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Swipe
+    CardData: {fileID: 11400000, guid: 4b107963e5a9b488586b58003248a410, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: TacticalStrike
+    CardData: {fileID: 11400000, guid: 63c24a4baf9a04421b13ab31f783daf4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Tempering
+    CardData: {fileID: 11400000, guid: 89b7bb0dc8f6c42e0a88d52a2f63bf87, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: TheOnlyOption
+    CardData: {fileID: 11400000, guid: 096daa1340be3469592ecf4b4f11b8c3, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Think
+    CardData: {fileID: 11400000, guid: 380161775228b459a8d274ff6bb8265c, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ThirstForBlood
+    CardData: {fileID: 11400000, guid: 850191eb2ff5a4c30a9824f8b5e9b77f, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ThornfulBlock
+    CardData: {fileID: 11400000, guid: e916ccd2815f3497c9317f285121d76d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: ThriveInChaos
+    CardData: {fileID: 11400000, guid: 7e5aaa2411db14b66895da8dc26af937, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Unbroken
+    CardData: {fileID: 11400000, guid: 30be1a6adc5be4df79158d8632221ef4, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: UntilTheEnd
+    CardData: {fileID: 11400000, guid: 89904b69bd42f4c4d92255962d95483d, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: WeaponsMaster
+    CardData: {fileID: 11400000, guid: 62c19b1b85b1d4c72981076b37387a75, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: WellRoundedWarrior
+    CardData: {fileID: 11400000, guid: 56e5bcce6f91c431daf0e662d837fe90, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: Whetstone
+    CardData: {fileID: 11400000, guid: 9f8fe69c449fc442abf6096d619a0a80, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  - clientID: WrathOfDev
+    CardData: {fileID: 11400000, guid: cea12e764018040fc906d00c1ceab2d2, type: 2}
+    IsImplemented: 1
+    IsUpgrade: 0
+    IsOdyCard: 0
+  AllCardContainers:
+  - AllCards:
+    - clientID: AggressiveDefender
+      CardData: {fileID: 11400000, guid: 51be505117a9b49cf87ec3bcf8d7feaf, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Alacrity
+      CardData: {fileID: 11400000, guid: 6964c80df7c244f648f5cec23d61a6e3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AllIn
+      CardData: {fileID: 11400000, guid: 6af9788deeeaf42628edf97b16065d93, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Amok
+      CardData: {fileID: 11400000, guid: 1a13cec6e2933471bb791a030f9451d0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AndBlock
+      CardData: {fileID: 11400000, guid: 2040f80922f25426685cc8def6a59695, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AndFire
+      CardData: {fileID: 11400000, guid: 693f988bc15774b10b785c049e018ef8, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AndParry
+      CardData: {fileID: 11400000, guid: 50029bb490eaa464e9b27cd1fa4c9415, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AndSlash
+      CardData: {fileID: 11400000, guid: 802c66ff6f17b4c6492a28c19b82b523, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AndThrust
+      CardData: {fileID: 11400000, guid: 5c9f5eb4ed23a4b50a0d2fd59d0302b6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Apprentice
+      CardData: {fileID: 11400000, guid: 538746ed1a18a4fd0a11f88b87e81aa2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Assasin
+      CardData: {fileID: 11400000, guid: 2fee07bcb4efb4cc597275331a695c25, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Backstab
+      CardData: {fileID: 11400000, guid: 3da25ac9e5deb47bebcb819311f564a6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BatheInBlood
+      CardData: {fileID: 11400000, guid: 789400a0dc1244cdeb4431c8ddec2a81, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BerserkersRage
+      CardData: {fileID: 11400000, guid: adc222f4245624c60af6eff8950a3a0d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BlackBlood
+      CardData: {fileID: 11400000, guid: e63809bc98f1b401c9b495b6158573d3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Blessing
+      CardData: {fileID: 11400000, guid: f025fa909d7ba4ca18ff258c23aead2b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Block
+      CardData: {fileID: 11400000, guid: a83d95e39dd644b1a834dd4db4a90494, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BlockStrike
+      CardData: {fileID: 11400000, guid: 25dab01f7e0744e4d82d523bfd22191d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Bulwark
+      CardData: {fileID: 11400000, guid: e6f8c41e7f6474e9c99259e35ed1199e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Caltrops
+      CardData: {fileID: 11400000, guid: 58b934aef7d4c46e4b7ab62b6247cb8e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CleansingFire
+      CardData: {fileID: 11400000, guid: 15baa9281520e49328a45e02ef68413f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ComboStrike
+      CardData: {fileID: 11400000, guid: b11486576fdb04dfcba5a3f64fcc03b8, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CookBook
+      CardData: {fileID: 11400000, guid: 40cdb3e0eaf7b4811a0018ca75132ef6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CripplingHit
+      CardData: {fileID: 11400000, guid: 3a5eacd392ee644c29892333a80e7285, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CriticalStrike
+      CardData: {fileID: 11400000, guid: 87e5534b6b21c4b23bfcdd3c75e84388, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Crush
+      CardData: {fileID: 11400000, guid: e4bbef249eb3d4d4f813e8d7426af093, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DaggerMaster
+      CardData: {fileID: 11400000, guid: 16fbfae437bd64fe3919bb116c927998, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Dash
+      CardData: {fileID: 11400000, guid: c9ba32b32d26249b2899aca3a2ae8be8, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DeathWish
+      CardData: {fileID: 11400000, guid: ab47d05fb92934e4db51bcc1cff7bd99, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DefenceIsTheKing
+      CardData: {fileID: 11400000, guid: fc1d029ad38ce443aba7326297d2ab97, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DesperateMeasures
+      CardData: {fileID: 11400000, guid: d80ed068e1d1a4db4b5244a5d6e29614, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DoubleEdgedSword
+      CardData: {fileID: 11400000, guid: 516e0439e26a6405e8b37f5087e9174d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DoubleTrouble
+      CardData: {fileID: 11400000, guid: 9ebffe80ba15e41dd889342e202fc97f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DualStrike
+      CardData: {fileID: 11400000, guid: 441fa793b78cb4edaa8f09b0756050ae, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Eviscerate
+      CardData: {fileID: 11400000, guid: c60d32902fd99417ba32e14d0f183e8d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Execute
+      CardData: {fileID: 11400000, guid: 4db69ac6780624e84aa37085861ecf57, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Expert
+      CardData: {fileID: 11400000, guid: 39dea322510914420b5d98dcf0e06e63, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Exploit
+      CardData: {fileID: 11400000, guid: 0754e600849184d188edd1f62029b903, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ExposedThrust
+      CardData: {fileID: 11400000, guid: 03e3e03b1a5a54eb78964f306121ba88, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Finale
+      CardData: {fileID: 11400000, guid: ba6a45653bd1145ad9a00e90d9fc026e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Flow
+      CardData: {fileID: 11400000, guid: 689fc14e881104997bd765956cd58837, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Footwork
+      CardData: {fileID: 11400000, guid: bc5bf194bd8a04b649c8708e25367c46, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ForcefulHit
+      CardData: {fileID: 11400000, guid: edd6c96c50cce41f391404585e9b8a81, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Formation
+      CardData: {fileID: 11400000, guid: dc3a836faf79440508b0b222a8df291e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: FortuneFavorsTheBold
+      CardData: {fileID: 11400000, guid: 2c81132c3331440f48506cd485758ead, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: FrenziedRegeneration
+      CardData: {fileID: 11400000, guid: 161d43ee9249743779753b8a5bbc7621, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Fundamentalist
+      CardData: {fileID: 11400000, guid: ca58cd3216d2642e39576caf3092b2a5, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Fury
+      CardData: {fileID: 11400000, guid: c028c7c79b9db4e5b9f957e9f1ed42b4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Geometry
+      CardData: {fileID: 11400000, guid: ccaf85a66875d49d39740cdcd2a8ab78, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Hector
+      CardData: {fileID: 11400000, guid: ffb5aabca5d634a0cbbfcb9f15057ff4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Honorable
+      CardData: {fileID: 11400000, guid: 4f0660b1272284f2baf267795a62b6c7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Ice
+      CardData: {fileID: 11400000, guid: 7a9186029d75540a2b5a2a2c4d393927, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: IgnorePain
+      CardData: {fileID: 11400000, guid: ec5016a256aee43a9b8638e4f8f96e8e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Imbalance
+      CardData: {fileID: 11400000, guid: 7561c3827db1743c1af282f46ef2d6b3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Impale
+      CardData: {fileID: 11400000, guid: fe10daa36394f4846956bf69d6aae667, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Improvise
+      CardData: {fileID: 11400000, guid: 999cc8af3d113471fa25389ca48b8046, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: KillingHardly
+      CardData: {fileID: 11400000, guid: ca9d21dbc2bbe4a81961f9e875598452, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: KillingSoftly
+      CardData: {fileID: 11400000, guid: af925377138e44b7ab0c3cafc90b6488, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: LastStand
+      CardData: {fileID: 11400000, guid: a8064220dfa23488a826f7ef9bbeaf20, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MakeThemBleed
+      CardData: {fileID: 11400000, guid: 18929c375c2ef446494156c3e5d265bc, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Master
+      CardData: {fileID: 11400000, guid: cee7cd28ce48d41f3a647ef099dc42be, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: NoPainNoGain
+      CardData: {fileID: 11400000, guid: f462f9c167f8b4787b53e5134142f03b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: NoRestForTheWicked
+      CardData: {fileID: 11400000, guid: 7fafc0944677f4f729f8ec307798aaf0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Obliterate
+      CardData: {fileID: 11400000, guid: 27ca49036a8a84afb91757200519399a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Offering
+      CardData: {fileID: 11400000, guid: 203ceb3fcabd44dd9b8c4ff4f1b729e7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: OneFitsAll
+      CardData: {fileID: 11400000, guid: a69f863b3c4634c539019d65bd405633, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Optimize
+      CardData: {fileID: 11400000, guid: f10a18d99e1894f448d43474e481c93a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Outsmart
+      CardData: {fileID: 11400000, guid: 58563e74d7b514a46ae9a575f73f4adb, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overpower
+      CardData: {fileID: 11400000, guid: 6313f1bd24efd45f596a5c32d548f682, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Patience
+      CardData: {fileID: 11400000, guid: 5ba8f5a43443c4e59a3c98106daf3eee, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Penetrate
+      CardData: {fileID: 11400000, guid: b4b80493768e041dd8b686c075997858, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PerfectTechnique
+      CardData: {fileID: 11400000, guid: f4cd126158557480abba42b22fc7888f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pierce
+      CardData: {fileID: 11400000, guid: 41374a9edb9d34cadaef9c8b7e3cf738, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Plan
+      CardData: {fileID: 11400000, guid: f24f91c454ac445e3957f68e79f1c504, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Ponder
+      CardData: {fileID: 11400000, guid: 285c05c1b52d34704a1dc30b9d5ca78f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PracticeMakesPerfect
+      CardData: {fileID: 11400000, guid: ff034d5e92f694f5f99df332069e8f0f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Preparation
+      CardData: {fileID: 11400000, guid: c6db74739f1514f9fb05b4c2b308f590, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PrizeForBlood
+      CardData: {fileID: 11400000, guid: 486d5a09ba1b546abbe6fb4df230b91f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Punisher
+      CardData: {fileID: 11400000, guid: ac08489fb78dc4e38a89ebacb1ccd54b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Ready
+      CardData: {fileID: 11400000, guid: 82028ee998b1b45b8af02fa12f00408e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Refresh
+      CardData: {fileID: 11400000, guid: 3dfbfdace0f50429686d791bd3b76577, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Rehearsal
+      CardData: {fileID: 11400000, guid: 9d77a24feb2944d8dac8aa38cfdfb99e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Remember
+      CardData: {fileID: 11400000, guid: 4c98962c97a71488ab4712924ae12ad6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Rend
+      CardData: {fileID: 11400000, guid: ea8a347b1918f47ef90c128efe2b0d30, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Render
+      CardData: {fileID: 11400000, guid: ff31c956509f14db7aa9d3073f33092f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Repair
+      CardData: {fileID: 11400000, guid: d983e5546548d481e986aac31a7ab0d9, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Repetition
+      CardData: {fileID: 11400000, guid: 5ef7df993c0dc43729b3f40e0e95ada7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Repurpose
+      CardData: {fileID: 11400000, guid: 819f978994e3b419c99ec39f235f04e3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Resilience
+      CardData: {fileID: 11400000, guid: 7b10a159ed870422daac945ce065a511, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: RevelInBlood
+      CardData: {fileID: 11400000, guid: b6d4ce89790cc45ecb772e319c32fb2e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: SerpentPoison
+      CardData: {fileID: 11400000, guid: 4052ac949b72442af9dc8739c18937f7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ShakeItOff
+      CardData: {fileID: 11400000, guid: b29a12234d7b843ab9962a04d0acee4a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ShieldBash
+      CardData: {fileID: 11400000, guid: 5e25e1cc62f574bd9a37b5264f53b1d4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ShieldsUp
+      CardData: {fileID: 11400000, guid: 2638610b53491470ba3a3d9be66d8da0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Shuffle
+      CardData: {fileID: 11400000, guid: e73e140d9a1ec4ef9bdb8883326eabc6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Slam
+      CardData: {fileID: 11400000, guid: 6e5d2e926dc3a4fda98cfc44be7b9e1a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Smash
+      CardData: {fileID: 11400000, guid: 64aa9c70e39d04f87bdb94a1a179b049, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Spikes
+      CardData: {fileID: 11400000, guid: 786a5a4c8cdbf4ae5916e2513848f74d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Strike
+      CardData: {fileID: 11400000, guid: 9a38ae778c7a34d7694090e50e164d4b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Study
+      CardData: {fileID: 11400000, guid: 707083c80e2cb40ec8eac945cb7031a6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Swipe
+      CardData: {fileID: 11400000, guid: 4b107963e5a9b488586b58003248a410, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: TacticalStrike
+      CardData: {fileID: 11400000, guid: 63c24a4baf9a04421b13ab31f783daf4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Tempering
+      CardData: {fileID: 11400000, guid: 89b7bb0dc8f6c42e0a88d52a2f63bf87, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: TheOnlyOption
+      CardData: {fileID: 11400000, guid: 096daa1340be3469592ecf4b4f11b8c3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ThirstForBlood
+      CardData: {fileID: 11400000, guid: 850191eb2ff5a4c30a9824f8b5e9b77f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ThornfulBlock
+      CardData: {fileID: 11400000, guid: e916ccd2815f3497c9317f285121d76d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Unbroken
+      CardData: {fileID: 11400000, guid: 30be1a6adc5be4df79158d8632221ef4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: UntilTheEnd
+      CardData: {fileID: 11400000, guid: 89904b69bd42f4c4d92255962d95483d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: WeaponsMaster
+      CardData: {fileID: 11400000, guid: 62c19b1b85b1d4c72981076b37387a75, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: WellRoundedWarrior
+      CardData: {fileID: 11400000, guid: 56e5bcce6f91c431daf0e662d837fe90, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Whetstone
+      CardData: {fileID: 11400000, guid: 9f8fe69c449fc442abf6096d619a0a80, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: WrathOfDev
+      CardData: {fileID: 11400000, guid: cea12e764018040fc906d00c1ceab2d2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    m_CharacterId: Akhilleus
+  - AllCards:
+    - clientID: PonderXYZ
+      CardData: {fileID: 11400000, guid: 11d6d2c07c37842f0a0a81643be009fb, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overthink
+      CardData: {fileID: 11400000, guid: bc194460e657248e19b5ba8de942dda6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Shoot
+      CardData: {fileID: 11400000, guid: 79d0a76eeb4304871964705a23c9be97, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Devise
+      CardData: {fileID: 11400000, guid: 6c12162e3cf804ec495bc4a6ceca85ec, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Think
+      CardData: {fileID: 11400000, guid: 380161775228b459a8d274ff6bb8265c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PiercingArrow
+      CardData: {fileID: 11400000, guid: a2ffbefa390104784b5cb9b0563df49f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Exhaust
+      CardData: {fileID: 11400000, guid: b781f712ba0c541ddb2c0e0a16421e6f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MakeThemBleedMore
+      CardData: {fileID: 11400000, guid: f8dda3e2f18494c818023fe14c11dc5a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovedCaltrops
+      CardData: {fileID: 11400000, guid: d2a113c7d7a884bf09237d12fa7b1ed6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurningBlood
+      CardData: {fileID: 11400000, guid: b8a1445b5a8b648efb975c5e536dc7b5, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PonderInBlood
+      CardData: {fileID: 11400000, guid: 06cd1fa6733744d40ac5f59a45645dcb, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: KillingThoughtfully
+      CardData: {fileID: 11400000, guid: 3d0fad0f3d9904e659318687fa02b734, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BloodForKnowledge
+      CardData: {fileID: 11400000, guid: 894c0cdd15a4248f3b8098969fd0d7c0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: RendingMechanism
+      CardData: {fileID: 11400000, guid: 86ed5627169a242ddada3bb17af35eca, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overcalculate
+      CardData: {fileID: 11400000, guid: 7ba75a7a879e54086aebdf4a12298460, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Oversmash
+      CardData: {fileID: 11400000, guid: bd5ddaa35eef7407ea0714b9564e8a75, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Bowstrike
+      CardData: {fileID: 11400000, guid: 505c0257113a842ebb1b03845f1ecdc8, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overplan
+      CardData: {fileID: 11400000, guid: 13ab404ccd817496bbf469abaae097bc, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Oversmart
+      CardData: {fileID: 11400000, guid: 82833b1ce39524b1aadd2fa10ca8a14b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overstudy
+      CardData: {fileID: 11400000, guid: d8eb7b48697f84ae28827749cc0d4186, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ExploitXYZ
+      CardData: {fileID: 11400000, guid: 3a03ea2ae56754b37903f70c74a71ec1, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: OverBackstab
+      CardData: {fileID: 11400000, guid: 9058755dad05647c0ba3b8c243972276, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: HeavyArrow
+      CardData: {fileID: 11400000, guid: 209567a5785024be2bc20eb72495d329, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Fletcher
+      CardData: {fileID: 11400000, guid: e6c0c80faec4d48f48f2f274012efddd, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PoisonArrow
+      CardData: {fileID: 11400000, guid: 7a8f3b952197a4f6e9a288de1a72c12a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: SaveForLater
+      CardData: {fileID: 11400000, guid: 76a518bbdc23445938d9ffe81507e018, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CreativeChaos
+      CardData: {fileID: 11400000, guid: f0498bb5efd1744cabd767b327f27c1c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: StudyWeakness
+      CardData: {fileID: 11400000, guid: cfab46f021e24484685741b2b4a5d23c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ChaosProtects
+      CardData: {fileID: 11400000, guid: 257694d96727740e1a51a418939b091e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurnDrain
+      CardData: {fileID: 11400000, guid: 8166cffdc97444b94a1b79bb112058ae, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Eureka
+      CardData: {fileID: 11400000, guid: cb4a5eeee0e0e4fe0b90a18b0867f7a4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurningBash
+      CardData: {fileID: 11400000, guid: ff8cf52088ace4992aaec412db772ec2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CalculatedShot
+      CardData: {fileID: 11400000, guid: c1f9a56918f624419964bf0786862aa2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: FireArrow
+      CardData: {fileID: 11400000, guid: 301116d7de974476fb8af472c8a9a866, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Boom
+      CardData: {fileID: 11400000, guid: 59a6103c738474ac9b17bcb98e234de3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pyromaniac
+      CardData: {fileID: 11400000, guid: 8d37e4f44777648f39f66db9187d6432, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pyre
+      CardData: {fileID: 11400000, guid: 514b2f98286d04d1a89bc359b9dea44a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Recalculate
+      CardData: {fileID: 11400000, guid: 00795b2d770254a0c9b9ca638b474ec2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: AllInXYZ
+      CardData: {fileID: 11400000, guid: 03ecee7c9c91c4164a72aa74a76edbbc, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Recalibrate
+      CardData: {fileID: 11400000, guid: 9b5279b68eecd4f3f90b7ada65334eae, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedArrow
+      CardData: {fileID: 11400000, guid: ce0693593d6e448b1ae3c692c458c596, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MakeshiftDefence
+      CardData: {fileID: 11400000, guid: 5c993b629e3204a499e4313180bd3eb6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedBomb
+      CardData: {fileID: 11400000, guid: 0ede5c8f07b2348eeb59b1af116ce8f2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Rejuvenate
+      CardData: {fileID: 11400000, guid: 20a1e04a66dfc4219bcea2487eead0ba, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Boomerang
+      CardData: {fileID: 11400000, guid: 0e09eb658912a41948a37589c937f60e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Quickness
+      CardData: {fileID: 11400000, guid: dfdffe740f9be4d66bebb84ea948f265, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MentalQuickness
+      CardData: {fileID: 11400000, guid: 4fa6efd5216b847ac8ebf1ad164ea4d2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CaltropsXYZ
+      CardData: {fileID: 11400000, guid: 956e32599dd5a48cc9307074a324996c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ThriveInChaos
+      CardData: {fileID: 11400000, guid: 7e5aaa2411db14b66895da8dc26af937, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: DelveInToChaos
+      CardData: {fileID: 11400000, guid: e7c00cc700df9445aab94d630dc6fb67, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Meditation
+      CardData: {fileID: 11400000, guid: 64bf82ed728a641e09ce0d8dc862d125, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Stronger
+      CardData: {fileID: 11400000, guid: ce9e6b22932c948aeb0ab0877ea9e385, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CalculatedStrike
+      CardData: {fileID: 11400000, guid: 52bd8748d81394f438009f66fb8098f4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: QuickThinking
+      CardData: {fileID: 11400000, guid: 491a4a6f309cd495181356f4fa72a99e, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Arsenal
+      CardData: {fileID: 11400000, guid: 9de7df2271f95467da3b4965d13720fe, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Loremaster
+      CardData: {fileID: 11400000, guid: 0a27b8452cae0436c8e8ed583d08f053, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Offload
+      CardData: {fileID: 11400000, guid: d87007dc6e0284835900e9cf7600e85d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Stasis
+      CardData: {fileID: 11400000, guid: e0dd858c71a3a4e4a9bcd53bf2d26e87, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    m_CharacterId: Odysseus
+  - AllCards:
+    - clientID: Boom_PLUS
+      CardData: {fileID: 11400000, guid: b5ed63e2c439747bd9f82be4ac7459a9, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Boom_STAR
+      CardData: {fileID: 11400000, guid: ecba53e064ed14d01894b14be9e1f7cb, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Boomerang_PLUS
+      CardData: {fileID: 11400000, guid: fda5127b01d574cb7a48f5a8a221e055, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Boomerang_STAR
+      CardData: {fileID: 11400000, guid: f90419917f45243d8961662c6eb3bc87, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Bowstrike_PLUS
+      CardData: {fileID: 11400000, guid: 05272798b68c6427b8921dc87fdc8a2a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Bowstrike_STAR
+      CardData: {fileID: 11400000, guid: c752af3d978514b4cac144ab31675d38, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurnDrain_PLUS
+      CardData: {fileID: 11400000, guid: ffa4cc27302e447c38a464042c6abe27, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurnDrain_STAR
+      CardData: {fileID: 11400000, guid: d4b5a4a2f296041eab524f29ed45630a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurningBash_PLUS
+      CardData: {fileID: 11400000, guid: 0b87a02c7538f4934a3f66f1a6c38fdc, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: BurningBash_STAR
+      CardData: {fileID: 11400000, guid: bffd1883a318642a38280813d2353f5f, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CalculatedShot_PLUS
+      CardData: {fileID: 11400000, guid: 8eef5884b888447d1b2cefc4faef47b1, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CalculatedShot_STAR
+      CardData: {fileID: 11400000, guid: 1741a29e561d647159cfe6c37de7e0f3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Caltrops_PLUS
+      CardData: {fileID: 11400000, guid: 1082cbaa9154744af8f4eaf2077ec6d7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ChaosProtects_PLUS
+      CardData: {fileID: 11400000, guid: 11bd4e3def27c4683911574073005458, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ChaosProtects_STAR
+      CardData: {fileID: 11400000, guid: 4a4b79030e10f4e19a3d9d0ff29f93eb, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CreativeChaos_PLUS
+      CardData: {fileID: 11400000, guid: 0aee947b4cab045bcbdc31e5c6b266db, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: CreativeChaos_STAR
+      CardData: {fileID: 11400000, guid: 26a448e84080e448c839ea5fc46da1f2, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: FireArrow_PLUS
+      CardData: {fileID: 11400000, guid: ee8def811c51843a8addc1222ee93ba0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: FireArrow_STAR
+      CardData: {fileID: 11400000, guid: a95c8377db2014d33a087097ba1223ae, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Fletcher_PLUS
+      CardData: {fileID: 11400000, guid: 95a4c556745bc4730ac5a5d56425de9b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Fletcher_STAR
+      CardData: {fileID: 11400000, guid: 2d36059ea674549129872a2373cfcd79, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: HeavyArrow_PLUS
+      CardData: {fileID: 11400000, guid: 871f2b71339e74ed09edc8a0d0e4263c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: HeavyArrow_STAR
+      CardData: {fileID: 11400000, guid: 258c9462848d148a0be3abef0c294745, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedArrow_PLUS
+      CardData: {fileID: 11400000, guid: b7c61c60402414b3e82fcac32b9afcba, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedArrow_STAR
+      CardData: {fileID: 11400000, guid: bcaa9657a629748fa91622f96cf4a39b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedBomb_PLUS
+      CardData: {fileID: 11400000, guid: b2e5fe205a4604dd8b91547a335370a0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: ImprovisedBomb_STAR
+      CardData: {fileID: 11400000, guid: 86ce7911718ce4d2eb2da6f54be0ab2a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Invent_STAR
+      CardData: {fileID: 11400000, guid: 0d764d0cd74694ee0b24c4a48ee79b93, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MakeshiftDefence_PLUS
+      CardData: {fileID: 11400000, guid: 08cfdc68be2814425a1891bb4e5d00c6, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MakeshiftDefence_STAR
+      CardData: {fileID: 11400000, guid: acfb0de106aa742e7bc426dddd83f702, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: MentalQuickness_PLUS
+      CardData: {fileID: 11400000, guid: f0aebd666511843ac92cc168438e981c, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overplan_PLUS
+      CardData: {fileID: 11400000, guid: bceac16c663d144e2b56e4b505cc751d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Overplan_STAR
+      CardData: {fileID: 11400000, guid: ddfe005d6628a43d18c5bd67d999685a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Oversmart_PLUS
+      CardData: {fileID: 11400000, guid: 6a17f36a98beb4a808b220690e3ee5a9, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Oversmart_STAR
+      CardData: {fileID: 11400000, guid: 3b6d62cfcd356425ebcfe416d103d677, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PiercingArrow_PLUS
+      CardData: {fileID: 11400000, guid: 534d640c1500247a396265be50bb0b1b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PiercingArrow_STAR
+      CardData: {fileID: 11400000, guid: 04983a10f034542c7bc6bf0158b8b97a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PoisonArrow_PLUS
+      CardData: {fileID: 11400000, guid: a99c2a2c05e984321a415ff6cf55919b, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PoisonArrow_STAR
+      CardData: {fileID: 11400000, guid: 65e0469be13434c218fbc3958ca978d3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PonderXYZ_PLUS
+      CardData: {fileID: 11400000, guid: 0ed1683e9cb95447f9944b56df46cd64, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: PonderXYZ_STAR
+      CardData: {fileID: 11400000, guid: 9a2aa815e4dd84cc29ac8c9984cd4712, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pyre_PLUS
+      CardData: {fileID: 11400000, guid: 3ba8914da3c1644138176562911d73e3, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pyromaniac_PLUS
+      CardData: {fileID: 11400000, guid: 03ff16139f0894f5f96be5ee2365d364, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Pyromaniac_STAR
+      CardData: {fileID: 11400000, guid: 457b80c1f61e44a219a65ff00e23e1e0, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Quickness_PLUS
+      CardData: {fileID: 11400000, guid: 953c0a6aa07ed4f20b28583dc96e407a, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Quickness_STAR
+      CardData: {fileID: 11400000, guid: a58c02acb2aba4cdea55930d9ed4fdc7, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Recalculate_PLUS
+      CardData: {fileID: 11400000, guid: b1e0fd08043b64408919ea1112b14fe4, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Rejuvenate_PLUS
+      CardData: {fileID: 11400000, guid: fe788dfd92e164d6583ca3ad2f3112e5, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: Rejuvenate_STAR
+      CardData: {fileID: 11400000, guid: 20520a0376dac4b4992fbd2e7cee4f18, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: SaveForLater_PLUS
+      CardData: {fileID: 11400000, guid: 77bf8c79f0e2048b08a3eef148717558, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: SaveForLater_STAR
+      CardData: {fileID: 11400000, guid: 060c6927751e44f2b914148fbad36f35, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    - clientID: StudyWeakness_STAR
+      CardData: {fileID: 11400000, guid: 51525439c4fa24ade96780cd63e5914d, type: 2}
+      IsImplemented: 1
+      IsUpgrade: 0
+      IsOdyCard: 0
+    m_CharacterId: Ody_Upgrades

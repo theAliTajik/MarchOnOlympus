@@ -4,32 +4,53 @@ using UnityEngine;
 
 
 
-public class RewardsManager : MonoBehaviour
+public class RewardsManager : Singleton<RewardsManager>
 {
     [SerializeField] private GameObject m_rewardsPanel;
     [SerializeField] private GameObject m_cardRewardsContainer;
     [SerializeField] private PoolCardClickableItem m_cardPool;
     
     
-    
     private int m_honorAmount = 10;
 
     private const int numOfRewards = 3;
-    public void GiveReward()
+
+    protected override void Awake()
     {
-        GiveCardReward();
-        GiveHonorReward();
-        m_rewardsPanel.gameObject.SetActive(true);
+        base.Awake();
+        m_rewardsPanel.SetActive(false);
     }
 
-    private void GiveCardReward()
+    public void GiveReward()
     {
-        List<CardClickableItem> rewards = new List<CardClickableItem>();
+        GiveRandomCardReward();
+        GiveHonorReward();
+    }
+
+    private void GiveRandomCardReward()
+    {
+        List<BaseCardData> randomCards = new();
         for (int i = 0; i < numOfRewards; i++)
+        {
+            randomCards.Add(SelectRandomCard());
+        }
+        GiveCardReward(randomCards);
+    }
+
+    public void GiveCardReward(List<BaseCardData> cards)
+    {
+        if (cards == null || cards.Count == 0)
+        {
+            CustomDebug.LogWarning("Give card reward was called with no cards", Categories.Rewards.Root);
+            return;
+        }
+        
+        List<CardClickableItem> rewards = new List<CardClickableItem>();
+        for (int i = 0; i < cards.Count; i++)
         {
             rewards.Add(m_cardPool.GetItem());
             
-            BaseCardData cardData = SelectRandomCard();
+            BaseCardData cardData = cards[i];
             
             rewards[i].Configure(cardData);
             rewards[i].OnClick += OnCardRewardSelected;
@@ -37,6 +58,7 @@ public class RewardsManager : MonoBehaviour
             rewards[i].transform.localScale = Vector3.one;
             rewards[i].RefreshUI();
         }
+        m_rewardsPanel.gameObject.SetActive(true);
     }
 
     private void DisplaySelection(List<BaseCardData> rewards)
@@ -63,13 +85,9 @@ public class RewardsManager : MonoBehaviour
     
     
     private BaseCardData SelectRandomCard()
-    { 
-        CardsDb.CardsInfo randCard = CardsDb.Instance.AllCards[Random.Range(0, CardsDb.Instance.AllCards.Count)];
-        while (!randCard.IsImplemented)
-        {
-            randCard = CardsDb.Instance.AllCards[Random.Range(0, CardsDb.Instance.AllCards.Count)];
-        }
-        return randCard.CardData;
+    {
+        BaseCardData randCard = CardsDb.Instance.GetRandom();
+        return randCard;
     }
 
     private void OnCardRewardSelected(CardClickableItem item)
@@ -77,7 +95,14 @@ public class RewardsManager : MonoBehaviour
         Debug.Log("card clicked: " + item.CardInDeck.GetCardName());
          
         GameplayEvents.SendRewarderCardSelected(item.CardInDeck.GetCardData());
+        GameplayEvents.SendOnCardRewardSelected(item.CardInDeck.GetCardData());
         
-        SceneController.Instance.LoadScene(Scenes.Map);
+        m_rewardsPanel.gameObject.SetActive(false);
+        // SceneController.Instance.LoadScene(Scenes.Map);
+    }
+
+    protected override void Init()
+    {
+        
     }
 }

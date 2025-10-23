@@ -28,8 +28,7 @@ public class ImproviseCardAction : BaseCardAction
         
         for (int i = 0; i < randCardAmount; i++)
         {
-            int rand = UnityEngine.Random.Range(0, CardsDb.Instance.AllCards.Count);
-            BaseCardData randCard = CardsDb.Instance.AllCards[rand].CardData;
+            BaseCardData randCard = GameInfoHelper.GetRandomCardData();
             CardDisplay cardInstance = GameActionHelper.SpawnCard(randCard, CardStorage.HAND);
             GameActionHelper.SetCardEnergyOverride(cardInstance, ECardInDeckState.NORMAL, cardCostOverride);
             GameActionHelper.SetCardEnergyOverride(cardInstance, ECardInDeckState.STANCE, cardCostOverride);

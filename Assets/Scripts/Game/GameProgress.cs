@@ -67,6 +67,7 @@ public class GameProgressData
         
     private int m_honor;
     private List<string> m_perkIds = new List<string>();
+    private List<string> m_inventFinisherIds = new();
     private List<IParamModifier<int>> m_shopModifiers = new List<IParamModifier<int>>();
 
     public int Honor
@@ -85,6 +86,16 @@ public class GameProgressData
         set
         {
             m_perkIds = value;
+            DataChanged();
+        }
+    }
+
+    public List<string> InventFinisherIds
+    {
+        get { return m_inventFinisherIds; }
+        set
+        {
+            m_inventFinisherIds = value;
             DataChanged();
         }
     }

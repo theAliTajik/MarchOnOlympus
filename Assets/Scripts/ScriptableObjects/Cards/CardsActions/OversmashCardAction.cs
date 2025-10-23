@@ -23,7 +23,7 @@ public class OversmashCardAction : BaseCardAction
         if (numOfDebuffs > 0)
         {
             int inventGain = m_data.InventGainForEachDebuff * numOfDebuffs;
-            GameplayEvents.SendOnGainInvent(inventGain);
+            GameActionHelper.GainInvent(inventGain, GainedByCard:true);
         }
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

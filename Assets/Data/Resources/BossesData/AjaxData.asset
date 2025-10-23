@@ -28,7 +28,7 @@ MonoBehaviour:
     Percentage: 66
     TriggerType: 2
     Equal: 1
-    RemoveOnTrigger: 0
+    RemoveOnTrigger: 1
   Phase2PercentageTrigger:
     Percentage: 33
     TriggerType: 2

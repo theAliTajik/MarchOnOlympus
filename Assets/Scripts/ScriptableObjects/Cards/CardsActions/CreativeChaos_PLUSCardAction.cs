@@ -20,7 +20,7 @@ public class CreativeChaos_PLUSCardAction : BaseCardAction
 
         int inventGain = startingDeckSize + m_data.ExtraInvent;
         
-        GameplayEvents.SendOnGainInvent(inventGain);
+        GameActionHelper.GainInvent(inventGain, GainedByCard:true);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)
         {

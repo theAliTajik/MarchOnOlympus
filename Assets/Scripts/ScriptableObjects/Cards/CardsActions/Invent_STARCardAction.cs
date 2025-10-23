@@ -18,7 +18,7 @@ public class Invent_STARCardAction : BaseCardAction
     {
         m_data = (Invent_STARCard)cardData;
         
-        GameplayEvents.SendOnGainInvent(m_data.InventGain);
+        GameActionHelper.GainInvent(m_data.InventGain, GainedByCard:true);
         GameActionHelper.AddMechanicToFighter(target, m_data.Burn, MechanicType.BURN);
         
         if (CombatManager.Instance.CurrentStance == cardData.MStance)

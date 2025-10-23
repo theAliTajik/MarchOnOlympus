@@ -32,7 +32,7 @@ public class MeditationCardAction : BaseCardAction
     {
         if(!GameInfoHelper.CompareFighterToPlayer(fighter)) return;
         
-        GameActionHelper.GainInvent(amount);
+        GameActionHelper.GainInvent(amount, GainedByCard:true);
     }
 
     private void OnDestroy()

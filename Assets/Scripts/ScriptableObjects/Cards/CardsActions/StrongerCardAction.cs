@@ -33,6 +33,6 @@ public class StrongerCardAction : BaseCardAction
         bool isPlayer = GameInfoHelper.CompareFighterToPlayer(fighter);
         if(!isPlayer) return;
         
-        GameActionHelper.GainInvent(m_data.Invent);
+        GameActionHelper.GainInvent(m_data.Invent, GainedByCard:true);
     }
 }

@@ -1,0 +1,11 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "_NAME__InventAction_Level_LEVEL_",  menuName = "Invent/InventAction/_NAME__InventAction_Level_LEVEL_")]
+public class _NAME__InventAction_Level_LEVEL_ : InventAction
+{
+
+    public override void Execute(IDamageable target)
+    {
+        CustomDebug.Log($"executed {GetType().ToString()}", Categories.Combat.Invent.Root);
+    }
+}

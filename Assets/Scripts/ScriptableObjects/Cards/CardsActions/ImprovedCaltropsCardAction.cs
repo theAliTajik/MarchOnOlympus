@@ -36,7 +36,7 @@ public class ImprovedCaltropsCardAction : BaseCardAction
         GameplayEvents.OnInventPlayed -= OnInventPlayed;
     }
 
-    private void OnInventPlayed()
+    private void OnInventPlayed(InventFinisher inventFinisher, int i)
     {
         ApplyBleed();
     }

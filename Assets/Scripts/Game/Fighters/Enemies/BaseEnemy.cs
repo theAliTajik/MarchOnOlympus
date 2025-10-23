@@ -16,6 +16,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
         public string clientID;
         public string description;
         public int chance;
+        public List<EnemyActionType> actionType;
         public float[] probabilities;
         public Func<bool> Condition;
 
@@ -24,6 +25,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
             this.clientID = clientID;
             description = null;
             chance = 0;
+            actionType = new();
             probabilities = new float[] { };
             Condition = null;
         }
@@ -33,6 +35,7 @@ public abstract class BaseEnemy : Fighter, IGetStunned
             this.clientID = clientID;
             this.description = description1;
             this.chance = chance;
+            actionType = new();
             this.probabilities = probabilities ?? new float[] {0.5f, 0};
             Condition = null;
         }
@@ -91,6 +94,10 @@ public abstract class BaseEnemy : Fighter, IGetStunned
     public virtual void ShowIntention()
     {
         //Debug.Log("enemy intends to do: " + m_nextMove.description);
+        if (m_nextMove.actionType.Contains(EnemyActionType.ATTACK))
+        {
+            GameplayEvents.SendOnEnemyIsGoingToAttack(this);
+        }
     }
     
     public virtual void ExecuteAction(Action finishCallback)
