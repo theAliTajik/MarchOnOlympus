@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: StudyWeakness_STAR
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 10
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 1
-    description: 
+    description: If an enemy has a debuff, Gain Frenzy and Invent {0}
     targetingType: 0
-    actionType: 
+    actionType: 0300000005000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,5 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Frenzy: 0
-  Invent: 0
+  Frenzy: 1
+  Invent: 10

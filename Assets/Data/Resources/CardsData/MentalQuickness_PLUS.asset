@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: MentalQuickness_PLUS
   Rarity: 0
   Type: 0
-  CardPack: 0
+  CardPack: 2
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0

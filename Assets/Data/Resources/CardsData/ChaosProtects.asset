@@ -25,7 +25,7 @@ MonoBehaviour:
       Ingenius
     targetingType: 0
     actionType: 
-    doesPerish: 0
+    doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
     energyCost: 0

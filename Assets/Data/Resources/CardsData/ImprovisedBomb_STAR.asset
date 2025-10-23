@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ImprovisedBomb_STAR
   m_EditorClassIdentifier: 
   Name: ImprovisedBomb_STAR
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: When discarded or played, Deal {0}, Apply Vulnerable {1} to player
+    targetingType: 2
+    actionType: 0000000004000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 30
+  Vulnerable: 2

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Loremaster
   Rarity: 0
-  Type: 0
-  CardPack: 0
+  Type: 1
+  CardPack: 15
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: Everytime you draw a card from Improvise, Hit {0}to random target
+    targetingType: 1
+    actionType: 00000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Damage: 5

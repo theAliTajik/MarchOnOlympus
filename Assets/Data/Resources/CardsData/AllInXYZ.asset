@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: AllInXYZ
   m_EditorClassIdentifier: 
   Name: AllInXYZ
-  Rarity: 0
+  Rarity: 1
   Type: 0
-  CardPack: 0
+  CardPack: 13
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
-    doesPerish: 0
+    energyCost: 3
+    description: Discard your entire hand, Hit {0}x Discarded Cards, Perish
+    targetingType: 2
+    actionType: 0500000000000000
+    doesPerish: 1
     doesPerishIfNotUsed: 0
   stanceDataSet:
     energyCost: 0
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  DamageMultiplier: 7

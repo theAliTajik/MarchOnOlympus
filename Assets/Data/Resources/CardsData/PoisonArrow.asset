@@ -21,7 +21,7 @@ MonoBehaviour:
   Ingenius: 0
   normalDataSet:
     energyCost: 1
-    description: Hit {0}, Apply Daze{1}
+    description: Hit {0}, Apply Daze
     targetingType: 1
     actionType: 0000000004000000
     doesPerish: 0
