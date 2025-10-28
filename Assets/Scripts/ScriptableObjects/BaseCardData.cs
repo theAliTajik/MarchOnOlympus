@@ -19,7 +19,8 @@ public enum CardPacks
     DEBUFF,
     TECH,
     PRACTICAL,
-    GENIUS
+    GENIUS,
+    ARROW
 }
 
 public enum CardType
