@@ -21,6 +21,10 @@ public enum CardPacks
     PRACTICAL,
     GENIUS,
     ARROW
+    BURN,
+    DISCARD,
+    BUFF_REMOVE,
+    IMPROVISE,
 }
 
 public enum CardType
