@@ -21,7 +21,7 @@ MonoBehaviour:
   Ingenius: 0
   normalDataSet:
     energyCost: 2
-    description: Your Arrow Cards gain {0} damage
+    description: Your Arrow Cards gain +{0} damage
     targetingType: 0
     actionType: 00000000
     doesPerish: 0

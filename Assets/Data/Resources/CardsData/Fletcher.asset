@@ -33,6 +33,5 @@ MonoBehaviour:
     actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
-  Upgrades:
-  - {fileID: 11400000, guid: 95a4c556745bc4730ac5a5d56425de9b, type: 2}
-  - {fileID: 11400000, guid: 2d36059ea674549129872a2373cfcd79, type: 2}
+  Upgrades: []
+  Damage: 0

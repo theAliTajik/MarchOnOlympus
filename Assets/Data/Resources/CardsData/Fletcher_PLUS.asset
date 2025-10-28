@@ -21,7 +21,7 @@ MonoBehaviour:
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: Spawn two Arrows of your choice
+    description: Spawn {0} Arrows of your choice
     targetingType: 0
     actionType: 05000000
     doesPerish: 0

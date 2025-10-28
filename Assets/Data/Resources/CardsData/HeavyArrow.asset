@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: HeavyArrow
   Rarity: 0
   Type: 0
-  CardPack: 11
+  CardPack: 1
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0

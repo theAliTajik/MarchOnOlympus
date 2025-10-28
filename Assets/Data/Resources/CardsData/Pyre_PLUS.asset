@@ -22,7 +22,7 @@ MonoBehaviour:
   normalDataSet:
     energyCost: 2
     description: Burn self {0}, Enemy {1}
-    targetingType: 0
+    targetingType: 2
     actionType: 04000000
     doesPerish: 0
     doesPerishIfNotUsed: 0

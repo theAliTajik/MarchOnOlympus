@@ -20,10 +20,10 @@ MonoBehaviour:
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 0
-    description: 
-    targetingType: 0
-    actionType: 
+    energyCost: 2
+    description: Gain {0} Invent, Hit {1}
+    targetingType: 2
+    actionType: 0500000000000000
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,5 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Damage: 0
+  Invent: 5
+  Damage: 10
