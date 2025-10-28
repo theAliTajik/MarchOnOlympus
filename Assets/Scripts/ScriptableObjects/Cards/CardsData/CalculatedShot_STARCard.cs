@@ -22,7 +22,7 @@ public class CalculatedShot_STARCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Damage, InventThreshold, InventDamage);
         }
     }
 }

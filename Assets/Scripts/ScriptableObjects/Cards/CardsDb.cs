@@ -262,4 +262,17 @@ public class CardsDb : GenericData<CardsDb>
         
         return allCard;
     }
+
+    public List<BaseCardData> GetCardsOfCharacter(string charId)
+    {
+        var targetCards = AllCardContainers.Find(x => x.GetCharId() == charId);
+
+        if (targetCards == null)
+        {
+            CustomDebug.LogWarning("Did not find  character with id: " + charId, Categories.Data.Cards);
+            return null;
+        }
+
+        return targetCards.GetAllImplementedCards();
+    }
 }

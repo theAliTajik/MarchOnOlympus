@@ -15,6 +15,7 @@ public class DeckBuilderView : MonoBehaviour
     public Action<string> OnDeckRemoved;
 
     public event Action OnLoadDecks;
+    public event Action OnCreateOdyDeck;
     
     public Action<string, int> OnCardAddedToDeck;
     public Action<int> OnCardRemovedFromDeck;
@@ -244,6 +245,11 @@ public class DeckBuilderView : MonoBehaviour
         // turn on pop up 
         m_deckCreationPopup.SetActive(true);
         m_deckCreationErrorText.gameObject.SetActive(false);
+    }
+
+    public void OnCreateOdyDeckClicked()
+    {
+        OnCreateOdyDeck?.Invoke();
     }
 
     public void CreateDeck()

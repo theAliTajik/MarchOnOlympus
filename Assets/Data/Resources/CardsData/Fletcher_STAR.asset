@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Fletcher_STAR
   Rarity: 0
   Type: 0
-  CardPack: 11
+  CardPack: 0
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 2
-    description: Your Arrow Cards gain +{0} damage
+    energyCost: 0
+    description: 
     targetingType: 0
-    actionType: 00000000
+    actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  ExtraDamage: 2
+  Damage: 0

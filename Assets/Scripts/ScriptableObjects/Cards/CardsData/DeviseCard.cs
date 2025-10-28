@@ -21,7 +21,7 @@ public class DeviseCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description, Damage);
+            return string.Format(normalDataSet.description, Damage, InventDivisor);
         }
     }
 }

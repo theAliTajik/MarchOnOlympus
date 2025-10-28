@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: Fletcher_PLUS
   Rarity: 0
   Type: 0
-  CardPack: 11
+  CardPack: 0
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
     energyCost: 0
-    description: Spawn {0} Arrows of your choice
+    description: 
     targetingType: 0
-    actionType: 05000000
+    actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  NumOfArrowsToSpawn: 2
+  Damage: 0

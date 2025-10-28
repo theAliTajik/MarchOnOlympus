@@ -20,7 +20,7 @@ public class BurningBashCard : BaseCardData
         }
         else
         {
-            return string.Format(normalDataSet.description);
+            return string.Format(normalDataSet.description, BurnMultiplier);
         }
     }
 }

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Stronger
   Rarity: 0
-  Type: 1
+  Type: 0
   CardPack: 0
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 2
-    description: Whenever you get hit, Invent {0}
+    energyCost: 0
+    description: 
     targetingType: 0
-    actionType: 05000000
+    actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Invent: 5
+  Damage: 0

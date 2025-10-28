@@ -18,14 +18,13 @@ MonoBehaviour:
   CardPack: 0
   Image: {fileID: 0}
   MStance: 0
-  Ingenius: 1
+  Ingenius: 0
   normalDataSet:
-    energyCost: 2
-    description: Perish{0} random cards from deck, Add {1} ANY legendary to deck,
-      Ingenius
+    energyCost: 0
+    description: 
     targetingType: 0
-    actionType: 05000000
-    doesPerish: 1
+    actionType: 
+    doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
     energyCost: 0
@@ -35,5 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  PerishCards: 3
-  NumOfLegendaryCards: 2
+  Damage: 0

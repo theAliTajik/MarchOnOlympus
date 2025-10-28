@@ -26,6 +26,7 @@ public class DeckBuilderPresenter : MonoBehaviour
         m_view.OnDeckRemoved += OnDeckRemoveClicked;
         m_view.OnDeckDuplicated += OnDeckDuplicateClicked;
         m_view.OnLoadDecks += OnLoadDecksClicked;
+        m_view.OnCreateOdyDeck += OnCreateOdyDeck;
         
 
         m_view.DisplayAllCards(CardsDb.Instance.GetAllImplementedCards());
@@ -97,6 +98,12 @@ public class DeckBuilderPresenter : MonoBehaviour
         DeckTemplates.LoadPredefinedDecks();
     }
     
+    private void OnCreateOdyDeck()
+    {
+        DeckTemplates.CreateCharTemplateFromCardsDb("Odysseus");
+        DeckTemplates.CreateCharTemplateFromCardsDb("Ody_Upgrades");
+    }
+
     private void OnDeckDuplicateClicked(string deckId, string duplicateId, int index)
     {
         bool success = DeckTemplates.AddDeck(duplicateId, index);

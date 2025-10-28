@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
@@ -21,6 +23,53 @@ public static class DeckTemplates
     
     public static List<Deck> Decks = new List<Deck>();
 
+    public static List<Deck> OdyDecks = new();
+    public static List<Deck> OdyUpgradeDecks = new();
+
+    public static void CreateCharTemplateFromCardsDb(string CharId)
+    {
+        if (CardsDb.Instance == null)
+        {
+            Debug.LogError("CardsDb is empty or not initialized.");
+            return;
+        }
+        // Grab ody cards
+        var CharCards = CardsDb.Instance.GetCardsOfCharacter(CharId);
+        // split to x num of 25 card deck
+        List<Deck> decks = new List<Deck>();
+        int deckIndex = 0;
+        for (int i = 0; i < CharCards.Count; i += 25)
+        {
+            List<BaseCardData> cards = CharCards
+                .Skip(i)
+                .Take(25)
+                .ToList();
+            
+            Deck newDeck = new Deck();
+            newDeck.clientID = CharId + "Deck_" + deckIndex;
+            
+            decks.Add(newDeck);
+
+            foreach (BaseCardData cardData in cards)
+            {
+                CardInDeckStateMachine card = new CardInDeckStateMachine();
+                card.Configure(cardData);
+                newDeck.CardsInDeck.Add(card);
+            }
+            deckIndex++;
+        }
+
+        foreach (Deck deck in decks)
+        {
+            deck.clientID = MakeIDUnique(deck.clientID);
+            Decks.Add(deck);
+        }
+        
+        UpdateDecks();
+        Save();
+    }
+    
+    
     public static void LoadAllDecks()
     {
         Decks.Clear();
@@ -41,6 +90,7 @@ public static class DeckTemplates
         
         UpdateDecks();
     }
+    
 
     public static List<Deck> LoadPredefinedDecks()
     {
@@ -320,4 +370,3 @@ public static class DeckTemplates
     }
 
 }
-

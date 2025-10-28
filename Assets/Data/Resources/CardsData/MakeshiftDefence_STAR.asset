@@ -15,15 +15,15 @@ MonoBehaviour:
   Name: MakeshiftDefence_STAR
   Rarity: 0
   Type: 0
-  CardPack: 13
+  CardPack: 0
   Image: {fileID: 0}
   MStance: 0
   Ingenius: 0
   normalDataSet:
-    energyCost: 1
-    description: When discarded or played, Gain Frenzy
+    energyCost: 0
+    description: 
     targetingType: 0
-    actionType: 03000000
+    actionType: 
     doesPerish: 0
     doesPerishIfNotUsed: 0
   stanceDataSet:
@@ -34,4 +34,4 @@ MonoBehaviour:
     doesPerish: 0
     doesPerishIfNotUsed: 0
   Upgrades: []
-  Frenzy: 1
+  Damage: 0
