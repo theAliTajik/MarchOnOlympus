@@ -175,12 +175,14 @@ MonoBehaviour:
   - clientID: hitBleed
     description: hit 20, bleed 5
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: hitBlock
     description: hit 10, block 10, restore 5
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

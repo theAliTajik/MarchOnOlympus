@@ -405,18 +405,21 @@ MonoBehaviour:
     - clientID: hit
       description: Hit 10+ (5 x Missing Head Count)
       chance: 10
+      actionType: 00000000
       probabilities:
       - 0.5
       - 0
     - clientID: hitAcid
       description: Hit 5 x Acid Dot Count
       chance: 10
+      actionType: 00000000
       probabilities:
       - 0.5
       - 0
     - clientID: acidDot
       description: Acid dot on player
       chance: 10
+      actionType: 
       probabilities:
       - 0.5
       - 0

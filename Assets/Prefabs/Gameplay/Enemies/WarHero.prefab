@@ -73,15 +73,11 @@ MeshRenderer:
   - {fileID: 2100000, guid: c46b9de374fdc456ea78629a1badeeed, type: 2}
   - {fileID: 2100000, guid: 580ac4eda237c4c5f94705fa8245ecbc, type: 2}
   - {fileID: 2100000, guid: c46b9de374fdc456ea78629a1badeeed, type: 2}
-  - {fileID: 2100000, guid: a8941508d52ff404293706e622dd13c3, type: 2}
-  - {fileID: 2100000, guid: 6bd68efc7e70249a8bf823934be92369, type: 2}
   - {fileID: 2100000, guid: 580ac4eda237c4c5f94705fa8245ecbc, type: 2}
   - {fileID: 2100000, guid: c46b9de374fdc456ea78629a1badeeed, type: 2}
   - {fileID: 2100000, guid: 580ac4eda237c4c5f94705fa8245ecbc, type: 2}
   - {fileID: 2100000, guid: c46b9de374fdc456ea78629a1badeeed, type: 2}
   - {fileID: 2100000, guid: 580ac4eda237c4c5f94705fa8245ecbc, type: 2}
-  - {fileID: 2100000, guid: a8941508d52ff404293706e622dd13c3, type: 2}
-  - {fileID: 2100000, guid: 6bd68efc7e70249a8bf823934be92369, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -249,6 +245,7 @@ MonoBehaviour:
     clientID: HitHunt
     description: Hit 2x5, Apply Haunt 2 per Attack that hits Player (if no block)
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -256,6 +253,7 @@ MonoBehaviour:
     clientID: Panic1
     description: Panic Count x Hit 10 , Restore 25
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -263,6 +261,7 @@ MonoBehaviour:
     clientID: Panic2
     description: Hit 50
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

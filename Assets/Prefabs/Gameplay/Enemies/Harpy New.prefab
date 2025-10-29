@@ -264,12 +264,14 @@ MonoBehaviour:
   - clientID: HitBleed
     description: Hit 10, Apply Bleed 5
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: ScreechDaze
     description: Give Daze 2
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
@@ -277,6 +279,7 @@ MonoBehaviour:
   - clientID: Airbone
     description: The boss is immune to damage while airborne
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0

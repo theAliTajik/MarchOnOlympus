@@ -283,30 +283,35 @@ MonoBehaviour:
   - clientID: pump
     description: 
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: fortified
     description: 
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: 2hit
     description: 
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: hit10
     description: 
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: block
     description: 
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0

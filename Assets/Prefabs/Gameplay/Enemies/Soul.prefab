@@ -241,18 +241,21 @@ MonoBehaviour:
   - clientID: Bleed
     description: Bleed 3
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: HitPiercing
     description: Hit 10 Piercing
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: HitDaze
     description: Hit 5, Apply Daze
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

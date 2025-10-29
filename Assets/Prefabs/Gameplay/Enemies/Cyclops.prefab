@@ -175,7 +175,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 292903ef1bfa946e69cb4182acd7120a, type: 2}
   - {fileID: 2100000, guid: aa974868e57d04795b5d5e3d240c779b, type: 2}
   - {fileID: 2100000, guid: 4594992dff0ed4af684aa75abe7cc467, type: 2}
-  - {fileID: 2100000, guid: 986304c17e2dd443ca73268113230988, type: 2}
+  - {fileID: 2100000, guid: 8c5b04f12df774deba2c21948840cee7, type: 2}
   - {fileID: 2100000, guid: 5a07b7642289747989f19c21bc68ad34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -323,12 +323,14 @@ MonoBehaviour:
   - clientID: HitBuff
     description: Hit 5x2 , Remove all buffs on player
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.2
     - 0
   - clientID: Hit
     description: Hit 10x2
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.2
     - 0
@@ -336,6 +338,7 @@ MonoBehaviour:
     clientID: RemoveAllDebuffs
     description: Removes all debuffs and Fortify 2
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
@@ -343,6 +346,7 @@ MonoBehaviour:
     clientID: getClub
     description: Getting Club
     chance: 0
+    actionType: 
     probabilities: []
   m_data: {fileID: 11400000, guid: 811a822e38bcead4ea571febf1d96ed5, type: 2}
   m_club:

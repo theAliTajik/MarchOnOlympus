@@ -229,18 +229,21 @@ MonoBehaviour:
   - clientID: SpawnSouls
     description: Summon 2 Souls
     chance: 10
+    actionType: 
     probabilities:
     - 1
     - 1
   - clientID: BuffRestore
     description: Buff self +10 Str, Restore 10
     chance: 10
+    actionType: 
     probabilities:
     - 1
     - 1
   - clientID: Spawn&Buff
     description: Summon 2 Souls and Buff self +10 Str, Restore 10
     chance: 10
+    actionType: 
     probabilities:
     - 1
     - 1
@@ -248,18 +251,21 @@ MonoBehaviour:
   - clientID: Bleed
     description: Bleed 3
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: HitPiercing
     description: Hit 10 Piercing
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: HitDaze
     description: Hit 5, Apply Daze
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0

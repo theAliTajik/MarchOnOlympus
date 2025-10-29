@@ -456,17 +456,20 @@ MonoBehaviour:
   - clientID: Hit
     description: Hit 3x3
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0
   - clientID: Block
     description: Block 3x3
     chance: 10
+    actionType: 
     probabilities:
     - 0
   m_restoreMove:
     clientID: RestoreHit
     description: Restore 25 to ALL tentacles, Hit 15 x Dead Tentacle Count
     chance: 10
+    actionType: 
     probabilities:
     - 0
   m_data: {fileID: 11400000, guid: ca3d51feba9a55045bfa3d3d7c249703, type: 2}
@@ -710,6 +713,7 @@ MonoBehaviour:
   - clientID: block
     description: block 10 + (10 x boss phase)
     chance: 10
+    actionType: 
     probabilities:
     - 1
   m_headPosition: {fileID: 3967764625108103617}
@@ -952,6 +956,7 @@ MonoBehaviour:
   - clientID: hit
     description: hit 10 + (10.boss phase)
     chance: 10
+    actionType: 
     probabilities:
     - 1
   m_headPosition: {fileID: 8575058253100925127}
@@ -1411,6 +1416,7 @@ MonoBehaviour:
     description: When alive, Gives +2 energy to PLAYER but whenever player uses a
       card, gives +1 str or dex to the boss
     chance: 10
+    actionType: 
     probabilities:
     - 1
   m_headPosition: {fileID: 5785030178015636411}

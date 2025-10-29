@@ -237,12 +237,14 @@ MonoBehaviour:
     description: 'Taunt (Player can''t attack other enemies next turn) Every odd
       turns '
     chance: 10
+    actionType: 
     probabilities:
     - 0
   - clientID: Hit
     description: 'Hit 60 - Alive Ally Countx20 (If both allies are alive, hits 20.
       If one ally is dead, hits 40. If both allies are dead, hits 60) '
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0
   m_data: {fileID: 11400000, guid: 112f5b917eea4de40989e4c9136c3f05, type: 2}

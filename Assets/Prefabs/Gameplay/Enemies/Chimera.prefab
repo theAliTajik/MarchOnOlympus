@@ -222,10 +222,12 @@ MonoBehaviour:
     - clientID: hit
       description: Hit 10
       chance: 0
+      actionType: 00000000
       probabilities: []
     - clientID: taunt
       description: Taunt
       chance: 0
+      actionType: 
       probabilities: []
     m_data: {fileID: 11400000, guid: ba92d73ba01ee40babe76e54243a878e, type: 2}
   m_serpent:
@@ -237,6 +239,7 @@ MonoBehaviour:
     - clientID: card
       description: Send a "poison" card to deck
       chance: 10
+      actionType: 
       probabilities: []
     m_data: {fileID: 11400000, guid: 6b38f01bf80624d6ca450a2c47903e00, type: 2}
   m_goat:
@@ -248,10 +251,12 @@ MonoBehaviour:
     - clientID: fortify
       description: Fortify on Serpent
       chance: 0
+      actionType: 
       probabilities: []
     - clientID: hit
       description: Hit 20x serpent poison cards in deck
       chance: 0
+      actionType: 00000000
       probabilities: []
     m_data: {fileID: 11400000, guid: f7ceebca987624e04a53f05473368be9, type: 2}
   m_poisonHitMultiplier: 2

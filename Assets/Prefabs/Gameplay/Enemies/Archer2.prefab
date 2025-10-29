@@ -288,12 +288,14 @@ MonoBehaviour:
   - clientID: Thorns
     description: 5 Thorns to Warrior Level 2
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: Hit
     description: Hit 15
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

@@ -283,18 +283,21 @@ MonoBehaviour:
   - clientID: Hit20
     description: Hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: Bleed3
     description: Give 3 Bleed, Gain 5 Block
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: Send3Cards
     description: Send 3 Cards
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0

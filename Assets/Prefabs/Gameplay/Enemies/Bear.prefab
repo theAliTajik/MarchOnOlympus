@@ -175,12 +175,14 @@ MonoBehaviour:
   - clientID: Animal
     description: Give 10 armor to boss and animals
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: Hit
     description: Hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

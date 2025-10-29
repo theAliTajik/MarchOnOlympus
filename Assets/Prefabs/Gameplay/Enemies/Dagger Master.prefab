@@ -229,18 +229,21 @@ MonoBehaviour:
   - clientID: first
     description: hit 10 and send card
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: second
     description: poision daggers. adding Bleed 2 x Dagger count
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: third
     description: 'hit 10 x dagger count. '
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

@@ -175,12 +175,14 @@ MonoBehaviour:
   - clientID: hit
     description: Hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: hitBlock
     description: Hit 10, Block 10
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

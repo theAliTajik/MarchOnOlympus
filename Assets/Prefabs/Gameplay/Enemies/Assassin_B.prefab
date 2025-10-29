@@ -345,12 +345,14 @@ MonoBehaviour:
   - clientID: Vulnerable
     description: 2 Vulnerable
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: HitRestore
     description: Hit 5, Restore 10
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

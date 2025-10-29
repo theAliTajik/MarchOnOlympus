@@ -345,18 +345,21 @@ MonoBehaviour:
   - clientID: HitPetrify
     description: Hit 3x5, Petrify 1 per hit
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: BlockThorns
     description: Block 20, Thorns 3
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: HitBlockPetrify
     description: 'Hit 20, ignores block, Petrifyx4 '
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -364,6 +367,7 @@ MonoBehaviour:
     clientID: IfPetrifyHit
     description: Hit 5xPetrify Stack
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

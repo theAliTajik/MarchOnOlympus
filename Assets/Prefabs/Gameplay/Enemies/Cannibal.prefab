@@ -261,12 +261,14 @@ MonoBehaviour:
   - clientID: Hit
     description: Hit 7
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: HitBoth
     description: Hit 15 both to player and himself
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -274,12 +276,14 @@ MonoBehaviour:
   - clientID: HitLevel2
     description: Hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: HitBothLevel2
     description: Hit 30 to player and 15 to himself
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -287,6 +291,7 @@ MonoBehaviour:
   - clientID: HitBothLevel3
     description: Hit 30 to player and 10 to himself
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

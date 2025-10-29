@@ -345,12 +345,14 @@ MonoBehaviour:
   - clientID: Thorns
     description: Thorns 3 to all allies
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: HitBlock
     description: Hit 5, Block 15
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

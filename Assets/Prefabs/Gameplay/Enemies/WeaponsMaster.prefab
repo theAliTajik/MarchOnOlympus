@@ -206,12 +206,14 @@ MonoBehaviour:
   - clientID: hit
     description: Hit 20
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: sendCard
     description: Send 3 Cards
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
@@ -219,6 +221,7 @@ MonoBehaviour:
   - clientID: hitRandom
     description: Hit 10,15,20,25,30 randomly (only 1)
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
@@ -226,12 +229,14 @@ MonoBehaviour:
   - clientID: hitBlock
     description: Hit 10 Block 10
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: restoreBlock
     description: Restore 10 Block 10
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0

@@ -345,12 +345,14 @@ MonoBehaviour:
   - clientID: BlockGainStr
     description: Block 5, Gain 2 str
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: Hit
     description: Hit 3x3
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0

@@ -212,24 +212,28 @@ MonoBehaviour:
   - clientID: Block
     description: Block 10
     chance: 0
+    actionType: 
     probabilities:
     - 0
   - clientID: Charge
     description: Gains 3 charges, if charges > 6, Hit 50. Each player hit removes
       1 charge
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
   - clientID: Hit
     description: Hit 20, Fortify
     chance: 10
+    actionType: 00000000
     probabilities:
     - 0.5
     - 0
   - clientID: SendCards
     description: Send 2 cards into the players deck
     chance: 10
+    actionType: 
     probabilities:
     - 0.5
     - 0
