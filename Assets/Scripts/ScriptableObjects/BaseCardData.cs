@@ -20,7 +20,7 @@ public enum CardPacks
     TECH,
     PRACTICAL,
     GENIUS,
-    ARROW
+    ARROW,
     BURN,
     DISCARD,
     BUFF_REMOVE,
