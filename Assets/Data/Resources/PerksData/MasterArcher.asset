@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: MasterArcher
   m_EditorClassIdentifier: 
   Rarity: 0
+  CardUpgradedActionDescription: hit +2 damage and restore 1 hp
+  NonArrowCardsThreshold: 4

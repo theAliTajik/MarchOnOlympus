@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Resourceful
   m_EditorClassIdentifier: 
   Rarity: 0
+  Invent: 1

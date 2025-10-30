@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Resilient
   m_EditorClassIdentifier: 
   Rarity: 0
+  InventLevelCondition: 3
+  Block: 20

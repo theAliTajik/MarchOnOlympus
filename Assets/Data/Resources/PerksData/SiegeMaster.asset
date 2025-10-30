@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cd9ae96a17547abadb538803923c5e, type: 3}
   m_Name: SiegeMaster
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 1
+  TargetInventFinisherPack: 0
+  InventLevelIncrease: 1

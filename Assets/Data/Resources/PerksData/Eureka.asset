@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Eureka
   m_EditorClassIdentifier: 
   Rarity: 0
+  InventFinisherLevelUpgrade: 1

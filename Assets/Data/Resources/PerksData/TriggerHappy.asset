@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TriggerHappy
   m_EditorClassIdentifier: 
   Rarity: 0
+  Restore: 10

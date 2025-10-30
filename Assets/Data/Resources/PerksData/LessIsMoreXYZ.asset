@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: LessIsMoreXYZ
   m_EditorClassIdentifier: 
   Rarity: 0
+  NumOfCardsThreshold: 2
+  Strength: 1

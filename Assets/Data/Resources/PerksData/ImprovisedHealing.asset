@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ImprovisedHealing
   m_EditorClassIdentifier: 
   Rarity: 0
+  Invent: 5

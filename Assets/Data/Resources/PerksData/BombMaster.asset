@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f58199cb9c5d43348355e712d1da2b4, type: 3}
   m_Name: BombMaster
   m_EditorClassIdentifier: 
-  Rarity: 0
+  Rarity: 1
