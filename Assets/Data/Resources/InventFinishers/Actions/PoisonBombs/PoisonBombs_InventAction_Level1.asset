@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PoisonBombs_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: PoisonBombs_Action1
+  ToolTip: Apply Daze
   InventLevel: 1
   TargetType: 1

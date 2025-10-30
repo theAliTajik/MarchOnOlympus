@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Trapmaster_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: Trapmaster_Action1
+  ToolTip: Gain Talos
   InventLevel: 1
   TargetType: 0
   Perk: Talos

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Genius_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: Genius_Action1
+  ToolTip: Your Next Card Plays Twice
   InventLevel: 1
   TargetType: 0

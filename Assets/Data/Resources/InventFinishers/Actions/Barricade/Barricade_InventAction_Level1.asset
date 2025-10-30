@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Barricade_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: Barricade_Action1
+  ToolTip: Gain 20 Block
   InventLevel: 1
   TargetType: 0
   Block: 20

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireBombs_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: FireBombs_Action1
+  ToolTip: Hit 10, Apply Burn 5 to yourself and Enemy
   InventLevel: 1
   TargetType: 1
   Damage: 10

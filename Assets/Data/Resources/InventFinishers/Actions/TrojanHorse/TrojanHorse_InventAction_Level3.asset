@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrojanHorse_InventAction_Level3
   m_EditorClassIdentifier: 
   ID: TrojanHorse_Action3
+  ToolTip: Gain 20 Block, Hit 50 Next Turn End, Gain Metis
   InventLevel: 3
   TargetType: 1
   Block: 20

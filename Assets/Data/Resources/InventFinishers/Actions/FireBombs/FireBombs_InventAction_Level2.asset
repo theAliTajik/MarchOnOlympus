@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireBombs_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: FireBombs_Action2
+  ToolTip: Hit 20, Apply Burn 5
   InventLevel: 2
   TargetType: 1
   Damage: 20

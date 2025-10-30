@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Trapmaster_InventAction_Level3
   m_EditorClassIdentifier: 
   ID: Trapmaster_Action3
+  ToolTip: Gain Talos, Discard and Redraw Your Hand
   InventLevel: 3
   TargetType: 0
   Perk: Talos

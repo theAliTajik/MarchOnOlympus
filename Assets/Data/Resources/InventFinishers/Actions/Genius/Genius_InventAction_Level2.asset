@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Genius_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Genius_Action2
+  ToolTip: Your Next Cards Plays Twice, Reduce a random card's cost to 0 this turn
   InventLevel: 2
   TargetType: 0
   CardCost: 0

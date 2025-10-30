@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ballista_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Ballista_Action2
+  ToolTip: Hit 20-50
   InventLevel: 2
   TargetType: 1
   LowestDamage: 20

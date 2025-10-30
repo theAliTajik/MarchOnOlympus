@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: FastThinking
   m_EditorClassIdentifier: 
   Rarity: 0
+  Strength: 2

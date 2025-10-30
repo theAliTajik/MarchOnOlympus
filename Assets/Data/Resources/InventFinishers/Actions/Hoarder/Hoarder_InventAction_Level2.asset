@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hoarder_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Hoarder_Action2
+  ToolTip: Discard 2, Draw 2, Gain 2xFortified
   InventLevel: 2
   TargetType: 0
   Discard: 2

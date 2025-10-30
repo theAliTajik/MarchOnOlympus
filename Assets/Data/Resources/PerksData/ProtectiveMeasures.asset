@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ProtectiveMeasures
   m_EditorClassIdentifier: 
   Rarity: 0
+  Block: 10

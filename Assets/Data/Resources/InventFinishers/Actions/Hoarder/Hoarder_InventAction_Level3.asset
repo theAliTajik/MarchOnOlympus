@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hoarder_InventAction_Level3
   m_EditorClassIdentifier: 
   ID: Hoarder_Action3
+  ToolTip: Discard 4, Draw 2, Gain 4 str, Hit 8 xDiscarded cards
   InventLevel: 3
   TargetType: 0
   Discard: 4

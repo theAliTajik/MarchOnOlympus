@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Inventor_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: Inventor_Action1
+  ToolTip: Gain Polumetis
   InventLevel: 1
   TargetType: 0
   Perk: Polumetis

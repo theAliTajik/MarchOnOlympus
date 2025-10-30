@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrojanHorse_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: TrojanHorse_Action2
+  ToolTip: Gain 20 Block, Hit 50 Next Turn End
   InventLevel: 2
   TargetType: 1
   Block: 20

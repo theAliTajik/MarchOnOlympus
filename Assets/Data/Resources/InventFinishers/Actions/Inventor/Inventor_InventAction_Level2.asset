@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Inventor_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Inventor_Action2
+  ToolTip: Gain Polumetis, Gain 50 Invent, Apply Impale 5 to all enemies
   InventLevel: 2
   TargetType: 0
   Perk: Polumetis

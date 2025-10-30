@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Trapmaster_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Trapmaster_Action2
+  ToolTip: Gain Talos, Discard 2 Cards, Draw 2 Cards
   InventLevel: 3
   TargetType: 0
   Perk: Talos

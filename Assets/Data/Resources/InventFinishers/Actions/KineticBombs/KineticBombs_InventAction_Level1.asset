@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: KineticBombs_InventAction_Level1
   m_EditorClassIdentifier: 
   ID: KineticBombs_Action1
+  ToolTip: Bleed 10
   InventLevel: 1
   TargetType: 1
   Bleed: 10

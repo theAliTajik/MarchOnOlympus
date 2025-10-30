@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Phronesis
   m_EditorClassIdentifier: 
   Rarity: 0
+  Invent: 15

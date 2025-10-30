@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PoisonBombs_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: PoisonBombs_Action2
+  ToolTip: Apply Daze, Vulnerable
   InventLevel: 2
   TargetType: 1

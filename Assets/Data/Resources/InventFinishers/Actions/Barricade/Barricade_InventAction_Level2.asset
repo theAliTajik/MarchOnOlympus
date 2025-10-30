@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Barricade_InventAction_Level2
   m_EditorClassIdentifier: 
   ID: Barricade_Action2
+  ToolTip: Gain 30 Block, 5 Thorns
   InventLevel: 2
   TargetType: 0
   Block: 30
